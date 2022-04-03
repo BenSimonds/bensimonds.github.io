@@ -8,13 +8,12 @@ tags:
 - quick projects
 - zbrush
 author: Ben Simonds
-markdown:
-  gfm: false
 alias: blog/posts/2011-05-26-aquatic-dude
 
 ---
 
-None
+[![](/images/old/swimmer2_2.jpg)](/images/old/swimmer2_2.jpg) Sculpted in ZBrush and rendered in blender. Just a rough sculpt but I liked the look of him.
+
 
 
 

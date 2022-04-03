@@ -8,13 +8,14 @@ tags:
 - book
 - store
 author: Ben Simonds
-markdown:
-  gfm: false
 alias: blog/posts/2013-02-15-blender-master-class-on-the-blender-org-store
 
 ---
 
-None
+> Thanks to a generous deal with NoStarch, we can offer @[bensimonds](https://twitter.com/bensimonds) Master Class in the [blender.org](http://t.co/logPLDVK "http://blender.org") store: [blender3d.org/e-shop/product…](http://t.co/PiHCOuYB "http://www.blender3d.org/e-shop/product_info_n.php?products_id=158") — Ton Roosendaal (@tonroosendaal) [February 15, 2013](https://twitter.com/tonroosendaal/status/302463218138361856)
+
+You can now buy my book, Blender Master Class on the Blender.org E-Store, it's roughly the same price as ordering anywhere else, and you'll also be supporting the Blender Foundation.
+
 
 
 

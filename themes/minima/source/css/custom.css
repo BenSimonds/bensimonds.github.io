@@ -47,6 +47,11 @@ img {
   margin-bottom: 1%;
 }
 
+
+.trans img {
+  max-width: 66%;
+}
+
 @media (min-width: 550px) {
   /*
   Side by side gallery
@@ -55,7 +60,18 @@ img {
   [_gallery >](imgages/test.jpg)
   */
   img[alt~="_gallery"] {
-    max-width: 49.5%;
+    max-width: 25%;
+
+  }
+
+  img:last-of-type[alt~="_gallery"] {
+    margin-right: auto;
+
+  }
+
+  img:first-of-type[alt~="_gallery"] {
+    margin-left: auto;
+
   }
 
   /* Aligned to the right */

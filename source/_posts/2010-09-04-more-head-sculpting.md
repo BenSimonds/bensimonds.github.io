@@ -8,13 +8,14 @@ tags:
 - quick projects
 - sculpt
 author: Ben Simonds
-markdown:
-  gfm: false
 alias: blog/posts/2010-09-04-more-head-sculpting
 
 ---
 
-None
+Just another head sculpt. That is all. 
+
+[![](/images/old/zeus7s.jpg)](/images/old/zeus7s.jpg)
+
 
 
 

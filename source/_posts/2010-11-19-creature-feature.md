@@ -8,13 +8,12 @@ tags:
 - sculpt
 - zbrush
 author: Ben Simonds
-markdown:
-  gfm: false
 alias: blog/posts/2010-11-19-creature-feature
 
 ---
 
-None
+Did this guy over the weekend. Might play around a little more with him, but I thought I'd post it. [![](/images/old/quadrarm10.jpg)](/images/old/quadrarm10.jpg) [![](/images/old/quadrarm_8.jpg)](/images/old/quadrarm_8.jpg)
+
 
 
 

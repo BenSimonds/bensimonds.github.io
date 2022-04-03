@@ -10,13 +10,16 @@ tags:
 - rig
 - zbrush
 author: Ben Simonds
-markdown:
-  gfm: false
 alias: blog/posts/2011-04-30-shapekeyface-rigging-tests-michelle
 
 ---
 
-None
+Testing out the rig and shapekeys for a face I made. [vimeo http://vimeo.com/23076748]  Originally sculpted in zbrush, retopologised and rigged in blender. 
+
+Original Sculpt: [![](/images/old/rdz2.jpg)](/images/old/rdz2.jpg)
+
+Retopology in blender: [![](/images/old/retopo.jpg)](/images/old/retopo.jpg)
+
 
 
 

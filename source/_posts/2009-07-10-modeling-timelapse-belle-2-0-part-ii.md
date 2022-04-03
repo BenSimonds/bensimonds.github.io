@@ -10,8 +10,6 @@ tags:
 - timelapse
 - tutorials
 author: Ben Simonds
-markdown:
-  gfm: false
 alias: blog/posts/2009-07-10-modeling-timelapse-belle-2-0-part-ii
 
 ---
@@ -21,7 +19,6 @@ alias: blog/posts/2009-07-10-modeling-timelapse-belle-2-0-part-ii
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/5536880" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
  The second part of my steampunk style android project.
-
 
 
 
