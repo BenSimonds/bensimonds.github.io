@@ -1,28 +1,24 @@
 #title in header
-title: "BenSimonds.com or whatever"
+title: "BenSimonds.com"
 
 #main info
 #owner
 owner: "Ben Simonds"
 email: ""
-info: "Data Viz. Blender. Woodwork."
-#description
-desc: "My personal site."
 
 #menu
 menu:
-  Works: /Works
-  About: /About
+  Blender: /blender
 
 #index/main page max show posts (in number)
 max_post: 12
 
 # Colors use hex color without #
 # Theme color
-tcolor: 0FA0CE
+tcolor: 0FCE92
 
 # Define path to user css
-#(could be also located outside of theme)
+# (could be also located outside of theme)
 # Relative to source/ directory
 usercss: css/user.css
 
