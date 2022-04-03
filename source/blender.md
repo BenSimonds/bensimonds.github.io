@@ -25,7 +25,7 @@ Here you can find some of my older tutorials and content on Blender related thin
   * [Halftone Shader](/2013/02/14/halftone-shader/)
   * [Controlling HDR Lighting with Nodes](http://t.co/YN7OnwZqHS)
 
-Mini-tutorials/ Tips 
+### Mini-tutorials/ Tips 
   * [Setting up Dual Monitors with a Wacom Tablet on Ubuntu 11.04](/2011/05/25/setting-up-dual-monitors-with-a-wacom-tablet-on-ubuntu-11-04/)
   * [Creating Seamless Textures with GIMP's Resynthesize Plugin](/2011/05/12/mini-tutorial-creating-seamless-textures-with-gimps-resynthesize-plugin/)
   * [Sculpting in Blender 2.5](/2010/07/29/blender-2-5-sculpting/)
@@ -37,14 +37,14 @@ Mini-tutorials/ Tips
   * [Smarter Scrape Brush](/2013/05/01/smarter-scrape-brush/) \- replicating ZBrush's Trim Dynamic brush in Blender.
   * [Cycles Pinhole Camera ](/2013/03/04/cycles-experiment-pinhole-camera/)
 
-Timelapses 
+### Timelapses 
   * [Sculpting Timelapse: Rocky](/2010/10/14/rocky/)
   * [Sculpting Timelapse: Cow -boy](http://mountainofminutes.wordpress.com/2011/07/18/cow-boy/) (at MountainOfMinutes.wordpress.com)
   * [Modelling Timelapse: Moroccan Man](/2010/06/16/modelling-timelapse/)
   * [Modelling Timelapse: Belle 2.0 Part i](/2009/07/04/modelling-timelapse-belle-2-0/)
   * [Modelling Timelapse: Belle 2.0 Part ii](/2009/07/10/modeling-timelapse-belle-2-0-part-ii/)
 
-Resources 
+### Resources 
   * [Free Rig: Jake](/2011/03/28/free-rig-jake/)
   * [Anatomy Resources For Blenderheads](/2010/08/18/anatomy-resources-for-blenderheads/)
   * [Texture Site Roundup](/2010/11/11/texture-site-roundup/)
