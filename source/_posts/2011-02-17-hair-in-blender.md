@@ -19,23 +19,35 @@ alias: blog/posts/2011-02-17-hair-in-blender
 
 ---
 
-[![](/images/old/jr_hairstyles.jpg)](/images/old/jr_hairstyles.jpg) Hair used to be something I really hated having to do in CG, and to this day you'll see more than a fair share of baldies amongst my works. However with more and more updates to blenders hair tools, it 's getting easier (and even fun!) to create characters and creatures with hair. This tutorial/guide covers working with hair particles in blender, including particle systems, combing/cutting/styling hair, and using the child particle settings.  **Reference is Key** As always, a big part of getting good results is knowing what you're going for, and hair is no exception. Go out onto the internets (or if you're feeling particularly adventurous, the real world) and look for examples of the kind of hairstyle you want your character to have. Pay attention to how this reflects on your characters personality too, your stereotypical space marine isn't likely to have long, elegantly coiffured hair, and that beautiful princess is going to look odd with a birds nest perched atop her head. How styled or messy your characters hair is reflects who they are, so it's worth spending a little time thinking how it should look and searching for examples. Collect up some reference images and have them on hand to refer to when doing your characters hair. Once that's sorted, you can start thinking about how you're going to make that hairstyle in blender. [caption id="attachment_936" align="aligncenter" width="393"][![Bad Hair Day? Know what you're going for first.](/images/old/windowslivewriterisexponentialtrafficforyourwebsitepossib-16cdalbert-einstein-2.jpg)](/images/old/windowslivewriterisexponentialtrafficforyourwebsitepossib-16cdalbert-einstein-2.jpg) Bad Hair Day? Know what you're going for first.[/caption] 
+![>< ><](/images/old/jr_hairstyles.jpg)
+
+
+Hair used to be something I really hated having to do in CG, and to this day you'll see more than a fair share of baldies amongst my works. However with more and more updates to blenders hair tools, it 's getting easier (and even fun!) to create characters and creatures with hair. This tutorial/guide covers working with hair particles in blender, including particle systems, combing/cutting/styling hair, and using the child particle settings.  **Reference is Key** As always, a big part of getting good results is knowing what you're going for, and hair is no exception. Go out onto the internets (or if you're feeling particularly adventurous, the real world) and look for examples of the kind of hairstyle you want your character to have. Pay attention to how this reflects on your characters personality too, your stereotypical space marine isn't likely to have long, elegantly coiffured hair, and that beautiful princess is going to look odd with a birds nest perched atop her head. How styled or messy your characters hair is reflects who they are, so it's worth spending a little time thinking how it should look and searching for examples. Collect up some reference images and have them on hand to refer to when doing your characters hair. Once that's sorted, you can start thinking about how you're going to make that hairstyle in blender. [caption id="attachment_936" align="aligncenter" width="393"
+
+![Bad Hair Day? Know what you're going for first. ><](/images/old/windowslivewriterisexponentialtrafficforyourwebsitepossib-16cdalbert-einstein-2.jpg)
+
+Bad Hair Day? Know what you're going for first. 
 
 **Break it Down, Build it Up**
 
 An easy mistake in trying to do a complex haircut is trying to do it all in one go is trying to build it all in one go. Not only will this put more strain on your poor old computer, it's going to be a nightmare to control too. Instead, break each part of the hair down into different particle systems that you can work on and tweak separately. You can assign the same material to each at first, and later make unique materials for certain parts, say if you want to add a few grey hairs to a beard, or make some of the hair thicker to look like stubble or eyebrows. If you want to do simulations with your hair system, you might want to keep the number of hair systems low to give yourself less work later on when doing simulations, but for still images you can go to town with lots of separate particle systems for maximum tweakability.
 
-[caption id="attachment_940" align="aligncenter" width="590"][![](/images/old/piratehair.jpg)](/images/old/piratehair.jpg) The five separate particle systems for my pirate captain character. The combined effect is on the bottom right.[/caption] 
+![>< ><](/images/old/piratehair.jpg)
+
+The five separate particle systems for my pirate captain character. The combined effect is on the bottom right. 
 
 Now, I should mention that in blender 2.56 and upwards, there are some great new hair features, such as the parting controls, that give you more control over separating areas of hair within the same particle system. You can get some more details on them [here](http://bensimonds.com/2011/02/02/hair-testing-in-blender-2-56/) in a previous post I wrote). Particularly for animation if you're doing some kind of simulation, theses are good alternatives to using separate particle systems, but I still think particularly for still renders, separate parts are the way to go.
 
 Start by creating an overall vertex group in weight paint mode of where you want your hair to be. Select your mesh and press Ctrl-Tab to do this by default, then start painting areas on your mesh where you want hair to be. You can use the x-mirror option in the tool options sidebar to keep the vertex group symmetrical if your model has symmetry, which is handy for most characters, as hairlines are usually broadly symmetrical. Once you have a good overall map, go over to the properties panel and look in the mesh settings sub panel under vertex groups. Click the little drop down menu and select copy vertex group to create another copy of your master hair density group you've just created, and give it a nice descriptive name for the first part of your hair system you want to create.
 
-[![](/images/old/copyverexgroup.jpg)](/images/old/copyverexgroup.jpg)
+![>< ><](/images/old/copyverexgroup.jpg)
+
 
 Then start trimming this vertex group with the subtract brush (open up the tools sidebar in the 3D viewport by pressing "T" to see the brush options), to create a smaller vertex group that only covers the area you want the first part of your hairstyle to cover. For example, if you were doing a haircut with a side parting , then remove all the vertices on one side of the parting, if you were creating a character with a moustache, then restrict your vertex group to just cover the upper lip. By subtracting vertices this way you can maintain nice neat vertex groups, and if you used symmetry to create your master group, then the symmetry of the hairline and so forth will be conserved. You can always add to the vertex group too, to fix any mistakes. You can also jump into edit mode and add or remove any hard to reach vertices by hand.
 
-[caption id="attachment_942" align="aligncenter" width="354"][![](/images/old/vghair.jpg)](/images/old/vghair.jpg) Vertex Groups for different hair particle systems laid out. The main (top left) hair group could be further broken down to give a parting or sideburns.[/caption] 
+![>< ><](/images/old/vghair.jpg)
+
+Vertex Groups for different hair particle systems laid out. The main (top left) hair group could be further broken down to give a parting or sideburns. 
 
 Once you have your vertex groups you can start creating particle systems for each.
 
@@ -49,7 +61,9 @@ Under the velocity settings, all you really need to do is set the "normal" veloc
 
 Okay, so I'm a dude, and if you could see my hair today you probably wouldn't believe I was in any position to comment on such matters. But in general, if you pay attention next time you get a haircut, the hairdresser will comb it first, then cut it to the right length, then do any other stuff that needs doing. This makes sense, as there isn't much point changing the length of the hair, if you don't yet know how it's going to sit. Start by creating a hair partcicle system with reasonably long hair, then go into particle edit mode and start by combing it to roughly the right shape for your final haircut. You can use the length tool to increase the length of any strands that aren't long enough, but don't worry about any that are longer then you need. Then begin cutting the hair to the length you want. Of course in blender you have the advantage that you can always take make hair longer as well as cutting it away! After it's the right length, you can add some more interest. Start using the comb tool again with a low intensity to add some waviness to the hair for example, or use the puff tool to add volume.
 
-[caption id="attachment_943" align="aligncenter" width="590"][![](/images/old/bowlcutbasics.jpg)](/images/old/bowlcutbasics.jpg) Your basic bowl cut. Comb it down, then cut it to the right length. This provides a good base to start working from.[/caption] 
+![>< ><](/images/old/bowlcutbasics.jpg)
+
+Your basic bowl cut. Comb it down, then cut it to the right length. This provides a good base to start working from. 
 
 Once you've done this for one part of your hairstyle, just keep repeating the process with all the different parts to complete your characters hair.
 
@@ -61,15 +75,22 @@ Wow, I really can't resist a cheesy sub heading title can I? Anyway, unless youv
 
 Simple child particles will follow the path of the parent particle pretty much exactly, and are not really attached to the surface of the mesh, instead they just stem from an area defined by the radius setting, around the parent. This gives them a kind of patchy look unless you use a lot of parent particles, which presents its own problems. Also, because they are located only around the the parent particles, they ignore vertex groups. This can be useful sometimes, for example you can add some extra parent particles along the hairline of your character to give more children there, placing the parents by hand with the add tool to give a nice tidy boundary which the child particles will obey. On the other hand if you have nice high-res mesh with well defined vertex groups, this may be the opposite of what you want.
 
-[caption id="attachment_944" align="aligncenter" width="442"][![](/images/old/patch.jpg)](/images/old/patch.jpg) Exaggerated patchiness caused by not setting the child radius high enough with simple child particles.[/caption] 
+![>< ><](/images/old/patch.jpg)
+
+Exaggerated patchiness caused by not setting the child radius high enough with simple child particles. 
 
 Interpolated child particles blend between the different parent hairs, and stay on the surface of your mesh, on the areas defined by by your vertex groups. Because they don't crowd around the parent particles, and don't follow their paths exactly, they don't have the patchy look of simple children. They also have the advantage that you can use far fewer parent hairs to define the hair-style, and use lots of children to fill in the gaps more cleanly. In general, I find I can get away with only a couple of hundred parent particles using this method, compared to several hundred or even thousands of parents when using simple children (to combat the patchiness and get nice boundaries). However they have the disadvantage that because they stick to the boundaries set out by your vertex groups, then if you have a very low resolution mesh, then the borders of your vertex groups will follow the topology of your mesh, potentially resulting in very un-natural looking, jaggy boundaries and hairlines. To combat this you simply have to use a higher resolution mesh when painting your vertex groups to get nice clean boundaries. This is easy for still images (just apply your subdivision modifiers before painting your vertex groups), but problematic if you want to keep your mesh un-subdivided to give nice deformations for animation. Thankfully with future [updates](http://jahkaparticles.blogspot.com/2011/02/particle-textures-reincarnated.html) to blender, we should be able to use textures of any arbitrary resolution, rather than vertex groups to define hair density, which ought to solve this problem.
 
-[caption id="attachment_945" align="aligncenter" width="398"][![](/images/old/hairline.jpg)](/images/old/hairline.jpg) With interpolated child particles, the hairline will follow along with the topology of your mesh.[/caption] 
+![>< ><](/images/old/hairline.jpg)
+
+
+
+With interpolated child particles, the hairline will follow along with the topology of your mesh. 
 
 In general, if you can get around the problems I mention above, then I advise using interpolated particles. They look nicer with much less effort, and you can use far fewer parent particles, which makes editing easier and reduces the amount of memory it takes to load your scene. With that done we can move onto the other child particle settings. I'll cover each in order:
 
-[![](/images/old/childparticles.jpg)](/images/old/childparticles.jpg)
+![>< ><](/images/old/childparticles.jpg)
+
 
   * **Display and Render:** How many child particles to generate in the 3d display and at render time respectively. To get the total number of particles, multiply this by the number of particles in the emission settings. I generally aim to have a few hundred thousand to no more than a million hairs in total, as having more can take prohibitively long to render. So if I'm using interpolated particles and I have a couple of hundred parent particles, then I'll set the render amount to a couple of thousand. Set the display amount much lower, to whatever keeps your viewport running nice and snappy whilst still giving you a good idea of what the final render will look like.
   * **Seed:** This just changes the pseudo-random seed used to generate the child particles. Handy if there's just a few hairs out of place messing up your hair-do, just change it and see what you get.
@@ -101,7 +122,12 @@ That's it for now. Obviously I haven't covered rendering hair yet, as that's a b
   * Alternatively, you can turn "deflect emitter" up to push the hairs further away from the emitter.
   * A really important factor in a good haircut is the silhouette. To get a feel for how the silhouette looks in isolation, set the material colour for your hair to black (make sure you have "use material colour turned on in the particle settings) and take a look at it from various angles, and work on outline. Aim for nice smooth curves.
 
-**Hair Caps** If you're working on a mesh you want to animate, or if you think you might want to alter your heads topology later on, it might be wise to attach the hair system to a separate mesh from the head, so you can work on one without affecting the other. This is easy to accomplish by going into edit mode and selecting the faces you want to grow hair from, then duplicating these and pressing "P" to part the new faces from the head object. This creates a safe object to create your particle system on, letting you go back and edit the head as needed. You can also turn off any inessential modifiers (like subsurf or multires) on this mesh to keep your computer happy. [![](/images/old/haircap.jpg)](/images/old/haircap.jpg)
+**Hair Caps** If you're working on a mesh you want to animate, or if you think you might want to alter your heads topology later on, it might be wise to attach the hair system to a separate mesh from the head, so you can work on one without affecting the other. This is easy to accomplish by going into edit mode and selecting the faces you want to grow hair from, then duplicating these and pressing "P" to part the new faces from the head object. This creates a safe object to create your particle system on, letting you go back and edit the head as needed. You can also turn off any inessential modifiers (like subsurf or multires) on this mesh to keep your computer happy.
+
+![>< ><](/images/old/haircap.jpg)
+
+
+
 
 
 

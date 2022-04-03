@@ -17,9 +17,16 @@ alias: blog/posts/2013-06-07-magic-eye-pictures-with-processing-and-blender
 
 ---
 
-[![HourGlass](/images/old/hourglass.png?w=950)](/images/old/hourglass.png)
+[![HourGlass ><](/images/old/hourglass.png?w=950)](/images/old/hourglass.png)
 
-Click the image above for full size, then try and look _through_ it. If you've still confused I'm not surprised, [there's a bit of a knack to it](http://en.wikipedia.org/wiki/Autostereogram#Viewing_techniques). Yesterday, I decided to start learning a bit of [Processing](http://www.processing.org/), and after following through a few tutorials I came up with the idea of making a random dot stereogram generator. Random dot stereograms, also known as Magic Eye pictures (the trade name of the company that popularised them in the 90's), are images made up of repeating patterns, that when viewed correctly give the impression of seeing a 3D shape appear magically out of the pattern. The wikipedia article on [autostereograms](http://en.wikipedia.org/wiki/Autostereogram) gives a much better explanation of how they work than I can here, but what follows is a brief explanation. Autostereograms work via the wallpaper effect. When you look at a horizontally repeating pattern, it's possible to convince your brain that two separate but identical parts of the pattern are actually the same part, but located on a different plane away from the real surface of the pattern: [caption id="" align="aligncenter" width="491"][![](http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Stereogram_Tut_Eye_Trick.png/491px-Stereogram_Tut_Eye_Trick.png)](http://en.wikipedia.org/wiki/Autostereogram) How autostereograms work, from Wikipedia.[/caption] But this alone just creates the effect of the pattern floating on a plane behind the image itself. In order to create a 3D image using this technique, we can change the amount of shifting between repeats of the pattern. By reducing the distance between repeats in certain parts of the image, we can trick our brains into perceiving these areas as being closer to us. To do this we just use a black and white depth map to define, for each pixel, how great the amount of shifting should be. Far away (dark) areas receive the default amount of shifting, closer areas (bright) receive less. This struck me as an ideal way to test out what I'd learned so far in Processing, as the principle was basically just a simple manipulation of pixels, but it was something that wouldn't have been easily possible in my usual go-to app (Blender), because of the way that pixels further to the right in a row rely on how far previous previous pixels in the row have been shifted, meaning that it isn't easy to render the image all at once. In Processing however I could cycle through each row with a _for_ loop, progressing left to right. Here's the script I came up with. 
+
+Click the image above for full size, then try and look _through_ it. If you've still confused I'm not surprised, [there's a bit of a knack to it](http://en.wikipedia.org/wiki/Autostereogram#Viewing_techniques). Yesterday, I decided to start learning a bit of [Processing](http://www.processing.org/), and after following through a few tutorials I came up with the idea of making a random dot stereogram generator. Random dot stereograms, also known as Magic Eye pictures (the trade name of the company that popularised them in the 90's), are images made up of repeating patterns, that when viewed correctly give the impression of seeing a 3D shape appear magically out of the pattern. The wikipedia article on [autostereograms](http://en.wikipedia.org/wiki/Autostereogram) gives a much better explanation of how they work than I can here, but what follows is a brief explanation. Autostereograms work via the wallpaper effect. When you look at a horizontally repeating pattern, it's possible to convince your brain that two separate but identical parts of the pattern are actually the same part, but located on a different plane away from the real surface of the pattern: [caption id="" align="aligncenter" width="491"
+
+![ ><](http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Stereogram_Tut_Eye_Trick.png/491px-Stereogram_Tut_Eye_Trick.png)
+
+http://en.wikipedia.org/wiki/Autostereogram
+
+How autostereograms work, from Wikipedia. But this alone just creates the effect of the pattern floating on a plane behind the image itself. In order to create a 3D image using this technique, we can change the amount of shifting between repeats of the pattern. By reducing the distance between repeats in certain parts of the image, we can trick our brains into perceiving these areas as being closer to us. To do this we just use a black and white depth map to define, for each pixel, how great the amount of shifting should be. Far away (dark) areas receive the default amount of shifting, closer areas (bright) receive less. This struck me as an ideal way to test out what I'd learned so far in Processing, as the principle was basically just a simple manipulation of pixels, but it was something that wouldn't have been easily possible in my usual go-to app (Blender), because of the way that pixels further to the right in a row rely on how far previous previous pixels in the row have been shifted, meaning that it isn't easy to render the image all at once. In Processing however I could cycle through each row with a _for_ loop, progressing left to right. Here's the script I came up with. 
     
     
     //Declare Variables
@@ -60,11 +67,23 @@ Click the image above for full size, then try and look _through_ it. If you've s
       saveFrame("magiceye.png"); //Save an image as the output.
     }
 
-It takes two inputs, one the pattern to repeat, the other a depth map. The result is a random dot stereogram. Below is the result of using a sphere with a hole in it as the depth map (rendered with blender), and the pattern on the left as the input for the noise (click for full size to get the best out of the 3d effect). [![Creating Autostereograms](/images/old/stereogrambreakdown1.png?w=950)](/images/old/stereogrambreakdown1.png) Anyway, it was pretty fun to play with, and I generated a few stereograms. I'm still in the process of learning how to tweak the script to get the best effect (mainly by adjusting the maximum and minimum amounts of shifting), but here's some results (click for full size, and see the filename for a clue if you can't get it): 
+It takes two inputs, one the pattern to repeat, the other a depth map. The result is a random dot stereogram. Below is the result of using a sphere with a hole in it as the depth map (rendered with blender), and the pattern on the left as the input for the noise (click for full size to get the best out of the 3d effect).
 
-[![Suzanne](/images/old/suzanne.png?w=300)](/images/old/suzanne.png)
+[![Creating Autostereograms ><](/images/old/stereogrambreakdown1.png?w=950)](/images/old/stereogrambreakdown1.png)
 
-[![Torus](/images/old/torus.png?w=300)](/images/old/torus.png) [![Vase](/images/old/vase1.png?w=300)](/images/old/vase1.png) Now if you'll excuse me I need to go and rest my eyes. Debugging the script took a lot of staring, and it's weird trying to make yourself see a 3D image when you aren't even sure whether there should be one yet....
+ Anyway, it was pretty fun to play with, and I generated a few stereograms. I'm still in the process of learning how to tweak the script to get the best effect (mainly by adjusting the maximum and minimum amounts of shifting), but here's some results (click for full size, and see the filename for a clue if you can't get it): 
+
+[![Suzanne ><](/images/old/suzanne.png?w=300)](/images/old/suzanne.png)
+
+
+
+[![Torus ><](/images/old/torus.png?w=300)](/images/old/torus.png)
+
+
+
+[![Vase ><](/images/old/vase1.png?w=300)](/images/old/vase1.png)
+
+ Now if you'll excuse me I need to go and rest my eyes. Debugging the script took a lot of staring, and it's weird trying to make yourself see a 3D image when you aren't even sure whether there should be one yet....
 
 
 

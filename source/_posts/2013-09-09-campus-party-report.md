@@ -15,7 +15,7 @@ alias: blog/posts/2013-09-09-campus-party-report
 
 ---
 
-[![2013-09-06 11.00.40](/images/old/2013-09-06-11-00-40.jpg?w=950)](/images/old/2013-09-06-11-00-40.jpg)
+[![2013-09-06 11.00.40 ><](/images/old/2013-09-06-11-00-40.jpg?w=950)](/images/old/2013-09-06-11-00-40.jpg)
 
 Last Friday [Jonathan](http://twitter.com/laxy) and I did a talk and a workshop at Campus Party Europe, a tech/hacking/gaming convention with around five thousand attendees, held at the O2 here in London. Keynote speakers at past Campus Party conferences have included Buzz Aldrin, Al Gore, and Sir Tim Berners-Lee - okay, we were obviously on one of the smaller stages, but it was very cool to be asked to come and present all the same. We gave a talk on Blender's modelling tools in the morning followed by a workshop on sculpting and texturing with Blender in the afternoon.
 
@@ -25,11 +25,17 @@ http://www.youtube.com/watch?v=eOWjsY3WxvQ
 
 The workshop was great fun, it was really nice to see people getting to grips with blender, some of them for the first time. After I'd spent a little while confusing people with GLSL materials and texture coordinates, we mainly looked at sculpting on a basemesh of a simple character. People seemed to particularly like the new dynamic topology tools, which were quickly used to add horns, tails, tentacles and other appendages to our character!
 
-[![image](/images/old/image.jpeg?w=950)](/images/old/image.jpeg)
+[![image ><](/images/old/image.jpeg?w=950)](/images/old/image.jpeg)
 
 There were plenty of other things to see at Campus party, including 3D printers, a few quadrocopters and some interesting PC case-mods. We also caught a talk by Games Workshop founder Ian Livingstone on his career in the Games industry. Here's some more photos from the days events:
 
-[![image](/images/old/image4.jpeg?w=950)](/images/old/image4.jpeg) [![image](/images/old/image2.jpeg)](/images/old/image2.jpeg) [![image](/images/old/image3.jpeg?w=758)](/images/old/image3.jpeg) [![image](/images/old/image1.jpeg?w=950)](/images/old/image1.jpeg)
+[![image ><](/images/old/image4.jpeg?w=950)](/images/old/image4.jpeg)
+
+[![image ><](/images/old/image2.jpeg)](/images/old/image2.jpeg)
+
+[![image ><](/images/old/image3.jpeg?w=758)](/images/old/image3.jpeg)
+
+[![image ><](/images/old/image1.jpeg?w=950)](/images/old/image1.jpeg)
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: Blender conference day two highlights.
+title: Blender Conference Day Two Highlights.
 date: '2010-10-31'
 tags:
 - uncategorized
@@ -8,7 +8,8 @@ alias: blog/posts/2010-10-31-blender-conference-day-two-highlights
 
 ---
 
-[![](/images/old/2010-10-30_15-34-01-scaled-1000.jpg?w=300)](/images/old/2010-10-30_15-34-01-scaled-1000.jpg)
+[![>< ><](/images/old/2010-10-30_15-34-01-scaled-1000.jpg?w=300)](/images/old/2010-10-30_15-34-01-scaled-1000.jpg)
+
 
 Jan-Willem van Dronkelaar's head sculpting presentation was excelent, in particular he had a few great anatomy tips for the face that I want to apply in some studies when I get home.
 

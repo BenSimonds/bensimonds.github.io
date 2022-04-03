@@ -17,7 +17,7 @@ alias: blog/posts/2011-09-21-assembly-life-in-macrospace
 
 ---
 
-[vimeo http://www.vimeo.com/29365091 w=600&h=338]
+http://www.vimeo.com/29365091
 
 Done for [Gecko Animation Ltd](http://www.geckoanimation.com/), which I am now a part of!
 
@@ -26,9 +26,6 @@ A short experimental piece featuring a blend of Macro Photography and CG Animati
 The CG elements were all done in blender (though some of the fluid sim stuff was done with RealFlow) and rendered in BI. Lots of animated node materials for the shifting surfaces and displacements.
 
 Credits: Director of Photography - David Parvin Live Action Shoot - David Parvin, Jonathan Lax, Tobin Brett CG Animation and Effects - Ben Simonds, Jonathan Lax Editing - Jonathan Lax Music and Sound FX - Alistair Lax
-
-
-
 
 
 # Comments

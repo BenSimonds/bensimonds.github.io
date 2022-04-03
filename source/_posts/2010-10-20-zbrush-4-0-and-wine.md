@@ -13,13 +13,17 @@ alias: blog/posts/2010-10-20-zbrush-4-0-and-wine
 
 ---
 
-[![](/images/old/screenshot-6.png)](/images/old/screenshot-6.png)
+![>< ><](/images/old/screenshot-6.png)
+
 
 I got ZBrush 4.0 today, and as I no longer even bother keeping a windows install on my machine, I was a little worried about how well it would work on my ubuntu 10.10 install using wine. Whilst Wine HQ had [listings](http://appdb.winehq.org/objectManager.php?sClass=version&iId=8023&iTestingId=12117) for zbrush 3.5, I was not able to find details of anyone successfully running zbrush 4.0 on wine.
 
 Undeterred, I made sure I was using an up to date version of wine (1.2.1 stable) and ran the installer. The installer worked perfectly! First step complete.
 
-On running the program however I got the following error message: [![](/images/old/error.jpg)](/images/old/error.jpg)
+On running the program however I got the following error message:
+
+![>< ><](/images/old/error.jpg)
+
 
 However, this did not prevent Zbrush from loading up and has so far not caused any problems - it seems that it can be ignored. Once loaded up, web registration worked fine (though I couldn't copy paste the key, I had to type it manually), but following this I got another error message, and zbrush quit. The error message stated that:
 

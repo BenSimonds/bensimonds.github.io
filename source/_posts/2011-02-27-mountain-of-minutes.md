@@ -13,7 +13,11 @@ alias: blog/posts/2011-02-27-mountain-of-minutes
 
 ---
 
-So some friends of mine from BlenderArtists.org and I decided to get together and make a little art-blog type thing. We post some WIP images, finished stuff, hopefully some timelapses in future too. Go check it out at [MountainOf Minutes.Wordpress.com](http://mountainofminutes.wordpress.com/) [caption id="attachment_1752" align="aligncenter" width="470"][![Gargoyle - By Brandon Phoenix](/images/old/01-gargoyle.jpg?w=470)](/images/old/01-gargoyle.jpg) Gargoyle - By Brandon Phoenix[/caption]
+So some friends of mine from BlenderArtists.org and I decided to get together and make a little art-blog type thing. We post some WIP images, finished stuff, hopefully some timelapses in future too. Go check it out at [MountainOf Minutes.Wordpress.com](http://mountainofminutes.wordpress.com/)
+
+[![Gargoyle - By Brandon Phoenix ><](/images/old/01-gargoyle.jpg?w=470)](/images/old/01-gargoyle.jpg)
+
+Gargoyle - By Brandon Phoenix
 
 
 

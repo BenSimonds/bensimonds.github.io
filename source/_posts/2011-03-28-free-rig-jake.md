@@ -1,5 +1,5 @@
 ---
-title: 'Free Rig: Jake'
+title: 'Rig: Jake'
 date: '2011-03-28'
 tags:
 - '2.5'
@@ -14,15 +14,10 @@ alias: blog/posts/2011-03-28-free-rig-jake
 
 ---
 
-[![](/images/old/boy_posed.jpg)](/images/old/boy_posed.jpg)
-
-This is a rig I created as a test for the Two Rivers Partnership, a small animation and VFX studio in London I work for. They've kindly allowed me to release the rig to the blender community.
-
-You can download the rig [here](http://dl.dropbox.com/u/180363/Jake_Rig_Packed6.blend.zip).
+![>< ><](/images/old/boy_posed.jpg)
 
 
-
-
+This is a rig I created as a test for the Two Rivers Partnership, a small animation and VFX studio in London I work for. 
 
 # Comments
 

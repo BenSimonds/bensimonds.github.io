@@ -17,7 +17,9 @@ alias: blog/posts/2013-10-14-multi-quicktime-add-on
 
 I've been working on a new script at Gecko for a side-project of ours in for which we need to generate a lot of video files at different sizes and in different codecs. Because we were processing the frames for these videos in blender we wanted a solution that could just take those rendered frames and produce all of the videos we needed. Enter a nifty command line tool called [qt_tools](http://omino.com/sw/qt_tools/) and some python scripting!
 
-[![MQT_Demo](/images/old/mqt_demo.jpg?w=950)](/images/old/mqt_demo.jpg)
+[![MQT_Demo ><](/images/old/mqt_demo.jpg?w=950)](/images/old/mqt_demo.jpg)
+
+
 
 The script I came up with lets you specify a list of different output files that you want to create, and define settings for each using different settings files. Then you can either manually set off an export of each of these videos from your rendered frames, or have the export automatically happen after you finish rendering your animation. And because qt_tools has access to all of the codecs and soforth that quicktime does, you have a lot of flexibility in what kinds of video you can make (more than blender has natively as far as quicktime is concerned anyway).
 
@@ -25,7 +27,12 @@ You can also use the script just to create a single file. This is great for when
 
 #### Instructions:
 
-**Important:** The script requires you have [qt_tools](http://omino.com/sw/qt_tools/) installed for it to work in its current state (see To Do list), which means you'll need to be on a Mac too. 1\. [Download](https://dl.dropboxusercontent.com/u/180363/Hosting/Multiquicktime.py), Install, and Enable the addon. 2\. Look in the Render Tab of the Properties Editor, under Multi-Quicktime. 3\. Click "Add Multi Quicktime Output" to create at least one output file. 4\. Configure a new settings file or browse for an existing one if you've created one before. Clicking on the configure button will bring up the same settings dialog that Quicktime uses natively. Set other properties as desired: [![MQT_Settings](/images/old/mqt_settings1.jpg?w=950)](/images/old/mqt_settings1.jpg) 5\. Either manually generate your quicktime outputs with "Generate Outputs fro Frames", or enable "Auto Generate After Render" and render your animation. 
+**Important:** The script requires you have [qt_tools](http://omino.com/sw/qt_tools/) installed for it to work in its current state (see To Do list), which means you'll need to be on a Mac too. 1\. [Download](https://dl.dropboxusercontent.com/u/180363/Hosting/Multiquicktime.py), Install, and Enable the addon. 2\. Look in the Render Tab of the Properties Editor, under Multi-Quicktime. 3\. Click "Add Multi Quicktime Output" to create at least one output file. 4\. Configure a new settings file or browse for an existing one if you've created one before. Clicking on the configure button will bring up the same settings dialog that Quicktime uses natively. Set other properties as desired:
+
+[![MQT_Settings ><](/images/old/mqt_settings1.jpg?w=950)](/images/old/mqt_settings1.jpg)
+
+
+5\. Either manually generate your quicktime outputs with "Generate Outputs fro Frames", or enable "Auto Generate After Render" and render your animation. 
 
 #### To Do:
 

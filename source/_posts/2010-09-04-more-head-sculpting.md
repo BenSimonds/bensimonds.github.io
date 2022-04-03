@@ -14,10 +14,7 @@ alias: blog/posts/2010-09-04-more-head-sculpting
 
 Just another head sculpt. That is all. 
 
-[![](/images/old/zeus7s.jpg)](/images/old/zeus7s.jpg)
-
-
-
+![>< ><](/images/old/zeus7s.jpg)
 
 
 # Comments

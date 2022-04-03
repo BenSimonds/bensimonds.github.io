@@ -14,7 +14,7 @@ alias: blog/posts/2012-10-18-blender-conference
 
 ---
 
-[![](/images/old/img_0952.jpg)](/images/old/img_0952.jpg)
+![image ><](/images/old/img_0952.jpg)
 
 I'm back from the blender conference, and I had a brilliant time. This time round Jonathan (@Laxy) and I gave a talk on some VFX work we did last year, on adding CGI makeup - in this case scars and bruises, to live action footage. You can watch the stream from the conference below.[ ](17 #bconf12 Ben Simonds Digital makeup with Blender)
 

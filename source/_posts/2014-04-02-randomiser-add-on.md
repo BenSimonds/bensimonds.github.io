@@ -16,7 +16,11 @@ alias: blog/posts/2014-04-02-randomiser-add-on
 
 ---
 
-https://www.youtube.com/watch?v=Jg93ksWYKws This is an add on that I've been working on occasionally for a while now. It started with my first attempts at learning python by creating a simple script to help me do cascading text, Matrix style. From there I used a modified version of the script on a job doing some animated numbers and text. I've dug it out for another job recently and thought it worthwhile tidying it up and making it into an add-on rather than a stand alone script. Randomiser is an add on that is mainly useful for manipulating text data (although I've implemented a couple of features for object data as well). It's similar in some respects to [Bassam Kurdali's typewriter add-on](http://urchn.org/post/typewriter-blender-addon), but has a few differences. Randomiser can manipulate text data in a variety of ways. If you supply it with the name of a text block, it can: 
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/FzJg93ksWYKws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+This is an add on that I've been working on occasionally for a while now. It started with my first attempts at learning python by creating a simple script to help me do cascading text, Matrix style. From there I used a modified version of the script on a job doing some animated numbers and text. I've dug it out for another job recently and thought it worthwhile tidying it up and making it into an add-on rather than a stand alone script. Randomiser is an add on that is mainly useful for manipulating text data (although I've implemented a couple of features for object data as well). It's similar in some respects to [Bassam Kurdali's typewriter add-on](http://urchn.org/post/typewriter-blender-addon), but has a few differences. Randomiser can manipulate text data in a variety of ways. If you supply it with the name of a text block, it can: 
 
   * Produce an animated typewriter effect, with an optional leading character (like the cursor in a word processing or terminal app).
   * Display a ticker-tape readout from the supplied text, scrolling through and repeating when it reaches the end of the text.

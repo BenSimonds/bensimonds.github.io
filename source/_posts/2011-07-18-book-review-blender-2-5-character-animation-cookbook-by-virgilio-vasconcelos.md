@@ -15,11 +15,8 @@ alias: blog/posts/2011-07-18-book-review-blender-2-5-character-animation-cookboo
 
 ---
 
-
-
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/25286653" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
- 
 
 I got Virgilio Vasconcelos' new book, _[Blender 2.5 Animation Cookbook](http://virgiliovasconcelos.com/blender-animation-cookbook/) _in the post from PACKT publishing the other day, and they asked me to write a review. I've been doing a bit of rigging of my own lately, so it came along at a useful time for me; I've already picked up a couple of useful tips. It seems like a good guide to rigging so far, with info on most common rigging tasks, and I think enough information for beginners to get their heads around the topic.
 
@@ -28,8 +25,6 @@ Whilst the title suggests that the book centres on Animation, the book is really
 On the animation side (which I know less about) the book teaches the layered technique, and has a nice progression through creating key poses, then extremes, breakdowns, and finally refining timing and tweaking curves in the graph editor. After demonstrating the basics the book moves on to a few common animation tasks, like having a character interact with props, creating walk cycles and animating speech. There's also plenty of discussion of the principles of animation, which really is more important than the technical side. Anticipation, moving holds, squash and stretch, and symmetry are all talked about, and there are also some great tips on rendering silhouettes and mirrored previews of your animation to help spot your mistakes. There's also a little discussion at the very end of the book on using grease pencil to plan and refine your animations. As I'm not much of an animator I can't speak to any shortcomings the book might have but the book has a nice breadth, and I like the deference it pays to traditional animation too.
 
 All the source .blend files for the book are available through [Virgilio's website](http://virgiliovasconcelos.com/blender-animation-cookbook/), which are a great resource when trying to pick apart how a rig works so you can implement something in your own projects. If you're interested in buying the book, I'd suggest you go and check them out. Also available is the main character rig "Otto", used in the book. All in all the book should be a nice reference for anyone looking to start with rigging and animation. It's an easy book to flip through and find the topic you're stuck on, and whilst I disagreed with a couple of solutions, the book has an answer for most problems that might stump newbie blender-heads.
-
-
 
 
 

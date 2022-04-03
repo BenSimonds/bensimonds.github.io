@@ -25,7 +25,12 @@ Make sure you’ve downloaded the fantastic Pantin rig by [Kiopaa](http://kiopaa
 
 ### The Challenge
 
-The challenge is to simply animate the character provided from one pillar to another. But to make your entry interesting you need an idea. [![Idea](/images/old/idea1.jpg)](/images/old/idea1.jpg)
+The challenge is to simply animate the character provided from one pillar to another. But to make your entry interesting you need an idea.
+
+![Idea ><](/images/old/idea1.jpg)
+
+
+
 
 ### Idea
 
@@ -39,11 +44,13 @@ Now you have an idea in your head but what should you do next? During this plann
 
 This is the most important part of the animation process. Blocking is a set of key-poses that can fully explain the idea that you’re trying to animate. I didn’t save my blocking pass but here's an early save of my animation (just after blocking).
 
-[vimeo http://www.vimeo.com/3794274 w=500&h=282] 
+http://www.vimeo.com/3794274
 
 Start by making sure you organise your interface to include a timeline. Hit the Auto-Key button and start to set your poses.
 
-[caption id="attachment_1407" align="aligncenter" width="200"][![Auto-Keying Switched On](/images/old/screen-shot-2013-01-07-at-14-28-13.png)](/images/old/screen-shot-2013-01-07-at-14-28-13.png) Auto-Keying Switched On (the Record Button).[/caption] 
+![Auto-Keying Switched On ><](/images/old/screen-shot-2013-01-07-at-14-28-13.png)
+
+ Auto-Keying Switched On (the Record Button). 
 
 This fantastic rig allows for both IK and FK movements. I used IK animation for most of the scene, the only time I switched to FK was for when his arms were stretched out, reaching for the other platform. Switching made that section a lot easier.
 
@@ -55,13 +62,18 @@ You may not believe it but you’re nearly finished! Finalizing the animation no
 
 The best way to make sure you have a nice smooth accurate animation is to make sure you have clean F-curves. Use the curve controls to their full extent, rather than adding extra key-frames. Open the F-Curve Editor and experiment with the different Handle types of your curves. Open the handle types in the 'Key' menu of the F-Curve editor. Here you can see the effect of clean F-Curves on a simple bouncing ball animation.
 
-[![Curves](/images/old/curves.jpg?w=205)](/images/old/curves.jpg) If you keep your F-Curves clean and fully use the correct handle types, your animation will be far more accurate.
+![Curves ><](/images/old/curves3.jpg)
+
+
+If you keep your F-Curves clean and fully use the correct handle types, your animation will be far more accurate.
 
 Once you’re happy with the extra detail, you can start work on the facial animation. Here you may want to refer back to your ‘Act like an idiot’ stage, and get a mirror to accurately reproduce the right expressions.
 
 ### The Finished Animation:
 
-[vimeo http://www.vimeo.com/3422810 w=500&h=282] Of course the best place to learn is from the masters. Here are a couple of links to my favourite materials: 
+http://www.vimeo.com/3422810
+
+Of course the best place to learn is from the masters. Here are a couple of links to my favourite materials: 
 
 [The Animator’s Survival Kit – Richard Williams](http://www.amazon.com/Animators-Survival-Kit-Richard-Williams/dp/0571202284/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1237045611&sr=8-1) [Preston Blair’s Animation First](http://klangley.blogspot.co.uk/2006/05/preston-blairs-animation-1st-edition_09.html) [Blender Character Animation Tutorials Wiki](http://wiki.blender.org/index.php/Doc:2.6/Tutorials/Resources/External_links#Animation)[ ](http://klangley.blogspot.co.uk/2006/05/preston-blairs-animation-1st-edition_09.html)
 

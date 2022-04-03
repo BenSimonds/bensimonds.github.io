@@ -14,15 +14,27 @@ alias: blog/posts/2013-01-04-blender-master-class-a-hands-on-guide-to-modeling-s
 
 ---
 
-[![Cover](/images/old/cover.jpg?w=239)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/cover/)
+[![Cover ><](/images/old/cover.jpg?w=239)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/cover/)
 
 If you've noticed I've been updating the site a bit less frequently of late, this (and busy times at [Gecko Animation](http://www.geckoanimation.com/)) is pretty much why. Along with the talented and patient folks at [No Starch Press](http://nostarch.com/), I've been writing a book about creating art with Blender and GIMP. It covers everything from modeling to sculpting, through to textures, materials, lighting and rendering.
 
-[caption id="attachment_1388" align="aligncenter" width="950"][![Allthree_small](/images/old/allthree_small.png?w=950)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/allthree_small/) The three main projects covered in the book.[/caption] 
+[![Allthree_small ><](/images/old/allthree_small.png?w=950)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/allthree_small/) 
+
+The three main projects covered in the book. 
 
 The book takes you through three different projects: a gruesome bat monster, a robotic spider, and an overgrown temple deep in the jungle. But this isn't just a simple step by step tutorial. Whilst you can use the book that way, I chose each of the projects to provide a unique set of challenges, and I use the projects to help explain how to use GIMP and Blender in your own projects. The book is filled with examples from my other works too, as well as detailed descriptions of blenders tools, and guides to getting the most out of Blender and GIMP with your own custom UIs, Brushes and Materials.
 
-[caption id="attachment_1398" align="aligncenter" width="204"][![Modeling using concept art as reference.](/images/old/fig414.png?w=204)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/fig414/) Modeling using concept art as reference.[/caption] [caption id="attachment_1390" align="aligncenter" width="300"][![Fig608](/images/old/fig608.png?w=300)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/fig608/) Creating custom sculpt brushes.[/caption] [caption id="attachment_1396" align="aligncenter" width="300"][![Creating node setups for cycles materials.](/images/old/fig1228.png?w=300)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/fig1228/) Creating node setups for cycles materials.[/caption] [caption id="attachment_1397" align="aligncenter" width="300"][![Compositing final Renders](/images/old/fig1415.png?w=300)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/fig1415/) Compositing final Renders[/caption] 
+[![Modeling using concept art as reference. ><](/images/old/fig414.png?w=204)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/fig414/) 
+Modeling using concept art as reference.
+
+[![Fig608 ><](/images/old/fig608.png?w=300)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/fig608/) 
+Creating custom sculpt brushes.
+
+[![Creating node setups for cycles materials. ><](/images/old/fig1228.png?w=300)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/fig1228/) 
+Creating node setups for cycles materials.
+
+[![Compositing final Renders ><](/images/old/fig1415.png?w=300)](http://bensimonds.com/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/fig1415/) 
+Compositing final Renders 
 
 Plus, the book comes with a DVD containing all of the project files and resources used in creating each of the projects, plus some extra goodies like brushes, mat-cap materials, textures, and sculpting alphas.
 
