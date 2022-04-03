@@ -1,0 +1,53 @@
+#title in header
+title: "BenSimonds.com or whatever"
+
+#main info
+#owner
+owner: "Ben Simonds"
+email: ""
+info: "Data Viz. Blender. Woodwork."
+#description
+desc: "My personal site."
+
+#menu
+menu:
+  Works: /Works
+  About: /About
+
+#index/main page max show posts (in number)
+max_post: 12
+
+# Colors use hex color without #
+# Theme color
+tcolor: 0FA0CE
+
+# Define path to user css
+#(could be also located outside of theme)
+# Relative to source/ directory
+usercss: css/user.css
+
+# social profile at the footer/bottom
+footer: true
+placename: London
+placelink: https://en.wikipedia.org/wiki/London
+github: https://github.com/bensimonds
+linkedin: https://www.linkedin.com/in/bensimonds/
+twitter: https://twitter.com/bensimonds
+
+
+# Misc
+nanobar: /js/nanobar.min.js
+switch_light: ☀️
+switch_dark: 🌒
+
+# favicon
+favicon: /images/favicon.png
+# thumbnail
+thumbnail: /images/thumbnail.jpg
+
+article:
+  thumbnail: true
+
+# DISQUS comments (sign up to Disqus to get disqus_shortname)
+disqus_enabled: false
+disqus_shortname: https-adisaktijrs-github-io
