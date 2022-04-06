@@ -13,14 +13,14 @@
   
   <title>3D Printing the Spider Bot</title>
   
-  <link rel="canonical" href="http://example.com/2013/06/18/3d-printing-the-spider-bot/">
+  <link rel="canonical" href="http://bensimonds.com/2013/06/18/3d-printing-the-spider-bot/">
   
   <meta name="description" content="Previously I posted some pictures of the 3D printed version of the spider bot from my book, Blender Master Class. In my original post I promised I’d p">
   
   
   <meta name="author" content="Ben Simonds">
   
-  <meta property="og:image" content="http://example.comundefined">
+  <meta property="og:image" content="http://bensimonds.comundefined">
   
   <meta property="og:site_name" content="Ben Simonds Personal Blog" />
   <meta property="og:type" content="article" />
@@ -28,7 +28,7 @@
   
   <meta property="og:description" content="Previously I posted some pictures of the 3D printed version of the spider bot from my book, Blender Master Class. In my original post I promised I’d p">
   
-  <meta property="og:url" content="http://example.com/2013/06/18/3d-printing-the-spider-bot/" />
+  <meta property="og:url" content="http://bensimonds.com/2013/06/18/3d-printing-the-spider-bot/" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="3D Printing the Spider Bot">
@@ -36,9 +36,9 @@
   <meta name="twitter:description" content="Previously I posted some pictures of the 3D printed version of the spider bot from my book, Blender Master Class. In my original post I promised I’d p">
   
   
-  <meta name="twitter:image" content="http://example.comundefined">
+  <meta name="twitter:image" content="http://bensimonds.comundefined">
   
-  <meta name="twitter:url" content="http://example.com/2013/06/18/3d-printing-the-spider-bot/" />
+  <meta name="twitter:url" content="http://bensimonds.com/2013/06/18/3d-printing-the-spider-bot/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -209,7 +209,7 @@
             <h2>3D Printing the Spider Bot</h2>
 
   <p><a href="/images/old/spider4mix.jpg"><img src="/images/old/spider4mix.jpg?w=950" alt="Spider4mix &gt;&lt;"></a></p>
-<p>Previously I posted some pictures of the 3D printed version of the spider bot from my book, <a target="_blank" rel="noopener" href="http://nostarch.com/blendermasterclass.htm">Blender Master Class</a>. In my <a target="_blank" rel="noopener" href="http://bensimonds.com/2013/06/13/3d-printed-spider-bot/">original post</a> I promised I’d put together a post detailing some of the process of altering the model for 3D printing, as a guide for others wishing to 3D print their own models. The book itself describes the modeling of the original model so I wont go into that, but I’ll cover the most important changes I made. </p>
+<p>Previously I posted some pictures of the 3D printed version of the spider bot from my book, <a target="_blank" rel="noopener" href="http://nostarch.com/blendermasterclass.htm">Blender Master Class</a>. In my <a href="http://bensimonds.com/2013/06/13/3d-printed-spider-bot/">original post</a> I promised I’d put together a post detailing some of the process of altering the model for 3D printing, as a guide for others wishing to 3D print their own models. The book itself describes the modeling of the original model so I wont go into that, but I’ll cover the most important changes I made. </p>
 <h3 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h3><p>My first task was to take my finished .blend file that I had used to render my spider bot, and make it more suitable for preparing it for 3D printing. The original spider bot had a whole bunch of textures and materials, as well as a basic environment with lamps and so forth, none of which would be needed for the 3D print. So I opened up the blendfile and re-saved it as a new blend, before deleting all of the extraneous objects such as lamps and backdrops. I then used the material utils add-on to assign a single material to every part of the model. The add-on lets you select multiple objects and use the keyboard shortcut Q to modify all of their materials at once, which makes it useful for this sort of task. </p>
 <p><a href="/images/old/cleanup.jpg"><img src="/images/old/cleanup.jpg?w=950" alt="Cleanup &gt;&lt;"></a></p>
 <p>Stripping away the extraneous parts of the scene. </p>
@@ -236,7 +236,7 @@
 <p>Cutaway showing the structural support inside the abdomen in blue. </p>
 <h3 id="Subdivision-Decimation-and-Exporting"><a href="#Subdivision-Decimation-and-Exporting" class="headerlink" title="Subdivision, Decimation and Exporting"></a>Subdivision, Decimation and Exporting</h3><p>With the structural concerns dealt with, all that remained was to get my model ready for exporting. First off I made sure that all the important parts of my model looked smooth enough by adding some extra subdivision to some objects. Remember that there’s no such thing as “smooth shading” on a 3D printed model, and that if your model looks faceted when shaded flat it will print that way too. On the other hand the printing process its self results in a certain amount of smoothing of details and faceting at small scales, so you don’t need to subdivide things too much. On the other side of the equation you need to make sure that your model complies with the maximum file size and polycount restrictions for uploading models to Shapeways (assuming you don’t have a 3D printer of your own). The maximum poly count is 750k faces and the maximum file size is 64MB. I found the file size limit was the more problematic, but the solution to either issue was to apply a bit of decimation to simplify your model. I used MeshLab for this, as it has some excellent tools for decimation and still beats blenders (admittedly significantly improved) decimate modifier for decimating large models. I exported the whole model from blender as an .obj file, then imported it into MeshLab. I used the quadratic edge collapse decimation method (Filters-Remeshing-Quadratic Edge Collapse Decimation) and set the target polycount to 650,000, which brought my file-size when exported to .stl to under 64MB. Make sure when decimating with MeshLab to turn on “planar simplification” in the decimation settings, as otherwise you will get ugly, long quads on flat surfaces. </p>
 <p><a href="/images/old/decimation.jpg"><img src="/images/old/decimation.jpg?w=950" alt="Decimation &gt;&lt;"></a></p>
-<p>Decimating in MeshLab I re-imported the model back into blender just to check it over once more, and then exported it as an .stl file, and <a target="_blank" rel="noopener" href="http://www.shapeways.com/model/1123311/spiderbot-from-blender-master-class.html">uploaded it to Shapeways</a>. They took care of the difficult parts from there. You can find some more pictures of the final print in my <a target="_blank" rel="noopener" href="http://bensimonds.com/2013/06/13/3d-printed-spider-bot/">original post</a>.</p>
+<p>Decimating in MeshLab I re-imported the model back into blender just to check it over once more, and then exported it as an .stl file, and <a target="_blank" rel="noopener" href="http://www.shapeways.com/model/1123311/spiderbot-from-blender-master-class.html">uploaded it to Shapeways</a>. They took care of the difficult parts from there. You can find some more pictures of the final print in my <a href="http://bensimonds.com/2013/06/13/3d-printed-spider-bot/">original post</a>.</p>
 <p><a href="/images/old/spider6.jpg"><img src="/images/old/spider6.jpg?w=950" alt="Spider6 &gt;&lt;"></a></p>
 <h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>3D Modeling | Runes in the Sand (Dec 17, 2013)</p>
 <blockquote>
