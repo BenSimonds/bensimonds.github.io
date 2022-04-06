@@ -28,8 +28,6 @@ My latest experiment into OSL shading is focused on implementing a sky shading m
 [![Altitudes ><](/images/old/altitudes.jpg?w=364)](/images/old/altitudes.jpg)
 
 
-And here's a sunset gif: ![>< ><](http://giant.gfycat.com/EarlyApprehensiveHowlermonkey.gif)
-
 A test with Suzanne:
 
 [![NishitaSkyRender9 ><](/images/old/nishitaskyrender9.jpg?w=470)](/images/old/nishitaskyrender9.jpg)
