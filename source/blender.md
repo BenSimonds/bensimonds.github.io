@@ -9,8 +9,7 @@ Here you can find some of my older tutorials and content on Blender related thin
 ## Tutorials
 
   * [Depth of Field in Blender](/2011/06/01/depth-of-field-in-blender/)
-  * [Texturing and Shading A Head In Blender Part I ](/2011/05/25/blender-cookie-tutorial-texturing-and-rendering-a-head-in-blender/)(on BlenderCookie.com)
-  * [Texturing and Shading A Head In Blender Part II](http://www.blendercookie.com/2011/06/01/texturing-and-rendering-an-elf-head-in-blender-part-02/) (on BlenderCookie.com)
+  * [Texturing and Shading A Head In Blender ](/2011/05/25/blender-cookie-tutorial-texturing-and-rendering-a-head-in-blender/)(on BlenderCookie.com)
   * [Modeling an Ancient Greek Temple](http://cgcookie.com/blender/cgc-series/modeling-a-greek-temple-in-blender/) (on BlenderCookie.com)
   * [Hair in Blender](/2011/02/17/hair-in-blender/)
   * [Three layer SSS in Blender Demystified](/2010/05/31/three-layer-sss-in-blender-demystified/)
