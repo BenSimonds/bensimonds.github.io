@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Quick Tips and Tools for Texturing With GIMP</title>
+  
+  <link rel="canonical" href="http://example.com/2010/06/08/quick-tips-and-tools-for-texturing-with-gimp/">
+  
+  <meta name="description" content="GIMP may not have the technical bells and whistles of photoshop, but if you know your way around it, it still gets the job done. The following are a f">
+  
+  
+  <meta name="author" content="Ben Simonds">
+  
+  <meta property="og:image" content="http://example.comundefined">
+  
+  <meta property="og:site_name" content="Ben Simonds Personal Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Quick Tips and Tools for Texturing With GIMP" />
+  
+  <meta property="og:description" content="GIMP may not have the technical bells and whistles of photoshop, but if you know your way around it, it still gets the job done. The following are a f">
+  
+  <meta property="og:url" content="http://example.com/2010/06/08/quick-tips-and-tools-for-texturing-with-gimp/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quick Tips and Tools for Texturing With GIMP">
+  
+  <meta name="twitter:description" content="GIMP may not have the technical bells and whistles of photoshop, but if you know your way around it, it still gets the job done. The following are a f">
+  
+  
+  <meta name="twitter:image" content="http://example.comundefined">
+  
+  <meta name="twitter:url" content="http://example.com/2010/06/08/quick-tips-and-tools-for-texturing-with-gimp/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FCE92;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FCE92 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FCE92;
+  }
+  .nanobar .bar {
+    background: #0FCE92;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FCE92;
+    border-color: #0FCE92;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FCE92;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <img class="u-max-full-width" src="/images/warehouse3.png" />
+
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/blender" class="ml">Blender</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>Quick Tips and Tools for Texturing With GIMP</h2>
+
+  <p><img src="/images/old/tex1.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>GIMP may not have the technical bells and whistles of photoshop, but if you know your way around it, it still gets the job done. The following are a few of the tools and techniques I find most useful when working on textures in the GIMP.</p>
+<p><strong>Transitions:</strong> When cloning and painting textures from multiple sources, using hard edged brushes is a good way to avoid pixel soup. The difficulty of course is that the boundaries between different texture sources can then be very obvious. A good solution is to pick a nice grungy&#x2F;splattery looking brush and set the size to random (as well as any pressure settings you want if you’re using a tablet). This should give a nice fractal like pattern with reasonably hard edges, that is ideal for blending many kinds of textures, either with the clone brush or layer masks, I use it for all sorts of grungy stuff, as well as for painting skin. </p>
+<p>A nice brush setup for cloning and painting alpha masks.</p>
+<p><img src="/images/old/gradients2.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Click for full size . Transitioning between textures with this kind of brush gives nicer results than a smooth fade, maintaining the crispness of the textures throughout the transition. The black and white image on the right shows the alpha mask for blending between the layers.<br><img src="/images/old/gradients1.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>You can find theses kinds of brushes all over the place. I’ll include a few links to my favourites at the end though. **Selective Gaussian Blur:﻿﻿** Probably my favourite filter, I regularly use this tool when texturing in the gimp. When baking AO maps it can be tedious to set the quality way up and wait around to get smooth results. Much easier is to bake at medium quality and blur the results to get rid of the results. With a simple Gaussian blur though any sharp edges in your bake will also get blurred, which you don’t want. Selective gaussian blur gets around this by only blurring noise and slight differences, and maintaining sharp boundaries. Playing around with the settings will usually take your baked AO maps from noisy to nice and smooth in the press of a button. For best results do a small regular gaussian blur (say two or three pixels) first to smooth out the noise slightly, then run selective Gaussian blur to do the main work of smoothing out the texture. </p>
+<p>Left: Original baked AO texture. Middle: Simple 15px gaussian blur. Right: 2pixel gaussian blur followed by a 15px selective gaussian blur. Sharp edges are preserved but the noise is gone.</p>
+<p><img src="/images/old/selectivegauss.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>It’s also usefull for all sorts of other things, I often use it when working on bump or displacement maps to even out flat areas whilst keeping the sharper bumps. <strong>High Pass Filter:</strong> Another great filter for working on textures, it’s sort of the opposite of a blur. It pulls out the high frequency detail and gets rid of the large details. This is fantastically usefull when trying to create seamless textures. High passed images also make great overlay layers for adding detail to a texture or render. </p>
+<p>The high pass filter removes the large features of your image, leaving only the details. This makes tiling your textures much easier. It can however remove a lot of the colour from a texture, and leave it feeling dull, so use it sparingly and think of ways to reintroduce that interest.</p>
+<p><img src="/images/old/highpass.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<h2 id="Some-great-GIMP-resources"><a href="#Some-great-GIMP-resources" class="headerlink" title="Some great GIMP resources:"></a>Some great GIMP resources:</h2><p>So that’s a few tips that I find useful fairly often. Here’s some links for useful plugins, brushes for texturing: </p>
+<ul>
+<li>DeviantArt is a great resource for <a target="_blank" rel="noopener" href="http://browse.deviantart.com/resources/applications/gimpbrushes/">GIMP brushes</a>. In general there’s a lot that aren’t much use, but a number of the grungy&#x2F;splatter type brush sets can be really helpful in creating textures. Here are two sets that I find <a target="_blank" rel="noopener" href="http://akisu-sama.deviantart.com/art/GIMP-Grunge-Brush-Pack-2-13556205?q=boost:popular+in:resources/applications/gimpbrushes&qo=18">quite</a> useful.</li>
+<li><a target="_blank" rel="noopener" href="http://www.area-56.de/_area56_data/news.php?mode=recent&page=0">Goro</a> is a fantastic digital painter, who has a pack of Photoshop brushes on his site available for download. You can find them <a target="_blank" rel="noopener" href="http://www.area-56.de/_area56_data/tutorials.html">here</a>, along with some great tutorials. GIMP will actually use Photoshop .abr brush files just like any other brush if you put them in your <em>.gimp-2.6&#x2F;brushes&#x2F;</em> directory. Not everything carries over (GIMPS brush engine is unfortunately nowhere near as sophisticated as Photoshops), but they work ok and it’s a useful set.</li>
+<li>GIMP Paint Studio provides some fantastic brushes and other tools for making painting in gimp easier. The downloads section on the site also has some excellent extra brushes too. <a target="_blank" rel="noopener" href="http://code.google.com/p/gps-gimp-paint-studio/">Check it out.</a></li>
+<li>If you’re using ubuntu, you can find some great add-ons for the GIMP in synaptic package manager. Look up gimp-data-extras, which has some useful brushes (including the grunge brush from earlier in this post) and filters, and gimp-normalmap, which generates great normal maps from image textures. I’m sure with a bit of googling you can find these online as well.</li>
+</ul>
+<p><strong>Questions?</strong> As usual, leave questions in the comments and I’ll do my best to answer.</p>
+<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>Sean (Jun 08, 2010)</p>
+<blockquote>
+<p>This is what we need more of!   There are tons of repeated tutorials out there on “the blender side of things”, but very little info creating textures with gimp&#x2F;photoshop etc.   So often I see tutorials hit everything in detail except the actual creation of the textures.   This is the part I’ve been hazy on for so long.  I’d love to see more tips and tricks in this realm.   Thanks Ben!</p>
+</blockquote>
+<p>Sean (Jun 08, 2010)</p>
+<blockquote>
+<p>For future texture tutorials I’d love to see:</p>
+<ol>
+<li>Painting human textures&#x2F;soft surface textureing</li>
+<li>Hard surface texturing</li>
+<li>Hand painting textures from scratch (No photo textures)</li>
+<li>Tips and Tricks that are out of left field that I would not even know to think about.</li>
+</ol>
+<p>Love the blog!</p>
+</blockquote>
+<p>bensimonds (Jun 08, 2010)</p>
+<blockquote>
+<p>Those are good suggestions. I may well cover them in future.</p>
+</blockquote>
+<p>3sie3wiel (Jul 21, 2010)</p>
+<blockquote>
+<p>I second that! This info is… what I’ve been looking for!!</p>
+</blockquote>
+<p>Phil (Aug 06, 2010)</p>
+<blockquote>
+<p>Yess! more texture tutorials!!!</p>
+</blockquote>
+<p>Lois (May 17, 2011)</p>
+<blockquote>
+<p>What a joy to find such clear thinking. Thanks for pontsig!</p>
+</blockquote>
+<p>jpv2 (Jan 03, 2012)</p>
+<blockquote>
+<p>Regarding transitions section: how exactly do you obtain that “Grungy Transition”? Do you start from hard black-white transition and paint on the edge with the grungy brush? In this case do you need special brush that paints in “both directions” (black-on white and white -on black)? My problem is that all brushes I found (on Deviant Arts etc.) are single color with transparency, so my transitions paint only with foreground color. Where to find suitable brushes? Or is there some special trick in Gimp that makes it possible to use standard single-color brush to paint both ways as you are showing in your “Grungy Transition” example?</p>
+</blockquote>
+<p>jpv2 (Jan 04, 2012)</p>
+<blockquote>
+<p>Ah, OK. Now I understand the concept.</p>
+<p>Thanks<br>Regards</p>
+</blockquote>
+<p>Ben Simonds (Jan 04, 2012)</p>
+<blockquote>
+<p>I just do a bit of painting in both directions. Fist with the foreground colour set to white, then to black.</p>
+</blockquote>
+<p>Danish (Mar 22, 2017)</p>
+<blockquote>
+<p>Really good work,</p>
+</blockquote>
+
+  <p><a class="classtest-link" href="/tags/ao-map/" rel="tag">ao map</a>, <a class="classtest-link" href="/tags/blender/" rel="tag">blender</a>, <a class="classtest-link" href="/tags/blur/" rel="tag">blur</a>, <a class="classtest-link" href="/tags/brushes/" rel="tag">brushes</a>, <a class="classtest-link" href="/tags/filters/" rel="tag">filters</a>, <a class="classtest-link" href="/tags/gaussian/" rel="tag">gaussian</a>, <a class="classtest-link" href="/tags/gimp/" rel="tag">gimp</a>, <a class="classtest-link" href="/tags/gimp-brushes/" rel="tag">gimp brushes</a>, <a class="classtest-link" href="/tags/high-pass/" rel="tag">high-pass</a>, <a class="classtest-link" href="/tags/selective-gaussian-blur/" rel="tag">selective gaussian blur</a>, <a class="classtest-link" href="/tags/texture/" rel="tag">texture</a>, <a class="classtest-link" href="/tags/textures/" rel="tag">textures</a>, <a class="classtest-link" href="/tags/texturing/" rel="tag">texturing</a>, <a class="classtest-link" href="/tags/tutorial/" rel="tag">tutorial</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Jun 8, 2010</p>
+  
+
+
+          <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        and the <a target="_blank" rel="noopener" href="https://github.com/adisaktijrs/hexo-theme-minima">minima</a> theme.
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://www.linkedin.com/in/bensimonds/" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>

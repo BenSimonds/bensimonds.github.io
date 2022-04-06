@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Light and Colour Perception or Why are Leaves Green?</title>
+  
+  <link rel="canonical" href="http://example.com/2013/05/30/light-and-colour-perception-or-why-are-leaves-green/">
+  
+  <meta name="description" content="This post is about how we perceive colour and how this relates to art and computer generated images. I find working digitally that I sometimes forget ">
+  
+  
+  <meta name="author" content="Ben Simonds">
+  
+  <meta property="og:image" content="http://example.comundefined">
+  
+  <meta property="og:site_name" content="Ben Simonds Personal Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Light and Colour Perception or Why are Leaves Green?" />
+  
+  <meta property="og:description" content="This post is about how we perceive colour and how this relates to art and computer generated images. I find working digitally that I sometimes forget ">
+  
+  <meta property="og:url" content="http://example.com/2013/05/30/light-and-colour-perception-or-why-are-leaves-green/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Light and Colour Perception or Why are Leaves Green?">
+  
+  <meta name="twitter:description" content="This post is about how we perceive colour and how this relates to art and computer generated images. I find working digitally that I sometimes forget ">
+  
+  
+  <meta name="twitter:image" content="http://example.comundefined">
+  
+  <meta name="twitter:url" content="http://example.com/2013/05/30/light-and-colour-perception-or-why-are-leaves-green/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FCE92;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FCE92 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FCE92;
+  }
+  .nanobar .bar {
+    background: #0FCE92;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FCE92;
+    border-color: #0FCE92;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FCE92;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <img class="u-max-full-width" src="/images/warehouse3.png" />
+
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/blender" class="ml">Blender</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>Light and Colour Perception or Why are Leaves Green?</h2>
+
+  <p>This post is about how we perceive colour and how this relates to art and computer generated images. I find working digitally that I sometimes forget that there’s a real world out there, of which a digital image is only an approximate representation. It’s interesting to step back from that once in a while and learn a bit more about how light and colour are perceived by our eyes and our brains. What follows is a grossly simplified description of colour vision and a little of how that relates to colours in digital images. </p>
+<h3 id="Why-are-leaves-green"><a href="#Why-are-leaves-green" class="headerlink" title="Why are leaves green?"></a>Why are leaves green?</h3><p>Perhaps this isn’t even the right question. Colour exists primarily in our minds - leaves are only “green” because we perceive them to be green. But I don’t want to go down a philosophical rabbit-hole, so I’ll stick to why - from a biological perspective - we perceive them this way. Our perception of the colour of an object depends on several things: </p>
+<ul>
+<li>The range of wavelengths present in the incident light.</li>
+<li>The wavelengths of light that the object reflects or absorbs.</li>
+<li>The receptor cells in our eyes that detect the reflected light.</li>
+<li>Our brain’s interpretation of the signals from those receptors.</li>
+</ul>
+<p>It’s important to realise that our categorising things into colours has more to do with our brains than it does with light itself. White light consists of a mix of all the visible wavelengths of light, from around 400 to 700 nanometers in wavelenth, and a given object will absorb some and reflect others, depending on what it is made of. It is a mistake then to think that a red object only reflects “red” light, it just happens to reflect wavelengths in the red region of the spectrum more strongly. The principal molecule that gives leaves their colour is called chlorophyll. Leaves are packed full of chlorophyll because it is a key component in photosynthesis, which lets plants use energy from sunlight to convert water and carbon dioxide into sugars. The absorbance spectrum of chlorophyll looks something like this:</p>
+<p><img src="/images/old/chlorophyll.jpg" alt="Chlorophyll &gt;&lt;"></p>
+<p>To make the best use of the incident light from the sun, which after scattering through the atmosphere is blueish in colour (observe the colour of the sky), chlorophyll absorbs as much blue light as possible - as evidenced by the main peak in the absorbance spectrum above around the indigo-blue wavelengths. The trough of low absorption we see in the middle around the yellow-green region of the spectrum gets reflected - and results in the green colour of chlorophyll. </p>
+<h3 id="RGB-Colours"><a href="#RGB-Colours" class="headerlink" title="RGB Colours"></a>RGB Colours</h3><p>However, when we compare the the abundance of different wavelengths present in the light reflected from a leaf, with how we represent colour digitally, it initially appears like something is seriously lacking. Colour in digital images is represented by a a measly three numbers - our RGB values. How can this simple triplet of numbers compare to the far more complex spectrum of wavelengths we receive from a real object? </p>
+<p><img src="/images/old/spectrumvsrgb2.jpg" alt="SpectrumvsRGB &gt;&lt;"></p>
+<h3 id="Colour-and-the-Eye"><a href="#Colour-and-the-Eye" class="headerlink" title="Colour and the Eye"></a>Colour and the Eye</h3><p>The reason concerns how colour works in the eye. The cells in our retina that detect colour (called cone cells) are full of pigments that respond to light. When light hits them they change shape, and through a chain reaction with other molecules in the cell they generate an electrical impulse. But these pigments - like chlorophyll - also respond to a spectrum of wavelengths, and can’t really differentiate between them. In order to detect colour then we need three <em>different</em> kinds of receptor cell, each with a different photopigment with a slightly different absorbance spectrum, that responds more or less strongly to different regions of the visible spectrum of light. It’s a misconception that these correspond to “red”, “green” and “blue” light, but the net effect is that by comparing the responses from these different receptors, we can tell whether the light we see contains more reddish, greenish or blueish wavelengths. It isn’t a coincidence then that the digital RGB colour model uses three colour values, because by mixing different amounts of these three colours we can replicate the effect of (almost) a whole spectrum of wavelengths. The cells in our eyes crunch the data down into three channels in a very similar way, so we notice very little difference. (Indeed, this is in fact why the RGB colour model was designed this way). </p>
+<h3 id="But-what-about-Magenta"><a href="#But-what-about-Magenta" class="headerlink" title="But what about Magenta?"></a>But what about Magenta?</h3><p>The next thing to talk about is how we get from the concept of wavelengths as representing colours, to the familiar idea of a colour wheel. Whilst I’ve shown already that most colours we see are made up of a whole mix of wavelengths, I’ve also been acting as each wavelength of light could in theory be assigned a specific colour. Indeed they can - as evidenced by certain kinds of light sources like lasers that can produce light of a single wavelength, which we see as coloured light, or by looking at light through a prism, split up into a rainbow of different wavelengths. However, the wavelengths of light extend off in either direction from the ends of the visible spectrum, into kinds of radiation we can’t see. So how do we end up perceiving colours like magenta which we perceive as being somewhere between red and blue?</p>
+<p><img src="/images/old/linewheel2.png" alt="linewheel &gt;&lt;"></p>
+<p> The answer this time lies in the brain. Once the receptors in our eyes receive light, they pass this on as an electrical signal up the optic nerve to the visual cortex, at the back of the brain, in the occipital lobe. Here the three-channel model of colour is abandoned and replaced with a four-colour opponent-processing model. Neurons early in the visual cortex are clustered in regions called blobs, some of which compare the signals from the different cone cells, to decide whether light is more blue or more yellow, others whether it is more red or more green. The output from these clusters determine how we perceive colour , and the grouping of colours into opposing pairs results in our idea of complimentary colours, blue with yellow, red with green and so on. This is also why we can’t imagine such colours as blueish yellow or reddish green - because the parts of the brain that perceive these colours treat them as being each others opposites. Our eyes could easily receive light consisting mostly of blue and yellow wavelengths, but we would simple perceive it as being more or less colourless. Non-opposing colours on the other hand can mix together, giving us orange between red and green, and cyan between green and blue. This also results in magenta - a mix of blue and red light from either end of the spectrum that we perceive as a single colour, even though it has no analogue on the visible spectrum itself (this is called an extra-spectral colour). </p>
+<h3 id="So-why-are-leaves-green"><a href="#So-why-are-leaves-green" class="headerlink" title="So, why are leaves green?"></a>So, why are leaves green?</h3><p>Because we perceive them to be green. A burning ball of hydrogen 150 million kilometres away emits light of all kinds of wavelengths, which travels to earth, scatters through the atmosphere, and gets partially absorbed by photosynthetic chemicals. The rest of that light gets reflected, then absorbed by pigments in cells in our eyes. The signal gets simplified, then processed and compared, passed on to other parts of the brain and we finally come to the conclusion that leaves are green. Simple right?</p>
+<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>Ben Simonds (May 31, 2013)</p>
+<blockquote>
+<p>Possibly. It’s could also be that producing pigments to absorb the whole spectrum of visible light would simply be too costly for the plant, when the payout from just producing chlorophyll is good enough as it is.</p>
+</blockquote>
+<p>scape (May 31, 2013)</p>
+<blockquote>
+<p>Black &#x3D; hot</p>
+</blockquote>
+<p>reavenk (May 31, 2013)</p>
+<blockquote>
+<p>There’s also the question of if leaves are supposed to absorb light as efficiently as possible, why didn’t they evolve to be black and absorb that green wavelength also.</p>
+</blockquote>
+<p>Rowilson (Jun 05, 2013)</p>
+<blockquote>
+<p>El cerebro se invento el magenta y ahora es; Red: 1.000, Green: 0.0, Blue: 1.000.</p>
+<p>Google Translate version:<br>“The brain was invented and is now Magenta, Red: 1.000, Green: 0.0, Blue: 1000.”</p>
+</blockquote>
+<p>scarodj (Jun 22, 2013)</p>
+<blockquote>
+<p>Interesting. You have a nice way of explaining it. Thank you. </p>
+<p>^ Wow, Google didn’t translate that properly. He said: “So the brain invented magenta and now it is R1.0 G0.0 B1.0.” &lt;- Blender input, hehe.</p>
+</blockquote>
+<p>Need To Know The Color of Sky in RGB Format? | Grayson Peddie (Oct 01, 2013)</p>
+<blockquote>
+<p>[&amp;#8230;] Light and Color Perception or Why Are Leaves Green [&amp;#8230;]</p>
+</blockquote>
+<p>bashi (Oct 14, 2013)</p>
+<blockquote>
+<p>Great Post, have to read more often here.</p>
+</blockquote>
+<p>スーパーコピーバッグ (Sep 30, 2018)</p>
+<blockquote>
+<p>2018年人気貴族ブランドコピー(N級品)優良店!<br>ルイヴィトン、シャネル、グッチ、ロレックス、バレンシアガ、<br>エルメス）、コーチ、ブラダ、クロエ大激売中<br>★高級品☆┃時計┃バッグ┃財 布┃その他┃<br>◆★ 誠実★信用★顧客は至上<br>●在庫情報随時更新!<br>品質がよい 価格が低い 実物写真 品質を重視<br>100%品質保証 100％満足保障 信用第一<br>★人気最新品┃特恵中┃☆腕時計、バッグ、財布、ベルト、アクセサリー、小物☆<br>★当店商品送料無料日本全国！<br>休業日： 365天受付年中無休</p>
+</blockquote>
+<p>Easwar Kumar vb (@easwarkumarvb) (Aug 07, 2015)</p>
+<blockquote>
+<p>Neat article …nicely explained.</p>
+</blockquote>
+<p>bob (Apr 19, 2016)</p>
+<blockquote>
+<p>your face</p>
+</blockquote>
+<p>bob (Apr 19, 2016)</p>
+<blockquote>
+<p>no</p>
+</blockquote>
+<p>vigneraj (Nov 24, 2015)</p>
+<blockquote>
+<p>nice</p>
+</blockquote>
+<p>Franchesca (Oct 05, 2016)</p>
+<blockquote>
+<p>If you are interested in topic: earn online by watching ads for cash - you should read about Bucksflooder first</p>
+</blockquote>
+<p>azim (Oct 03, 2014)</p>
+<blockquote>
+<p>i think leaves are not a green colour.because leaves are made up by all colours. this cause leaves are reflacted the green colour.</p>
+</blockquote>
+<p>Gordon (Apr 02, 2015)</p>
+<blockquote>
+<p>No, they are not even reflecting “green colour”. Did you actually read the article? <em>g</em></p>
+</blockquote>
+<p>Sex (Nov 26, 2017)</p>
+<blockquote>
+<p>Why not talk about babies</p>
+</blockquote>
+<p>  (Feb 28, 2019)</p>
+<blockquote>
+<p>ºþ±±Ë¼ÇÚÖÇÄÜ×°±¸ÓÐÏÞ¹«Ë¾»ùÓÚ´óÊý¾ÝºÍÈË¹¤ÖÇÄÜµÄÄ£Ê½ÔËÓª·½Ê½¡£</p>
+</blockquote>
+<p>john (Oct 03, 2021)</p>
+<blockquote>
+<p>I’m think light and sound is just a frequency and perceived by animal and  humans.</p>
+</blockquote>
+
+  <p><a class="classtest-link" href="/tags/brain/" rel="tag">brain</a>, <a class="classtest-link" href="/tags/colour/" rel="tag">colour</a>, <a class="classtest-link" href="/tags/eyes/" rel="tag">eyes</a>, <a class="classtest-link" href="/tags/green/" rel="tag">green</a>, <a class="classtest-link" href="/tags/leaves/" rel="tag">leaves</a>, <a class="classtest-link" href="/tags/light/" rel="tag">light</a>, <a class="classtest-link" href="/tags/perception/" rel="tag">perception</a>, <a class="classtest-link" href="/tags/resources/" rel="tag">resources</a> — May 30, 2013</p>
+  
+
+
+          <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        and the <a target="_blank" rel="noopener" href="https://github.com/adisaktijrs/hexo-theme-minima">minima</a> theme.
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://www.linkedin.com/in/bensimonds/" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>

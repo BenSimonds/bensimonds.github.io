@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Three Layer SSS in Blender Demystified</title>
+  
+  <link rel="canonical" href="http://example.com/2010/05/31/three-layer-sss-in-blender-demystified/">
+  
+  <meta name="description" content="Something that gives a lot of people trouble when creating characters is implementing convincing subsurface scattering (SSS). Blender’s SSS shader com">
+  
+  
+  <meta name="author" content="Ben Simonds">
+  
+  <meta property="og:image" content="http://example.comundefined">
+  
+  <meta property="og:site_name" content="Ben Simonds Personal Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Three Layer SSS in Blender Demystified" />
+  
+  <meta property="og:description" content="Something that gives a lot of people trouble when creating characters is implementing convincing subsurface scattering (SSS). Blender’s SSS shader com">
+  
+  <meta property="og:url" content="http://example.com/2010/05/31/three-layer-sss-in-blender-demystified/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Three Layer SSS in Blender Demystified">
+  
+  <meta name="twitter:description" content="Something that gives a lot of people trouble when creating characters is implementing convincing subsurface scattering (SSS). Blender’s SSS shader com">
+  
+  
+  <meta name="twitter:image" content="http://example.comundefined">
+  
+  <meta name="twitter:url" content="http://example.com/2010/05/31/three-layer-sss-in-blender-demystified/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FCE92;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FCE92 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FCE92;
+  }
+  .nanobar .bar {
+    background: #0FCE92;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FCE92;
+    border-color: #0FCE92;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FCE92;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <img class="u-max-full-width" src="/images/warehouse3.png" />
+
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/blender" class="ml">Blender</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>Three Layer SSS in Blender Demystified</h2>
+
+  <p><img src="/images/old/final.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Something that gives a lot of people trouble when creating characters is implementing convincing subsurface scattering (SSS). Blender’s SSS shader comes with a wealth of options that make it easy to customise how light scatters under a surface, but also makes it tough to hit on what options exactly make for convincing skin. Using a node based approach, one can create a three layer SSS shader that gives good, and reasonably physically correct results, and also makes making adjustments fairly straightforward. in this tutorial I use blender 2.5, but I used almost the exact same setup for my blending life entry in 2.49 and got much the same results (just without such fast ray-tracing, thanks blender devs!).  </p>
+<h2 id="The-Basics"><a href="#The-Basics" class="headerlink" title="The Basics"></a>The Basics</h2><p>A three layer SSS shader emulates skin by splitting the effect of the different layers of skin into different materials:</p>
+<p><img src="/images/old/sums.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>These are added together in the material node editor, primarily using screen nodes (UPDATE: or add nodes, see my note at the end) so that the light from each layer is added to that of the layer below, resulting in the final composite material. Click for full size:</p>
+<p><img src="/images/old/nodesetup.jpg" alt="Click for full size. &gt;&lt;"></p>
+<h2 id="Important-SSS-Settings"><a href="#Important-SSS-Settings" class="headerlink" title="Important SSS Settings"></a>Important SSS Settings</h2><p><img src="/images/old/ssssettings.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<ul>
+<li><em>IOR:</em> Index of refraction - this is the same as the IOR for raytraced reflection and refraction, and reflects the IOR of the medium. As people are about 60% water, and the IOR of water is 1.3, this is a suitable value to use. </li>
+<li><em>Scale:</em> This is the big one. This is really important to get right as it will determine how far light scatters through the skin, and is the difference between looking like wax and getting nice skin. A scale of 1.0 means that one blender unit equals one millimeter - this is obviously way too large for most scenes. The average head is around 20 to 25cm tall, which would mean that if you scaled your head to exactly one blender unit high, that a value of 0.004 would give correct results. In general you may want to try a bit of tweaking to get the right results. Adjust accordingly for the size of your model according to this formula: size in blender units&#x2F;real world size in millimeters &#x3D; scale value. </li>
+<li><em>RGB radius:</em> This allows you to set the relative scattering amounts for red green and blue light, in proportion to the scale value. This is important for skin as different colours of light scatter by different amounts under the skin. As a good rule of thumb, red light scatters the most, green light half as much as red, and blue light half as much again. So values of 1.0, 0.5 and 0.25 for red green and blue respectively should give good results. </li>
+<li><em>Colour:</em> Colour influence. This controls how much the RGB colour picker in the SSS setttings affects the scattering, as a rule I generally set the colour to a dark grey to tone down the effect, and the colour value to 0. This is because we want the colour of the scattered light to be determined by our textures, not a generic colour all over the model. Not that even with the colour slider set to zero the, the colour you choose in the picker above will still affect the scattering.<br>|* <em>Texture:</em> This is another important one. It’s more of a personal preference than the others, as this setting determines how much your textures are blurred by the scattering, higher values will blur the texture more. I prefer to leave this set to zero, as I like my textures to look crisp and I feel that this washes out the detail, particularly in the lower layers like the subdermal, but feel free to experiment. </li>
+<li><em>Scattering Weight:</em> These determine the relative amounts of scattering from the front and back of the model. Because we are splitting up our three layer shader to isolate these effects, for the subdermal and epidermal material set front to 1.0 and back to 0.0. and for the back scatter material set back to 1.0 and front to 0.0. For further explanation of these settings, check the blender <a target="_blank" rel="noopener" href="http://www.blender.org/development/release-logs/blender-244/subsurface-scattering/">documentation</a>.</li>
+</ul>
+<h2 id="Subdermal"><a href="#Subdermal" class="headerlink" title="Subdermal"></a>Subdermal</h2><p>You will note, that there are in fact more than three nodes. The three layers refer to the three different material nodes that use subsurface scattering. The first - the subdermal layer - simulates the light that penetrates to the deep layers of the skin, and spreads out the furthest. This light gets mostly absorbed by the skin, and only the deep red&#x2F;orange colours of the blood and tissues are re-emitted. This is the most important layer for giving the material those rich saturated shadows that we see in natural skin. This is also the layer with the most important textures - as the subtle patterns of veins and capillaries, fatty tissues and bony areas beneath the skin are what give it much of it’s realism.</p>
+<p><img src="/images/old/subdermal.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Settings: This layer is the most translucent, so I give it a slightly higher scale value to increase the scattering distance. In theory this isn’t quite correct as the scale should be the same for all the layers. However in practice it is easier just to adjust the scale value, though you can also tweak the RGB scattering radii separately. Apart from that this layer is very simple. The subdermal texure is applied by means of a texture node mapped to the colour channel of the material node, using th UV output of the geometry node to correctly map the texture. No bump map is needed in my opinion as this layer is technically below the surface of the skin anyway, but if you are using a normal map to add mid-level detail such as creases and wrinkles, then that can be applied to this material.</p>
+<p><img src="/images/old/subdermal_settings1.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<h2 id="Epidermal"><a href="#Epidermal" class="headerlink" title="Epidermal"></a>Epidermal</h2><p>This layer simulates the scatttering in the thinner epidermal layers of skin. The light that gets reflected from this layer has a more blueish tinge. The thickness of this layer varies widely - in areas like the eyelids and lips it is much thinner and so more of the subdermal layer shows through. This is reflected in the texture by colouring these areas more darkly. Because this is added to the subdermal layer by means of a screen node, darker areas on the texture mean that less is added on top of the sub dermal layer, allowing the redder subdermal colours to show through more.</p>
+<p><img src="/images/old/epidermal.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Settings: Another fairly simple material, the epidermal colour texture is mapped via a texture node as before. The scale value is set slightly lower, as light scatters less within this layer. This time as the epidermal layer is a surface layer, you may want to apply a bump map.</p>
+<p><img src="/images/old/epidermal_settings.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<h2 id="Back-Scatter"><a href="#Back-Scatter" class="headerlink" title="Back Scatter"></a>Back Scatter</h2><p>In areas such as the ears where the skin protrudes from the face (and other areas on the body like the gaps between the fingers), light may shine through the skin from the far side, giving it a reddish glow. In order to be able to tweak this effect separately, we isolate it from the other SSS materials by turning their back scatter values down to zero, and instead use a separate back scatter material node to control this aspect of the skin individually. This material does not really require a texture, as the colour is determined largely by the thickness of the skin the light has to shine through. This is a more subtle part of the material, and indeed may not be visible at all in many well lit environments. It tends to be most obvious when the subject is lit from behind. </p>
+<p><img src="/images/old/backscatter1.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Settings: This is a really simple material. no textures, just a basic SSS shader with only back scattering. Unlike the other materials, here we use set the colour setting in the SSS panel to one. Set the scale value quite large, as this layer is for light scattering all the way through the skin (Again: I know this isn’t physically correct, but it a nice easy way to tweak the result). </p>
+<p><img src="/images/old/backscatter_settings.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<h2 id="Diffuse"><a href="#Diffuse" class="headerlink" title="Diffuse"></a>Diffuse</h2><p>This material consists of the simple, diffuse reflected light from the skin, rather than that which is absorbed within the skin and re-emitted (so no SSS is required for this material). If you were to imagine a plaster of paris mask of the person, this is all the light you would see reflected (apart from specular reflections, which we will come to in a minute). This layer can be used to tweak the colours of the skin, to add pigmentation or makeup, and to “fix” any areas you don’t like. Unlike the other layers you can experiment with different mix modes in the node editor to get different effects - you could keep it to a simple screen mode to just add a bit of diffuse light, or set the mode to mix to allow you to add darker colours as well. </p>
+<p><img src="/images/old/diffuse.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Settings: This is just a super-simple Lambert diffuse shader, no specular, no SSS. Incidentally, this makes it an ideal material just for checking out how your lighting looks without having to wait ages for a full SSS render, just plug the output from this material node directly into the output node in the material node editor to see how your model looks without textures and shaders applied. This can be really useful when trying to troubleshoot renders that don’t look right.</p>
+<p><img src="/images/old/diffusesettings1.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<h2 id="Specular"><a href="#Specular" class="headerlink" title="Specular:"></a>Specular:</h2><p>This layer is for the shiny reflections (both specular and mirror reflections, an artificial distinction in reality). The diffuse colour for this material is matte black, with reflection set to zero, as we only want specular and mirror reflections from this material. The shinyness of the skin varies over the face, with more oily areas such as the forehead, brows, and the bridge of the nose, and wet areas like the lips and around the eyelids reflecting more. We can control this by using a specular map - darker areas on the map reflect less, and the bright areas such as the lips and nose will give nice shiny reflections.</p>
+<p><img src="/images/old/specular.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>This texture is mapped to the specular intensity and ray mirror (if you are using ray tracing) channels, set the blend mode to multiply to allow you to to control the maximum specularity using the materials settings, and the relative specularity of the different areas of the skin with the texture. In my node setup, I act﻿ually blend two specular materials together, one with a high hardness (around 90) and no ray mirror for the small “hot” highlights, and one with a low hardness (down around 30) and mirror reflections to give a more general spread out shine to the skin. The same specular texture is applied to each and they are added together with a screen node.</p>
+<p><img src="/images/old/spec_settings.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<h2 id="Other-textures"><a href="#Other-textures" class="headerlink" title="Other textures:"></a>Other textures:</h2><p>The only other texture required is the bump map, which I mention above should be applied to the epidermal, diffuse and specular materials to give the surface some detail. Also if you have a normal map texture (for example baked from a high res sculpt, or if you simply prefer normal maps to bump mapping) then this should definitely be applied to the surface layers (diffuse, epidermal, specular), and potentially to the subdermal layer too depending on what level of detail is present in it.</p>
+<p><img src="/images/old/bumpnor.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<h2 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements:"></a>Acknowledgements:</h2><p>A lot of what I know about SSS I learned from Maqs and Pixelvore on the blender artists forums. In particular Maqs’ SSS shader tests are brilliant, and whilst a lot of the links are broken now, his <a target="_blank" rel="noopener" href="http://blenderartists.org/forum/showthread.php?t=145904&page=9">thread</a> is an excellent source of information. </p>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions?"></a>Questions?</h2><p>If you have any more questions, leave them in the comments and I’ll do my best to answer. </p>
+<h2 id="Add-vs-Screen-Nodes"><a href="#Add-vs-Screen-Nodes" class="headerlink" title="Add vs. Screen Nodes:"></a>Add vs. Screen Nodes:</h2><p><a target="_blank" rel="noopener" href="http://www.francois-tarlier.com/blog/">Francois Tarlier</a> points out that if you are working with blenders colour management turned on, then you should use add mode to mix the materials rather than screen. This is because screen is sort of a cheat for working with un-gamma corrected textures. I originally made this shader using 2.49 for my blending life entry, and as 2.49 doesn’t have a nice way of gamma correcting textures (and I’m too lazy to do it in GIMP) I found screen worked better. With 2.5s new colour management I agree with Francois that add mode is more correct. Here is a bit of a comparison for those interested: [](&#x2F;images&#x2F;old&#x2F;final_comparison.jpg</p>
+<p><img src="/images/old/final_comparison1.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>On the left we have a colour management turned off, but a gamma correction of 0.45 (1&#x2F;2.2) applied in the compositor in post, and screen nodes used to combine the materials. On the right we have add nodes use, and colour management turned on. I think the latter looks a bit better. It’s a bit of a false test though - I usually end up doing a fair bit of adjustment in the compositor in post anyways (I even did a quick brightness and contrast adjustment to both of these in the GIMP, though the exact same correction was applied to both) to get a render looking how I want. Neither looks like I would want straight out of the box. <strong>Blendfile:</strong> If you want a blend file to get you started, a pared down version of the shader used for this tutorial is avaliable at <a target="_blank" rel="noopener" href="http://www.blendswap.com/3D-models/materials/bens-three-layer-sss/">blendswap.com</a>. However, be aware that this is just the basic shader, and proper textures are a must for good results.</p>
+<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>francoisgfx (May 31, 2010)</p>
+<blockquote>
+<p>Nice explanation makes me wonna give a try!<br>I think it should be Add instead of screen at least in blender 2.5 if you are working w&#x2F; color management. Check out my linear workflow post on my website!</p>
+</blockquote>
+<p>francoisgfx (Jun 01, 2010)</p>
+<blockquote>
+<p>great reference on how maps should look like : <a target="_blank" rel="noopener" href="http://gl.ict.usc.edu/Research/LFR/">http://gl.ict.usc.edu/Research/LFR/</a></p>
+<p>you are incredibly close man !</p>
+</blockquote>
+<p>bensimonds (Jun 01, 2010)</p>
+<blockquote>
+<p>That’s an excellent find. Thanks for that!</p>
+</blockquote>
+<p>ccherrett (May 31, 2010)</p>
+<blockquote>
+<p>Well done. Thank you for the explaination!</p>
+</blockquote>
+<p>bensimonds (May 31, 2010)</p>
+<blockquote>
+<p>Thanks. I should point out I work without colour management, I find I can’t get the blacks looking right with it turned on. I still do gamma correction afterwards though. As far as add vs screen is concerned I’ve tried both and I find screen works better, that’s all. I prefer it because it seems to prevent the values topping out too soon.</p>
+</blockquote>
+<p>Juan Romero (Jun 01, 2010)</p>
+<blockquote>
+<p>We can’t see the effect of back scatter on your image, you should put a light behind the subject even if it’s just for demostrative purposes.</p>
+</blockquote>
+<p>bensimonds (Jun 01, 2010)</p>
+<blockquote>
+<p>If you zoom in you should see some deep red areas on the ears and around the edges of the head. It is subtle though.</p>
+</blockquote>
+<p>invertedNormal (Jun 01, 2010)</p>
+<blockquote>
+<p>love the technical explanations that accompany the settings.</p>
+<p>great tutorial!</p>
+<p>thank you very much</p>
+<p>cheers</p>
+<p>brian</p>
+</blockquote>
+<p>francoisgfx (Jun 01, 2010)</p>
+<blockquote>
+<p>oh come on, you didn’t knew about those research, and yet you got so close to the result ?! seriously !?<br>Then checkout this paper : <a target="_blank" rel="noopener" href="http://gl.ict.usc.edu/Research/FaceScanning/EGSR2007_SGI_high.pdf">http://gl.ict.usc.edu/Research/FaceScanning/EGSR2007_SGI_high.pdf</a><br>It gives a lot of information about skin layer seperation (especially page 9)<br>Well I guess Debevec is going to become your new friend now ^^ </p>
+<p>And while I’m on papers topics, some small but really nice detail info sometimes very hide in those one :<br><a target="_blank" rel="noopener" href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch14.html">http://http.developer.nvidia.com/GPUGems3/gpugems3_ch14.html</a><br><a target="_blank" rel="noopener" href="http://developer.download.nvidia.com/presentations/2008/GDC/slides-nvidia_advanced_skin_173.mov">http://developer.download.nvidia.com/presentations/2008/GDC/slides-nvidia_advanced_skin_173.mov</a><br><a target="_blank" rel="noopener" href="http://developer.download.nvidia.com/presentations/2007/siggraph/advanced_skin_2_sigg07.ppt">http://developer.download.nvidia.com/presentations/2007/siggraph/advanced_skin_2_sigg07.ppt</a><br>especially about specular &amp; oil values as blur stuff too…</p>
+</blockquote>
+<p>Wasa (Jun 01, 2010)</p>
+<blockquote>
+<p>Nice job!<br>A few comments, the final images, the first looks very pale, and the second looks sunburned, maybe an average of these two would look even better<br>Also there is a weird artifact where the nose joints the face on the shadow side<br>It’s hard to tell if this is a rendering artifact or caused by errors in the anatomy and lighting angle.<br>With that said, thank you very much for sharing your expertise, this is definitely getting bookmarked.</p>
+</blockquote>
+<p>loramel (Jun 01, 2010)</p>
+<blockquote>
+<p>Thanks a lot for putting this together. Its so much more informative than just using a blend file and trying to figure it out by yourself :). It will certainly come in handy for my current short film project once I start with the texturing.</p>
+<p>Did you actually use raytracing in your pirate project ?</p>
+</blockquote>
+<p>bensimonds (Jun 01, 2010)</p>
+<blockquote>
+<p>Yes I did. As it was a still image I didn’t mind the render time, and it allowed me to use area lamps with nice soft ray traced shadows. I find it gives the nicest results working with hair, although now that 2.5 had deep shadow maps it is probably less necessary.</p>
+<p>I look forward to hearing about your short film project!</p>
+</blockquote>
+<p>bensimonds (Jun 01, 2010)</p>
+<blockquote>
+<p>They don’t look quite right, as I say I would normally do more post work to get the effect I want. What it does show however is that the colour management version with add nodes maintains richer colours and deeper shadows when done correctly vs the non-colour managed version. Something previously I had to spend time fixing in the compositor.</p>
+</blockquote>
+<p>francoisgfx (Jun 01, 2010)</p>
+<blockquote>
+<p>yes I understand, blacks are usually a bit more tedious to work with. But still in your comparison I prefer the redish skin with Add &amp; CM. This is great, because I never did the test before to compare both, I just know theoretically it is supposed to be like that (on a physic &amp; math base at least), but never did the try.<br>Great job mate !</p>
+</blockquote>
+<p>francoisgfx (Jun 01, 2010)</p>
+<blockquote>
+<p>subtle is good my friend :)</p>
+</blockquote>
+<p>Rickyblender (Jun 01, 2010)</p>
+<blockquote>
+<p>like the technical description nicely done</p>
+<p>i wold suggest one thing if possible<br>if you could have a sample blend file somewhere that we can download for some skin material that we can look and study and may be used on a model<br>would be easier and faster to test and see the results on model</p>
+<p>also some details on the best lighting set up to see this SSS </p>
+<p>this might be a good wiki page to add<br>keep up the good work</p>
+<p>thanks &amp; happy 2.5</p>
+</blockquote>
+<p>bensimonds (Jun 01, 2010)</p>
+<blockquote>
+<p>Done. You can find a blend file here: <a target="_blank" rel="noopener" href="http://www.blendswap.com/3D-models/materials/bens-three-layer-sss/">http://www.blendswap.com/3D-models/materials/bens-three-layer-sss/</a></p>
+</blockquote>
+<p>Riko (vfx’n’3d) (Jun 01, 2010)</p>
+<blockquote>
+<p>Very useful post!<br>Thx you!</p>
+</blockquote>
+<p>rickyblender (Jun 01, 2010)</p>
+<blockquote>
+<p>thanks for the sample file with suzanne</p>
+<p>i looks caerfully at the details and i can see the only mat with 2 users<br>not certain if this comes with the added mat in node editor mat!<br>so why is there 2 users hee?</p>
+<p>now  you say to set scattering with different values for the front and back<br>but how and where do you do that ?<br>i mean do you select the epidermia and the other one ig uess the  derm and where to set this?</p>
+<p>i did another experiment here  i added a spot light behind the ear and check if the skin was more or less transparent and in your model it does not matter<br>is this normal ?</p>
+<p>Tanks &amp; happy 2.5</p>
+</blockquote>
+<p>bensimonds (Jun 01, 2010)</p>
+<blockquote>
+<p>The blendfile is just the basic node material setup (and child nodes). You will need to add the textures and set the values according to your scene yourself.</p>
+</blockquote>
+<p>Sena (Jun 01, 2010)</p>
+<blockquote>
+<p>Nice work, always wondered how to make a realistic skin. Continue with this beautiful work in Blender.</p>
+</blockquote>
+<p>Top Posts &amp;#8212; WordPress.com (Jun 02, 2010)</p>
+<blockquote>
+<p>[…]  Three Layer SSS in Blender Demystified Something that gives a lot of people trouble when creating characters is implementing convincing subsurface scattering […] […]</p>
+</blockquote>
+<p>Wasa (Jun 02, 2010)</p>
+<blockquote>
+<p>Ah ok, I didn’t have time to give the article a proper reading before posting. :)</p>
+</blockquote>
+<p>Dica- Blender 2.5 shader SSS skin &amp;laquo; Jafapt&amp;#039;s Blog (Jun 02, 2010)</p>
+<blockquote>
+<p>[…] artista Bens Simons criou um pequeno tutorial(clique aqui) onde nos explica como funciona o shader SSS skin do Blender, para quem não sabe para o que serve […]</p>
+</blockquote>
+<p>Paul (Jun 03, 2010)</p>
+<blockquote>
+<p>Hey I have a question to the specmap. First of all, your tutorial (and your character) is very good. It helps me a lot. But I have problems with the spec map. Is it a hand painted map, or is there any othre way to generate it ( like the difuse map). Greetings paul</p>
+</blockquote>
+<p>bensimonds (Jun 03, 2010)</p>
+<blockquote>
+<p>It is a hand painted map, - the main areas to think about are those extra shiny parts like the lips and the bridge of the nose. It’s actually one of the easier maps to paint. You can also start off using your bump or diffuse map as a base. if you invert it and take the brightness down low it makes quite a good starting point for laying out the shinier areas.</p>
+</blockquote>
+<p>Paul (Jun 03, 2010)</p>
+<blockquote>
+<p>Ok. Thanks a lot</p>
+</blockquote>
+<p>Benjamin Bailey (May 12, 2011)</p>
+<blockquote>
+<p>Awesome.  Thanks for the explanation, man! :)</p>
+</blockquote>
+<p>Martin Lubich (Sep 17, 2010)</p>
+<blockquote>
+<p>Thanks Ben !</p>
+<p>I’ll try this approach.</p>
+</blockquote>
+<p>bensimonds (Sep 17, 2010)</p>
+<blockquote>
+<p>I built the textures from the base upwards, which worked quite well, as the subdermal layer defines mostly the global colour and texture, so painting this first made sense.<br>Then I added in the larger patterns on the epidermal layer (such as darker areas where the subdermal colours showed through more, as well as spots and moles etc.<br>You can render at any stage to get an idea of what your progress looks like, just assign what textures you have and set the rest of the layers to use a flat colour.</p>
+</blockquote>
+<p>Martin Lubich (Sep 17, 2010)</p>
+<blockquote>
+<p>Hi Ben</p>
+<p>As I am starting now with the face texturing in my short, I have a quick question about your workflow.</p>
+<p>What I currently find hard to visualize is this: I have a specific end result in mind, but its hard to determine the changes needed to each layer to achieve this look.</p>
+<p>How was your iteration loop ? Paint a change in one of the maps, render it out and check the result ?</p>
+<p>I had a quick look at the skin shader of an early model of sintel, which is not quite as elaborated as yours. They put the major color information into one layer, which from an artistic point of view is better to handle, but may give inferior results. But then with a short you can go away with it.</p>
+<p>I would be really interested how you approached this topic.</p>
+</blockquote>
+<p>Benjamin Bailey (Sep 16, 2010)</p>
+<blockquote>
+<p>Great work, Simonds.  I’ve finally gotten around to reading the whole thing.</p>
+<p>I do have one question, though: what do you mean by saying the normal map  “then this should definitely be applied to the surface layers”?  I’d definitely like to be able to use a normal map in my setups, but I’m not sure what you mean…?</p>
+<p>Thanks!</p>
+</blockquote>
+<p>bensimonds (Sep 16, 2010)</p>
+<blockquote>
+<p>What I mean is that depending on the scale of the details baked into your normal map, it may or may not be worth applying it to your subvdermal and epidermal layers.</p>
+<p>If it only has very fine details, then these will probably get washed out by the scattering on deeper layers anyway, so it may be best just to apply it to the diffuse and specular layers. On the other hand if your model is quite low poly and the normal map adds definition to some major areas of light and shadow in the final render, then it should be applied to all the layers to get better results.</p>
+</blockquote>
+<p>Blending multilayer skin &amp;laquo; Blending in Limbo (Sep 08, 2010)</p>
+<blockquote>
+<p>[…] were be no lights placed behind the head in the final image.  One can be added if necessary.   Ben Simonds covers backscattering in the tutorial for his skin […]</p>
+</blockquote>
+<p>Ben Simonds (Jul 20, 2011)</p>
+<blockquote>
+<p>Diffuse &#x3D; colour. It’s just the “col” texture channel of a material.</p>
+</blockquote>
+<p>Jose Ramirez (May 25, 2011)</p>
+<blockquote>
+<p>Hello! i am really interest in this tutorial but can you give some help about the textures of each layer, there is something special in each texture( color, light, contrast)?</p>
+</blockquote>
+<p>Ben Simonds (May 07, 2011)</p>
+<blockquote>
+<p>That depends. For the normal map, if it’s only generating fine detail you could probably leave it out from the sub and epidermal layers. The other textures can all be used in generating the diffuse maps for each level.</p>
+</blockquote>
+<p>Infinite Head Scan Skin Testing &amp;laquo; BenSimonds.com (Apr 04, 2011)</p>
+<blockquote>
+<p>[…] also did some testing with blender internal using a three layer setup (see my tutorial for more on that), and was pretty impressed at the […]</p>
+</blockquote>
+<p>Ed (May 07, 2011)</p>
+<blockquote>
+<p>Hello, I’ve created my textures in ZBrush and exported Normal, Texture, Cavity, and Ambient Occlusion Maps. Would I apply all of these to the diffuse layer in the shader or should I apply to sub-dermal and epidermal layers as well? Thanks again for the excellent tutorial.</p>
+</blockquote>
+<p>Hairy Maclary Walks Among The Undead &amp;laquo; Black Carrot (Mar 15, 2011)</p>
+<blockquote>
+<p>[…] got all the settings from this awesomely useful page. It&amp;#8217;s extremely useful and saved me from messing around with the settings […]</p>
+</blockquote>
+<p>Ben Simonds (May 25, 2011)</p>
+<blockquote>
+<p>I just recorded a fairly in-depth video tutorial on this for blendercookie.com. You can find it here: <a target="_blank" rel="noopener" href="http://www.blendercookie.com/2011/05/23/texturing-and-rendering-an-elf-head-in-blender-part-01/">http://www.blendercookie.com/2011/05/23/texturing-and-rendering-an-elf-head-in-blender-part-01/</a></p>
+</blockquote>
+<p>Hahli (Jul 20, 2011)</p>
+<blockquote>
+<p>Thanks for the tutorial. I wasn’t able to find the old post you talked about in the beginning of this tutorial for blender 2.49.<br>What do I do about the diffuse part since blender 2.49 doesn’t have that?</p>
+</blockquote>
+<p>Skinshader test &amp;raquo; AstroKiste (Jan 15, 2012)</p>
+<blockquote>
+<p>[…] by Ben Simonds the overall shader will […]</p>
+</blockquote>
+<p>Ade (Jan 04, 2012)</p>
+<blockquote>
+<p>Bit beyong me, I’m still on 2.49 and it’s slow ging, I reckon I’ve learnt abot 1% of what Blender can do.</p>
+</blockquote>
+<p>Ben Simonds (Dec 02, 2011)</p>
+<blockquote>
+<p>Good question. This was something that gave me trouble a while ago. For darker skin, it’s less easy to rely on adding together layers - as it can get difficult to tweak. An alternative would be to use mix nodes for the epidermal and diffuse layers and only add the specular and subdermal layers, this would allow you to mix in the dark tones from the upper layers of the skin. Another (simpler) option would be to use a single layer shader and just add your SSS that way.</p>
+</blockquote>
+<p>40+ Highly Useful but Rarely Collected Blender’s Tutorials | Dzineblog360 (Dec 04, 2011)</p>
+<blockquote>
+<p>[…] Three Layer SSS in Blender Demystified […]</p>
+</blockquote>
+<p>Meikel (Dec 02, 2011)</p>
+<blockquote>
+<p>Thank you for the quick reply. So basically it is a matter of the node’s blending mode. I’ll play with that. Do you suggest that the colour tone of the textures may be darker than for the lighter skin?</p>
+</blockquote>
+<p>Publication dans 3Dmag | Manu Creation (Oct 25, 2011)</p>
+<blockquote>
+<p>[…] du shader de peau multi-couches SSS. Pour les anglicistes, je vous conseille vivement le site de Ben Simonds où vous pourrez en apprendre un peu plus sur ce type de matériaux à plusieurs […]</p>
+</blockquote>
+<p>Meikel (Dec 01, 2011)</p>
+<blockquote>
+<p>Hello Ben,</p>
+<p>thanks for this highly enlightening piece of information! I was just wondering what settings or textures I do have to change for a dark&#x2F;black skintone. I understand that the subdermal texture largely defines the overall skin colour but I’m unsure how this translatets to a black coloured skin.<br>Can you please elaborate on this?</p>
+<p>Kind regards,<br>Meikel.</p>
+</blockquote>
+<p>Meikel (Mar 01, 2012)</p>
+<blockquote>
+<p>Hello Ben,</p>
+<p>did you do some research to reproduce the skin within the current cycles renderer (as of blender version 2.62)? My results so far don’t look very promising :-&#x2F;<br>So, any suggestions from your side?</p>
+<p>Regards,<br>Meikel…</p>
+</blockquote>
+<p>Ben Simonds (Mar 11, 2012)</p>
+<blockquote>
+<p>Currently cycles doesn’t feature an SSS shader type, so skin for now is pretty difficult I think.</p>
+</blockquote>
+<p>Meikel (Mar 11, 2012)</p>
+<blockquote>
+<p>right.<br>I didn’t manage to reproduce anything remote looking like skin in cycles.<br>So, we’ll wait for some SSS shader…</p>
+</blockquote>
+<p>Gherard M. (May 15, 2012)</p>
+<blockquote>
+<p>Hey Ben, excelent work! Please how many lights you use for this scene and were exactly! please!. THX!</p>
+</blockquote>
+<p>Ben Simonds (May 16, 2012)</p>
+<blockquote>
+<p>It’s a fairly straightforward three point lighting setup using area lamps. See my lighting article for more about that: <a target="_blank" rel="noopener" href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/">http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</a></p>
+</blockquote>
+<p>Steven (Sep 25, 2013)</p>
+<blockquote>
+<p>Is the texture colors uv unwrapped colors added then added with material nodes.<br>Trying to figure out how you added the colors.<br>Did you unwrap color it and save it as a png?</p>
+</blockquote>
+<p>Rickyblender (Oct 02, 2013)</p>
+<blockquote>
+<p>SSS is alive in cycles now<br>so is there  a simple cycle file sample at blendswap with the complete set up for all the different mapping layers using suzanne may be<br>or did you do a tut for using SSS in cycles </p>
+<p>thanks<br>happy cycles</p>
+</blockquote>
+<p>James (Jun 12, 2013)</p>
+<blockquote>
+<p>Wow, fantastic work here! I’ve been trying to do something similar for the Cycles render engine, considering that it now has a Subsurface Scattering Shader. The only issue is that the front and back scattering values can’t seem to be set.<br>Do you have any idea of how to do something similar in Cycles, at all?</p>
+</blockquote>
+
+  <p><a class="classtest-link" href="/tags/blender/" rel="tag">blender</a>, <a class="classtest-link" href="/tags/material-nodes/" rel="tag">material nodes</a>, <a class="classtest-link" href="/tags/materials/" rel="tag">materials</a>, <a class="classtest-link" href="/tags/node-editor/" rel="tag">node editor</a>, <a class="classtest-link" href="/tags/scattering/" rel="tag">scattering</a>, <a class="classtest-link" href="/tags/shaders/" rel="tag">shaders</a>, <a class="classtest-link" href="/tags/skin/" rel="tag">skin</a>, <a class="classtest-link" href="/tags/sss/" rel="tag">sss</a>, <a class="classtest-link" href="/tags/subsurface/" rel="tag">subsurface</a>, <a class="classtest-link" href="/tags/subsurface-scattering/" rel="tag">subsurface scattering</a>, <a class="classtest-link" href="/tags/textures/" rel="tag">textures</a>, <a class="classtest-link" href="/tags/texturing/" rel="tag">texturing</a>, <a class="classtest-link" href="/tags/tutorial/" rel="tag">tutorial</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — May 31, 2010</p>
+  
+
+
+          <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        and the <a target="_blank" rel="noopener" href="https://github.com/adisaktijrs/hexo-theme-minima">minima</a> theme.
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://www.linkedin.com/in/bensimonds/" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>

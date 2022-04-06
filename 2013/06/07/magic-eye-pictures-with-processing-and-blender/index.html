@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Magic Eye Pictures with Processing and Blender</title>
+  
+  <link rel="canonical" href="http://example.com/2013/06/07/magic-eye-pictures-with-processing-and-blender/">
+  
+  <meta name="description" content="Click the image above for full size, then try and look through it. If you’ve still confused I’m not surprised, there’s a bit of a knack to it. Yesterd">
+  
+  
+  <meta name="author" content="Ben Simonds">
+  
+  <meta property="og:image" content="http://example.comundefined">
+  
+  <meta property="og:site_name" content="Ben Simonds Personal Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Magic Eye Pictures with Processing and Blender" />
+  
+  <meta property="og:description" content="Click the image above for full size, then try and look through it. If you’ve still confused I’m not surprised, there’s a bit of a knack to it. Yesterd">
+  
+  <meta property="og:url" content="http://example.com/2013/06/07/magic-eye-pictures-with-processing-and-blender/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Magic Eye Pictures with Processing and Blender">
+  
+  <meta name="twitter:description" content="Click the image above for full size, then try and look through it. If you’ve still confused I’m not surprised, there’s a bit of a knack to it. Yesterd">
+  
+  
+  <meta name="twitter:image" content="http://example.comundefined">
+  
+  <meta name="twitter:url" content="http://example.com/2013/06/07/magic-eye-pictures-with-processing-and-blender/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FCE92;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FCE92 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FCE92;
+  }
+  .nanobar .bar {
+    background: #0FCE92;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FCE92;
+    border-color: #0FCE92;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FCE92;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <img class="u-max-full-width" src="/images/warehouse3.png" />
+
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/blender" class="ml">Blender</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>Magic Eye Pictures with Processing and Blender</h2>
+
+  <p><a href="/images/old/hourglass.png"><img src="/images/old/hourglass.png?w=950" alt="HourGlass &gt;&lt;"></a></p>
+<p>Click the image above for full size, then try and look <em>through</em> it. If you’ve still confused I’m not surprised, <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Autostereogram#Viewing_techniques">there’s a bit of a knack to it</a>. Yesterday, I decided to start learning a bit of <a target="_blank" rel="noopener" href="http://www.processing.org/">Processing</a>, and after following through a few tutorials I came up with the idea of making a random dot stereogram generator. Random dot stereograms, also known as Magic Eye pictures (the trade name of the company that popularised them in the 90’s), are images made up of repeating patterns, that when viewed correctly give the impression of seeing a 3D shape appear magically out of the pattern. The wikipedia article on <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Autostereogram">autostereograms</a> gives a much better explanation of how they work than I can here, but what follows is a brief explanation. Autostereograms work via the wallpaper effect. When you look at a horizontally repeating pattern, it’s possible to convince your brain that two separate but identical parts of the pattern are actually the same part, but located on a different plane away from the real surface of the pattern: [caption id&#x3D;”” align&#x3D;”aligncenter” width&#x3D;”491”</p>
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Stereogram_Tut_Eye_Trick.png/491px-Stereogram_Tut_Eye_Trick.png" alt=" &gt;&lt;"></p>
+<p><a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Autostereogram">http://en.wikipedia.org/wiki/Autostereogram</a></p>
+<p>How autostereograms work, from Wikipedia. But this alone just creates the effect of the pattern floating on a plane behind the image itself. In order to create a 3D image using this technique, we can change the amount of shifting between repeats of the pattern. By reducing the distance between repeats in certain parts of the image, we can trick our brains into perceiving these areas as being closer to us. To do this we just use a black and white depth map to define, for each pixel, how great the amount of shifting should be. Far away (dark) areas receive the default amount of shifting, closer areas (bright) receive less. This struck me as an ideal way to test out what I’d learned so far in Processing, as the principle was basically just a simple manipulation of pixels, but it was something that wouldn’t have been easily possible in my usual go-to app (Blender), because of the way that pixels further to the right in a row rely on how far previous previous pixels in the row have been shifted, meaning that it isn’t easy to render the image all at once. In Processing however I could cycle through each row with a <em>for</em> loop, progressing left to right. Here’s the script I came up with. </p>
+<pre><code>//Declare Variables
+PImage noise; //Image containing my repeating pattern.
+PImage depth; //A depth map for the 3D object, rendered with blender.
+float shiftrange = 0.3; // Proportion of the pattern width to use for shifting to create depth.
+
+void **setup** () &#123;
+  size(1024,1024);
+  // Load pattern and depth map.
+  noise = loadImage(&quot;noise3.png&quot;);
+  depth = loadImage(&quot;depth7.png&quot;);
+  noLoop();
+&#125;
+
+void **draw** () &#123;
+  //draw first column
+  image(noise,0,0);
+  //Work through the image row by row, column by column.
+  loadPixels();
+  for (int x = 0; x &lt; width; x++) &#123;
+    for (int y = 0; y &lt; height; y++) &#123;
+      int locwindow = x + (y*width); // Gives the pixels index based on it&#39;s x and y coordinates.
+      float zdepth = (green(depth.pixels[locwindow])) / 255.00; // Gives the zdepth of the pixel as a value between 0.0 and 1.0
+      int shift = int(noise.width - (zdepth*(noise.width * shiftrange))); // Calculates the amount of shift for the pixel.
+      // If in first col, ignore shift (nothing to repeat yet):
+      int locshifted = locwindow;
+      if (x &lt; noise.width) &#123;
+        //println(&quot;x is in first column&quot;); //optional feedback
+      &#125; else &#123;
+        locshifted = (x-shift) + (y * width); // Gives the index of the pixel to repeat.
+      &#125;
+      // Now set the new pixel colour to that of the pixel to repeat.
+      pixels[locwindow] = pixels[locshifted];
+    &#125;
+  &#125;
+  updatePixels(); //Update the final image.
+  saveFrame(&quot;magiceye.png&quot;); //Save an image as the output.
+&#125;
+</code></pre>
+<p>It takes two inputs, one the pattern to repeat, the other a depth map. The result is a random dot stereogram. Below is the result of using a sphere with a hole in it as the depth map (rendered with blender), and the pattern on the left as the input for the noise (click for full size to get the best out of the 3d effect).</p>
+<p><a href="/images/old/stereogrambreakdown1.png"><img src="/images/old/stereogrambreakdown1.png?w=950" alt="Creating Autostereograms &gt;&lt;"></a></p>
+<p> Anyway, it was pretty fun to play with, and I generated a few stereograms. I’m still in the process of learning how to tweak the script to get the best effect (mainly by adjusting the maximum and minimum amounts of shifting), but here’s some results (click for full size, and see the filename for a clue if you can’t get it): </p>
+<p><a href="/images/old/suzanne.png"><img src="/images/old/suzanne.png?w=300" alt="Suzanne &gt;&lt;"></a></p>
+<p><a href="/images/old/torus.png"><img src="/images/old/torus.png?w=300" alt="Torus &gt;&lt;"></a></p>
+<p><a href="/images/old/vase1.png"><img src="/images/old/vase1.png?w=300" alt="Vase &gt;&lt;"></a></p>
+<p> Now if you’ll excuse me I need to go and rest my eyes. Debugging the script took a lot of staring, and it’s weird trying to make yourself see a 3D image when you aren’t even sure whether there should be one yet….</p>
+<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>DC (Aug 27, 2013)</p>
+<blockquote>
+<p>Hi, I used some of your code to make a random dot stereogram in processing. Was really helpful. Hope you don’t mind. Thanks.</p>
+<p>The sketch:<br><a target="_blank" rel="noopener" href="http://www.openprocessing.org/sketch/106591">http://www.openprocessing.org/sketch/106591</a></p>
+</blockquote>
+<p>Ben Simonds (Aug 27, 2013)</p>
+<blockquote>
+<p>Cool!</p>
+</blockquote>
+<p>vitos1k (Jun 07, 2013)</p>
+<blockquote>
+<p>cool! but on the Vase image, there are few pixels grouped together, that are off, and are ruining the picture, on the top part of the vase</p>
+</blockquote>
+<p>Ben Simonds (Jun 07, 2013)</p>
+<blockquote>
+<p>I think I see what you mean. The vase actually has some holes around the top of it, but the 3D effect works better without them. I’ve updated the image. Cheers!</p>
+</blockquote>
+<p>vitos1k (Jun 08, 2013)</p>
+<blockquote>
+<p>ah! much nicer now<br>thanks for the code</p>
+</blockquote>
+<p>Man with 20 less minutes (Feb 01, 2014)</p>
+<blockquote>
+<p>Stared at the first image for 20 minutes before reading. My bad. lol</p>
+</blockquote>
+<p>Autostereograms | Kalshiev (Aug 10, 2016)</p>
+<blockquote>
+<p>[&amp;#8230;] If you want to make your own or learn more about magic eye pictures visist: Ben Simonds&amp;#8217; Tutorial [&amp;#8230;]</p>
+</blockquote>
+<p>Magiceye Venus | Kalshiev (Aug 11, 2016)</p>
+<blockquote>
+<p>[&amp;#8230;] For a tutorial on how to make these click here [&amp;#8230;]</p>
+</blockquote>
+<p>Estereograma &amp;#8211; &amp;#8211; MATEUS TARGINO &amp;#8211; (Aug 27, 2018)</p>
+<blockquote>
+<p>[&amp;#8230;] Magic Eye Pictures with Processing and Blender [&amp;#8230;]</p>
+</blockquote>
+
+  <p><a class="classtest-link" href="/tags/3d/" rel="tag">3d</a>, <a class="classtest-link" href="/tags/autostereogram/" rel="tag">autostereogram</a>, <a class="classtest-link" href="/tags/depth-map/" rel="tag">depth map</a>, <a class="classtest-link" href="/tags/magic-eye/" rel="tag">magic eye</a>, <a class="classtest-link" href="/tags/noise/" rel="tag">noise</a>, <a class="classtest-link" href="/tags/processing/" rel="tag">processing</a>, <a class="classtest-link" href="/tags/quick-projects/" rel="tag">quick projects</a>, <a class="classtest-link" href="/tags/random-dot-stereogram/" rel="tag">random dot stereogram</a>, <a class="classtest-link" href="/tags/script/" rel="tag">script</a>, <a class="classtest-link" href="/tags/zdepth/" rel="tag">zdepth</a> — Jun 7, 2013</p>
+  
+
+
+          <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        and the <a target="_blank" rel="noopener" href="https://github.com/adisaktijrs/hexo-theme-minima">minima</a> theme.
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://www.linkedin.com/in/bensimonds/" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Lighting tips from the Masters</title>
+  
+  <link rel="canonical" href="http://example.com/2010/06/03/lighting-tips-from-the-masters/">
+  
+  <meta name="description" content="What do I know about lighting after all? After my previous post on setting up a three layer SSS shader, a few people asked for tips on how to light th">
+  
+  
+  <meta name="author" content="Ben Simonds">
+  
+  <meta property="og:image" content="http://example.comundefined">
+  
+  <meta property="og:site_name" content="Ben Simonds Personal Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Lighting tips from the Masters" />
+  
+  <meta property="og:description" content="What do I know about lighting after all? After my previous post on setting up a three layer SSS shader, a few people asked for tips on how to light th">
+  
+  <meta property="og:url" content="http://example.com/2010/06/03/lighting-tips-from-the-masters/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lighting tips from the Masters">
+  
+  <meta name="twitter:description" content="What do I know about lighting after all? After my previous post on setting up a three layer SSS shader, a few people asked for tips on how to light th">
+  
+  
+  <meta name="twitter:image" content="http://example.comundefined">
+  
+  <meta name="twitter:url" content="http://example.com/2010/06/03/lighting-tips-from-the-masters/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FCE92;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FCE92 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FCE92;
+  }
+  .nanobar .bar {
+    background: #0FCE92;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FCE92;
+    border-color: #0FCE92;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FCE92;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <img class="u-max-full-width" src="/images/warehouse3.png" />
+
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/blender" class="ml">Blender</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>Lighting tips from the Masters</h2>
+
+  <p><img src="/images/old/bouguereau_william_autoportrait_presente_a_m-_sage_1886-large.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>What do I know about lighting after all? After my previous post on setting up a three layer SSS shader, a few people asked for tips on how to light their characters to best show them off. As it happens, this something I’m rather interested in, and I’ve had a blog post on the subject brewing for a while, so I’ve finally found the motivation to finally write it up. I didn’t want to spend too much time talking about specific settings for this tutorial, so instead you can download this <a target="_blank" rel="noopener" href="http://www.blendswap.com/3D-models/lighting-rigs/simple-three-point-light-setup/">blendfile</a> from BlendSwap.com for some ideas on the specifics of how to set up your scene.  Lighting in portraits is key to how you want your character to be seen. The exact same character with the same pose and expression can be seen in completely different ways depending on how they are lit. They can be made to appear anything from dark and sinister to calm and serene simply by changing the lighting of your scene. On a more subtle level different kinds of lighting will can drastically improve the look of your models, and transform them from drab and uninteresting to dynamic and captivating. I don’t get it right every time, so when I’m looking for inspiration for lighting I usually turn to those who know better. From the great painters and photographers, to Hollywood Films, to modern day CG artists, each can offer insights into what makes for interesting lighting.</p>
+<h2 id="Three-Point-Lighting"><a href="#Three-Point-Lighting" class="headerlink" title="Three Point Lighting:"></a>Three Point Lighting:</h2><p>Before delving into some deeper issues, let’s look at what is considered the “standard” lighting setup for a lot of portraiture and cinematography. Three point lighting is the use of three different lights to achieve a pleasant, natural look that is adaptable to a wide variety of circumstances, and gives good results with most subjects when set up correctly.</p>
+<p><img src="/images/old/2x.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Conrad Veidt as Major Strasser in Casablanca </p>
+<p>You should be able to see that the main source of light in the image above is coming from slightly above and to the side of the shot. This is called the “key” light. This provides illumination to most of the face, but were we to only have that one light in the scene, the remainder of the face would be in shadow. For the whole face to be seen we add a second, slightly softer “fill” light from the other side, at roughly eye level. This gives an even illumination to the shadowed parts of the face. A third “back” light (also called a “rim” light) light, positioned behind the subject, is used to highlight the edges of the subject and lift it out of the background. </p>
+<p><img src="/images/old/threepointsetup.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>A basic three point lighting setup. </p>
+<p>This kind of lighting is easy to do in blender, and is best done using either spot lights or area lights, as these give a good amount of control over the direction and placement of the light, and also have some of the best tools for adjusting the softness of the shadows. Spot lights are preferable for animation, as using buffered shadows allows objects in the scene to cast shadows over each other without resorting to ray-tracing (which would increase render time significantly). Area lights give much nicer soft shadows, but at the cost of much longer render times. </p>
+<p><img src="/images/old/spotvarea.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Spot Lamps with buffered shadows vs. Area Lamps with ray traced Shadows. </p>
+<p>Rendertimes in Blender 2.5 (with raytraced AO for both) - Spot Lights: 28 seconds. Area Lights: 2 mins 59 seconds.</p>
+<h2 id="Hollywood"><a href="#Hollywood" class="headerlink" title="Hollywood!"></a>Hollywood!</h2><p>Three point lighting is a familiar feature of any film, CG animation or photographers studio today. Originally though, it became popular in the golden era of Hollywood, when film makers wanted to make sure that their sets and actors were evenly illuminated so that movie-goers could see all the money they spent on their productions. Because early colour film didn’t capture contrast between light and dark very well, Directors often used bright key and fill lights that gave very even illumination the actors on screen. Think back to those early technicolor films for examples: </p>
+<p><img src="/images/old/seven_year_itch-079.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Marilyn Munroe in The Seven Year Itch </p>
+<p>This kind of lighting doesn’t have any particularly dramatic qualities, but it does an excellent job of showing everything that is going on in shot. It also shows off texture well (look at the wooden siding in the picture above for example), and looks very natural. Getting this kind of lighting using a three point setup in blender is as simple as setting the fill and key lights to reasonably high intensities and long fall off distances, without much difference in brightness between the two. The back light used in this kind of lighting is reasonably subtle and diffuse, so set the intensity of your back light reasonably low and use fairly soft shadows. </p>
+<p><img src="/images/old/threepoint3.png" alt="&gt;&lt; &gt;&lt;"></p>
+<p>High-key Lighting </p>
+<h2 id="Rembrandt"><a href="#Rembrandt" class="headerlink" title="Rembrandt"></a>Rembrandt</h2><p>Let’s jump back in time for a second to the the seventeenth century. In Holland at the time, a revolution was occurring in how artists treated light. By this point in time much of the physics of light was understood and was being applied to the art of painting, but the Dutch masters - in particular Rembrandt - started a revolution in the use of light for the exposition of drama and storytelling in their scenes. By thowing light on the elements in the scene they wanted to draw attention to, and throwing elements that were less important into shadow painters could control how people interpreted the scene. This more dynamic style of lighting was also popular in portraiture, particularly because as well as adding plenty of dramatic flair to the image, it also breathed life into the forms of the subject, highligting those that face the light and veiling those that turn away in shadow. This created a lot more visual interest when compared with the more diffuse, flat lighting of a lot of Renaissance art.</p>
+<p><img src="/images/old/the_nightwatch_by_rembrandt.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>The Night Watch by Rembrandt. </p>
+<p>One of his most well known paintings, and a famous example of the use of light to highlight the dramatic elements of the composition. Returning to Hollywood, this kind of lighting rose to prominence first in German Expressionist Cinema and then in the Film Noir era as directors sought to portray their actors in more dynamic ways. It has been popular ever since.</p>
+<p><img src="/images/old/tgf_111.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Marlon Brando in The Godfather. </p>
+<p>Note the triangle of light under the eye on the shadowed side of the face. This is referred to a as Rembrandt lighting, as it was a common motif in Rembrandts works. Gordon Willis, the cinematographer on The Godfather, specifically cites Rembrandt amongst his influences for the film. In cinematography this is referred to as low key lighting, and can be achieved through our standard three point light set up once again. This time, our key light is much brighter than the fill light (turn the “energy” setting up on the key light), and should have much more pronounced shadows as a result, we can also decrease the size of the lamp (the “size” setting for area lamps, or “soft size” for spot lamps) to make give our shadows much clearer outlines. </p>
+<p><img src="/images/old/threepoint4.png" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Low-key Lighting </p>
+<p>This kind of lighting is ideal for showing off character models, as it higlights the forms and makes them appear much more three dimensional, compared to flatter, high-key lighting. However, by playing up the forms and increasing the contrast, it may make your textures less prominent - something you may want to consider if you spent hours slaving away over a multi-layer SSS shader with detailed textures! <strong>Rim Light</strong> Up to this point I have largely neglected the third light in our three point setup. Unlike the other two it’s primary purpose is not to provide illumination to any large area of the subject. Indeed, being positioned behind the subject this would be impossible. Instead this light is used to pick out the outlines of the the subject and thus separate it from the background. Rim lights can be very useful in darker scenes where the subject might otherwise fade into the background (of course this may well be the effect you desire, in which case carry on). Rim light is also quite dramatic, and works well in both high and low key lighting.</p>
+<p><img src="/images/old/fight_club_0005.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Brad Pitt as Tyler Durden in Fight Club</p>
+<p>Much of the film was set in dark, gritty environments, and the use of back lights helped the characters “pop” out of the backgrounds, without requiring bright frontal lighting. I find getting rim lights to give the effect I want in blender is often the most tricky aspect of lighting characters, as searching for the right balance between illuminating the outline, and not spreading out too far over the subject, requires a fair amount of trial and error for the placement of the lamp. Additionally, because the we only see the effects of rim lights at angles that are just glancing off the surface, rim lights must be quite bright in comparison to the main key and fill lights in order to stand out (usually several times brighter, though again this requires experimentation). </p>
+<p><img src="/images/old/threepoint61.png" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Lit mainly from behind with a large, bright, area lamp, with the shadow samples turned up to 16</p>
+<p>Depending on the kind of illumination you want, rim lights may not require raytraced&#x2F;buffered shadows at all, instead relying only on the angle the light hits the surface. As such the effect of rim lights can also be faked using material nodes. </p>
+<p><img src="/images/old/threepoint7.png" alt="&gt;&lt; &gt;&lt;"></p>
+<p>A similar look can be achieved with out a back light</p>
+<p>This time a ramp is shader used to give the same effect instead. This is much faster, but doesn’t give quite the same quality. </p>
+<p><strong>Colour</strong></p>
+<p>Colour theory is of course an entire subject in itself. I shall mention it only briefly here in so far as to say that opposition between the two main lights (fill and key) can create some really nice effects. Opposing colours of course are those on either side of a colour wheel:</p>
+<p><img src="/images/old/goethefarbkreis.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>In general opposing colours look good when paired with one another. </p>
+<p>Another consideration when thinking about colour choices is how they interact with the subject. Skin is a sort of pinkish-orange colour, and so warm tones like reds and oranges complement it well, the opposing colour to these tones are bluey-green tones, and these also work well, particularly as fill or rim lights. You will note for most of this tutorial I have opted for a key light with slightly orange tint, and fill and rim lights with a blue colour. </p>
+<p><img src="/images/old/threepoint11.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Complementary Colours often work well for the fill and key lights, though not all combinations work well when lighting skin tones. The green light on the right would give the skin a very unhealthy look. </p>
+<h2 id="Light-Direction-and-Character"><a href="#Light-Direction-and-Character" class="headerlink" title="Light Direction and Character"></a>Light Direction and Character</h2><p>Within any lighting setup, the predominant direction the character is lit from communicates a lot about the character. We are used to seeing people lit by natural light, and so we often find that characters lit from strange angles appear more visually arresting, and often unsettling. Achieving this in blender is a simple matter of positioning the key light to provide light from the desired direction, and having the fill light take an opposing position to provide illumination of the shadowed areas. </p>
+<p><img src="/images/old/threepoint15.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Lighting from above makes characters look dignified and noble, from below makes them look sinister and menacing. </p>
+<p>Lighting from behind gives a mysterious outline. Many famous pieces of devotional art use lighting from above to denote divinity, as it simultaneously makes the subject appear more dominant in the scene and at the same time gives the impression of being seen from below - imagine being a small child in a room full of grown-ups and looking up at their faces lit from above by the lights on the ceiling. More diffuse light is used to communicate a more serene and peacefull atmosphere. The master of this style (well, arguably the master of light in general) in traditional art was William Bourguerau:</p>
+<p><img src="/images/old/le_crepuscule-huge.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+<p>Le Crepuscule, by William Adolphe Bouguerau</p>
+<p>The light in this painting is very diffuse, but you can still make out the predominant source of light in the upper left, though fill light in this case comes from all around. This kind of lighting would be best achieved through some kind of GI setup. Renderers like vray or lux render can do this kind of thing easily, but it can also be done in blender internal by getting rid of the fill and back lights, instead environment lighting to provide illumination for the shadows. A full discussion of how to set this up would be a tutorial of its own, so apart from the settings below I will leave you to experiment with this yourself. </p>
+<p><img src="/images/old/threepoint16.png" alt="&gt;&lt; &gt;&lt;"></p>
+<p>In this render, the subject is lit with only one key light, using environment lighting instead of fill and back lights to provide illumination of the shadowed areas. This results in very smooth lighting. </p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><p>Anyway. I hope this tutorial has been interesting and useful, and I leave you with a few general tips on lighting with spot and area lamps. </p>
+<ol>
+<li>Area lamps provide much stronger illumination than the other types of lamp with the default settings. Turn down the distance setting on the lamp to reduce its brightness before adjusting it’s energy, set it to a somewhat less than the distance between the lamp and the subject itself as a good starting point - use the line from the lamp in the viewport as a guide.</li>
+<li>Area lamps also take a long time to get nice raytraced shadows, particularly with high enough settings to avoid significant noise. For this reason they aren’t particularly suited to animation. That said with the speed improvements to raytracing in blender 2.5, they are becoming more of a viable option.</li>
+<li>If your spot lamp shadows appear pixelated there are a number of options. Increase the sample buffer size (try doubling it each time until you get nicer results) and set the filter type to gauss for smoother results. For better soft shadows you will also need to increase the number of samples taken.</li>
+<li>If you are going to add ambient occlusion to your three point setup, set it to multiply. Otherwise you’ll just have another light source to deal with when trying to adjust your lighting. Additionally, ambient occlusion is not the same thing as global illumination, and shouldn’t really be used as a substitute, as the name suggests (occlusion means blocking something, in this case light) AO should be used to remove light from the scene, not add it.</li>
+<li>When setting up your lighting, try creating a matte material (just a plain diffuse colour, for example a dull clay colour with no specular reflections) and setting it as the override material in the layers panel of the render setttings editor. This will allow you to look at the lighting in isolation from the other elements of the scene, which is a great way to troubleshoot lighting setups that aren’t quite working.</li>
+</ol>
+<h2 id="Blendfile"><a href="#Blendfile" class="headerlink" title="Blendfile:"></a>Blendfile:</h2><p>If you missed it at the beginning, you can download it <a target="_blank" rel="noopener" href="http://www.blendswap.com/3D-models/lighting-rigs/simple-three-point-light-setup/">here</a>. </p>
+<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>francoisgfx (Jun 03, 2010)</p>
+<blockquote>
+<p>you are nailing it man !! great job</p>
+</blockquote>
+<p>bensimonds (Jun 03, 2010)</p>
+<blockquote>
+<p>Thanks!</p>
+</blockquote>
+<p>mofx (Jun 04, 2010)</p>
+<blockquote>
+<p>Great stuff, thanks for sharing with the community too. Top notch stuff.</p>
+</blockquote>
+<p>thisroomthatikeep (Jun 03, 2010)</p>
+<blockquote>
+<p>Another great article, thanks for sharing all this info! :)</p>
+</blockquote>
+<p>Reyn (Jun 04, 2010)</p>
+<blockquote>
+<p>Ben, you did it again! This is very valuable information.  Thanks for sharing it. ^_^</p>
+</blockquote>
+<p>Heho (Jun 06, 2010)</p>
+<blockquote>
+<p>Nice Tutorial, learnt a lot. But i’ve got a question: When I have a dark lighting setup there are often some strange lighting artifacts visible. They don’t really fade from light to dark but they look like “steps”(I’m sorry that i can’t describe it better… English is not my native tangue). This can’t be a buffer problem cause it is also there when I only use Raytracing… You can see what I mean here: <a target="_blank" rel="noopener" href="http://upload.wikimedia.org/wikibooks/de/c/ca/Blender3D_li_inv_square.jpg">http://upload.wikimedia.org/wikibooks/de/c/ca/Blender3D_li_inv_square.jpg</a> look at the light on the floor… It’s like there aren’t enough RGB colors to create a smoothe gradient…<br>So how I get rid of this? One possible way is to activate dither but this let the picture look like a bad jpeg…</p>
+</blockquote>
+<p>bensimonds (Jun 06, 2010)</p>
+<blockquote>
+<p>Hmm. A certain amount of banding is inevitable, especially if you’re going to save in an 8-bit format. I’m afraid I can’t really see what’s going on in that image - it’s rather dark, and being a jpeg I cant tell whether any artefact is compression or something from blender. It looks reasonably smooth to me though.</p>
+</blockquote>
+<p>bensimonds (Jun 06, 2010)</p>
+<blockquote>
+<p>Just a thought, are you compositing in GIMP or doing a composite with an image saved in an 8 bit format? If so it could be that - always save to a 16bit or better format if you’re going to be doing any kind of levels adjustment to an image (which gimp won’t open…. that’s another issue though).</p>
+</blockquote>
+<p>Blender lighting primer &amp;laquo; :: m y C L O N E :: (Jun 06, 2010)</p>
+<blockquote>
+<p>[…] Freebies, Lighting, Tutorials by Borrowind &amp;mdash; Leave a comment 6 June 2010    A very useful new lighting primer&#x2F;tutorial for Blender by the UK&amp;#8217;s Ben Simonds. He also gives some tips on how to mimic the lighting from &amp;#8220;old […]</p>
+</blockquote>
+<p>Heho (Jun 06, 2010)</p>
+<blockquote>
+<p>I thought that this has no influence on the render itself… Anyway: Which formats should I choose? And why are those bandings even in the default render visible?<br>BTW: I always composite in Blender.</p>
+</blockquote>
+<p>Heho (Jun 06, 2010)</p>
+<blockquote>
+<p>I just noticed(when I looked closer at the picture) that the bandings are really just the nearest colors(that means: band one R:0.111 G:0.111 B:0.111 band two R:0.112 G:0.112 B: 0.112 you get it) But this should not be noticeable for the human eye…</p>
+</blockquote>
+<p>bensimonds (Jun 06, 2010)</p>
+<blockquote>
+<p>I really can’t see much banding on the image you posted. Are you sure your monitors brightness and contrast are set correctly? This could well be the issue.</p>
+</blockquote>
+<p>Oscar Baechler (Jun 05, 2010)</p>
+<blockquote>
+<p>ZOMG I love you for Bouguereau examples. Best painter people have never heard of!</p>
+</blockquote>
+<p>bensimonds (Jun 05, 2010)</p>
+<blockquote>
+<p>Absolutely. Bouguerau was the master - probably my favourite painter, although that’s probably a three way tie between him, Leighton and Ingres.</p>
+</blockquote>
+<p>Saurav (Feb 24, 2011)</p>
+<blockquote>
+<p>Thanks Man and You Rock the Blender.</p>
+</blockquote>
+<p>Tips para Iluminación de personajes en 3d (Jan 20, 2011)</p>
+<blockquote>
+<p>[…] el tipo de proyecto en el cual estemos trabajando. Es por ello que Ben Simonds a publicado un tutorial en donde comparte algunos tips para iluminación de personajes en 3d, aunque habla de luces de […]</p>
+</blockquote>
+<p>A look at lighting and a new lighting setup add-on &amp;laquo; ThruDreamsgate&amp;#039;s Blog (Jan 15, 2011)</p>
+<blockquote>
+<p>[…] via Lighting tips from the Masters « BenSimonds.com. […]</p>
+</blockquote>
+<p>eddybigz (Nov 19, 2010)</p>
+<blockquote>
+<p>This has been very helpful. men thanks  a lot looking forward to next tutorials</p>
+</blockquote>
+<p>Rajith Eruveettil (Nov 22, 2010)</p>
+<blockquote>
+<p>Amazing software.</p>
+</blockquote>
+<p>Hperigo (Jun 15, 2010)</p>
+<blockquote>
+<p>you might enjoy this videos:<br><a target="_blank" rel="noopener" href="http://www.youtube.com/watch?v=1oYgTP0MX2U">http://www.youtube.com/watch?v=1oYgTP0MX2U</a></p>
+</blockquote>
+<p>bensimonds (Jun 15, 2010)</p>
+<blockquote>
+<p>Thanks for that!</p>
+</blockquote>
+<p>Iluminação de estúdio com Blender Internal &amp;laquo; Victor Phellipe (Dec 16, 2010)</p>
+<blockquote>
+<p>[…] Desculpe! Enfim, para complementar, indico um tutorial aqui muito bom sobre iluminação: <a target="_blank" rel="noopener" href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/">http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</a>. Está em inglês, mas prometo depois fazer a tradução e postar aqui no […]</p>
+</blockquote>
+<p>Pascal Montjovent (Feb 17, 2011)</p>
+<blockquote>
+<p>Thanks for this post. I’m a cinematographer and interested in the “virtual lighting” transpositions from what I use in the real world.<br>My blog could be of use (via Google translate) for those of you interested in real cinematography.<br>I found some mistakes in the post, none of them too dramatic ;-) but the Casablanca actor Conrad Veidt is not backlit from the left, but from the right.</p>
+</blockquote>
+<p>Ben Simonds (Feb 17, 2011)</p>
+<blockquote>
+<p>Thanks Pascal. I took a quick look at your blog, it’s really interesting, I’ll definitely have to have a proper read through sometime.</p>
+</blockquote>
+<p>Rodrigo Couto (Dec 21, 2010)</p>
+<blockquote>
+<p>Sorry, but im sure that the two images showing spot and area lights examples are inverted. Just look with attention to the sharp shadows in the base of the statue. Thanks for contribution, very usefull post!</p>
+</blockquote>
+<p>existentia (Mar 05, 2011)</p>
+<blockquote>
+<p>Brilliant! You make it seem so simple, and gave me the necessary background to experiment and learn. Thanks.</p>
+</blockquote>
+<p>john leigh London UK (Feb 17, 2011)</p>
+<blockquote>
+<p>very nice info and detail - really helpful to see a walkthrough of points to help consolidate lighting our skills - thanks for putting this together!</p>
+</blockquote>
+<p>laabo (Sep 09, 2010)</p>
+<blockquote>
+<p>Great article! Thanks for that!</p>
+</blockquote>
+<p>zahlenzerkleinerer &amp;raquo; Blog Archive &amp;raquo; Tips für Licht in Blender 3D (Sep 09, 2010)</p>
+<blockquote>
+<p>[…] das von den Meistern. Sehr gute Tips um die 3D Scene mit Lichtquellen zu versehen. Die Webseite und das blend File zum selber Lernen.   Verwandte […]</p>
+</blockquote>
+<p>How to Create Realistic Outdoor Lighting | Blender Lighting | Blender Guru (Apr 12, 2011)</p>
+<blockquote>
+<p>[…] The Master Lighting Guide for Blender […]</p>
+</blockquote>
+<p>HenruAlonso Abella (Apr 10, 2011)</p>
+<blockquote>
+<p>Is very interesting.Yhank you.</p>
+</blockquote>
+<p>Jazz (Mar 12, 2011)</p>
+<blockquote>
+<p>Hi!! I just finished reading through this tutorial, and it revived my interest in learning more about lighting! I’m more of a 2D artist, but I like to dabble in Blender a lot, and I’m still such a beginner with 3D modelling and animation.</p>
+<p>Lighting is one of my favourite subjects, so you really kept things interesting with this tutorial! Thank you!</p>
+</blockquote>
+<p>mohsen (Apr 18, 2011)</p>
+<blockquote>
+<p>Thanks for sharing,keep going…</p>
+</blockquote>
+<p>Pierre Béliveau (Mar 15, 2011)</p>
+<blockquote>
+<p>His name is not Bourguerau or Bouguerau…but Bouguereau…</p>
+</blockquote>
+<p>Ben Simonds (Mar 15, 2011)</p>
+<blockquote>
+<p>So many vowels… Sorry for my crappy spelling of French names.</p>
+</blockquote>
+<p>Ade (Aug 23, 2011)</p>
+<blockquote>
+<p>Really great post. You’ve somehow managed to make a lighting tutorial which isn’t overly complicated, using the busts and reference paintings really makes sense. Works really well as a general lighting tutorial. Cheers</p>
+</blockquote>
+<p>Learning Lighting | Corner 3d (Aug 13, 2011)</p>
+<blockquote>
+<p>[…] tutorial is here: <a target="_blank" rel="noopener" href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/">http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</a>   GA_googleAddAttr(&quot;AdOpt&quot;, &quot;1&quot;); GA_googleAddAttr(&quot;Origin&quot;, &quot;other&quot;); GA_googleAddAttr(&quot;theme_bg&quot;, […]</p>
+</blockquote>
+<p>Blender Mesh &amp;raquo; Blog Archive &amp;raquo; 7 Tutorials that helped me learn Blender (Sep 19, 2011)</p>
+<blockquote>
+<p>[…] Lighting tips from the Masters […]</p>
+</blockquote>
+<p>Sakari (Oct 08, 2011)</p>
+<blockquote>
+<p>One of the best lighting article what I have read! Thanks mate…</p>
+</blockquote>
+<p>aaron (Oct 17, 2011)</p>
+<blockquote>
+<p>that was cool,  does it cover this in the blender tutorial book “lightening and rendering in blender 2.5” like more techniques how to do it</p>
+</blockquote>
+<p>Ben Simonds (Oct 17, 2011)</p>
+<blockquote>
+<p>I don’t know. The book is nothing to do with me.</p>
+</blockquote>
+<p>40+ Highly Useful but Rarely Collected Blender’s Tutorials | Dzineblog360 (Dec 04, 2011)</p>
+<blockquote>
+<p>[…] Lighting tips from the Masters […]</p>
+</blockquote>
+<p>Przydatne linki &amp;laquo; Polski Kurs Blendera (Feb 27, 2012)</p>
+<blockquote>
+<p>[…] Doskonały artykuł (j. ang.) na temat oświetlenia sceny w Blenderze […]</p>
+</blockquote>
+<p>ndundupan (Jul 17, 2012)</p>
+<blockquote>
+<p>Thank for share the tips, it will be help our community animation project</p>
+</blockquote>
+<p>Ian Clegg (Jul 19, 2013)</p>
+<blockquote>
+<p>Hello Ben, </p>
+<p>First I must point out I’m new to 3D rendering &amp; animation. Just read your tutorial and found it very informative and easy to understand. However, would you use a three point lighting setup for a dynamic outdoor animation (Would you have to constrain lights to model?) or is it only used for static images?</p>
+</blockquote>
+<p>olivier (Nov 20, 2012)</p>
+<blockquote>
+<p>Thanks a lot, very interesting…</p>
+</blockquote>
+<p>Przydatne linki | Polski Kurs Blendera (Mar 12, 2013)</p>
+<blockquote>
+<p>[…] Doskonały artykuł (j. ang.) na temat oświetlenia sceny w Blenderze […]</p>
+</blockquote>
+<p>Ben Simonds (Aug 05, 2013)</p>
+<blockquote>
+<p>You could light an outdoor scene this way, particularly if you were focussing on a single model or character within the scene - you could apply some basic lighting to the main areas of the scene in one render pass and light the main subject with a three point setup in another.</p>
+<p>However for simplicity I’d suggest going for a GI setup with a sun lamp for outdoor lighting, it’s easier to make things look physically correct this way.</p>
+</blockquote>
+<p>FCDIF (Jun 07, 2013)</p>
+<blockquote>
+<p>A nice thing it’s very cool. Thank…</p>
+</blockquote>
+<p>Robert Cunningham (Apr 21, 2013)</p>
+<blockquote>
+<p>The artifacts look like an optical illusion. Your mind makes the banding because of the objects. You project the lines automatically. Look at the picture from a different angle and they disappear.</p>
+</blockquote>
+<p>Художествено осветление | Визио (May 08, 2013)</p>
+<blockquote>
+<p>[…] <a target="_blank" rel="noopener" href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/">http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</a> […]</p>
+</blockquote>
+<p>Ways of Seeing &amp;#8211; The Design | Jaclyn Lake Development and Research (Feb 17, 2014)</p>
+<blockquote>
+<p>[&amp;#8230;] <a target="_blank" rel="noopener" href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/">http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</a> [&amp;#8230;]</p>
+</blockquote>
+<p>How to set up and use Nox renderer for Blender | quaint (Aug 31, 2014)</p>
+<blockquote>
+<p>[&amp;#8230;] as our fill, rim and key light. I definitely recommend you to check out this Wikipedia article and this blog post written by Ben [&amp;#8230;]</p>
+</blockquote>
+<p>Reducing the size of shadows | CL-UAT (Dec 25, 2014)</p>
+<blockquote>
+<p>[&amp;#8230;] The trick really is to add more lights, but make them weak so as not to saturate the scene. If you are serious about lighting I recommend you read this classic post by Ben Simonds about lighting techniques. [&amp;#8230;]</p>
+</blockquote>
+<p>Week 3 – Lighting, Rendering and Compositing | Andrew Moore (Mar 11, 2015)</p>
+<blockquote>
+<p>[&amp;#8230;] <a target="_blank" rel="noopener" href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/">http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</a> [&amp;#8230;]</p>
+</blockquote>
+<p>Douglas E Knapp (Apr 26, 2016)</p>
+<blockquote>
+<p>Which Leighton?</p>
+</blockquote>
+<p>Johnyer (Aug 26, 2016)</p>
+<blockquote>
+<p>Findings Jobs On Craigslist - The Right Way To Search With Success</p>
+<p><a target="_blank" rel="noopener" href="http://go.1o3.me/dcDjC">http://go.1o3.me/dcDjC</a> - wages and benefits</p>
+</blockquote>
+<p>Blender Lighting Tutorial for Beginners (Oct 21, 2015)</p>
+<blockquote>
+<p>[&amp;#8230;] to give it that nice silhouette look. Explaining this in detail would be a tutorial on its own. Click here to learn from the [&amp;#8230;]</p>
+</blockquote>
+<p>Harshavardhan (May 21, 2015)</p>
+<blockquote>
+<p>Very informative! Thanks For Sharing!!</p>
+</blockquote>
+<p>Lighting | jaydenossiterghostart (Mar 13, 2015)</p>
+<blockquote>
+<p>[&amp;#8230;] tips from the Masters. (2010, June 3). Retrieved March 13, 2015, from <a target="_blank" rel="noopener" href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/">http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</a>   Slick, J. (n.d.). Standard 3D Lighting Techniques in Maya and 3DS Max. Retrieved March 13, 2015, [&amp;#8230;]</p>
+</blockquote>
+<p>Blender: С чего начать - Exploring Blender (Oct 22, 2014)</p>
+<blockquote>
+<p>[&amp;#8230;] Lighting tips from the Masters — не новая, но вечноактуальная статья об основных принципах освещения в Blender. Общие закономерности и примеры, но без технических подробностей. [&amp;#8230;]</p>
+</blockquote>
+<p>FLUOTEC (Jul 19, 2015)</p>
+<blockquote>
+<p>Reblogged this on <a target="_blank" href="https://fluotec.wordpress.com/2015/07/19/lighting-tips-from-the-masters/" rel="nofollow noopener">FLUOTEC</a>.</p>
+</blockquote>
+<p>Lighting tips from the Masters | videoworld studios (Jul 26, 2015)</p>
+<blockquote>
+<p>[&amp;#8230;] Sourced through Scoop.it from: bensimonds.com [&amp;#8230;]</p>
+</blockquote>
+<p>Week 3 | wardredplease (Mar 02, 2016)</p>
+<blockquote>
+<p>[&amp;#8230;] Ben simonds, B.S. (2010). BenSimondscom. Retrieved 1 March, 2016, from <a target="_blank" rel="noopener" href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/">http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</a> [&amp;#8230;]</p>
+</blockquote>
+<p>Maria (Oct 10, 2015)</p>
+<blockquote>
+<p>Thank you for sharing..What ! Grea article.. Very informative and useful aswell..<br><a target="_blank" rel="noopener" href="http://www.gameyan.com/character-shading-lighting.html">http://www.gameyan.com/character-shading-lighting.html</a></p>
+</blockquote>
+<p>Trent (Jun 27, 2017)</p>
+<blockquote>
+<p>sdhgvewshtg ker</p>
+</blockquote>
+<p>Rendering and Lighting | 3d art and animation (May 07, 2016)</p>
+<blockquote>
+<p>[&amp;#8230;] LIGHTING TIPS FROM THE MASTERS [&amp;#8230;]</p>
+</blockquote>
+<p>ricardoroehe (Jul 19, 2017)</p>
+<blockquote>
+<p>New link for the same file: <a target="_blank" rel="noopener" href="https://www.blendswap.com/blends/view/3836">https://www.blendswap.com/blends/view/3836</a></p>
+</blockquote>
+<p>Abhimanyu (Jul 10, 2018)</p>
+<blockquote>
+<p>Great post. Holds up even today. Thanks.</p>
+</blockquote>
+<p>RonaZep (Apr 21, 2017)</p>
+<blockquote>
+<p>заработок в интернете через вконтакте <a target="_blank" href="http://khyurlikhu.ru/vacuum-zarabotok-v-internete.html" rel="nofollow noopener">Vacuum заработок в интернете</a> заработок в интернете платные задания</p>
+</blockquote>
+
+  <p><a class="classtest-link" href="/tags/area-lamps/" rel="tag">area lamps</a>, <a class="classtest-link" href="/tags/back-light/" rel="tag">back light</a>, <a class="classtest-link" href="/tags/blender/" rel="tag">blender</a>, <a class="classtest-link" href="/tags/blender-3d/" rel="tag">blender 3d</a>, <a class="classtest-link" href="/tags/cinematography/" rel="tag">cinematography</a>, <a class="classtest-link" href="/tags/fill-light/" rel="tag">fill light</a>, <a class="classtest-link" href="/tags/hollywood-lighting/" rel="tag">hollywood lighting</a>, <a class="classtest-link" href="/tags/key-light/" rel="tag">key light</a>, <a class="classtest-link" href="/tags/lighting/" rel="tag">lighting</a>, <a class="classtest-link" href="/tags/lights/" rel="tag">lights</a>, <a class="classtest-link" href="/tags/portrait/" rel="tag">portrait</a>, <a class="classtest-link" href="/tags/portrait-lighting/" rel="tag">portrait lighting</a>, <a class="classtest-link" href="/tags/rembrandt-lighting/" rel="tag">rembrandt lighting</a>, <a class="classtest-link" href="/tags/rim-light/" rel="tag">rim light</a>, <a class="classtest-link" href="/tags/spot-lamps/" rel="tag">spot lamps</a>, <a class="classtest-link" href="/tags/three-point/" rel="tag">three point</a>, <a class="classtest-link" href="/tags/three-point-lighting/" rel="tag">three point lighting</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Jun 3, 2010</p>
+  
+
+
+          <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        and the <a target="_blank" rel="noopener" href="https://github.com/adisaktijrs/hexo-theme-minima">minima</a> theme.
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://www.linkedin.com/in/bensimonds/" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>

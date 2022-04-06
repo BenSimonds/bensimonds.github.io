@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Halftone Shader</title>
+  
+  <link rel="canonical" href="http://example.com/2013/02/14/halftone-shader/">
+  
+  <meta name="description" content="Just want the blend? Skip to the end. This is something I made for work recently and have since been playing around with. It’s pretty fun, so I though">
+  
+  
+  <meta name="author" content="Ben Simonds">
+  
+  <meta property="og:image" content="http://example.comundefined">
+  
+  <meta property="og:site_name" content="Ben Simonds Personal Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Halftone Shader" />
+  
+  <meta property="og:description" content="Just want the blend? Skip to the end. This is something I made for work recently and have since been playing around with. It’s pretty fun, so I though">
+  
+  <meta property="og:url" content="http://example.com/2013/02/14/halftone-shader/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Halftone Shader">
+  
+  <meta name="twitter:description" content="Just want the blend? Skip to the end. This is something I made for work recently and have since been playing around with. It’s pretty fun, so I though">
+  
+  
+  <meta name="twitter:image" content="http://example.comundefined">
+  
+  <meta name="twitter:url" content="http://example.com/2013/02/14/halftone-shader/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FCE92;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FCE92 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FCE92;
+  }
+  .nanobar .bar {
+    background: #0FCE92;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FCE92;
+    border-color: #0FCE92;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FCE92;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <img class="u-max-full-width" src="/images/warehouse3.png" />
+
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/blender" class="ml">Blender</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>Halftone Shader</h2>
+
+  <p><img src="/images/old/sunsethalftone.jpg" alt="SunsetHalftone &gt;&lt;"></p>
+<p>Just want the blend? Skip to the end. This is something I made for work recently and have since been playing around with. It’s pretty fun, so I thought I’d share it with you. It started life as a node setup for rendering images or video as a halftone pattern, similar to how images in a newspaper look when viewed close up. It was an interesting challenge as it required mimicking the CMYK colours used in traditional printing. To do this the input image has to be converted to CMYK values, and then further manipulated to create the halftone pattern. A halftone pattern basically uses small dots of fixed colours (in this case cyan, magenta, yellow, and black) and varying sizes to create the illusion of smooth colours. The image below shows a halftone pattern close up (from wikipedia). </p>
+<p><img src="/images/old/halftone_pattern.png" alt="Halftone_Pattern &gt;&lt;"></p>
+<p>The eventual node group I created to mimic the effect looks like this (click to view full): </p>
+<p><a href="/images/old/halftonesetup1.jpg"><img src="/images/old/halftonesetup1.jpg?w=950" alt="HalftoneSetup &gt;&lt;"></a></p>
+<p>It a bit of a birds nest, but it works pretty simply overall. The CMYK colour conversion uses the following formula:</p>
+<p><a href="/images/old/eqns.jpg"><img src="/images/old/eqns.jpg?w=470" alt="&gt;&lt; &gt;&lt;"></a></p>
+<p>Here R, G and B are the RGB values, C, M, Y, and K are the CMYK values, and c, m, and y are some intermediate values that make the stages in converting between the two a little clearer. The tangle of nodes labeled 1 and 2 in the image above are just applying these formulae with a bunch of math nodes. (It’s worth noting here that this isn’t the most accurate conversion in the world, there’s no fancy colour management going on here, but it’s sufficient for creating a cool retro looking shader.) The lower half of the node setup then creates a set of four halftone patterns, each at slightly different orientations so that they don’t overlap. This is done simply by tiling the image below a whole bunch (you’ll notice it isn’t a dot but a gradient, I’ll explain why below). The dot starts as a linear spherical gradient that I created in GIMP, but I manipulate it a bit by taking the square root of the value (the <em>Power</em> node in part 3 of the node setup). This is because we want the area of the halftone dots (and thus the amount of “ink”) to be proportional to the value of the input, and because area is proportional to radius squared, the value of the gradient should be proportional to the square root of the distance from the centre. I also invert the result, otherwise we’d get dot’s with no ink on an inky background, rather than the opposite.</p>
+<p><img src="/images/old/halftonedot.jpg" alt="HalfToneDot &gt;&lt;"></p>
+<p>Then to generate dots of the correct size, I use math nodes with the <em>Greater Than</em> operation to compare the value of the dot gradients pattern with the CMYK values. Thus where the input value is greater the node outputs a larger dot, because the input stays greater than the dot value for longer. This yeilds the dot pattern for each colour individually. Then I just multiply each of these together to yield the final CMYK composite.</p>
+<p><a href="/images/old/combine.jpg"><img src="/images/old/combine.jpg?w=950" alt="combine &gt;&lt;"></a></p>
+<p>That basically covers the node setup. The node group itself then just takes a colour input for the texture to be converted, and a vector input for the texture coordinates to apply the dots to, plus some extra values that I can use to tweak the result, for example to slightly adjust the dot size or the amount of saturation in the output. I can then use this node setup in all sorts of different materials. I actually created two different node groups with pretty much the same layout, one for cycles and one for blender internal. The main use of these is obviously in creating fake halftone images as originally intended: just use a shadeless material with the the texture to be converted as the input, and the output is the halftoned version of the image, as seen above. One cool thing you can do with Blender Internal (that I don’t think is possible with cycles) is to use the shading of a material as the input for the halftone node group. This will then convert rendered shadows into an NPR style halftone shader (shown below on the happy buddha from the Stanford 3D scan repository, with a little edge rendering over the top). </p>
+<p><a href="/images/old/cmyk1.jpg"><img src="/images/old/cmyk1.jpg?w=633" alt="CMYK1 &gt;&lt;"></a></p>
+<p>It’s also fun to play around with the input for the halftone texture. Whilst a gradient yeilds the classic halftone dots, you can create some cool effects using different textures. Here’s an my pirate captain character from a few years ago, using a Band Noise Wood texture as the halftone texture (click to view ful size).</p>
+<p><a href="/images/old/cmky2.jpg"><img src="/images/old/cmky2.jpg?w=684" alt="CMKY2 &gt;&lt;"></a></p>
+<p>Here is a photo by photographer <a target="_blank" rel="noopener" href="http://www.flickr.com/photos/vonderauvisuals/7317092448/">vonderauvisuals </a>on flickr (CC-BY) that I experimented with some other textures on. In the first I used a bunch of numbers slightly blurred out. For the second I used the image itself as the halftone pattern, giving a pretty cool recursive result (again, view full size for best experience). You’ll notice on the latter that you actually get some of the detail of the original image showing through. It isn’t apparent with the dots (which aren’t actually perfect dots but are a bit wobbly) but the node setup doesn’t really scale the input pattern up or down, it just does a sort of threshold operation.</p>
+<p><a href="/images/old/cmykhalftones.jpg"><img src="/images/old/cmykhalftones.jpg?w=950" alt="CMYKHalftones &gt;&lt;"></a></p>
+<p>Anyway, you can download the blend and mess around with it for yourself. let me know if you make anything cool! <a target="_blank" rel="noopener" href="http://www.blendswap.com/blends/view/66588">Halftone Shader </a> on Blendswap</p>
+<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>Cosi (Apr 15, 2013)</p>
+<blockquote>
+<p>WoW! Some days ago I looked for a filter like this for After Effects, without finding anything free or working. I’m amazed now to find it now and being so f****ng cool. Thanks a lot, Ben.</p>
+</blockquote>
+<p>Tobiasz Unfa Karoń (Oct 24, 2014)</p>
+<blockquote>
+<p>I’m  blown away by your creativity and ideas!<br>This is a great artistic tool to have around.</p>
+</blockquote>
+<p>Yoana España Urresty (Mar 08, 2019)</p>
+<blockquote>
+<p>Download the shader<br>But it doesn´t work when I add it to another object, do you have any tutorials?</p>
+</blockquote>
+
+  <p><a class="classtest-link" href="/tags/cmyk/" rel="tag">cmyk</a>, <a class="classtest-link" href="/tags/halftone/" rel="tag">halftone</a>, <a class="classtest-link" href="/tags/node-groups/" rel="tag">node groups</a>, <a class="classtest-link" href="/tags/node-setup/" rel="tag">node setup</a>, <a class="classtest-link" href="/tags/print/" rel="tag">print</a>, <a class="classtest-link" href="/tags/resources/" rel="tag">resources</a>, <a class="classtest-link" href="/tags/retro/" rel="tag">retro</a>, <a class="classtest-link" href="/tags/shader/" rel="tag">shader</a>, <a class="classtest-link" href="/tags/technical/" rel="tag">technical</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Feb 14, 2013</p>
+  
+
+
+          <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        and the <a target="_blank" rel="noopener" href="https://github.com/adisaktijrs/hexo-theme-minima">minima</a> theme.
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://www.linkedin.com/in/bensimonds/" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>

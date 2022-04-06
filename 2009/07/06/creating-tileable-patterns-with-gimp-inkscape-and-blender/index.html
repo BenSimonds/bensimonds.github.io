@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Creating tileable patterns with GIMP, Inkscape and Blender</title>
+  
+  <link rel="canonical" href="http://example.com/2009/07/06/creating-tileable-patterns-with-gimp-inkscape-and-blender/">
+  
+  <meta name="description" content="Trying to isolate a tileable pattern from a photo or sketch to use in your 2D and 3D projects can be a pain, and often involves tedious tracing of pat">
+  
+  
+  <meta name="author" content="Ben Simonds">
+  
+  <meta property="og:image" content="http://example.comundefined">
+  
+  <meta property="og:site_name" content="Ben Simonds Personal Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Creating tileable patterns with GIMP, Inkscape and Blender" />
+  
+  <meta property="og:description" content="Trying to isolate a tileable pattern from a photo or sketch to use in your 2D and 3D projects can be a pain, and often involves tedious tracing of pat">
+  
+  <meta property="og:url" content="http://example.com/2009/07/06/creating-tileable-patterns-with-gimp-inkscape-and-blender/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Creating tileable patterns with GIMP, Inkscape and Blender">
+  
+  <meta name="twitter:description" content="Trying to isolate a tileable pattern from a photo or sketch to use in your 2D and 3D projects can be a pain, and often involves tedious tracing of pat">
+  
+  
+  <meta name="twitter:image" content="http://example.comundefined">
+  
+  <meta name="twitter:url" content="http://example.com/2009/07/06/creating-tileable-patterns-with-gimp-inkscape-and-blender/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FCE92;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FCE92 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FCE92;
+  }
+  .nanobar .bar {
+    background: #0FCE92;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FCE92;
+    border-color: #0FCE92;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FCE92;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <img class="u-max-full-width" src="/images/warehouse3.png" />
+
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/blender" class="ml">Blender</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>Creating tileable patterns with GIMP, Inkscape and Blender</h2>
+
+  <p><img src="/images/old/wallpaper23.jpg" alt="Wallpaper2 &gt;&lt;"></p>
+<p>Trying to isolate a tileable pattern from a photo or sketch to use in your 2D and 3D projects can be a pain, and often involves tedious tracing of patterns by hand. I’ve come up with a method for generating tileable raster&#x2F;vector&#x2F;3D curve based patterns from photos that automates some of the tedious parts and gives good results, using the free and open source softwares GIMP, Inkscape, and Blender. For this tutorial I’ll be using one of the free textures from <a target="_blank" rel="noopener" href="http://www.cgtextures.com/">CGTextures.com</a>:</p>
+<p><img src="/images/old/wallpaper0048_s.jpg?w=201" alt="Wallpaper0048_S &gt;&lt;"></p>
+<h3 id="Stage-1-GIMP"><a href="#Stage-1-GIMP" class="headerlink" title="Stage 1: GIMP"></a>Stage 1: GIMP</h3><p>Our aim in the GIMP is to simplify the image as much as possible, so that later the automatic extraction of the pattern can be achieved with minimal input from us. This involves identifying the repeating unit of the texture and isolating it, followed by increasing the contrast between the different elements as much as possible. This is the result of this process, and shows a single repeating unit:</p>
+<p><img src="/images/old/wallpaper0048_threecol.jpg?w=201" alt="Wallpaper0048_ThreeCol &gt;&lt;"></p>
+<p><strong>Step 1.</strong> Opening up the texture in the GIMP, we notice that there isn’t a part of the image that shows an entire repeating unit of the pattern. To solve this we duplicate the layer and place it under the original and move it until we can match the pattern up with the layer above once again. We repeat this until we have a full repeating unit. Don’t worry about being to tidy at this stage however, as we will clean up any rough edges later. In the image below the repeating unit is outlined in blue and the boundary of the original image marked by the red line. Once we have this repeating unit we can erase everything else. We’ll reconstruct the rest of the pattern by copying this single unit later.</p>
+<p><img src="/images/old/patterns2.jpg" alt="Patterns2 &gt;&lt;"></p>
+<p><strong>Step 2.</strong> The next problem we have is that there is an underlying fabric texture that we don’t want interfering with out efforts to extract the main pattern. To get rid of the underlying grain to the texture we use two filters in the GIMP. First, do a simple Gaussian blur (blur &gt; Gaussian blur from the filters menu) of around 6 pixels to even out some of the grain, followed by a Selective Gaussian blur (found in the same menu). Selective Gaussian blur only blurs pixels together if they are already quite similar and so it is ideal for evening out the different coloured areas without blurring the boundaries of the different parts of the pattern. Adjust the threshold and the blur radius until you have a nice balance of even colours within regions and clean edges between different parts of the pattern:</p>
+<p><img src="/images/old/sgblur.jpg" alt="SGBlur &gt;&lt;"></p>
+<p>The selective Gaussian blur dialogue.</p>
+<p><strong>Step 3.</strong> To make the edges even cleaner, we now use the select by colour tool to select the different coloured parts of the pattern. By adjusting the threshold of the select by colour tool, and using the add and subtract modifiers (shift+click and ctrl+click respectively), you should be able to isolate a single coloured part of the pattern. Once we have this selection, we could simply use the fill tool to fill our selection with a flat colour. However, the results of this would still be messy, as we haven’t eliminated 100% of the grain from the image, and the borders of our selection are slightly wobbly. Instead we will use the convert selection to path tool in the paths dialogue to convert this selection to a much cleaner path, which we can then fill with a single colour. This also allows us to re-select the same areas later, or even stroke their outlines if we wish.</p>
+<p><img src="/images/old/stop.jpg" alt="StoP &gt;&lt;"></p>
+<p>Left: Selection by colour. Middle: Paths Dialogue. Right: Selection after converting to path (1) and re-selecting (2). The difference between the two is subtle, but the latter gives cleaner results.</p>
+<p><strong>Step 4.</strong> Once we have our selections, then on a new layer we can fill them with a flat color. For the next step it is ideal to convert our image to grayscale, as we will be using Inkscape to convert the image to curves based on brightness. Thus we simply fill background with black, the outline part with 50% grey, and the dark central parts with pure white. After a small amount of cleaning up with the paint tool (use Ctrl+click to select colours from the image with the eyedropper, and paint over any problem areas), the result is the image shown at the beginning of this stage. We will save this as a .png file for the next stage.</p>
+<h3 id="Stage-2-Inkscape"><a href="#Stage-2-Inkscape" class="headerlink" title="Stage 2: Inkscape"></a>Stage 2: Inkscape</h3><p>Inkscape has an excellent tool that allows you to convert a raster image such as a .jpg or .png into vector format. We can then import the paths from this vector image into Blender. Because we have already done most of the hard work in the GIMP, this stage is easy. We simply import the .png image we made in the GIMP using File &gt; Import and then open up the bitmap to path tool from the paths menu via Paths &gt; Trace Bitmap:</p>
+<p><img src="/images/old/isc1.jpg" alt="Isc1 &gt;&lt;"></p>
+<p>Our imported image with the Trace Bitmap dialogue open.</p>
+<p><strong>Step 1.</strong> Since our image is in black and white, and only has three shades, the “Brightness Steps” option is ideal for converting our image into paths. We choose this options and set number of scans to 2, since the background colour of the document is the third colour. Then click ok.</p>
+<p><img src="/images/old/traced.jpg" alt="Traced &gt;&lt;"></p>
+<p><strong>Step 2.</strong> The result is our image, traced and converted into a group of paths. We can now drag it off to one side and then delete our original imported image, as we don’t need it anymore. Then select our new traced object and click ungroup <img src="/images/old/ungroup.gif" alt="Ungroup &gt;&lt;"> in the toolbar to split the different colours apart. Finally, click and drag to move each layer away from the others and save as a .svg file.</p>
+<p><img src="/images/old/paths.jpg" alt="Paths &gt;&lt;"></p>
+<p>Our paths, split apart and ready for importing into blender.</p>
+<h3 id="Stage-3-Blender"><a href="#Stage-3-Blender" class="headerlink" title="Stage 3: Blender"></a>Stage 3: Blender</h3><p>Now that we have our repeating unit in SVG path format, we can import it into blender to use however we please. From here you can use it to generate bitmap images that tile flawlessly, or as part of your next model or project. I’ll demonstrate how to import into blender and then create a tileable render, but really what you do with the results is up to you.</p>
+<p><strong>Step 1.</strong> Use File &gt; Import &gt; Paths to import the .svg file you created, select “Inkscape (.svg)” from the menu when prompted. This will create a blender Curves object from your paths. Go into edit mode (Tab) and select the rectangular outlines around each part (simply hover over it with your mouse and press “L”) and then delete them (x). Then box select one of the two halves (b) of the object and press P to separate them:</p>
+<p><img src="/images/old/curves.jpg" alt="Curves &gt;&lt;"></p>
+<p>The imported curves, with the rectangular outline removed and separated from one another.</p>
+<p><strong>Step 2.</strong> To align the two objects on top of one another, select each in turn and use “centre new” from the edit buttons (press F9 to show them in the buttons window). Then use clear location (Alt+G) in object mode to place them both at the origin. If the offset between the two isn’t quite right, then just go into top view (Numpad 7) and tweak their locations, and then put their centres back at the origin by pressing Shift+C to reset the 3D cursor, selecting the two objects and doing “Centre Cursor” from the edit butons. Once this is done, try giving bit of extrude to your two curves to make them easier to see. Also, you can set the resolution of the curves (the rather cryptic “DefResolU” slider in the edit butons panel) much lower than the default 24, since our imported curves already have a lot of points, start low and work up until you get nice, smooth looking curves for the most efficient results. I settled at around four.</p>
+<p><img src="/images/old/curves2.jpg" alt="Curves2 &gt;&lt;"></p>
+<p><strong>Step 3.</strong> Now we want to repeat these objects over a regular grid to create our tileable pattern. To do this we’ll use dupliverts. Since our pattern repeats in a diamond arrangement, create a new plane in top view and in edit mode rotate it (r) 45 degrees. Subdivide the plane once (w &gt; subdivide) and then return to object mode (Tab). Now select your curve objects and parent them to your newly created grid (select the curves, then the grid, and do Ctrl+p). Turn on the Dupliverts option for your grid object under Object Buttons (F7) and your pattern will now be repeated!</p>
+<p><img src="/images/old/repeated.jpg" alt="Our imported curves repeated over the grid. &gt;&lt;"></p>
+<p>Our imported curves repeated over the grid.</p>
+<p><strong>Step 4.</strong> Select the grid and go back into edit mode and scale the grid in the x and y directions separately (s &gt; x or s &gt; y) to get the spacing between the repeats right. You can subdivide the grid further and scale it up to get more repeats if you want.</p>
+<p><img src="/images/old/repeated2.jpg" alt="Repeated2 &gt;&lt;"></p>
+<p><strong>Step 5.</strong> Finally to render out a single repeatable tile you need to set up the camera just right. Create a new camera at the origin (space &gt; add &gt; camera in object mode) and move it up a few units. Then check “Orthographic” in the objects edit buttons. You now need to determine the correct scale so that the rendered image covers exactly one tile. To do this, select your grid and go into edit mode, and select the top and bottom vertices of a single square of the grid, press “f” to create an edge between them. Now check Edge Length in the Edit Buttons panel and the length of this edge will be shown on screen when it is selected. Select the camera and set it’s lens scale to this value under object buttons. Now the maximum dimension of the cameras view is this many blender units.</p>
+<p><strong>Step 6.</strong> In the render buttons panel (F10) set the y resolution to a convenient multiple of the value you measured in step 5. Then repeat Step 5 to get the width of one diamond in the grid and use this (multiplied by the same amount) as the x resolution of the render. If you now look through the camera you will see that a single repeated unit is now shown in the camera’s view. Set up your materials and lighting as you wish and render - you will get a single tile of your texture! It should tile seamlessly too without any further modification!</p>
+<p><img src="/images/old/wallpaper4.jpg" alt="A single tile of our repeating pattern. &gt;&lt;"></p>
+<p>A single tile of our repeating pattern. Rendered with simple flat materials and lit with ambient occlusion.</p>
+<p><img src="/images/old/wallpaper3.jpg" alt="The same image, opend in GIMP and repeated with the &quot;Tile&quot; filter. &gt;&lt;"></p>
+<p>The same image, opened in GIMP and repeated with the “Tile” filter.</p>
+<p><img src="/images/old/wallpaper5.jpg" alt="The same scene using simple black and white materials set to &quot;shadeless&quot; in the materials settings panel. This could be tiled and used as a bump map for example. &gt;&lt;"></p>
+<p>The same scene using simple black and white materials set to “shadeless” in the materials settings panel. This could be tiled and used as a bump map for example.</p>
+<p>That’s it! There are plenty of other things you can use this tutorial for, so feel free to experiment, and please comment with any questions, comments, or suggestions you have!</p>
+<p>Update: Watch this <a target="_blank" rel="noopener" href="http://www.vimeo.com/5536880">timelapse modelling video</a>, which shows how I use a pattern created with this method, converted to a mesh, to repeat a pattern over a curved surface.</p>
+<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>comeinandburn (Jul 14, 2009)</p>
+<blockquote>
+<p>This is an outstanding tutorial!  This should be submitted to Blender Art Magazine.  </p>
+<p>thanks for sharing!</p>
+</blockquote>
+<p>LucidNovelty (Sep 27, 2009)</p>
+<blockquote>
+<p>Came across this while looking for something completely different. Very nice workflow, Lost the entire evening playing with it.</p>
+<p>Thanks</p>
+</blockquote>
+<p>anton (Dec 04, 2009)</p>
+<blockquote>
+<p>Hmm.. This is probably the only way to do it if you have to convert the 2d shapes in to 3d splines.. But there is an alternative which seems more reasonable to me:<br>The only thing you need is to find ornament font and then you can start type in 3ds max with the text tool, and if needed to reduce the vertex numbers .. which can be done with a free plugin called Optimize spline.</p>
+</blockquote>
+<p>craigsnedeker (Jul 13, 2009)</p>
+<blockquote>
+<p>This looks great! I gotta try it sometime</p>
+</blockquote>
+<p>loramel (Jul 12, 2009)</p>
+<blockquote>
+<p>Very interesting and unique approach. I will definitely give it a try. </p>
+<p>Thanks for sharing.</p>
+</blockquote>
+<p>Blenderman (Jan 14, 2010)</p>
+<blockquote>
+<p>hm…interesting idea, i think i might give it a try</p>
+</blockquote>
+<p>unfa (Mar 25, 2010)</p>
+<blockquote>
+<p>Very good tutorial! Interesting, clear and with lots of valuable informaton. Thanks for sharing your knowledge, Ben :)</p>
+</blockquote>
+<p>mCasual&#x2F;Jacques (Jul 09, 2010)</p>
+<blockquote>
+<p>Hello, i used the pattern as wallpaper in a short animation ( which is exerpted from a longer tutorial about sketchup )</p>
+<p>over here: <a target="_blank" rel="noopener" href="http://www.youtube.com/watch?v=dLl-mGlsKEY">http://www.youtube.com/watch?v=dLl-mGlsKEY</a></p>
+<p>the wallpaper appears around 0:30 </p>
+<p>thanks !</p>
+</blockquote>
+<p>mCasual&#x2F;Jacques (Jul 09, 2010)</p>
+<blockquote>
+<p>oops i wanted to make a comment to Ben Simonds but somehow it got grafted to LucidNovelty’s post</p>
+</blockquote>
+<p>Ivy pattern &amp;laquo; Serenblip&amp;#039;s Blog (Jun 28, 2011)</p>
+<blockquote>
+<p>[…] This Japanese ivy pattern is one of my favourites. It doesn&amp;#8217;t repeat that often (if it does it fools me anyway). My plan was simply to take a photo of a pattern and turn it into a usable and resuable vector. My first few steps are taken from this tutorial on bensimonds.com […]</p>
+</blockquote>
+<p>Creating tileable patterns with GIMP, Inkscape and Blender &amp;laquo; THINKING BLENDER 3D (Aug 28, 2011)</p>
+<blockquote>
+<p>[…] a comment &amp;raquo;   Creating tileable patterns with GIMP, Inkscape and Blender « BenSimonds.com. Share this:TwitterFacebookStumbleUponDiggPrintEmailLike this:LikeBe the first to like this […]</p>
+</blockquote>
+<p>M (May 24, 2012)</p>
+<blockquote>
+<p>Wow, great! It’s just what I’ve needed. Thanks for tutorial Ben, it’s very helpful and clear. Thanks it I’ve become interested in Inkscape.</p>
+</blockquote>
+<p>Ben Simonds (Mar 11, 2013)</p>
+<blockquote>
+<p>Sorry, I made this a pretty long time ago and I don’t think I have the files anymore. Even if I did, they’d be old 2.4x files.</p>
+<p>It’s pretty simple to set up though, just subdivide a  plane and turn on dupliverts. The only tricky part is doing the maths to get the camera set up just right so the image tiles.</p>
+</blockquote>
+<p>ToddG (Mar 10, 2013)</p>
+<blockquote>
+<p>Ben - can you make the files available? I would love to see the actual blender file. (I’m very new to blender and trying to do exactly this.)</p>
+</blockquote>
+<p>ToddG (Mar 11, 2013)</p>
+<blockquote>
+<p>Thanks Ben -<br>I have started the tute and am now hung up on Step 2 after getting both sets of paths centered on the origin.<br>I can’t find the buttons to select vertices, paths or faces, or the Defresolu and definitely have not figured out how to actually extrude anything yet.  Advice?  :) Thanks again.</p>
+</blockquote>
+<p>How To Create A Tileable Texture In Gimp | How Find Money (Jul 22, 2016)</p>
+<blockquote>
+<p>[&amp;#8230;] Creating tileable patterns with GIMP, Inkscape and … – Trying to isolate a tileable pattern from a photo or sketch to use in your 2D and 3D projects can be a pain, and often involves tedious tracing of patterns by hand. [&amp;#8230;]</p>
+</blockquote>
+<p>Rohan Bang (Dec 12, 2017)</p>
+<blockquote>
+<p>Awesome work☺</p>
+</blockquote>
+
+  <p><a class="classtest-link" href="/tags/blender/" rel="tag">blender</a>, <a class="classtest-link" href="/tags/gimp/" rel="tag">gimp</a>, <a class="classtest-link" href="/tags/inkscape/" rel="tag">inkscape</a>, <a class="classtest-link" href="/tags/pattern/" rel="tag">pattern</a>, <a class="classtest-link" href="/tags/tileable/" rel="tag">tileable</a>, <a class="classtest-link" href="/tags/tutorial/" rel="tag">tutorial</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Jul 6, 2009</p>
+  
+
+
+          <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        and the <a target="_blank" rel="noopener" href="https://github.com/adisaktijrs/hexo-theme-minima">minima</a> theme.
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://www.linkedin.com/in/bensimonds/" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/bensimonds" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
