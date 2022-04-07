@@ -105,7 +105,7 @@ Alex (Aug 19, 2015)
 > Is it possible to somehow "convert" it to bitmap to speed it up with static shots? It's now really slow compared to internal blender sky.
 
 Ben Simonds (Aug 19, 2015)
-> You could put an equine angular camera in the scene and render out a HDR. Then use that as your environment map.
+> You could put an equirectangular camera in the scene and render out a HDR. Then use that as your environment map.
 
 Ben Simonds (Jul 09, 2015)
 > Like I say, the scene has *zero* geometry. It's all a world shader including the planet.
