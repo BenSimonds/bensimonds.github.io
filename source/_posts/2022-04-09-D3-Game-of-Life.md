@@ -10,7 +10,7 @@ Resurrecting the blog with the occasional post about what I'm messing around wit
 
 <div style="text-align:center; padding: 50px 0px 50px 0px">
     <div id='lifeDiv' style="margin: auto;">
-        <svg style="" id='lifeSvg'></svg>
+        <svg style="background-color: #222226;" id='lifeSvg'></svg>
     </div>
     <button class="button-primary" style="margin: auto;" id="randomise" type="button">Randomise!</button>
 </div>
