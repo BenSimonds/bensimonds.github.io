@@ -9,7 +9,7 @@ function generateRandom() {
     for (let j = 0; j < gridSize; j++) {
         data[j] = [];
         for (let i = 0; i < gridSize; i++) {
-            data[j][i] = Math.round(Math.random());
+            data[j][i] = Math.round(Math.random() * Math.random());
         }
     }
     return data;
