@@ -201,9 +201,17 @@
 </div>
 
         <div class="trans">
-            <h2>A few rigging related python snippets.</h2>
+          
 
-  <p>I’ve been working on some character rigs recently, and trying to learn and use more python to speed up the process and improve my rigs. One of my favourite uses that I’ve come across so far is using a “for” loop to do batch operations on bones, which is super handy when building complex rigs, as you can do batch renaming and changing of options on a whole bunch of bones at once rather than having to do things one-bone-at-a-time by hand. I thought I’d share some of my favourite python snippets that have come in handy so far. When in edit mode, select the bones you want to change and put the following in a new text block, comment out any operations you dont want to perform, and hit alt-P to run the script: </p>
+
+
+  <h2>A few rigging related python snippets.</h2>
+ 
+
+
+
+<hr/>
+<p>I’ve been working on some character rigs recently, and trying to learn and use more python to speed up the process and improve my rigs. One of my favourite uses that I’ve come across so far is using a “for” loop to do batch operations on bones, which is super handy when building complex rigs, as you can do batch renaming and changing of options on a whole bunch of bones at once rather than having to do things one-bone-at-a-time by hand. I thought I’d share some of my favourite python snippets that have come in handy so far. When in edit mode, select the bones you want to change and put the following in a new text block, comment out any operations you dont want to perform, and hit alt-P to run the script: </p>
 <pre><code>import bpy
 bones_list = bpy.data.armatures[&#39;RIG NAME&#39;].bones
 bones_selected = bpy.context.selected_bones
@@ -239,8 +247,7 @@ for item in bones_selected_pose:
 <p>Great tips!  Its nice to make simple tools in rigging too.   Full-featured, end-to-end rigging has its drawbacks.</p>
 </blockquote>
 
-  <p><a class="classtest-link" href="/tags/technical/" rel="tag">technical</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Jul 18, 2011</p>
-  
+<p><a class="classtest-link" href="/tags/technical/" rel="tag">technical</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Jul 18, 2011</p>
 
 
           <div class="row mt-2">

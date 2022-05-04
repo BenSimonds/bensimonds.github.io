@@ -201,9 +201,17 @@
 </div>
 
         <div class="trans">
-            <h2>3D Anaglyph Experimentation</h2>
+          
 
-  <p><img src="/images/old/clint3d.jpg" alt="&gt;&lt; &gt;&lt;"></p>
+
+
+  <h2>3D Anaglyph Experimentation</h2>
+ 
+
+
+
+<hr/>
+<p><img src="/images/old/clint3d.jpg" alt="&gt;&lt; &gt;&lt;"></p>
 <p>I got a pair of 3D anaglyph glasses off amazon the other day, and had a go at creating anaglyph 3D images. The method is actually extremely simple - all you need is a right eye and a left eye image (place two cameras slightly apart but pointed at the same point in the scene, and render both), which are combined to make a single anaglyph. This is easily done using the combine&#x2F;separate RGBA nodes in blender’s node editor. You just take the red channel from the left image and the blue and green channels from the right image, and combine them to get the result. Like so:</p>
 <p><img src="/images/old/3d.png" alt="&gt;&lt; &gt;&lt;"></p>
 <p>This gives pretty good results. One thing to note though is that the red channel of an image contains less texture information, and so desaturating the left eye image slightly before separating the channels can give better results. You can see in the node set-up above I have used a HSV node to do this. The method also works for animation - just import a sequence or movie file for each eye (yup, you’ll have to render twice) instead of a still image. </p>
@@ -246,8 +254,7 @@
 <p>Nice work. You have some great results there.</p>
 </blockquote>
 
-  <p><a class="classtest-link" href="/tags/3d/" rel="tag">3d</a>, <a class="classtest-link" href="/tags/anaglyph/" rel="tag">anaglyph</a>, <a class="classtest-link" href="/tags/blender/" rel="tag">blender</a>, <a class="classtest-link" href="/tags/compositing/" rel="tag">compositing</a>, <a class="classtest-link" href="/tags/quick-projects/" rel="tag">quick projects</a>, <a class="classtest-link" href="/tags/red-blue-anaglyph/" rel="tag">red blue anaglyph</a>, <a class="classtest-link" href="/tags/red-cyan/" rel="tag">red cyan</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Jun 21, 2010</p>
-  
+<p><a class="classtest-link" href="/tags/3d/" rel="tag">3d</a>, <a class="classtest-link" href="/tags/anaglyph/" rel="tag">anaglyph</a>, <a class="classtest-link" href="/tags/blender/" rel="tag">blender</a>, <a class="classtest-link" href="/tags/compositing/" rel="tag">compositing</a>, <a class="classtest-link" href="/tags/quick-projects/" rel="tag">quick projects</a>, <a class="classtest-link" href="/tags/red-blue-anaglyph/" rel="tag">red blue anaglyph</a>, <a class="classtest-link" href="/tags/red-cyan/" rel="tag">red cyan</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Jun 21, 2010</p>
 
 
           <div class="row mt-2">
