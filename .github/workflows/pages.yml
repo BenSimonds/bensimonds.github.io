@@ -23,6 +23,7 @@ jobs:
         run: yarn run build
       - name: Copy notebook files.
         run: |
+          mkdir public/notebooks
           cp -r node_modules/@bensimonds public/notebooks/@bensimonds
       - name: Show build js
         run: |
