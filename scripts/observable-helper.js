@@ -12,7 +12,7 @@ hexo.extend.helper.register('observable_notebook', function(path){
     </script>
     <div>
     <p>
-        This post was written first as an observable notebook. You can find the [original notebook](https://observablehq.com/${path}) on observablehq.com.
+        This post was written first as an observable notebook. You can find the <a href="https://observablehq.com/${path}">original notebook</a> on observablehq.com.
     </p>
     <hr/>
     </div>
