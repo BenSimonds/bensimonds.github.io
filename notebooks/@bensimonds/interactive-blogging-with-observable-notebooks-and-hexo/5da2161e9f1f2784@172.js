@@ -1,4 +1,4 @@
-// https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@171
+// https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@172
 function _1(md){return(
 md`# Interactive Blogging with Observable Notebooks and Hexo
 ## Inspired by Robin Linacre's [Interactive blogging with Observable Notebooks and Gatsby.js](https://www.robinlinacre.com/interactive_blogging/)`
@@ -46,7 +46,7 @@ function _3(d3,width,data)
     .attr("y", 20)
     .attr("font-family", "sans-serif")
     .attr("font-size", "16px")
-    .text("Propoprtion of this blog post by subject." + width);
+    .text("Propoprtion of this blog post by subject.");
   return container.node();
 }
 
