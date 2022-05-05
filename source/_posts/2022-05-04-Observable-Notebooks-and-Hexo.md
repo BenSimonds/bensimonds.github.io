@@ -6,4 +6,3 @@ tags:
 notebook: "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo"
 ---
 
-Any content will appear after the notebook in the page.
