@@ -207,10 +207,10 @@
   
     <script type="module">
         // Load the Observable runtime and inspector.
-        import {Runtime, Inspector} from "/js/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo/runtime.js";
+        import {Runtime, Inspector} from "/notebooks/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo/runtime.js";
 
         // Your notebook, compiled as an ES module.
-        import notebook from "/js/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo/index.js";
+        import notebook from "/notebooks/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo/index.js";
         const target_div = document.getElementById("observable-div")
         const runtime = new Runtime();
         const main = runtime.module(notebook, Inspector.into(target_div));
