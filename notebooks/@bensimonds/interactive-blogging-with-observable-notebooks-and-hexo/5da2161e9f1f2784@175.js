@@ -1,4 +1,4 @@
-// https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@174
+// https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175
 function _1(md){return(
 md`# Interactive Blogging with Observable Notebooks and Hexo
 ## Inspired by Robin Linacre's [Interactive blogging with Observable Notebooks and Gatsby.js](https://www.robinlinacre.com/interactive_blogging/)`
@@ -10,7 +10,7 @@ md`Lets start with a brief summary of what this post is about:`
 
 function _3(width,d3,data)
 {
-  const svgwidth = Math.min(width, 800)
+  const svgwidth = Math.min(width, 760)
   const height = 200;
   const margin = {left: 130, right: 40, top: 60, bottom: 10}
   const container = d3.create("div").attr("width", "100%")
