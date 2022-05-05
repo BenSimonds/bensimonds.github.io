@@ -21,6 +21,9 @@ jobs:
         run: ls node_modules/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo
       - name: Build
         run: yarn run build
+      - name: Copy notebook files.
+        run: |
+          cp -r node_modules/@bensimonds public/@bensimonds
       - name: Show build js
         run: |
           ls source/notebooks
