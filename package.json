@@ -12,7 +12,7 @@
     "version": "6.1.0"
   },
   "dependencies": {
-    "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo": "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@164.tgz?v=3",
+    "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo": "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@171.tgz?v=3",
     "@observablehq/runtime": "4",
     "hexo": "^6.0.0",
     "hexo-generator-archive": "^1.0.0",
