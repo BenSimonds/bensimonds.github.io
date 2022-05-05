@@ -1,4 +1,4 @@
-// https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@172
+// https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@174
 function _1(md){return(
 md`# Interactive Blogging with Observable Notebooks and Hexo
 ## Inspired by Robin Linacre's [Interactive blogging with Observable Notebooks and Gatsby.js](https://www.robinlinacre.com/interactive_blogging/)`
@@ -8,18 +8,19 @@ function _2(md){return(
 md`Lets start with a brief summary of what this post is about:`
 )}
 
-function _3(d3,width,data)
+function _3(width,d3,data)
 {
+  const svgwidth = Math.min(width, 800)
   const height = 200;
   const margin = {left: 130, right: 40, top: 60, bottom: 10}
   const container = d3.create("div").attr("width", "100%")
   const svg = container.append("svg")
       .attr("height", height)
-      .attr("viewBox", [0, 0, width, height]);
+      .attr("viewBox", [0, 0, svgwidth, height]);
   
   const x = d3.scaleLinear()
     .domain([0, 1.0])
-    .range([margin.left, width - margin.right]);
+    .range([margin.left, svgwidth - margin.right]);
   const y = d3.scaleBand()
     .domain(data.map(d => d.label))
     .range([margin.top, height - margin.bottom])
@@ -123,7 +124,7 @@ export default function define(runtime, observer) {
   const main = runtime.module();
   main.variable(observer()).define(["md"], _1);
   main.variable(observer()).define(["md"], _2);
-  main.variable(observer()).define(["d3","width","data"], _3);
+  main.variable(observer()).define(["width","d3","data"], _3);
   main.variable(observer()).define(["md"], _4);
   main.variable(observer()).define(["md"], _5);
   main.variable(observer()).define(["md"], _6);
