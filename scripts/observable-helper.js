@@ -10,6 +10,6 @@ hexo.extend.helper.register('observable_notebook', function(path){
         const runtime = new Runtime();
         const main = runtime.module(notebook, Inspector.into(target_div));
     </script>
-    <div id="observable-div"></div>
+    <div id="observable-div" style="max-width: 800px;"></div>
     `
   });
