@@ -17,10 +17,12 @@ jobs:
           cache: 'yarn'
       - name: Install Dependencies
         run: yarn install
-      - name: show folder
+      - name: Show node folder.
         run: ls node_modules/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo
       - name: Build
         run: yarn run build
+      - name: Show build js
+        run: ls public/js/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
