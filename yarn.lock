@@ -2,9 +2,10 @@
 # yarn lockfile v1
 
 
-"@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@76.tgz?v=3":
-  version "76.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@76.tgz?v=3#1fe324a2fa2a6df93d553cb167e645c68f21e7de"
+"@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175.tgz?v=3":
+  version "175.0.0"
+  uid "2a2e97fe2fc4fe8ed6114752c3deb6607e7ac1ed"
+  resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175.tgz?v=3#2a2e97fe2fc4fe8ed6114752c3deb6607e7ac1ed"
 
 "@observablehq/inspector@^3.2.2":
   version "3.2.4"
@@ -14,9 +15,9 @@
     isoformat "^0.2.0"
 
 "@observablehq/runtime@4":
-  version "4.19.0"
-  resolved "https://registry.yarnpkg.com/@observablehq/runtime/-/runtime-4.19.0.tgz#5752a80c28f7f3fd7cf40cef849a47829e2945dd"
-  integrity sha512-/96YEokAzMBS/dHADS+LfP+c4+vsjcfxS+M0hWdOyZ/eurF8DNmGjVESkDv+rL0B5peuvfBxCFG8KOIXgQ2X5w==
+  version "4.22.6"
+  resolved "https://registry.yarnpkg.com/@observablehq/runtime/-/runtime-4.22.6.tgz#587327a5a13ba8c93acc02264473d3b33b7f5767"
+  integrity sha512-eGcyWAnmcd6T9wTzTDt/siVfVCzGVIAHX1x8Sq46GkMY7SQvX/DAXv1zL6uY3srUYEzhHHeA6DsylwzTrTG0BA==
   dependencies:
     "@observablehq/inspector" "^3.2.2"
     "@observablehq/stdlib" "^3.4.1"
