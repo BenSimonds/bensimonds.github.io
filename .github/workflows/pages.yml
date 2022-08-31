@@ -25,14 +25,6 @@ jobs:
         run: |
           mkdir -p public/notebooks
           cp -r node_modules/@bensimonds public/notebooks/@bensimonds
-      - name: Show build js
-        run: |
-          ls source/notebooks
-          ls source/notebooks/@bensimonds
-          ls source/notebooks/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo
-          ls public/notebooks
-          ls public/notebooks/@bensimonds
-          ls public/notebooks/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
