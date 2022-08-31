@@ -2,9 +2,13 @@
 # yarn lockfile v1
 
 
-"@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@76.tgz?v=3":
-  version "76.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@76.tgz?v=3#1fe324a2fa2a6df93d553cb167e645c68f21e7de"
+"@bensimonds/calendar-charts@https://api.observablehq.com/@bensimonds/calendar-charts@599.tgz?v=3":
+  version "599.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/calendar-charts@599.tgz?v=3#4959a1e87aed7f688eb0961d73a885338ffc8b81"
+
+"@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175.tgz?v=3":
+  version "175.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175.tgz?v=3#e59052af34759fec831661b84657a43ffd46be06"
 
 "@observablehq/inspector@^3.2.2":
   version "3.2.4"

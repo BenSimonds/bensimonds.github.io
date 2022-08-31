@@ -3,7 +3,6 @@ hexo.extend.helper.register('observable_notebook', function(path){
     <script type="module">
         // Load the Observable runtime and inspector.
         import {Runtime, Inspector} from "/notebooks/${path}/runtime.js";
-
         // Your notebook, compiled as an ES module.
         import notebook from "/notebooks/${path}/index.js";
         const target_div = document.getElementById("observable-div")
@@ -13,7 +12,7 @@ hexo.extend.helper.register('observable_notebook', function(path){
     <div>
     <p>
         This post was first published as an observable notebook. 
-        You can find the <a href="https://observablehq.com/${path}">original notebook</a> on <a href="https://observablehq.com">observablehq.com</a>.
+        You can find the <a href="https://observablehq.com/${path}">original, editable, forkable notebook</a> on <a href="https://observablehq.com">observablehq.com</a>.
     </p>
     <hr/>
     </div>

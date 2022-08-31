@@ -35,6 +35,12 @@
 
 }
 
+/* Observable cells*/
+
+div.observablehq {
+  margin: 17px 0px;
+}
+
 html {
   overflow: auto;
 }
