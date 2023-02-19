@@ -220,7 +220,6 @@
         );
 
         const main = runtime.module(notebook, name => {
-            console.log(`Cell ${counter} ${name}`);
             const cellOuter = document.createElement('div');
             cellOuter.classList.add("cellOuter");
             cellOuter.innerHTML = `<p class="cellNumber">[${ name ? name : counter}]</p>`;
@@ -233,7 +232,6 @@
                 appendixDiv.appendChild(cellOuter)
             }
             const inspector =  new Inspector(cellInner);
-            console.log(inspector);
             counter += 1;
             return inspector;
         });
