@@ -34,7 +34,7 @@ twitter: https://twitter.com/bensimonds
 # Misc
 nanobar: /js/nanobar.min.js
 switch_light: ☀️
-switch_dark: 🌒
+switch_dark: 🌙
 
 # favicon
 favicon: /images/favicon.png
