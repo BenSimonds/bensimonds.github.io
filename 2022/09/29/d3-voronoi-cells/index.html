@@ -11,34 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - Ben Simonds</title>
+  <title>Voronoi Cells</title>
   
-  <link rel="canonical" href="http://bensimonds.com/archives/page/6/">
+  <link rel="canonical" href="http://bensimonds.com/2022/09/29/d3-voronoi-cells/">
   
   <meta name="description" content="My personal site.">
   
   
   <meta name="author" content="Ben Simonds">
   
-  <meta property="og:image" content="http://bensimonds.com/images/thumbnail.jpg">
+  <meta property="og:image" content="http://bensimonds.comundefined">
   
   <meta property="og:site_name" content="Ben Simonds Personal Blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - Ben Simonds" />
+  <meta property="og:title" content="Voronoi Cells" />
   
   <meta property="og:description" content="My personal site.">
   
-  <meta property="og:url" content="http://bensimonds.com/archives/page/6/" />
+  <meta property="og:url" content="http://bensimonds.com/2022/09/29/d3-voronoi-cells/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - Ben Simonds">
+  <meta name="twitter:title" content="Voronoi Cells">
   
   <meta name="twitter:description" content="My personal site.">
   
   
-  <meta name="twitter:image" content="http://bensimonds.com/images/thumbnail.jpg">
+  <meta name="twitter:image" content="http://bensimonds.comundefined">
   
-  <meta name="twitter:url" content="http://bensimonds.com/archives/page/6/" />
+  <meta name="twitter:url" content="http://bensimonds.com/2022/09/29/d3-voronoi-cells/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -202,195 +202,101 @@
 
         <div class="trans">
           
-<h2>All Posts</h2>
 
 
-    <article>
-      <div class="row">
+  
+    <script type="module">
+        import {Runtime, Inspector, Library} from "/notebooks/@bensimonds/voronoi-cells/runtime.js";
+        import notebook from "/notebooks/@bensimonds/voronoi-cells/index.js";
 
-        <div class="three columns left lit">
-          <p class="bottom">Jul 2, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/07/02/anatomy-practice-2/" class="">
-            
-              Anatomy Practice
-            
-          </a>
-        </div>
-      </div>
-    </article>
+        const targetDiv = document.getElementById("observable-div")
+        const appendixDiv = document.getElementById("observable-div-appendix")
+        const hideAfter = 5;
+        var counter = 0;
 
-    <article>
-      <div class="row">
+        const runtime = new Runtime(
+            // Override Observable's width property
+            Object.assign(new Library, {width: 760})
+        );
+        console.log(notebook)
+        const main = runtime.module(notebook, name => {
+            const cellOuter = document.createElement('div');
+            cellOuter.classList.add("cellOuter");
+            cellOuter.innerHTML = `<p class="cellNumber">[${ name ? name : counter}]</p>`;
+            const cellInner = document.createElement('div');
+            cellInner.classList.add("cellInner");
+            cellOuter.appendChild(cellInner);
+            if (counter < hideAfter || hideAfter === -1 ) {
+                targetDiv.appendChild(cellOuter)
+            } else {
+                appendixDiv.appendChild(cellOuter)
+            }
+            const inspector =  new Inspector(cellInner);
+            console.log(inspector);
+            counter += 1;
+            return inspector;
+        });
 
-        <div class="three columns left lit">
-          <p class="bottom">Jun 1, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/06/01/depth-of-field-in-blender/" class="">
-            
-              Depth of Field in Blender
-            
-          </a>
-        </div>
-      </div>
-    </article>
+        
+    </script>
+    <style>
+        .collapseAppendix {
+            display: none;
+        }
+        .cellOuter {
+            position: relative;
+            padding: -1px;
+            border-right: 1px solid;
+            border-radius: 4px;
+            border-color: rgba(200, 200, 200, 0);
+            transition: border-color 1.2s;
+            text-align: right;
+        }
+        .cellOuter:hover {
+            border-color: rgba(200, 200, 200, 1.0);
+        }
+        .cellNumber {
+            position: absolute;
+            top: 0px;
+            left: calc(100% + 5px);
+            opacity: 0.0;
+            font-size: 0.75em;
+            color: rgba(200, 200, 200, 1.0);
+            transition: opacity 1.2s;
+        }
+        .cellOuter:hover .cellNumber {
+            opacity: 1.0;
+        }
+        .cellInner {
+            text-align: left;
+        }
+    </style>
+    <div>
+    <p>
+        This post was first published as an observable notebook. 
+        You can find the <a target="_blank" rel="noopener" href="https://observablehq.com/@bensimonds/voronoi-cells">original, editable, forkable notebook</a> on <a target="_blank" rel="noopener" href="https://observablehq.com">observablehq.com</a>.
+    </p>
+    </div>
+    <div id="observable-div" style="max-width: 760px;"></div>
+       
+        <hr/>
+        <button id="toggleShowAppendix">Show Appendix</button>
+        <div class="collapseAppendix" id="observable-div-appendix" style="max-width: 760px;"></div>
+        <script>
+            const button = document.getElementById("toggleShowAppendix")
+            function handleToggleCollapse() {
+                document.getElementById("observable-div-appendix").classList.toggle("collapseAppendix");
+                button.textContent = button.textContent === 'Show Appendix' ? 'Hide Appendix' : 'Show Appendix';
+            }
+            button.addEventListener("click", handleToggleCollapse);
+        </script>
+        
 
-    <article>
-      <div class="row">
 
-        <div class="three columns left lit">
-          <p class="bottom">May 26, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/05/26/aquatic-dude/" class="">
-            
-              Aquatic Dude
-            
-          </a>
-        </div>
-      </div>
-    </article>
 
-    <article>
-      <div class="row">
+<hr/>
 
-        <div class="three columns left lit">
-          <p class="bottom">May 25, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/05/25/blender-cookie-tutorial-texturing-and-rendering-a-head-in-blender/" class="">
-            
-              Blender Cookie Tutorial: Texturing and Rendering a Head in Blender
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">May 12, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/05/12/mini-tutorial-creating-seamless-textures-with-gimps-resynthesize-plugin/" class="">
-            
-              Mini-Tutorial: Creating Seamless Textures with GIMPs Resynthesize Plugin
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Apr 30, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/04/30/shapekeyface-rigging-tests-michelle/" class="">
-            
-              Shapekey/Face Rigging Tests - "Michelle" 
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Apr 3, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/04/03/infinite-head-scan-skin-testing/" class="">
-            
-              Infinite Head Scan Skin Testing
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Mar 28, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/03/28/free-rig-jake/" class="">
-            
-              Rig: Jake
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Mar 20, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/03/20/i-seem-to-be-having-tremendous-difficulty-with-my-lifestyle/" class="">
-            
-              "I seem to be having tremendous difficulty with my lifestyle." 
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Feb 27, 2011</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2011/02/27/mountain-of-minutes/" class="">
-            
-              Mountain of Minutes
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-
-    <a class="mr" href="/archives/page/5/">
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-      </svg>
-      <span>Recent</span>
-    </a>
-
-    
-    
-
-    <a class="" href="/archives/page/7/">
-      <span>Older</span>
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z" />
-      </svg>
-    </a>
-
-    
-  </ul>
-</div>
+<p><a class="classtest-link" href="/tags/observable/" rel="tag">observable</a>, <a class="classtest-link" href="/tags/voronoi/" rel="tag">voronoi</a> — Sep 29, 2022</p>
 
 
           <div class="row mt-2">
