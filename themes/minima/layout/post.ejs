@@ -1,13 +1,10 @@
 
 
 <% if (page.notebook) { %>
-  <%- observable_notebook(page.notebook) %>
+  <%- observable_notebook(page.notebook, page.hideAfter || -1) %>
 
 <% } else { %>
-
   <h2><%- page.title %></h2>
- 
-
 <% } %>
 
 <hr/>

@@ -9,10 +9,10 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "6.1.0"
+    "version": "6.3.0"
   },
   "dependencies": {
-    "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo": "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175.tgz?v=3",
+    "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo": "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3",
     "@bensimonds/calendar-charts": "https://api.observablehq.com/@bensimonds/calendar-charts@599.tgz?v=3",
     "@observablehq/runtime": "4",
     "hexo": "^6.2.0",
