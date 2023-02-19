@@ -6,5 +6,5 @@ tags:
     - observable
     - voronoi
 notebook: "@bensimonds/voronoi-cells"
-hideAfter: 5
+hideAfter: 4
 ---
