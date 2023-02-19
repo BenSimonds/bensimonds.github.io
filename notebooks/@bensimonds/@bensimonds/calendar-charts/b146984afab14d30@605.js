@@ -78,10 +78,6 @@ function _7(md){return(
 md`We can examine longer timespans as well. In the example below, we see the history of armed conflicts by year from the [UCDP/PRIO Armed Conflict Dataset](https://ucdp.uu.se/downloads/index.html#armedconflict). Showing the regions on the y axis lets us compare continents over time (this time with years on the x axis).`
 )}
 
-function _8(Legend,chart3){return(
-Legend(chart3.scales.c, {title: "# Armed Conflicts"})
-)}
-
 function _intensityLevel(Inputs){return(
 Inputs.select(["Minor","War"], {label: "Intensity Level"})
 )}
@@ -115,6 +111,10 @@ const c = CalendarGrid(conflictsByRegionYear, {
 }
 
 
+function _10(Legend,chart3){return(
+Legend(chart3.scales.c, {title: "# Armed Conflicts"})
+)}
+
 function _11(md){return(
 md`### Implementation`
 )}
@@ -126,6 +126,7 @@ function CalendarGrid(data, {
   xUnit = d3.utcDay, // Provide a different unit eg. d3.utcMonth, d3.utcDay
   xFormat = d3.utcFormat('%d %b'), // Provide a format function for your dates.
   xScale = undefined, // Provide your own d3.scaleTime based scale for the x axis.
+  xDomain = undefined, // Provide your own [start date, end date] for the x axis.
   // Y AXIS
   y = (d) => undefined, // Given d in data, returns the (categorical/ordinal) y-value
   yDomain = undefined, // Provide your own y domain to order categories how you would like. Defaults to the unique values returned by y(),
@@ -146,7 +147,7 @@ function CalendarGrid(data, {
 } = {}) {
 
   // Get our domains for each dimension.
-  const xDomain = d3.extent(data.map(d => x(d)));
+  xDomain = xDomain || d3.extent(data.map(d => x(d)));
   const xUnique = xUnit.range(xDomain[0], d3.timeDay.offset(xDomain[1], 1));
   const yUnique = yDomain || [... new Set(data.map(d => y(d)))];
 
@@ -380,10 +381,10 @@ export default function define(runtime, observer) {
   main.variable(observer()).define(["Swatches","chart2"], _5);
   main.variable(observer("chart2")).define("chart2", ["CalendarGrid","trumpGolf","d3","width"], _chart2);
   main.variable(observer()).define(["md"], _7);
-  main.variable(observer()).define(["Legend","chart3"], _8);
   main.variable(observer("viewof intensityLevel")).define("viewof intensityLevel", ["Inputs"], _intensityLevel);
   main.variable(observer("intensityLevel")).define("intensityLevel", ["Generators", "viewof intensityLevel"], (G, _) => G.input(_));
   main.variable(observer("chart3")).define("chart3", ["intensityLevel","CalendarGrid","conflictsByRegionYear","d3","width"], _chart3);
+  main.variable(observer()).define(["Legend","chart3"], _10);
   main.variable(observer()).define(["md"], _11);
   main.variable(observer("CalendarGrid")).define("CalendarGrid", ["d3"], _CalendarGrid);
   main.variable(observer()).define(["md"], _13);

@@ -35,14 +35,15 @@
 
 }
 
-/* Observable cells*/
+/* Observable cells overrides*/
 
 div.observablehq {
-  margin: 17px 0px;
+  margin: 0px 0px;
 }
 
 html {
   overflow: auto;
+  margin: 0;
 }
 
 img {
