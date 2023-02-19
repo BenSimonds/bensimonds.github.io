@@ -6,5 +6,5 @@ tags:
     - observable
     - perlin noise
 notebook: "@bensimonds/perlin-snakes"
-hideAfter: 3
+hideAfter: 4
 ---
