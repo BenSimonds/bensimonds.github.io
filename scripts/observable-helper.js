@@ -12,7 +12,7 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
 
         const runtime = new Runtime(
             // Override Observable's width property
-            Object.assign(new Library, {width: 750})
+            Object.assign(new Library, {width: 760})
         );
         console.log(notebook)
         const main = runtime.module(notebook, name => {
@@ -41,7 +41,7 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
         }
         .cellOuter {
             position: relative;
-            padding: 5px;
+            padding: -1px;
             border-right: 1px solid;
             border-radius: 4px;
             border-color: rgba(200, 200, 200, 0);
@@ -73,13 +73,13 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
         You can find the <a href="https://observablehq.com/${path}">original, editable, forkable notebook</a> on <a href="https://observablehq.com">observablehq.com</a>.
     </p>
     </div>
-    <div id="observable-div" style="max-width: 800px;"></div>
+    <div id="observable-div" style="max-width: 760px;"></div>
     `
     if (hideAfter >= 0) {
         notebookHtml += `   
         <hr/>
         <button id="toggleShowAppendix">Show Appendix</button>
-        <div class="collapseAppendix" id="observable-div-appendix" style="max-width: 800px;"></div>
+        <div class="collapseAppendix" id="observable-div-appendix" style="max-width: 760px;"></div>
         <script>
             const button = document.getElementById("toggleShowAppendix")
             function handleToggleCollapse() {
