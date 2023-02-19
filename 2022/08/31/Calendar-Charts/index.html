@@ -218,7 +218,7 @@
             // Override Observable's width property
             Object.assign(new Library, {width: 800})
         );
-
+        console.log(notebook)
         const main = runtime.module(notebook, name => {
             const cellOuter = document.createElement('div');
             cellOuter.classList.add("cellOuter");
@@ -232,6 +232,7 @@
                 appendixDiv.appendChild(cellOuter)
             }
             const inspector =  new Inspector(cellInner);
+            console.log(inspector);
             counter += 1;
             return inspector;
         });
@@ -295,7 +296,7 @@
 
 <hr/>
 
-<p> — Aug 31, 2022</p>
+<p><a class="classtest-link" href="/tags/data-visualisation/" rel="tag">data visualisation</a>, <a class="classtest-link" href="/tags/observable/" rel="tag">observable</a>, <a class="classtest-link" href="/tags/time/" rel="tag">time</a> — Aug 31, 2022</p>
 
 
           <div class="row mt-2">
