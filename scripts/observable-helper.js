@@ -39,6 +39,7 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
             display: none;
         }
         .cellOuter {
+            position: relative;
             padding: 5px;
             border-right: 1px solid;
             border-radius: 4px;
@@ -50,6 +51,9 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
             border-color: rgba(200, 200, 200, 1.0);
         }
         .cellNumber {
+            position: absolute;
+            top: 0px;
+            left: calc(100% + 5px);
             opacity: 0.0;
             font-size: 0.75em;
             color: rgba(200, 200, 200, 1.0);
@@ -67,7 +71,6 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
         This post was first published as an observable notebook. 
         You can find the <a href="https://observablehq.com/${path}">original, editable, forkable notebook</a> on <a href="https://observablehq.com">observablehq.com</a>.
     </p>
-    <hr/>
     </div>
     <div id="observable-div" style="max-width: 800px;"></div>
     `

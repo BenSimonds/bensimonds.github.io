@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo": "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3",
-    "@bensimonds/calendar-charts": "https://api.observablehq.com/@bensimonds/calendar-charts@599.tgz?v=3",
+    "@bensimonds/calendar-charts": "https://api.observablehq.com/@bensimonds/calendar-charts@605.tgz?v=3",
     "@observablehq/runtime": "4",
     "hexo": "^6.2.0",
     "hexo-generator-archive": "^1.0.0",

@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@bensimonds/calendar-charts@https://api.observablehq.com/@bensimonds/calendar-charts@599.tgz?v=3":
-  version "599.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/calendar-charts@599.tgz?v=3#bacaea55913cc7c847c9979cfc2e976b12282b7d"
+"@bensimonds/calendar-charts@https://api.observablehq.com/@bensimonds/calendar-charts@605.tgz?v=3":
+  version "605.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/calendar-charts@605.tgz?v=3#766aca0ea2116eddfc2c9a3e14029f28b1b0c06b"
 
 "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3":
   version "196.0.0"
