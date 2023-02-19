@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Controlling HDRI Lighting with Nodes</h2>
 
 
-<hr/>
 <p>I’ve seen a couple of posts recently on getting more control over HDR based lighting setups, specifically in terms of getting crisper shadows. In particular <a target="_blank" rel="noopener" href="http://reynantem.blogspot.co.uk/2013/07/proper-hdr-lighting-remix.html">Reyante Martinez</a> and <a target="_blank" rel="noopener" href="http://adaptivesamples.com/2013/07/24/cif-2-hdr-lighting/">Greg Zaal</a> each posted some great setups that used the colour of an HDRI map as the input to the strength node of a background shader. I thought I’d add my own experiments to the mix. Here’s a basic world setup for cycles. Just a HDR map plugged into a background node. No other lights in the scene.</p>
 <p><a href="/images/old/hdri_1_basic1.png"><img src="/images/old/hdri_1_basic1.png?w=950" alt="HDRI_1_Basic &gt;&lt;"></a></p>
 <p> Here’s a setup based on one that Greg posted in his original article. It gives stronger shadows by plugging the HDRI map into both the colour and intensity inputs of the background node.</p>

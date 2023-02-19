@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Breakdowns for Assembly: Life in Macrospace</h2>
 
 
-<hr/>
 <p>My friend and partner in crime at <a target="_blank" rel="noopener" href="http://www.geckoanimation.com/">Gecko Animation</a>, <a target="_blank" rel="noopener" href="https://twitter.com/#!/Laxy">Jonathan Lax</a>, recently put together some breakdowns of the shots we did for our short film Assembly: Life in Macrospace, which won Best Designed short film at the suzanne awards last year. Have a watch if you’re interested in how it was made. </p>
 <p><a target="_blank" rel="noopener" href="http://www.vimeo.com/37099185">http://www.vimeo.com/37099185</a> </p>
 <p>All of the CG shots were done in blender, though some of the fluid sim was done with realflow and then imported into blender as .obj files using a little python script I wrote. The rendering was all done in blender internal, and post processing with a mix of blender and After Effects. We mainly used AE for the depth of field as blenders defocus node is kind of slow and has some issues with foreground blur, whereas the Frischluft lens blur plugin for AE is pretty darn fantastic. The grading and other effects were all done with blender. If you haven’t seen the original itself you can find it <a href="http://bensimonds.com/2011/09/21/assembly-life-in-macrospace/">here</a>.</p>

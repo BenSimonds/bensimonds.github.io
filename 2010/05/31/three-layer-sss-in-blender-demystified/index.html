@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Three Layer SSS in Blender Demystified</h2>
 
 
-<hr/>
 <p><img src="/images/old/final.jpg" alt="&gt;&lt; &gt;&lt;"></p>
 <p>Something that gives a lot of people trouble when creating characters is implementing convincing subsurface scattering (SSS). Blender’s SSS shader comes with a wealth of options that make it easy to customise how light scatters under a surface, but also makes it tough to hit on what options exactly make for convincing skin. Using a node based approach, one can create a three layer SSS shader that gives good, and reasonably physically correct results, and also makes making adjustments fairly straightforward. in this tutorial I use blender 2.5, but I used almost the exact same setup for my blending life entry in 2.49 and got much the same results (just without such fast ray-tracing, thanks blender devs!).  </p>
 <h2 id="The-Basics"><a href="#The-Basics" class="headerlink" title="The Basics"></a>The Basics</h2><p>A three layer SSS shader emulates skin by splitting the effect of the different layers of skin into different materials:</p>

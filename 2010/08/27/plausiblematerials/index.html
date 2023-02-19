@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Physics and Creating Plausible Materials.</h2>
 
 
-<hr/>
 <p><img src="/images/old/cornell2s.png" alt="&gt;&lt; &gt;&lt;"></p>
 <p>Something that is really handy to bear in mind when creating a material, is how it would interact with light in the real world. Even if you aren’t interested in creating photo realistic renders, it’s likely that you still want to be able to create materials like wood, metal, glass etc, and a vital part of knowing how to do this is knowing how real world materials interact with light. Thankfully this is simply a matter of knowing some basic physics, and being able to apply this knowledge to blenders material editor. The following are a few rules from the real world about how light works, and how this applies to CG.</p>
 <p><strong>Diffuse vs Specular Reflection</strong> When light hits any flat surface it reflects back at the same angle: </p>

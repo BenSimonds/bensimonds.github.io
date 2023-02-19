@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Open Shading Language Experiment</h2>
 
 
-<hr/>
 <p>I’ve been trying to learn a bit about writing OSL shaders the past couple of days, and I’m finding it pretty interesting. So far I’ve just learned a bit about what osl can do and how to put together a basic shader. Here’s one of my first attempts - a procedural dirt shader based on the trace function. It’s pretty much just an ambient occlusion pass that you can use as a mask for other materials, but what’s nice about it is that it’s completely dynamic: no baking, no vertex paint etc. Here’s what it looks like:</p>
 <p><img src="/images/old/proceduraldirt.jpg?w=606" alt="ProceduralDirt &gt;&lt;"></p>
 <p>And here’s the shader code: </p>

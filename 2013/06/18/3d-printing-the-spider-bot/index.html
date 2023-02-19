@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>3D Printing the Spider Bot</h2>
 
 
-<hr/>
 <p><a href="/images/old/spider4mix.jpg"><img src="/images/old/spider4mix.jpg?w=950" alt="Spider4mix &gt;&lt;"></a></p>
 <p>Previously I posted some pictures of the 3D printed version of the spider bot from my book, <a target="_blank" rel="noopener" href="http://nostarch.com/blendermasterclass.htm">Blender Master Class</a>. In my <a href="http://bensimonds.com/2013/06/13/3d-printed-spider-bot/">original post</a> I promised I’d put together a post detailing some of the process of altering the model for 3D printing, as a guide for others wishing to 3D print their own models. The book itself describes the modeling of the original model so I wont go into that, but I’ll cover the most important changes I made. </p>
 <h3 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h3><p>My first task was to take my finished .blend file that I had used to render my spider bot, and make it more suitable for preparing it for 3D printing. The original spider bot had a whole bunch of textures and materials, as well as a basic environment with lamps and so forth, none of which would be needed for the 3D print. So I opened up the blendfile and re-saved it as a new blend, before deleting all of the extraneous objects such as lamps and backdrops. I then used the material utils add-on to assign a single material to every part of the model. The add-on lets you select multiple objects and use the keyboard shortcut Q to modify all of their materials at once, which makes it useful for this sort of task. </p>

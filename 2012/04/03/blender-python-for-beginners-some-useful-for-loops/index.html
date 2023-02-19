@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Blender Python for Beginners: Some Useful For Loops.</h2>
 
 
-<hr/>
 <p>I started learning python a bit more seriously late last year, and since then it’s saved my bacon more times than I can count. It’s a terrific tool both inside and outside of blender, for automating tedious batch processes and adding little functions to blender that you just wish were there sometimes. Whilst learning python and the bpy API more fully will take some (well spent) time, you can get to know blenders python API very easily thanks to the Autocomplete function (Ctrl-Space) which will present you with a list of available options when exploring the api from blenders python console. One use of the python console that is very quick to get the hang of is using for loops to the properties of multiple objects at the same time. To get a list of all the selected objects, you can use <strong>bpy.context.selected_objects</strong>. Then you can run through the list with a for loop, which will do the same thing to each entry in the list. For example the following sets all of the selected objects display level to wireframe: </p>
 <pre><code>for x in bpy.context.selected_objects:
     x.draw_type = &#39;WIRE&#39;

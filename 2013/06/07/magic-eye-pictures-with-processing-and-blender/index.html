@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Magic Eye Pictures with Processing and Blender</h2>
 
 
-<hr/>
 <p><a href="/images/old/hourglass.png"><img src="/images/old/hourglass.png?w=950" alt="HourGlass &gt;&lt;"></a></p>
 <p>Click the image above for full size, then try and look <em>through</em> it. If you’ve still confused I’m not surprised, <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Autostereogram#Viewing_techniques">there’s a bit of a knack to it</a>. Yesterday, I decided to start learning a bit of <a target="_blank" rel="noopener" href="http://www.processing.org/">Processing</a>, and after following through a few tutorials I came up with the idea of making a random dot stereogram generator. Random dot stereograms, also known as Magic Eye pictures (the trade name of the company that popularised them in the 90’s), are images made up of repeating patterns, that when viewed correctly give the impression of seeing a 3D shape appear magically out of the pattern. The wikipedia article on <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Autostereogram">autostereograms</a> gives a much better explanation of how they work than I can here, but what follows is a brief explanation. Autostereograms work via the wallpaper effect. When you look at a horizontally repeating pattern, it’s possible to convince your brain that two separate but identical parts of the pattern are actually the same part, but located on a different plane away from the real surface of the pattern: [caption id&#x3D;”” align&#x3D;”aligncenter” width&#x3D;”491”</p>
 <p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Stereogram_Tut_Eye_Trick.png/491px-Stereogram_Tut_Eye_Trick.png" alt=" &gt;&lt;"></p>

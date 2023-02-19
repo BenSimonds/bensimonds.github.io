@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Matcap Generator</h2>
 
 
-<hr/>
 <p>Edit: I’ve updated the .blend download to fix an issue with the rendered matcap images not aliasing correctly when used as matcaps, but to get the most out of the matcap images at the bottom you may want to crop the outer few pixels from the outside of the image. Alternatively if you’re using them in blender, just set the “size” option in the texture mapping options to 0.98 in each direction</p>
 <p><img src="/images/old/matcaps.jpg" alt="&gt;&lt; &gt;&lt;"></p>
 <p>Whilst doing some sculpting today I found myself casting around for some nice matcap images to apply to my sculpt. Whilst zbrush central has some great ones that are well worth checking out, these all come in a rather unhelpful .zmt format, which if you dont have zbrush are difficult if not impossible to export to something you can use in blender. So I thought it would be simple enough to build my own matcap generator in blender that I could use to generate whatever material I liked and render it as a matcap style sphere. It was a fairly quick process and the results work rather well as matcap images for my sculpts. I thought I’d share the generator .blend and a few of the matcaps I generated for anyone interested in doing some sculpting in blender, or just showing off the results.</p>

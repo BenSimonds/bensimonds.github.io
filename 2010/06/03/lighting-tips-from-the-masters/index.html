@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Lighting tips from the Masters</h2>
 
 
-<hr/>
 <p><img src="/images/old/bouguereau_william_autoportrait_presente_a_m-_sage_1886-large.jpg" alt="&gt;&lt; &gt;&lt;"></p>
 <p>What do I know about lighting after all? After my previous post on setting up a three layer SSS shader, a few people asked for tips on how to light their characters to best show them off. As it happens, this something I’m rather interested in, and I’ve had a blog post on the subject brewing for a while, so I’ve finally found the motivation to finally write it up. I didn’t want to spend too much time talking about specific settings for this tutorial, so instead you can download this <a target="_blank" rel="noopener" href="http://www.blendswap.com/3D-models/lighting-rigs/simple-three-point-light-setup/">blendfile</a> from BlendSwap.com for some ideas on the specifics of how to set up your scene.  Lighting in portraits is key to how you want your character to be seen. The exact same character with the same pose and expression can be seen in completely different ways depending on how they are lit. They can be made to appear anything from dark and sinister to calm and serene simply by changing the lighting of your scene. On a more subtle level different kinds of lighting will can drastically improve the look of your models, and transform them from drab and uninteresting to dynamic and captivating. I don’t get it right every time, so when I’m looking for inspiration for lighting I usually turn to those who know better. From the great painters and photographers, to Hollywood Films, to modern day CG artists, each can offer insights into what makes for interesting lighting.</p>
 <h2 id="Three-Point-Lighting"><a href="#Three-Point-Lighting" class="headerlink" title="Three Point Lighting:"></a>Three Point Lighting:</h2><p>Before delving into some deeper issues, let’s look at what is considered the “standard” lighting setup for a lot of portraiture and cinematography. Three point lighting is the use of three different lights to achieve a pleasant, natural look that is adaptable to a wide variety of circumstances, and gives good results with most subjects when set up correctly.</p>

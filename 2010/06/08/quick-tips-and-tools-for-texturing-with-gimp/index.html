@@ -132,9 +132,17 @@
       <div>
 
         <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌒</div>
+  
+
+  <div class="ten columns ml-1">
+    <h1 class="mt-2">
+      BenSimonds.com
+    </h1>
+  </div>
+
+  <div class="two columns">
+    <h1 class="mt-2" style="text-align: right;"">
+      <div onclick=setDarkMode(true) id="darkBtn">🌙</div>
       <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
@@ -155,12 +163,6 @@
           document.body.classList.toggle("darkmode");
         }
       </script>
-    </h1>
-  </div>
-
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
-      BenSimonds.com
     </h1>
   </div>
 
@@ -207,7 +209,6 @@
   <h2>Quick Tips and Tools for Texturing With GIMP</h2>
 
 
-<hr/>
 <p><img src="/images/old/tex1.jpg" alt="&gt;&lt; &gt;&lt;"></p>
 <p>GIMP may not have the technical bells and whistles of photoshop, but if you know your way around it, it still gets the job done. The following are a few of the tools and techniques I find most useful when working on textures in the GIMP.</p>
 <p><strong>Transitions:</strong> When cloning and painting textures from multiple sources, using hard edged brushes is a good way to avoid pixel soup. The difficulty of course is that the boundaries between different texture sources can then be very obvious. A good solution is to pick a nice grungy&#x2F;splattery looking brush and set the size to random (as well as any pressure settings you want if you’re using a tablet). This should give a nice fractal like pattern with reasonably hard edges, that is ideal for blending many kinds of textures, either with the clone brush or layer masks, I use it for all sorts of grungy stuff, as well as for painting skin. </p>
