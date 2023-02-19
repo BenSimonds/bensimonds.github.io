@@ -22,6 +22,12 @@
         <%- post.title %>
       <% } %>
     </a>
+    <% if (post.summary) { %>
+      <br/>  
+      <%- post.summary %>
+    
+    <% } %>
+    
   </div>
 </div>
 <% }) %>
