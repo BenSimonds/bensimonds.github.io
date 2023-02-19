@@ -16,7 +16,6 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
         );
 
         const main = runtime.module(notebook, name => {
-            console.log(\`Cell \${counter} \${name}\`);
             const cellOuter = document.createElement('div');
             cellOuter.classList.add("cellOuter");
             cellOuter.innerHTML = \`<p class="cellNumber">[\${ name ? name : counter}]</p>\`;
@@ -29,7 +28,6 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
                 appendixDiv.appendChild(cellOuter)
             }
             const inspector =  new Inspector(cellInner);
-            console.log(inspector);
             counter += 1;
             return inspector;
         });
