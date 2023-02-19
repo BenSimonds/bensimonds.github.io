@@ -216,7 +216,7 @@
 
         const runtime = new Runtime(
             // Override Observable's width property
-            Object.assign(new Library, {width: 750})
+            Object.assign(new Library, {width: 760})
         );
         console.log(notebook)
         const main = runtime.module(notebook, name => {
@@ -245,7 +245,7 @@
         }
         .cellOuter {
             position: relative;
-            padding: 5px;
+            padding: -1px;
             border-right: 1px solid;
             border-radius: 4px;
             border-color: rgba(200, 200, 200, 0);
@@ -277,11 +277,11 @@
         You can find the <a target="_blank" rel="noopener" href="https://observablehq.com/@bensimonds/calendar-charts">original, editable, forkable notebook</a> on <a target="_blank" rel="noopener" href="https://observablehq.com">observablehq.com</a>.
     </p>
     </div>
-    <div id="observable-div" style="max-width: 800px;"></div>
+    <div id="observable-div" style="max-width: 760px;"></div>
        
         <hr/>
         <button id="toggleShowAppendix">Show Appendix</button>
-        <div class="collapseAppendix" id="observable-div-appendix" style="max-width: 800px;"></div>
+        <div class="collapseAppendix" id="observable-div-appendix" style="max-width: 760px;"></div>
         <script>
             const button = document.getElementById("toggleShowAppendix")
             function handleToggleCollapse() {
