@@ -124,7 +124,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div class="container">
@@ -206,14 +206,68 @@
 
   
     <script type="module">
-        // Load the Observable runtime and inspector.
-        import {Runtime, Inspector} from "/notebooks/@bensimonds/calendar-charts/runtime.js";
-        // Your notebook, compiled as an ES module.
+        import {Runtime, Inspector, Library} from "/notebooks/@bensimonds/calendar-charts/runtime.js";
         import notebook from "/notebooks/@bensimonds/calendar-charts/index.js";
-        const target_div = document.getElementById("observable-div")
-        const runtime = new Runtime();
-        const main = runtime.module(notebook, Inspector.into(target_div));
+
+        const targetDiv = document.getElementById("observable-div")
+        const appendixDiv = document.getElementById("observable-div-appendix")
+        const hideAfter = -1;
+        var counter = 0;
+
+        const runtime = new Runtime(
+            // Override Observable's width property
+            Object.assign(new Library, {width: 800})
+        );
+
+        const main = runtime.module(notebook, name => {
+            console.log(`Cell ${counter} ${name}`);
+            const cellOuter = document.createElement('div');
+            cellOuter.classList.add("cellOuter");
+            cellOuter.innerHTML = `<p class="cellNumber">[${ name ? name : counter}]</p>`;
+            const cellInner = document.createElement('div');
+            cellInner.classList.add("cellInner");
+            cellOuter.appendChild(cellInner);
+            if (counter < hideAfter || hideAfter === -1 ) {
+                targetDiv.appendChild(cellOuter)
+            } else {
+                appendixDiv.appendChild(cellOuter)
+            }
+            const inspector =  new Inspector(cellInner);
+            console.log(inspector);
+            counter += 1;
+            return inspector;
+        });
+
+        
     </script>
+    <style>
+        .collapseAppendix {
+            display: none;
+        }
+        .cellOuter {
+            padding: 5px;
+            border-right: 1px solid;
+            border-radius: 4px;
+            border-color: rgba(200, 200, 200, 0);
+            transition: border-color 1.2s;
+            text-align: right;
+        }
+        .cellOuter:hover {
+            border-color: rgba(200, 200, 200, 1.0);
+        }
+        .cellNumber {
+            opacity: 0.0;
+            font-size: 0.75em;
+            color: rgba(200, 200, 200, 1.0);
+            transition: opacity 1.2s;
+        }
+        .cellOuter:hover .cellNumber {
+            opacity: 1.0;
+        }
+        .cellInner {
+            text-align: left;
+        }
+    </style>
     <div>
     <p>
         This post was first published as an observable notebook. 

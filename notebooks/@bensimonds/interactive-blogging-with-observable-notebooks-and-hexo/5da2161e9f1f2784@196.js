@@ -1,14 +1,11 @@
-// https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175
 function _1(md){return(
 md`# Interactive Blogging with Observable Notebooks and Hexo
-## Inspired by Robin Linacre's [Interactive blogging with Observable Notebooks and Gatsby.js](https://www.robinlinacre.com/interactive_blogging/)`
+I recently read Robin Linacre's [post](https://www.robinlinacre.com/interactive_blogging/) on using observable to author interactive blog posts with [Gatsby](https://www.gatsbyjs.com/). Since my personal site is built on [Hexo](https://hexo.io/) - a very similar style of static site generator, I was inspired to try out a very similar sort of thing thing.
+
+Lets start with a brief summary of what this post is about:`
 )}
 
-function _2(md){return(
-md`Lets start with a brief summary of what this post is about:`
-)}
-
-function _3(width,d3,data)
+function _2(width,d3,data)
 {
   const svgwidth = Math.min(width, 760)
   const height = 200;
@@ -52,13 +49,8 @@ function _3(width,d3,data)
 }
 
 
-function _4(md){return(
-md`I recently read Robin Linacres post on using observable to author interactive blog posts, and publishing the results to your personal website. Since my personal site is built on Hexo - a very similar style of static site generator, I wanted to try out a very similar sort of thing thing.`
-)}
-
-function _5(md){return(
-md`---
-### Steps
+function _3(md){return(
+md`### Steps
 
 The steps are very similar to Robin's, with a few adjustments.
 
@@ -71,12 +63,10 @@ The steps are very similar to Robin's, with a few adjustments.
 To update the post, I just need to republish the notebook, and update my package.json file with the latest version number. Committing the change then rebuilds the static version of the page.`
 )}
 
-function _6(md){return(
-md`## Appendix:
-
-### Examples of Hexo Setup
+function _4(md){return(
+md`### Hexo Setup
 My post markdown just looks like the following. I just need to add the path to the notebook in the front matter, though I can add additional content that will appear below the main notebook too.
-\`\`\`
+\`\`\`yaml
 ---
 title: Observable Notebooks and Hexo
 author: Ben Simonds
@@ -87,7 +77,7 @@ notebook: "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo"
 \`\`\`
 
 The helper function looks like this:
-\`\`\`
+\`\`\`javascript
 hexo.extend.helper.register('observable_notebook', function(path){
     return \`
     <script type="module">
@@ -106,28 +96,28 @@ hexo.extend.helper.register('observable_notebook', function(path){
 
 And my post template just has a section that looks like this.
 
-\`\`\`
+\`\`\`ejs
 <% if (page.notebook) { %>
   <%- observable_notebook(page.notebook) %>
 <% } else { %>
+  <h2><%- page.title %></h2>
+<% } %>
 \`\`\``
 )}
 
 function _data(){return(
 [
   {"label": "Technical Messing Around", "value": 0.95},
-  {"label": "Actual Data Viz", "value": 0.05}
+  {"label": "Actual Data Visualisation", "value": 0.05}
 ]
 )}
 
 export default function define(runtime, observer) {
   const main = runtime.module();
   main.variable(observer()).define(["md"], _1);
-  main.variable(observer()).define(["md"], _2);
-  main.variable(observer()).define(["width","d3","data"], _3);
+  main.variable(observer()).define(["width","d3","data"], _2);
+  main.variable(observer()).define(["md"], _3);
   main.variable(observer()).define(["md"], _4);
-  main.variable(observer()).define(["md"], _5);
-  main.variable(observer()).define(["md"], _6);
   main.variable(observer("data")).define("data", _data);
   return main;
 }

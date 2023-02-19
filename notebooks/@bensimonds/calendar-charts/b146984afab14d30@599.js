@@ -1,4 +1,3 @@
-// https://observablehq.com/@bensimonds/calendar-charts@599
 import define1 from "./a33468b95d0b15b0@808.js";
 
 async function _1(FileAttachment,md){return(

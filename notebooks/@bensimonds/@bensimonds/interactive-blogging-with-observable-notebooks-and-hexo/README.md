@@ -1,6 +1,6 @@
 # Interactive Blogging with Observable Notebooks and Hexo
 
-https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175
+https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196
 
 View this notebook in your browser by running a web server in this folder. For
 example:
@@ -13,8 +13,8 @@ Or, use the [Observable Runtime](https://github.com/observablehq/runtime) to
 import this module directly into your application. To npm install:
 
 ~~~sh
-npm install @observablehq/runtime@4
-npm install https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@175.tgz?v=3
+npm install @observablehq/runtime@5
+npm install https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3
 ~~~
 
 Then, import your notebook and the runtime as:
