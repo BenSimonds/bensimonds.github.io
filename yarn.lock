@@ -18,6 +18,10 @@
   version "407.0.0"
   resolved "https://api.observablehq.com/@bensimonds/perlin-snakes@407.tgz?v=3#d8a363d06e45fe71328dcf7675af408699188991"
 
+"@bensimonds/voronoi-cells@https://api.observablehq.com/@bensimonds/voronoi-cells@524.tgz?v=3":
+  version "524.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/voronoi-cells@524.tgz?v=3#19c731d193d602c3b0a772b3ddf96680f8b3a7f6"
+
 "@observablehq/inspector@^3.2.2":
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/@observablehq/inspector/-/inspector-3.2.4.tgz#b620af79e721ae0e26e9bc83ec6e2e26ad260880"
