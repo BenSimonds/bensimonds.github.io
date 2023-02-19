@@ -14,7 +14,7 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
             // Override Observable's width property
             Object.assign(new Library, {width: 800})
         );
-
+        console.log(notebook)
         const main = runtime.module(notebook, name => {
             const cellOuter = document.createElement('div');
             cellOuter.classList.add("cellOuter");
@@ -28,6 +28,7 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
                 appendixDiv.appendChild(cellOuter)
             }
             const inspector =  new Inspector(cellInner);
+            console.log(inspector);
             counter += 1;
             return inspector;
         });

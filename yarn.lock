@@ -10,6 +10,14 @@
   version "196.0.0"
   resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3#c0be88fb32b9cf0d78becf9179aec0675d3e3fb2"
 
+"@bensimonds/perlin-noise@https://api.observablehq.com/@bensimonds/perlin-noise@689.tgz?v=3":
+  version "689.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/perlin-noise@689.tgz?v=3#461bc11ff22ba09b18c1ed0ca4f9e891cc5c85a8"
+
+"@bensimonds/perlin-snakes@https://api.observablehq.com/@bensimonds/perlin-snakes@407.tgz?v=3":
+  version "407.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/perlin-snakes@407.tgz?v=3#d8a363d06e45fe71328dcf7675af408699188991"
+
 "@observablehq/inspector@^3.2.2":
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/@observablehq/inspector/-/inspector-3.2.4.tgz#b620af79e721ae0e26e9bc83ec6e2e26ad260880"

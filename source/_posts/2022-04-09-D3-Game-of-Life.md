@@ -2,7 +2,9 @@
 title: D3 Game of Life
 author: Ben Simonds
 date: 2022-04-09 11:47:35
-tags:
+tags: 
+    - javascript
+    - cellular automata
 ---
 
 Resurrecting the blog with the occasional post about what I'm messing around with these days, starting with a bit Conways game of life written in javascript with [d3](https://d3js.org/).
