@@ -12,7 +12,7 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
 
         const runtime = new Runtime(
             // Override Observable's width property
-            Object.assign(new Library, {width: 800})
+            Object.assign(new Library, {width: 750})
         );
         console.log(notebook)
         const main = runtime.module(notebook, name => {
