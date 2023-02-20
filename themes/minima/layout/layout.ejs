@@ -79,23 +79,12 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <%- css('css/normalize.css') %>
   <%- css('css/skeleton.css') %>
   <%- css('css/custom.css') %>
-  <%- css('css/prism-dark.css') %>
-  <%- css('css/prism-line-numbers.css') %>
-  <!-- User css -->
-  <% if (theme.usercss) { %>
-  <%- css(theme.usercss) %>
-  <% } %>
-
+  
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="<%- theme.favicon %>">
@@ -137,6 +126,6 @@
     nanobar.go(100);
   </script>
 
+  
 </body>
-
 </html>

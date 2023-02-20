@@ -10,7 +10,7 @@ tags:
 - paranoid android
 author: Ben Simonds
 alias: blog/posts/2013-09-02-marvin-sighting
-
+thumbnail_old: /images/old/marvin3.png
 ---
 
 ![Marvin3 ><](/images/old/marvin3.png)

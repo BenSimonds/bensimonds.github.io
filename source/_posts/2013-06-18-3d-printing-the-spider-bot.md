@@ -16,7 +16,7 @@ tags:
 - white strong and flexible
 author: Ben Simonds
 alias: blog/posts/2013-06-18-3d-printing-the-spider-bot
-
+thumbnail_old: /images/old/spider2.jpg
 ---
 
 [![Spider4mix ><](/images/old/spider4mix.jpg?w=950)](/images/old/spider4mix.jpg)

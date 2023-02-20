@@ -14,7 +14,7 @@ tags:
 - silly
 author: Ben Simonds
 alias: blog/posts/2015-05-29-silly-sheep-cuffilinks-3d-printed
-
+thumbnail_old: /images/old/fullsizerender.jpg
 ---
 
 [![FullSizeRender ><](/images/old/fullsizerender.jpg?w=300)](/images/old/fullsizerender.jpg)

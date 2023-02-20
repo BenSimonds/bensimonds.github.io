@@ -12,7 +12,7 @@ tags:
 - volumetric
 author: Ben Simonds
 alias: blog/posts/2014-10-02-atmospheric-rendering-with-osl
-
+thumbnail_old: /images/old/nishitaskyrender10.jpg
 ---
 
 [![NishitaSkyRender10 ><](/images/old/nishitaskyrender10.jpg?w=470)](/images/old/nishitaskyrender10.jpg)

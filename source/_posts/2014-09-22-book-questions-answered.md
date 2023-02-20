@@ -11,7 +11,7 @@ tags:
 - tutorials
 author: Ben Simonds
 alias: blog/posts/2014-09-22-book-questions-answered
-
+thumbnail_old: /images/old/hand1.jpg
 ---
 
 I get the occasional question from people following along with the book about how to tackle specific things. In particular the two questions below seem to trip people up. I thought I'd answer them here so that anyone else who is having trouble can look them up. 

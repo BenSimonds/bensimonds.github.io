@@ -7,4 +7,6 @@ tags:
     - perlin noise
 notebook: "@bensimonds/perlin-noise"
 hideAfter: 21
+thumbnail: thumb.png
+summary: Messing around with the perlin noise function.
 ---

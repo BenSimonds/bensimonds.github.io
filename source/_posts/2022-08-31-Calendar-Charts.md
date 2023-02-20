@@ -8,4 +8,6 @@ tags:
     - time
 notebook: "@bensimonds/calendar-charts"
 hideAfter: 11
+thumbnail: 'thumb.png'
+summary: Drawing calendars with d3 and observable.
 ---

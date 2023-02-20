@@ -7,4 +7,6 @@ tags:
     - perlin noise
 notebook: "@bensimonds/perlin-snakes"
 hideAfter: 4
+thumbnail: 'thumb.png'
+summary: Recreating Seph Gentle's Perlin snakes visualisation in Observable.
 ---

@@ -10,7 +10,7 @@ tags:
 - typeface
 author: Ben Simonds
 alias: blog/posts/2014-08-19-googoo-times
-
+thumbnail_old: /images/old/ggt-thumb.png
 ---
 
 My girlfriend Liz has been producing and distributing a newsletter for over fifteen years called the Googoo Times. For most of its life every issue of the Googoo Times was written out by hand before being photocopied. This is a pretty time-consuming process and Liz is pretty busy these days, so a couple of years ago she asked if I could create a font based on her handwriting, so that she could produce the GGT digitally without losing the classic look of the newsletter.

@@ -12,7 +12,7 @@ tags:
 - tutorials
 author: Ben Simonds
 alias: blog/posts/2014-11-11-build-a-fairytale-castle-article-in-3dartist-magazine-issue-74
-
+thumbnail_old: /images/old/castle_tut1.jpg
 ---
 
 

@@ -7,4 +7,6 @@ tags:
     - voronoi
 notebook: "@bensimonds/voronoi-cells"
 hideAfter: 4
+thumbnail: 'thumb.png'
+summary: Creating cells with d3 in observable.
 ---
