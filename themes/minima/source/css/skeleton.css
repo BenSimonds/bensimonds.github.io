@@ -27,7 +27,7 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 960px; /* This sets container width for the whole site! */
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;

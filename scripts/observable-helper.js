@@ -77,13 +77,13 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
         It's also the best place to view the code behind each cell.
     </p>
     </div>
-    <div id="observable-div" style="max-width: 760px;"></div>
+    <div id="observable-div"></div>
     `
     if (hideAfter >= 0) {
         notebookHtml += `   
         <hr/>
         <button id="toggleShowAppendix">Show Appendix</button>
-        <div class="collapseAppendix" id="observable-div-appendix" style="max-width: 760px;"></div>
+        <div class="collapseAppendix" id="observable-div-appendix"></div>
         <script>
             const button = document.getElementById("toggleShowAppendix")
             function handleToggleCollapse() {
