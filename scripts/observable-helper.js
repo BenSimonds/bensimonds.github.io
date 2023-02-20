@@ -10,9 +10,12 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
         const hideAfter = ${hideAfter};
         var counter = 0;
 
+        // Get width to use for observable components
+        const width = targetDiv.getBoundingClientRect().width;
+
         const runtime = new Runtime(
             // Override Observable's width property
-            Object.assign(new Library, {width: 760})
+            Object.assign(new Library, {width})
         );
         console.log(notebook)
         const main = runtime.module(notebook, name => {

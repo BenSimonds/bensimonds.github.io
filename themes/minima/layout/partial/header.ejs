@@ -1,16 +1,14 @@
 <div class="row">
   
 
-  <div class="ten columns ml-1">
-    <h1 class="mt-2">
+  <div class="twelve columns">
+    <h1 class="mt-2" style="display: inline-block;"">
       <%= theme.title %>
     </h1>
-  </div>
-
-  <div class="two columns">
-    <h1 class="mt-2" style="text-align: right;"">
-      <div onclick=setDarkMode(true) id="darkBtn"><%= theme.switch_dark %></div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden><%= theme.switch_light %></div>
+  
+    <h1 class="mt-2" style="display: inline-block; float:right; text-align: right;"">
+      <span onclick=setDarkMode(true) id="darkBtn"><%= theme.switch_dark %></span>
+      <span onclick=setDarkMode(false) id="lightBtn" class=hidden><%= theme.switch_light %></span>
       <script >
         if (localStorage.getItem('preferredTheme') == 'dark') {
           setDarkMode(true)
@@ -71,6 +69,6 @@
         <% } %>
       </div>
     </div>
-    <hr style="margin-bottom: 2.6rem">
+    <hr/>
   </div>
 </div>
