@@ -44,11 +44,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
@@ -61,14 +56,6 @@
 <link rel="stylesheet" href="/css/custom.css">
 
   
-<link rel="stylesheet" href="/css/prism-dark.css">
-
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
-
-  <!-- User css -->
-  
-
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
@@ -163,7 +150,7 @@
 
 
   <div class="twelve columns">
-    <img id="siteBanner" class="u-max-full-width" src="/images/warehouse1.png" />
+    <img id="siteBanner" class="u-max-full-width" src="/images/banner-warehouse-1.png" />
     <script>
       var images = [
         "/images/banner-fractal.png",
@@ -219,7 +206,7 @@
 <blockquote>
 <p>Sure, you can find it for sale here:<br><a target="_blank" rel="noopener" href="https://www.shapeways.com/model/1123311/spiderbot-from-blender-master-class.html">https://www.shapeways.com/model/1123311/spiderbot-from-blender-master-class.html</a></p>
 </blockquote>
-<p><a href="mailto:&#122;&#x6f;&#x74;&#116;&#101;&#108;&#x6d;&#x61;&#x6e;&#x6e;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#122;&#x6f;&#x74;&#116;&#101;&#108;&#x6d;&#x61;&#x6e;&#x6e;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a> (Dec 17, 2013)</p>
+<p><a href="mailto:&#122;&#x6f;&#116;&#x74;&#x65;&#108;&#x6d;&#97;&#110;&#110;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#122;&#x6f;&#116;&#x74;&#x65;&#108;&#x6d;&#97;&#110;&#110;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a> (Dec 17, 2013)</p>
 <blockquote>
 <p>Hi. would you mind telling the price of this modell at shapeways?</p>
 </blockquote>
@@ -233,6 +220,21 @@
 </blockquote>
 
 <p><a class="classtest-link" href="/tags/3d-print/" rel="tag">3d print</a>, <a class="classtest-link" href="/tags/3d-printing/" rel="tag">3d printing</a>, <a class="classtest-link" href="/tags/book/" rel="tag">book</a>, <a class="classtest-link" href="/tags/projects/" rel="tag">projects</a>, <a class="classtest-link" href="/tags/robot/" rel="tag">robot</a>, <a class="classtest-link" href="/tags/shapeways/" rel="tag">shapeways</a>, <a class="classtest-link" href="/tags/spider/" rel="tag">spider</a>, <a class="classtest-link" href="/tags/spider-bot/" rel="tag">spider bot</a> — Jun 13, 2013</p>
+
+
+
+
+
+
+<!-- Highlight.js syntax highlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+<script type="module">
+  import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js';
+  //  and it's easy to individually load additional languages
+  import python from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/python.min.js';
+  hljs.registerLanguage('python', python);
+  hljs.highlightAll();
+</script>
 
 
           <div class="row mt-2">
@@ -289,6 +291,6 @@
     nanobar.go(100);
   </script>
 
+  
 </body>
-
 </html>

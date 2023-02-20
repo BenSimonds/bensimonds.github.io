@@ -44,11 +44,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="../fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../fonts/Merriweather-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
@@ -61,14 +56,6 @@
 <link rel="stylesheet" href="/css/custom.css">
 
   
-<link rel="stylesheet" href="/css/prism-dark.css">
-
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
-
-  <!-- User css -->
-  
-
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
@@ -163,7 +150,7 @@
 
 
   <div class="twelve columns">
-    <img id="siteBanner" class="u-max-full-width" src="/images/warehouse1.png" />
+    <img id="siteBanner" class="u-max-full-width" src="/images/banner-warehouse-1.png" />
     <script>
       var images = [
         "/images/banner-fractal.png",
@@ -209,6 +196,21 @@
 <p><a target="_blank" rel="noopener" href="http://gooseberry.blender.org/"><img src="/images/old/supportus1.jpg?w=950" alt="SupportUs &gt;&lt;"></a></p>
 
 <p><a class="classtest-link" href="/tags/big-projects/" rel="tag">big projects</a>, <a class="classtest-link" href="/tags/blender/" rel="tag">blender</a>, <a class="classtest-link" href="/tags/crowdfunding/" rel="tag">crowdfunding</a>, <a class="classtest-link" href="/tags/feature-film/" rel="tag">feature film</a>, <a class="classtest-link" href="/tags/film/" rel="tag">film</a>, <a class="classtest-link" href="/tags/gecko-animation/" rel="tag">gecko animation</a>, <a class="classtest-link" href="/tags/gooseberry/" rel="tag">gooseberry</a>, <a class="classtest-link" href="/tags/launch/" rel="tag">launch</a>, <a class="classtest-link" href="/tags/movie/" rel="tag">movie</a>, <a class="classtest-link" href="/tags/open-source/" rel="tag">open source</a>, <a class="classtest-link" href="/tags/open-source-movie/" rel="tag">open source movie</a> — Mar 10, 2014</p>
+
+
+
+
+
+
+<!-- Highlight.js syntax highlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+<script type="module">
+  import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js';
+  //  and it's easy to individually load additional languages
+  import python from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/python.min.js';
+  hljs.registerLanguage('python', python);
+  hljs.highlightAll();
+</script>
 
 
           <div class="row mt-2">
@@ -265,6 +267,6 @@
     nanobar.go(100);
   </script>
 
+  
 </body>
-
 </html>
