@@ -74,6 +74,7 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
     <p>
         This post was first published as an observable notebook. 
         You can find the <a href="https://observablehq.com/${path}">original, editable, forkable notebook</a> on <a href="https://observablehq.com">observablehq.com</a>.
+        It's also the best place to view the code behind each cell.
     </p>
     </div>
     <div id="observable-div" style="max-width: 760px;"></div>
