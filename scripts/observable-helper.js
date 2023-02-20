@@ -11,7 +11,7 @@ hexo.extend.helper.register('observable_notebook', function(path, hideAfter=-1){
         var counter = 0;
 
         // Get width to use for observable components
-        const width = targetDiv.getBoundingClientRect().width;
+        const width = targetDiv.getBoundingClientRect().width  - 10;
 
         const runtime = new Runtime(
             // Override Observable's width property
