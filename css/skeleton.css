@@ -398,7 +398,7 @@ input[type="password"],
 textarea,
 select {
   height: 38px;
-  padding: 4px 8px;
+  padding: 6px 8px;
   /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
   border: 1px solid #D1D1D1;
@@ -576,8 +576,8 @@ form {
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   border-width: 0;
   border-top: 1px solid #E1E1E1;
 }
