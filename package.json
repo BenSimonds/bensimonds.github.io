@@ -16,6 +16,7 @@
     "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo": "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3",
     "@bensimonds/perlin-noise": "https://api.observablehq.com/@bensimonds/perlin-noise@689.tgz?v=3",
     "@bensimonds/perlin-snakes": "https://api.observablehq.com/@bensimonds/perlin-snakes@407.tgz?v=3",
+    "@bensimonds/spinning-globe": "https://api.observablehq.com/@bensimonds/spinning-globe@142.tgz?v=3",
     "@bensimonds/voronoi-cells": "https://api.observablehq.com/@bensimonds/voronoi-cells@524.tgz?v=3",
     "@observablehq/runtime": "4",
     "hexo": "^6.2.0",
