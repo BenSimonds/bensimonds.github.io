@@ -1,0 +1,14 @@
+{
+  "name": "@bensimonds/spinning-globe",
+  "main": "13bfad22ac57d5a3@142.js",
+  "version": "142.0.0",
+  "homepage": "https://observablehq.com/@bensimonds/spinning-globe",
+  "author": {
+    "name": "Ben Simonds",
+    "url": "https://observablehq.com/@bensimonds"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
