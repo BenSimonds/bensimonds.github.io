@@ -11,34 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - Ben Simonds</title>
+  <title>Mitchell&#39;s Best Candidate Algorithm</title>
   
-  <link rel="canonical" href="http://bensimonds.com/archives/page/10/">
+  <link rel="canonical" href="http://bensimonds.com/2023/02/22/circle-packing/">
   
   <meta name="description" content="My personal site.">
   
   
   <meta name="author" content="Ben Simonds">
   
-  <meta property="og:image" content="http://bensimonds.com/images/thumbnail.jpg">
+  <meta property="og:image" content="http://bensimonds.comthumb.png">
   
   <meta property="og:site_name" content="Ben Simonds Personal Blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - Ben Simonds" />
+  <meta property="og:title" content="Mitchell&#39;s Best Candidate Algorithm" />
   
   <meta property="og:description" content="My personal site.">
   
-  <meta property="og:url" content="http://bensimonds.com/archives/page/10/" />
+  <meta property="og:url" content="http://bensimonds.com/2023/02/22/circle-packing/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - Ben Simonds">
+  <meta name="twitter:title" content="Mitchell&#39;s Best Candidate Algorithm">
   
   <meta name="twitter:description" content="My personal site.">
   
   
-  <meta name="twitter:image" content="http://bensimonds.com/images/thumbnail.jpg">
+  <meta name="twitter:image" content="http://bensimonds.comthumb.png">
   
-  <meta name="twitter:url" content="http://bensimonds.com/archives/page/10/" />
+  <meta name="twitter:url" content="http://bensimonds.com/2023/02/22/circle-packing/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -185,255 +185,109 @@
 
         <div class="trans">
           
-<h2>All Posts</h2>
 
 
-    <article>
-      <div class="row">
+  
+    <script type="module">
+        import {Runtime, Inspector, Library} from "/notebooks/@bensimonds/mitchells-best-candidate-algorithm/runtime.js";
+        import notebook from "/notebooks/@bensimonds/mitchells-best-candidate-algorithm/index.js";
 
-        <div class="three columns left lit">
-          <p class="bottom">Apr 14, 2010</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2010/04/14/cover-art-ben-beattie-and-the-jazz-age/" >
-            
-              Cover Art: Ben Beattie and The Jazz Age
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
+        const targetDiv = document.getElementById("observable-div")
+        const appendixDiv = document.getElementById("observable-div-appendix")
+        const hideAfter = 21;
+        var counter = 0;
+
+        // Get width to use for observable components
+        const width = targetDiv.getBoundingClientRect().width  - 10;
+
+        const runtime = new Runtime(
+            // Override Observable's width property
+            Object.assign(new Library, {width})
+        );
+        console.log(notebook)
+        const main = runtime.module(notebook, name => {
+            const cellOuter = document.createElement('div');
+            cellOuter.classList.add("cellOuter");
+            cellOuter.innerHTML = `<p class="cellNumber">[${ name ? name : counter}]</p>`;
+            const cellInner = document.createElement('div');
+            cellInner.classList.add("cellInner");
+            cellOuter.appendChild(cellInner);
+            if (counter < hideAfter || hideAfter === -1 ) {
+                targetDiv.appendChild(cellOuter)
+            } else {
+                appendixDiv.appendChild(cellOuter)
+            }
+            const inspector =  new Inspector(cellInner);
+            console.log(inspector);
+            counter += 1;
+            return inspector;
+        });
+
         
+    </script>
+    <style>
+        .collapseAppendix {
+            display: none;
+        }
+        .cellOuter {
+            position: relative;
+            padding: -1px;
+            border-right: 1px solid;
+            border-radius: 4px;
+            border-color: rgba(200, 200, 200, 0);
+            transition: border-color 1.2s;
+            text-align: right;
+        }
+        .cellOuter:hover {
+            border-color: rgba(200, 200, 200, 1.0);
+        }
+        .cellNumber {
+            position: absolute;
+            top: 0px;
+            left: calc(100% + 5px);
+            opacity: 0.0;
+            font-size: 0.75em;
+            color: rgba(200, 200, 200, 1.0);
+            transition: opacity 1.2s;
+        }
+        .cellOuter:hover .cellNumber {
+            opacity: 1.0;
+        }
+        .cellInner {
+            text-align: left;
+        }
+    </style>
+    <div>
+    <p>
+        This post was first published as an observable notebook. 
+        You can find the <a target="_blank" rel="noopener" href="https://observablehq.com/@bensimonds/mitchells-best-candidate-algorithm">original, editable, forkable notebook</a> on <a target="_blank" rel="noopener" href="https://observablehq.com">observablehq.com</a>.
+        It's also the best place to view the code behind each cell.
+    </p>
+    </div>
+    <div id="observable-div"></div>
+       
+        <hr/>
+        <button id="toggleShowAppendix">Show Appendix</button>
+        <div class="collapseAppendix" id="observable-div-appendix"></div>
+        <script>
+            const button = document.getElementById("toggleShowAppendix")
+            function handleToggleCollapse() {
+                document.getElementById("observable-div-appendix").classList.toggle("collapseAppendix");
+                button.textContent = button.textContent === 'Show Appendix' ? 'Hide Appendix' : 'Show Appendix';
+            }
+            button.addEventListener("click", handleToggleCollapse);
+        </script>
         
-      </div>
-      </div>
-    </article>
 
-    <article>
-      <div class="row">
 
-        <div class="three columns left lit">
-          <p class="bottom">Feb 24, 2010</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2010/02/24/blending-life-2010/" >
-            
-              Blending Life 2010
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
 
-    <article>
-      <div class="row">
 
-        <div class="three columns left lit">
-          <p class="bottom">Feb 20, 2010</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2010/02/20/durian-open-movie-modelling-sprint/" >
-            
-              Durian Open Movie Modelling Sprint
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
+<p><a class="classtest-link" href="/tags/circle-packing/" rel="tag">circle packing</a>, <a class="classtest-link" href="/tags/observable/" rel="tag">observable</a>, <a class="classtest-link" href="/tags/quadtree/" rel="tag">quadtree</a> — Feb 22, 2023</p>
 
-    <article>
-      <div class="row">
 
-        <div class="three columns left lit">
-          <p class="bottom">Nov 25, 2009</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2009/11/25/iris-ag-reviewed-by-the-daily-app-show/" >
-            
-              iRis AG Reviewed by The Daily App show 
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
 
-    <article>
-      <div class="row">
 
-        <div class="three columns left lit">
-          <p class="bottom">Oct 16, 2009</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2009/10/16/iris-ag-released/" >
-            
-              iRis AG Released!
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
 
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Aug 28, 2009</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2009/08/28/panic-elbow-album-cover-iii/" >
-            
-              Panic Elbow Album Cover III
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Aug 20, 2009</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2009/08/20/alchemy/" >
-            
-              Alchemy
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Aug 18, 2009</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2009/08/18/panic-elbow-every-cliche/" >
-            
-              Panic Elbow - Every Cliche
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Aug 10, 2009</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2009/08/10/family-crest/" >
-            
-              Family Crest
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jul 29, 2009</p>
-        </div>
-        <div class="six columns left mb-3">
-          <a href="/2009/07/29/painting-with-polygons/" >
-            
-              Painting With Polygons
-            
-          </a>
-          
-          
-        </div>
-        <div class="three columns left mb-3">
-        
-        
-      </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-
-    <a class="mr" href="/archives/page/9/">
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-      </svg>
-      <span>Recent</span>
-    </a>
-
-    
-    
-
-    <a class="" href="/archives/page/11/">
-      <span>Older</span>
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z" />
-      </svg>
-    </a>
-
-    
-  </ul>
-</div>
 
 
           <div class="row mt-2">
