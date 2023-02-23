@@ -194,7 +194,7 @@
 
         const targetDiv = document.getElementById("observable-div")
         const appendixDiv = document.getElementById("observable-div-appendix")
-        const hideAfter = 4;
+        const hideAfter = 6;
         var counter = 0;
 
         // Get width to use for observable components
@@ -204,7 +204,6 @@
             // Override Observable's width property
             Object.assign(new Library, {width})
         );
-        console.log(notebook)
         const main = runtime.module(notebook, name => {
             const cellOuter = document.createElement('div');
             cellOuter.classList.add("cellOuter");
@@ -218,7 +217,6 @@
                 appendixDiv.appendChild(cellOuter)
             }
             const inspector =  new Inspector(cellInner);
-            console.log(inspector);
             counter += 1;
             return inspector;
         });
