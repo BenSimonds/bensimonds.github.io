@@ -1,46 +1,42 @@
+<% var title='' ; if (page.category) title=page.category; if (page.tag) title=page.tag; if (page.archive){ if
+    (page.year) title=page.year + (page.month ? '/' + page.month : '' ); else title="Archives" ; } %>
+    <% if(title) { %>
+        <h3>Posts Related to — <%- title %></h3>
+        <% } %>
+            <% page.posts.each(function(post){ %>
 
-<%
-    var title = '';
-    if (page.category) title = page.category;
-    if (page.tag) title = page.tag;
-    if (page.archive){
-        if (page.year) title = page.year + (page.month ? '/' + page.month : '');
-        else title = "Archives";
-    }
-%>
-<% if(title) { %>
-   <h3>Posts Related to — <%- title %></h3>
-<% } %>
-<% page.posts.each(function(post){ %>
+                <article class="post-item">
+                    <div>
+                        <p><%- full_date(post.date, 'll' ) %></p>
+                    </div>
+                    <div>
+                        <a href="<%- url_for(post.path) %>">
+                            <% if (post.title=="" ) { %>
+                                No Title
+                                <% } else { %>
+                                    <%- post.title %>
+                                        <% } %>
+                        </a>
 
-    <article class="post-item">
-        <div>
-            <p><%- full_date(post.date, 'll' ) %></p>
-        </div>
-        <div>
-            <a href="<%- url_for(post.path) %>">
-                <% if (post.title=="" ) { %>
-                    No Title
-                    <% } else { %>
-                        <%- post.title %>
+                        <% if (post.summary) { %>
+                            <br />
+                            <%- post.summary %>
+                                <% } %>
+                    </div>
+                    <div>
+                        <% if (post.thumbnail) { %>
+                            <a href="<%- url_for(post.path) %>">
+                                <img src="/<%- post.path %><%- post.thumbnail %>" class="thumbnail" />
+                            </a>
                             <% } %>
-            </a>
 
-            <% if (post.summary) { %>
-                <br />
-                <%- post.summary %>
-                    <% } %>
-        </div>
-        <div>
-            <% if (post.thumbnail) { %>
-                <img src="/<%- post.path %><%- post.thumbnail %>" class="thumbnail" />
-                <% } %>
+                                <% if (post.thumbnail_old) { %>
+                                    <a href="<%- url_for(post.path) %>">
+                                        <img src="<%- post.thumbnail_old %>" class="thumbnail" />
+                                    </a>
+                                    <% } %>
+                    </div>
+                </article>
 
-        <% if (post.thumbnail_old) { %>
-            <img src="<%- post.thumbnail_old %>" class="thumbnail" />
-            <% } %>
-        </div>
-    </article>
-
-<% }); %>
-<%- partial('partial/pagination') %>
+                <% }); %>
+                    <%- partial('partial/pagination') %>

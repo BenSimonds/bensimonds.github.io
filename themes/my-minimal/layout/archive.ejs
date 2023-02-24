@@ -24,11 +24,15 @@
             </div>
             <div>
                 <% if (post.thumbnail) { %>
-                    <img src="<%- url_for(post.path) %><%- post.thumbnail %>" class="thumbnail"/>
+                    <a href="<%- url_for(post.path) %>">
+                        <img src="<%- url_for(post.path) %><%- post.thumbnail %>" class="thumbnail" />
+                    </a>
                     <% } %>
 
                         <% if (post.thumbnail_old) { %>
-                            <img src="<%- post.thumbnail_old %>" class="thumbnail"/>
+                            <a href="<%- url_for(post.path) %>">
+                                <img src="<%- post.thumbnail_old %>" class="thumbnail" />
+                            </a>
                             <% } %>
             </div>
         </article>
