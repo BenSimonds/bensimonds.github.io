@@ -41,6 +41,17 @@
     opacity: 1.0;
 }
 
+@media (max-width: 1024),
+screen and (orientation: portrait) {
+    /* Hide cell numbers on mobile. */
+    .cell--number {
+        display: none;
+    }
+    .cell--outer {
+        border-right: 0px;
+    }
+}
+
 .cell--number {
     text-align: left;
     position: absolute;

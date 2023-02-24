@@ -1,17 +1,12 @@
 /* Font Setup */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
 
-
-
 :root {
     --spacing: 1rem;
     --block-spacing-vertical: calc(var(--spacing) * 2);
     --color-bg: hsl(31 10% 91% / 1);
     --color-text: #222;
 }
-
-
-
 
 /* Convenience */
 
@@ -20,7 +15,7 @@
 }
 
 .m0 {
-    margin: 0;    
+    margin: 0;
 }
 
 /* Main text styles */
@@ -166,16 +161,18 @@ footer li {
 
 
 /* Images */
-img, svg, iframe {
+img,
+svg,
+iframe {
     display: block;
     max-width: 100%;
-    
+
 }
 
 iframe {
     /* Center iframe by default. */
     margin: 1em auto;
-    
+
 }
 
 
@@ -245,16 +242,18 @@ iframe {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px 20px; /* row-gap column gap */
+    gap: 10px 20px;
+    /* row-gap column gap */
 }
-.post-item > div {
+
+.post-item>div {
     float: left;
     flex-shrink: 3;
     width: calc(50% - 20px);
 }
 
-.post-item > div:first-child,
-.post-item > div:last-child {
+.post-item>div:first-child,
+.post-item>div:last-child {
     width: calc(25% - 10px);
 }
 
@@ -282,16 +281,16 @@ a:visited {
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: rgb(128 128 128 / 70%);
-  }
-  ::-webkit-scrollbar-thumb:window-inactive {
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
     background: rgb(128 128 128 / 20%);
-  }
-  
-  ::-webkit-scrollbar-thumb:active { 
+}
+
+::-webkit-scrollbar-thumb:active {
     background-color: rgb(128 128 128 / 100%);
-  }
-  
+}
