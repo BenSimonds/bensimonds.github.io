@@ -2,10 +2,6 @@
 <html lang="en">
 
 <head>
-
-  <!-- Minima -->
-  <!-- Hexo theme created by @adisaktijrs -->
-
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
@@ -27,9 +23,6 @@
   }
   %>
   <title><%= title %></title>
-  <% if (config.sitemap) { %>
-  <link rel="sitemap" href="<%-config.url + config.sitemap.path %>" />
-  <% } %>
   <link rel="canonical" href="<%= url.replace(/index\.html$/, '').replace(/index\.html$/, '') %>">
   <% if (is_page()){ %>
   <meta name="description" content="<%= page.description %>">
@@ -81,51 +74,23 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <%- css('css/normalize.css') %>
-  <%- css('css/skeleton.css') %>
-  <%- css('css/custom.css') %>
+  <%- css('css/reset.css') %>
+  <%- css('css/base.css') %>
   
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="<%- theme.favicon %>">
 
-  <!-- Custom Theme Color Style
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <%- partial('partial/tcolor') %>
-
-  <!-- Google Analytics (With Privacy Settings On)
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <%- partial('partial/google_analytics') %>
-
 </head>
 
 <body>
   <div class="container">
-    <div class="row">
-      <div>
 
-        <%- partial('partial/header') %>
-        <div class="trans">
-          <%- body %>
-          <%- partial('partial/footer') %>
-        </div>
-      </div>
+    <%- partial('partial/header') %>
 
-    </div>
 
-  </div>
-  <script src="<%- theme.nanobar %>"></script>
-  <script>
-    var options = {
-      classname: 'nanobar',
-      id: 'myNanobar'
-    };
-    var nanobar = new Nanobar(options);
-    nanobar.go(30);
-    nanobar.go(76);
-    nanobar.go(100);
-  </script>
+    <%- body %>
+    <%- partial('partial/footer') %>
 
-  
 </body>
 </html>

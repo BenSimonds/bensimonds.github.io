@@ -1,0 +1,45 @@
+<section>
+    I write about data viz and other things that interest me. Previously I wrote lot (including <a
+        href="https://www.amazon.com/Blender-Master-Class-Hands-Sculpting/dp/1593275102">a book</a>) about Blender - an
+    open source 3D app.
+</section>
+<section>
+    <h3>Recent Posts</h3>
+
+
+    <div class="post-list">
+        <% site.posts.sort('date', 'desc' ).limit(6).each(function(post) { %>
+
+            <article class="post-item">
+                <div>
+                   <%- full_date(post.date, 'll' ) %>
+                </div>
+                <div>
+                    <a href="<%- url_for(post.path) %>">
+                        <% if (post.title=="" ) { %>
+                            No Title
+                            <% } else { %>
+                                <%- post.title %>
+                                    <% } %>
+                    </a>
+
+                    <% if (post.summary) { %>
+                        <br />
+                        <%- post.summary %>
+                            <% } %>
+                </div>
+                <div>
+                    <% if (post.thumbnail) { %>
+                        <img src="<%- post.path %><%- post.thumbnail %>" class="thumbnail" />
+                        <% } %>
+
+                <% if (post.thumbnail_old) { %>
+                    <img src="<%- post.thumbnail_old %>" class="thumbnail" />
+                    <% } %>
+                </div>
+            </article>
+            <% }) %>
+    </div>
+</section>
+
+<h4> <a href="<%= config.root %>archives">All Posts</a></h4>

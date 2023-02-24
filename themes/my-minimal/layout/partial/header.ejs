@@ -1,0 +1,37 @@
+<header>
+  <!-- Title -->
+  <a href="" style="text-decoration: none;">
+  <h1>
+    <%= theme.title %>
+  </h1>
+  </a>
+
+  <!-- Site Banner Image -->
+  <a href="/">
+  <img id="siteBanner" class="banner" src="/images/banner-warehouse-1.png" />
+  </a>
+  <script>
+    var images = [
+      "/images/banner-fractal.png",
+      "/images/banner-temple.png",
+      "/images/banner-spiderbot.png",
+      "/images/banner-pirate.jpg",
+      "/images/banner-warehouse-3.png",
+      "/images/banner-warehouse-2.png",
+      "/images/banner-warehouse-1.png"
+    ];
+    var randomNum = Math.floor(Math.random() * images.length);
+    document.getElementById("siteBanner").src = images[randomNum];
+  </script>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <% for (name in theme.navbar) { %>
+        <li><a href="<%- url_for(theme.navbar[name])%>"><%- name %></a></li>
+        <% }%>
+    </ul>
+  </nav>
+  <hr/>
+</header>
