@@ -10,13 +10,13 @@
   version "196.0.0"
   resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3#c0be88fb32b9cf0d78becf9179aec0675d3e3fb2"
 
-"@bensimonds/mitchells-best-candidate-algorithm@https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@692.tgz?v=3":
-  version "692.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@692.tgz?v=3#9885f0b5d0984474693548c18335465985c8f61f"
+"@bensimonds/mitchells-best-candidate-algorithm@https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3":
+  version "700.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3#baf8a6bdcf44c2e651c092692ddde04bf390f71b"
 
-"@bensimonds/perlin-noise@https://api.observablehq.com/@bensimonds/perlin-noise@689.tgz?v=3":
-  version "689.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/perlin-noise@689.tgz?v=3#461bc11ff22ba09b18c1ed0ca4f9e891cc5c85a8"
+"@bensimonds/perlin-noise@https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3":
+  version "698.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3#1d4edd36b7e87eda8150c57c2d4630ec0b2ae289"
 
 "@bensimonds/perlin-snakes@https://api.observablehq.com/@bensimonds/perlin-snakes@466.tgz?v=3":
   version "466.0.0"

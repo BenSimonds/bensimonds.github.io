@@ -1,0 +1,297 @@
+/* Font Setup */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
+
+
+
+:root {
+    --spacing: 1rem;
+    --block-spacing-vertical: calc(var(--spacing) * 2);
+    --color-bg: hsl(31 10% 91% / 1);
+    --color-text: #222;
+}
+
+
+
+
+/* Convenience */
+
+.hidden {
+    display: none;
+}
+
+.m0 {
+    margin: 0;    
+}
+
+/* Main text styles */
+
+body {
+    font-size: 1em;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+p,
+ol,
+ul {
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1.1rem;
+}
+
+
+hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-width: 0;
+    border-top: 1px solid #E1E1E1;
+}
+
+/* Lists */
+ol,
+ul {
+    padding-left: 0px;
+    margin-left: 2rem;
+}
+
+ol {
+    list-style: decimal outside;
+}
+
+ul {
+    list-style: circle outside;
+
+}
+
+/* Quotes */
+/* blockquote */
+blockquote {
+    /* font-family: 'Inter'; */
+    background-color: rgba(148, 148, 149, 0.08);
+    margin-bottom: 1.5em;
+    padding: 1.1em 20px 1px 20px;
+    font-style: italic;
+}
+
+/* Basic Responsive Layout */
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    /* no y maring, center vertically*/
+}
+
+/* Headers and Footers */
+nav {
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin-left: 0px;
+}
+
+nav li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+header {
+    padding-top: 2rem;
+}
+
+footer {
+    padding-bottom: 2rem;
+}
+
+header,
+section,
+footer {
+    margin-bottom: var(--block-spacing-vertical);
+}
+
+
+footer ul {
+    list-style-type: none;
+    padding: 0px;
+    margin-left: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer li {
+    margin: 0px 0.5rem;
+}
+
+
+/* Images */
+img, svg, iframe {
+    display: block;
+    max-width: 100%;
+    
+}
+
+iframe {
+    /* Center iframe by default. */
+    margin: 1em auto;
+    
+}
+
+
+.icon {
+    display: inline;
+    box-shadow: none;
+}
+
+.thumbnail {
+    max-width: 200px;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.banner {
+    width: 100%;
+}
+
+
+
+@media (min-width: 550px) {
+
+    /*
+    Side by side gallery
+    use with </> alignment
+    e.g.
+    [_gallery >](imgages/test.jpg)
+    */
+    img[alt~="_gallery"] {
+        max-width: 25%;
+        display: inline;
+
+    }
+
+    img:last-of-type[alt~="_gallery"] {
+        margin-right: auto;
+
+    }
+
+    img:first-of-type[alt~="_gallery"] {
+        margin-left: auto;
+
+    }
+
+    /* Aligned to the right */
+    img[alt$=">"] {
+        float: right;
+    }
+
+    /* Aligned to the left */
+    img[alt$="<"] {
+        float: left;
+    }
+
+    /* Centered image */
+    img[alt$="><"] {
+        display: block;
+        margin: auto;
+        float: none !important;
+    }
+}
+
+/* Posts */
+.post-item {
+    margin-bottom: var(--block-spacing-vertical);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 20px; /* row-gap column gap */
+}
+.post-item > div {
+    float: left;
+    flex-shrink: 3;
+    width: calc(50% - 20px);
+}
+
+.post-item > div:first-child,
+.post-item > div:last-child {
+    width: calc(25% - 10px);
+}
+
+.post-item img {
+    max-width: 100%;
+    border-radius: 4px;
+    float: right;
+}
+
+.post-item::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Minimal links */
+
+/* Links: replicate underline that clears descenders */
+a:link,
+a:visited {
+    color: inherit;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(128 128 128 / 70%);
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgb(128 128 128 / 20%);
+  }
+  
+  ::-webkit-scrollbar-thumb:active { 
+    background-color: rgb(128 128 128 / 100%);
+  }
+  

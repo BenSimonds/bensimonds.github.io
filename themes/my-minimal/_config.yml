@@ -1,0 +1,20 @@
+title: "BenSimonds.com"
+author: Ben Simonds
+description: Personal Blog of Ben Simonds
+keywords:
+  - blender
+  - data visualisation
+  - d3
+  - observable
+  - creative coding
+
+# Navbar 
+navbar:
+  Blender: /blender
+
+# Links
+github: https://github.com/bensimonds
+linkedin: https://www.linkedin.com/in/bensimonds/
+
+# Images
+favicon: /images/favicon.png
