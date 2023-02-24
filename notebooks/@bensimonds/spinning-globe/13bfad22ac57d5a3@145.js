@@ -8,7 +8,7 @@ Inputs.form({
   countryFill: Inputs.color({value: '#800a21', label: "Country Fill"}),
   oceanFill: Inputs.color({value: '#060623', label: "Oceans"}),
   graticule: Inputs.color({value: '#152123', label: "Graticule"}),
-  bgHaze1: Inputs.color({value: '#0ee1c9', label: "BG Haze 1"}),
+  bgHaze1: Inputs.color({value: '#0eb7e1', label: "BG Haze 1"}),
   bgHaze2: Inputs.color({value: '#045181', label: "BG Haze 2"}),
   bg: Inputs.color({value: '#000', label: "BG Color"}),
 })

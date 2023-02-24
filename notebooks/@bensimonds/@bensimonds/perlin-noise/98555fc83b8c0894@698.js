@@ -52,7 +52,6 @@ function _5(d3,width,noise1d,nUnique)
       .attr("width", width)
       .attr("height", height)
       .attr("viewBox", `0 0 ${width} ${height}`)
-      .style('background-color','white');
 
   const scaleX = d3.scaleLinear([0, width]).domain([bottom, top])
   const scaleY = d3.scaleLinear([height, 0]).domain([-1, 2])
@@ -150,7 +149,7 @@ function _10(width,d3,noise2d,cells2d,nUnique,perm)
   const scaleC = d3.scaleSequential(d3.interpolateRdYlBu).domain([0, 1])
   
   const [start, stop] = [0, shapesPerRepeat * nUnits];
-  const shapeSize = Math.floor(width / (stop - start)) - 1;
+  const shapeSize = Math.ceil(width / (stop - start)) - 1;
   const data = [];
   const vectorData = [];
   for (let i = start; i<= stop; i++) {
@@ -296,7 +295,7 @@ function _16(width,d3,noise2DOctaves,octaves,persistence)
 
   
   const [start, stop] = [0, shapesPerRepeat * nUnits];
-  const shapeSize = Math.floor(width / (stop - start));
+  const shapeSize = Math.ceil(width / (stop - start));
   const data = [];
   const vectorData = [];
   for (let i = start; i<= stop; i++) {
@@ -316,7 +315,6 @@ function _16(width,d3,noise2DOctaves,octaves,persistence)
       .attr("width", width)
       .attr("height", height)
       .attr("viewBox", `0 0 ${width} ${height}`)
-      .style('background-color','white')
 
   svg.append('g').attr('transform','translate(0,20)').call(d3.axisTop(scaleX));
   svg.append('g').attr('transform','translate(30,0)').call(d3.axisLeft(scaleY));
@@ -326,7 +324,7 @@ function _16(width,d3,noise2DOctaves,octaves,persistence)
     .style('position', 'absolute')
     .style('top', 0)
     .style('left', 0)
-  .attr('width', width)
+    .attr('width', width)
     .attr('height', height)
     
   const context = canvas.node().getContext('2d');

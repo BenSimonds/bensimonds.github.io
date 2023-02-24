@@ -1,0 +1,121 @@
+/* Observable cells overrides*/
+:root {
+    /* Syntax highlighting */
+    --syntax-normal: #1b1e23;
+    --syntax-comment: #828282;
+    --syntax-diff: #24292e;
+    --syntax-diff-bg: #ffffff;
+    --syntax-number: #20a5ba;
+    --syntax-keyword: #c30771;
+    --syntax-atom: #10a778;
+    --syntax-string: #008ec4;
+    --syntax-error: #ffbedc;
+    --syntax-unknown-variable: #838383;
+    --syntax-known-variable: #005f87;
+    --syntax-matchbracket: #20bbfc;
+    --syntax-key: #6636b4;
+}
+
+.collapseAppendix {
+    display: none;
+}
+
+.cell--outer {
+    position: relative;
+    border-right: 1px solid;
+    border-radius: 10px;
+    padding-right: 10px;
+    border-color: rgba(200, 200, 200, 0);
+    transition: border-color 1.2s;
+}
+
+.cell--viewof + .cell--outer {
+    display: none;
+}
+
+.cell--outer:hover {
+    border-color: var(--syntax-comment);
+}
+
+.cell--outer:hover .cell--number {
+    opacity: 1.0;
+}
+
+.cell--number {
+    text-align: left;
+    position: absolute;
+    top: min(10px, 50%);
+    left: calc(100% + 1em);
+    width: 120px;
+    opacity: 0.0;
+    font-size: 0.75em;
+    color: var(--syntax-comment);
+    transition: opacity 1.2s;
+}
+
+.cell--inner {
+    text-align: left;
+}
+
+div.observablehq {
+    /* margin: 0px 0px; */
+    margin-bottom: var(--block-spacing-vertical);
+}
+
+.observablehq--inspect::-webkit-scrollbar {
+    display: none;
+}
+
+.observablehq--collapsed {
+    display: none;
+}
+
+.observablehq--inspect {
+    font-family: monospace, monospace;
+    font-size: 1rem;
+    overflow-x: scroll;
+    white-space: pre;
+
+}
+
+
+
+.observablehq--caret {
+    display: inline;
+    margin: 0rem 0.25rem
+}
+
+.observablehq--cellname {
+    color: var(--syntax-normal);
+}
+
+.observablehq--string {
+    color: var(--syntax-string);
+}
+
+.observablehq--field {
+    color: var(--syntax-normal);
+    text-indent: -2rem;
+    margin-left: 2rem;
+}
+
+.observablehq--key {
+    color: var(--syntax-key);
+}
+
+.observablehq--number,
+.observablehq--date {
+    color: var(--syntax-number);
+}
+
+.observablehq--comment {
+    color: var(--syntax-comment);
+}
+
+.observablehq--keyword {
+    color: var(--syntax-keyword);
+}
+
+.observablehq--error {
+    color: var(--syntax-error);
+}

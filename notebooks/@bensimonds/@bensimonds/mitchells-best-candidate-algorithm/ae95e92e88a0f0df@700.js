@@ -42,8 +42,9 @@ function _replay1(Inputs){return(
 Inputs.button("replay")
 )}
 
-function* _canvas(replay1,DOM,width,height,naiveCircleGenerator,config,$0)
+async function* _canvas(visibility,replay1,DOM,width,height,naiveCircleGenerator,config,$0)
 {
+  await visibility();
   replay1;
   const t1 = performance.now();
   const context = DOM.context2d(width, height);
@@ -144,9 +145,9 @@ function _replay2(Inputs){return(
 Inputs.button("replay")
 )}
 
-function* _canvas2(timer1,replay2,DOM,width,height,quadTreeCircleGenerator,config,$0)
+async function* _canvas2(visibility,replay2,DOM,width,height,quadTreeCircleGenerator,config,$0)
 {
-  if (timer1) {
+  await visibility();
   const t1 = performance.now();
   replay2;
   const context = DOM.context2d(width, height);
@@ -186,7 +187,6 @@ function* _canvas2(timer1,replay2,DOM,width,height,quadTreeCircleGenerator,confi
   const t2 = performance.now();
   $0.value = t2 - t1;
   newCircle.quadtree
-  }
 }
 
 
@@ -215,9 +215,9 @@ function _replay3(Inputs){return(
 Inputs.button("replay")
 )}
 
-function* _canvas3(timer2,replay3,DOM,width,height,naiveCircleGenerator,config,$0)
+async function* _canvas3(visibility,replay3,DOM,width,height,naiveCircleGenerator,config,$0)
 {
-  if (timer2) { // Run after canvas 2 completes
+  await visibility();
   const t1 = performance.now();
   replay3;
   const context = DOM.context2d(width, height);
@@ -256,7 +256,6 @@ function* _canvas3(timer2,replay3,DOM,width,height,naiveCircleGenerator,config,$
   yield context.canvas;
   const t2 = performance.now();
   $0.value = t2 - t1;
-  }
 }
 
 
@@ -270,9 +269,9 @@ function _replay4(Inputs){return(
 Inputs.button("replay")
 )}
 
-function* _canvas4(timer3,replay4,DOM,width,height,quadTreeCircleGenerator,config,$0)
+async function* _canvas4(visibility,replay4,DOM,width,height,quadTreeCircleGenerator,config,$0)
 {
-  if (timer3) { // Run after canvas 3 completes
+  await visibility();
   const t1 = performance.now();
   replay4;
   const context = DOM.context2d(width, height);
@@ -311,7 +310,6 @@ function* _canvas4(timer3,replay4,DOM,width,height,quadTreeCircleGenerator,confi
   yield context.canvas;
   const t2 = performance.now();
   $0.value = t2 - t1;
-  }
 }
 
 
@@ -374,21 +372,21 @@ export default function define(runtime, observer) {
   main.variable(observer("naiveCircleGenerator")).define("naiveCircleGenerator", ["distanceSquared"], _naiveCircleGenerator);
   main.variable(observer("viewof replay1")).define("viewof replay1", ["Inputs"], _replay1);
   main.variable(observer("replay1")).define("replay1", ["Generators", "viewof replay1"], (G, _) => G.input(_));
-  main.variable(observer("canvas")).define("canvas", ["replay1","DOM","width","height","naiveCircleGenerator","config","mutable timer1"], _canvas);
+  main.variable(observer("canvas")).define("canvas", ["visibility","replay1","DOM","width","height","naiveCircleGenerator","config","mutable timer1"], _canvas);
   main.variable(observer()).define(["d3","timer1","md"], _6);
   main.variable(observer("quadTreeCircleGenerator")).define("quadTreeCircleGenerator", ["d3","distanceSquared"], _quadTreeCircleGenerator);
   main.variable(observer("viewof replay2")).define("viewof replay2", ["Inputs"], _replay2);
   main.variable(observer("replay2")).define("replay2", ["Generators", "viewof replay2"], (G, _) => G.input(_));
-  main.variable(observer("canvas2")).define("canvas2", ["timer1","replay2","DOM","width","height","quadTreeCircleGenerator","config","mutable timer2"], _canvas2);
+  main.variable(observer("canvas2")).define("canvas2", ["visibility","replay2","DOM","width","height","quadTreeCircleGenerator","config","mutable timer2"], _canvas2);
   main.variable(observer()).define(["d3","timer2","md"], _10);
   main.variable(observer()).define(["md"], _11);
   main.variable(observer("viewof replay3")).define("viewof replay3", ["Inputs"], _replay3);
   main.variable(observer("replay3")).define("replay3", ["Generators", "viewof replay3"], (G, _) => G.input(_));
-  main.variable(observer("canvas3")).define("canvas3", ["timer2","replay3","DOM","width","height","naiveCircleGenerator","config","mutable timer3"], _canvas3);
+  main.variable(observer("canvas3")).define("canvas3", ["visibility","replay3","DOM","width","height","naiveCircleGenerator","config","mutable timer3"], _canvas3);
   main.variable(observer()).define(["d3","timer3","md"], _14);
   main.variable(observer("viewof replay4")).define("viewof replay4", ["Inputs"], _replay4);
   main.variable(observer("replay4")).define("replay4", ["Generators", "viewof replay4"], (G, _) => G.input(_));
-  main.variable(observer("canvas4")).define("canvas4", ["timer3","replay4","DOM","width","height","quadTreeCircleGenerator","config","mutable timer4"], _canvas4);
+  main.variable(observer("canvas4")).define("canvas4", ["visibility","replay4","DOM","width","height","quadTreeCircleGenerator","config","mutable timer4"], _canvas4);
   main.variable(observer()).define(["d3","timer4","md"], _17);
   main.variable(observer()).define(["md"], _18);
   main.variable(observer("height")).define("height", ["width"], _height);
