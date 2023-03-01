@@ -44,7 +44,7 @@ function _2(width,d3,data)
     .attr("y", 20)
     .attr("font-family", "sans-serif")
     .attr("font-size", "16px")
-    .text("Propoprtion of this blog post by subject.");
+    .text("Proportion of this blog post by subject.");
   return container.node();
 }
 
