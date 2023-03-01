@@ -1,0 +1,14 @@
+{
+  "name": "@bensimonds/parametric-kumiko-grids",
+  "main": "097722237adcf6cb@722.js",
+  "version": "722.0.0",
+  "homepage": "https://observablehq.com/@bensimonds/parametric-kumiko-grids",
+  "author": {
+    "name": "Ben Simonds",
+    "url": "https://observablehq.com/@bensimonds"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
