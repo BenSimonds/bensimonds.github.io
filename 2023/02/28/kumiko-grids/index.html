@@ -7,33 +7,33 @@
   <meta charset="utf-8">
 
   
-  <title>Modelling Timelapse</title>
-  <link rel="canonical" href="http://bensimonds.com/2010/06/16/modelling-timelapse/">
+  <title>Parametric Kumiko Grids</title>
+  <link rel="canonical" href="http://bensimonds.com/2023/02/28/kumiko-grids/">
   
-  <meta name="description" content="Modelling a head in Blender. This video covers me modelling the head poly-by-poly and then doing some low-detail sculpting to fill out the forms. The ">
+  <meta name="description" content="My personal site.">
   
   
   <meta name="author" content="Ben Simonds">
   
-  <meta property="og:image" content="http://bensimonds.comundefined">
+  <meta property="og:image" content="http://bensimonds.comthumb.jpg">
   
   <meta property="og:site_name" content="Ben Simonds&#39; Personal Blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Modelling Timelapse" />
+  <meta property="og:title" content="Parametric Kumiko Grids" />
   
-  <meta property="og:description" content="Modelling a head in Blender. This video covers me modelling the head poly-by-poly and then doing some low-detail sculpting to fill out the forms. The ">
+  <meta property="og:description" content="My personal site.">
   
-  <meta property="og:url" content="http://bensimonds.com/2010/06/16/modelling-timelapse/" />
+  <meta property="og:url" content="http://bensimonds.com/2023/02/28/kumiko-grids/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Modelling Timelapse">
+  <meta name="twitter:title" content="Parametric Kumiko Grids">
   
-  <meta name="twitter:description" content="Modelling a head in Blender. This video covers me modelling the head poly-by-poly and then doing some low-detail sculpting to fill out the forms. The ">
+  <meta name="twitter:description" content="My personal site.">
   
   
-  <meta name="twitter:image" content="http://bensimonds.comundefined">
+  <meta name="twitter:image" content="http://bensimonds.comthumb.jpg">
   
-  <meta name="twitter:url" content="http://bensimonds.com/2010/06/16/modelling-timelapse/" />
+  <meta name="twitter:url" content="http://bensimonds.com/2023/02/28/kumiko-grids/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -99,48 +99,92 @@
     
 
 
-    <h2>Modelling Timelapse</h2>
+    
+    <script type="module">
+        import {Runtime, Inspector, Library} from "/notebooks/@bensimonds/parametric-kumiko-grids/runtime.js";
+        import notebook from "/notebooks/@bensimonds/parametric-kumiko-grids/index.js";
+
+        const targetDiv = document.getElementById("observable-div")
+        const appendixDiv = document.getElementById("observable-div-appendix")
+        const hideAfter = 14;
+        var counter = 0;
+
+        // Get width to use for observable components
+        const width = targetDiv.getBoundingClientRect().width  - 25;
+
+        const runtime = new Runtime(
+            // Override Observable's width property
+            Object.assign(new Library, {width})
+        );
+        const main = runtime.module(notebook, name => {
+            
+            // Create cell div
+            const cellOuter = document.createElement('div');
+            cellOuter.classList.add("cell--outer");
+            
+            // When we encounter a viewof node, hide the next sibling with some css
+            if (name && name.startsWith('viewof ')) {
+                cellOuter.classList.add("cell--viewof");
+            }
+
+            // Add Cell Number
+            cellOuter.innerHTML = `<p class="cell--number">[${ name ? name : counter}]</p>`;
+            const cellInner = document.createElement('div');
+            cellInner.classList.add("cell--inner");
+
+
+            cellOuter.appendChild(cellInner);
+            
+            // Add the content to the correct div.
+            if (counter < hideAfter || hideAfter === -1 ) {
+                targetDiv.appendChild(cellOuter)
+            } else {
+                appendixDiv.appendChild(cellOuter)
+            }
+            
+            const inspector =  new Inspector(cellInner);
+            console.log({inspector});
+            counter += 1;
+            return inspector;
+        });
+
+        
+    </script>
+    
+    <div>
+    <p>
+        This post was first published as an observable notebook. 
+        You can find the <a target="_blank" rel="noopener" href="https://observablehq.com/@bensimonds/parametric-kumiko-grids">original, editable, forkable notebook</a> on <a target="_blank" rel="noopener" href="https://observablehq.com">observablehq.com</a>.
+        It's also the best place to view the code behind each cell.
+    </p>
+    </div>
+    <div id="observable-div"></div>
+       
+        <hr/>
+        <button id="toggleShowAppendix">Show Appendix</button>
+        <div class="collapseAppendix" id="observable-div-appendix"></div>
+        <script>
+            const button = document.getElementById("toggleShowAppendix")
+            function handleToggleCollapse() {
+                document.getElementById("observable-div-appendix").classList.toggle("collapseAppendix");
+                button.textContent = button.textContent === 'Show Appendix' ? 'Hide Appendix' : 'Show Appendix';
+            }
+            button.addEventListener("click", handleToggleCollapse);
+        </script>
+        
   
   
-  <iframe title="vimeo-player" src="https://player.vimeo.com/video/12619595" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-
-<p>Modelling a head in Blender. This video covers me modelling the head poly-by-poly and then doing some low-detail sculpting to fill out the forms. The basic modelling was done in Blender 2.49, and I switched to JWilkins’ Google summer of code sculpt build for the sculpting, so I could play with the new tools. In particular I think the improved clay brush and the scrape and fill tools are brilliant, and well worth seeking out a build yourself if you’re into sculpting. You can find a recent build at <a target="_blank" rel="noopener" href="http://graphicall.org/">graphicall.org</a>, just look for a JWilkins GSoC build appropriate to your OS. </p>
-<p><img src="/images/old/face1.jpg" alt="&gt;&lt; &gt;&lt;"></p>
-<p>Hopefully I will find time to follow this one up with a timelapse of some higher detail sculpting and maybe texturing at a later date.</p>
-<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>Hperigo (Jun 16, 2010)</p>
-<blockquote>
-<p>how long did you take to model that?<br>(nice model btw ehehe)</p>
-</blockquote>
-<p>bensimonds (Jun 16, 2010)</p>
-<blockquote>
-<p>I think around 2 and a bit hours.</p>
-</blockquote>
-<p>vijay (Nov 08, 2010)</p>
-<blockquote>
-<p>hi,</p>
-<p>did u see the sintel model.there the topology different.which is the best one.</p>
-</blockquote>
-<p>bensimonds (Nov 08, 2010)</p>
-<blockquote>
-<p>There is no best one. Only topology that works and topology that doesn’t.</p>
-</blockquote>
-<p>ani2in (Aug 20, 2010)</p>
-<blockquote>
-<p>HELLO SIR, </p>
-<p>nice to c your work nd flow.. can u do the same in little slower, so that we can understand the modelling method  in a much better way..</p>
-<p>thanking you</p>
-<p><a href="mailto:&#97;&#110;&#x69;&#50;&#105;&#x6e;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;">&#97;&#110;&#x69;&#50;&#105;&#x6e;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p>
-</blockquote>
-<p>Abdel Aziz (Apr 16, 2013)</p>
-<blockquote>
-<p>You’re right</p>
-</blockquote>
-
-  <p><a class="classtest-link" href="/tags/blender/" rel="tag">blender</a>, <a class="classtest-link" href="/tags/modelling/" rel="tag">modelling</a>, <a class="classtest-link" href="/tags/portrait/" rel="tag">portrait</a>, <a class="classtest-link" href="/tags/quick-projects/" rel="tag">quick projects</a>, <a class="classtest-link" href="/tags/sculpt/" rel="tag">sculpt</a>, <a class="classtest-link" href="/tags/timelapse/" rel="tag">timelapse</a>, <a class="classtest-link" href="/tags/tutorial/" rel="tag">tutorial</a>, <a class="classtest-link" href="/tags/tutorials/" rel="tag">tutorials</a> — Jun 16, 2010</p>
+  
+  
+  <p><a class="classtest-link" href="/tags/kumiko/" rel="tag">kumiko</a>, <a class="classtest-link" href="/tags/observable/" rel="tag">observable</a>, <a class="classtest-link" href="/tags/patterns/" rel="tag">patterns</a>, <a class="classtest-link" href="/tags/woodworking/" rel="tag">woodworking</a> — Feb 28, 2023</p>
   
   <br/>
   
   
+  
+    
+<link rel="stylesheet" href="/css/observable.css">
+
   
   
     <footer>

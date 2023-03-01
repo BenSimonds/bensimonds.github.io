@@ -7,33 +7,33 @@
   <meta charset="utf-8">
 
   
-  <title>Parametric Kumiko Grids</title>
-  <link rel="canonical" href="http://bensimonds.com/2023/03/01/kumiko-grids/">
+  <title>Data Is or Data Are</title>
+  <link rel="canonical" href="http://bensimonds.com/2023/03/01/data-is-or-are/">
   
-  <meta name="description" content="My personal site.">
+  <meta name="description" content="A recent episode of on of my favourite podcasts, More or Less discussed the changing use of the word “data” and whether it is used as a mass noun (lik">
   
   
   <meta name="author" content="Ben Simonds">
   
-  <meta property="og:image" content="http://bensimonds.comthumb.jpg">
+  <meta property="og:image" content="http://bensimonds.comundefined">
   
   <meta property="og:site_name" content="Ben Simonds&#39; Personal Blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Parametric Kumiko Grids" />
+  <meta property="og:title" content="Data Is or Data Are" />
   
-  <meta property="og:description" content="My personal site.">
+  <meta property="og:description" content="A recent episode of on of my favourite podcasts, More or Less discussed the changing use of the word “data” and whether it is used as a mass noun (lik">
   
-  <meta property="og:url" content="http://bensimonds.com/2023/03/01/kumiko-grids/" />
+  <meta property="og:url" content="http://bensimonds.com/2023/03/01/data-is-or-are/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Parametric Kumiko Grids">
+  <meta name="twitter:title" content="Data Is or Data Are">
   
-  <meta name="twitter:description" content="My personal site.">
+  <meta name="twitter:description" content="A recent episode of on of my favourite podcasts, More or Less discussed the changing use of the word “data” and whether it is used as a mass noun (lik">
   
   
-  <meta name="twitter:image" content="http://bensimonds.comthumb.jpg">
+  <meta name="twitter:image" content="http://bensimonds.comundefined">
   
-  <meta name="twitter:url" content="http://bensimonds.com/2023/03/01/kumiko-grids/" />
+  <meta name="twitter:url" content="http://bensimonds.com/2023/03/01/data-is-or-are/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -99,92 +99,25 @@
     
 
 
-    
-    <script type="module">
-        import {Runtime, Inspector, Library} from "/notebooks/@bensimonds/parametric-kumiko-grids/runtime.js";
-        import notebook from "/notebooks/@bensimonds/parametric-kumiko-grids/index.js";
-
-        const targetDiv = document.getElementById("observable-div")
-        const appendixDiv = document.getElementById("observable-div-appendix")
-        const hideAfter = 14;
-        var counter = 0;
-
-        // Get width to use for observable components
-        const width = targetDiv.getBoundingClientRect().width  - 25;
-
-        const runtime = new Runtime(
-            // Override Observable's width property
-            Object.assign(new Library, {width})
-        );
-        const main = runtime.module(notebook, name => {
-            
-            // Create cell div
-            const cellOuter = document.createElement('div');
-            cellOuter.classList.add("cell--outer");
-            
-            // When we encounter a viewof node, hide the next sibling with some css
-            if (name && name.startsWith('viewof ')) {
-                cellOuter.classList.add("cell--viewof");
-            }
-
-            // Add Cell Number
-            cellOuter.innerHTML = `<p class="cell--number">[${ name ? name : counter}]</p>`;
-            const cellInner = document.createElement('div');
-            cellInner.classList.add("cell--inner");
-
-
-            cellOuter.appendChild(cellInner);
-            
-            // Add the content to the correct div.
-            if (counter < hideAfter || hideAfter === -1 ) {
-                targetDiv.appendChild(cellOuter)
-            } else {
-                appendixDiv.appendChild(cellOuter)
-            }
-            
-            const inspector =  new Inspector(cellInner);
-            console.log({inspector});
-            counter += 1;
-            return inspector;
-        });
-
-        
-    </script>
-    
-    <div>
-    <p>
-        This post was first published as an observable notebook. 
-        You can find the <a target="_blank" rel="noopener" href="https://observablehq.com/@bensimonds/parametric-kumiko-grids">original, editable, forkable notebook</a> on <a target="_blank" rel="noopener" href="https://observablehq.com">observablehq.com</a>.
-        It's also the best place to view the code behind each cell.
-    </p>
-    </div>
-    <div id="observable-div"></div>
-       
-        <hr/>
-        <button id="toggleShowAppendix">Show Appendix</button>
-        <div class="collapseAppendix" id="observable-div-appendix"></div>
-        <script>
-            const button = document.getElementById("toggleShowAppendix")
-            function handleToggleCollapse() {
-                document.getElementById("observable-div-appendix").classList.toggle("collapseAppendix");
-                button.textContent = button.textContent === 'Show Appendix' ? 'Hide Appendix' : 'Show Appendix';
-            }
-            button.addEventListener("click", handleToggleCollapse);
-        </script>
-        
+    <h2>Data Is or Data Are</h2>
   
   
-  
-  
-  <p><a class="classtest-link" href="/tags/kumiko/" rel="tag">kumiko</a>, <a class="classtest-link" href="/tags/observable/" rel="tag">observable</a>, <a class="classtest-link" href="/tags/patterns/" rel="tag">patterns</a>, <a class="classtest-link" href="/tags/woodworking/" rel="tag">woodworking</a> — Mar 1, 2023</p>
+  <p>A recent episode of on of my favourite podcasts, <a target="_blank" rel="noopener" href="https://www.bbc.co.uk/programmes/b006qshd">More or Less</a> discussed the changing use of the word “data” and whether it is used as a mass noun (like rice) or a count noun like “sheep”. If you’re a latin purist then data is obviously data is the plural of datum, and so data is already plural (“the data <em>are</em> available”, “lets see what the data <em>tell</em> us”), but gradually lots of people have moved toward using data as a mass noun (“the data <em>is</em> available”, “lets see what the data <em>tells</em> us”). Recently the FT <a target="_blank" rel="noopener" href="https://twitter.com/alanbeattie/status/1620777532202291203">changed their style guide</a>, to treat data as a mass noun, but changes have been brewing for longer than that.</p>
+<p>In literature (British English books from Google ngrams), data as a singlar noun has been gaining traction steadily for decades. Since the “big data” era from the early 2000’s onwards the plural form has dropped in frequency rapidly to around the same level as the singular.</p>
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=data+is,data+are&year_start=1900&year_end=2019&case_insensitive=on&corpus=en-GB-2019&smoothing=0" width="100%" height=300 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
+
+<p>And looking at more colloquial use in search the singular option has been dominant for as long as the data is&#x2F;are available.</p>
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3261_RC05/embed_loader.js"></script> 
+<script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"data is","geo":"GB","time":"2004-01-01 2023-03-01"},{"keyword":"data are","geo":"GB","time":"2004-01-01 2023-03-01"}],"category":0,"property":""}, {"exploreQuery":"date=all&geo=GB&q=data%20is,data%20are","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
+
+
+<p>The changing use makes sense to me. When data were a set of known facts (each one constituting a single datum), it made sense to think of data as a plural noun. Now that we often think of data as the new oil &#x2F; gold &#x2F; currency &#x2F; bacon (according to google autofill), where a single data point is as atomic as, well, an atom - the singluar form for the substance that is data seems to fit better.</p>
+
+  <p><a class="classtest-link" href="/tags/data/" rel="tag">data</a>, <a class="classtest-link" href="/tags/language/" rel="tag">language</a> — Mar 1, 2023</p>
   
   <br/>
   
   
-  
-    
-<link rel="stylesheet" href="/css/observable.css">
-
   
   
     <footer>
