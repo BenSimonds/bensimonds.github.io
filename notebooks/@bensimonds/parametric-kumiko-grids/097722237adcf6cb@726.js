@@ -58,11 +58,11 @@ ${
 function _3(md){return(
 md`
 
-I came across a problem recently in a woodworking project, where I wanted to fit a kumiko grid into a panel. Kumiko grids are based on squares, and but my panel was a rectangle that didn't fit some whole number of squares perfectly (ie. having a rational number ratio between that width and height that wasn't too complex.
+I came across a problem recently in a woodworking project, where I wanted to fit a [kumiko](https://en.wikipedia.org/wiki/Kumiko_(woodworking)) grid into a panel. Kumiko grids can be based on a variety of patterns, but for my panel I wanted to use the square asanoha pattern you see above. The issue was that my panel was a rectangle that didn't fit some whole number of squares perfectly (ie. having a rational number ratio between that width and height that wasn't too complex).
 
-By adding some padding to the design though, I realised there must be some width of padding around the edge of of the frame that would turn the inner frame into one that would fit a whole number of squares exactly.
+By adding some padding around the edge of the design though, I realised I could adjust the ratio between the width and height of the inner rectangle to fit a whole number of squares exactly.
 
-Adjust the padding width below - as the ratio of the inner rectangle reaches a value close to a whole number the matching number of squares will appear in the grid.`
+Adjust the padding width below - as the aspect ratio of the inner rectangle reaches a value close to a whole number the matching number of squares will appear in the grid.`
 )}
 
 function _padding(Scrubber,d3,width){return(
@@ -102,7 +102,7 @@ function _5(width,padding,d3,htl)
 
 
 function _6(tex,width,md){return(
-md`To find the _exact_ padding ${tex`p`}, we just need to solve the following, for a horizontal rectangle of height ${tex`h`} and width ${tex`w`}. For example:
+md`To find the _exact_ padding ${tex`p`} needed for any given panel, we just need to solve the following, for a horizontal rectangle of height ${tex`h`} and width ${tex`w`}. For example:
 
 <svg width=${width} height=${width/3} viewBox="-10 -10 100 100">
   
@@ -124,11 +124,7 @@ ${tex`w = 2p + nx`}
 ${tex`h = 2p + mx`}
 <br/>
 
-Where ${tex`n \times m`} is our number of squares we want to fit and ${tex`x`} is the size of our squares. We can solve this with some iteration.
-
-
-
-`
+Where ${tex`n \times m`} is our number of squares we want to fit and ${tex`x`} is the size of our squares. We can solve this with some iteration - narrowing in on the correct values by repeatedly plugging them into the formulas above.`
 )}
 
 function _solve(){return(
