@@ -14,9 +14,9 @@
   version "700.0.0"
   resolved "https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3#baf8a6bdcf44c2e651c092692ddde04bf390f71b"
 
-"@bensimonds/parametric-kumiko-grids@https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@716.tgz?v=3":
-  version "716.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@716.tgz?v=3#0214cf32d12de18ec70eac8b2e7028e975efc73f"
+"@bensimonds/parametric-kumiko-grids@https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@722.tgz?v=3":
+  version "722.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@722.tgz?v=3#51df539829f794da50bb3fe3273c978f23375fd0"
 
 "@bensimonds/perlin-noise@https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3":
   version "698.0.0"
