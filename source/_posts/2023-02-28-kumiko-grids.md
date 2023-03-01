@@ -1,7 +1,7 @@
 ---
 title: Parametric Kumiko Grids
 author: Ben Simonds
-date: 2023-03-01 12:29:52
+date: 2023-02-28 12:29:52
 tags:
  - observable
  - kumiko
