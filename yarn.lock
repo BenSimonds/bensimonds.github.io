@@ -14,6 +14,10 @@
   version "700.0.0"
   resolved "https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3#baf8a6bdcf44c2e651c092692ddde04bf390f71b"
 
+"@bensimonds/parametric-kumiko-grids@https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@716.tgz?v=3":
+  version "716.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@716.tgz?v=3#0214cf32d12de18ec70eac8b2e7028e975efc73f"
+
 "@bensimonds/perlin-noise@https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3":
   version "698.0.0"
   resolved "https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3#1d4edd36b7e87eda8150c57c2d4630ec0b2ae289"
@@ -22,9 +26,9 @@
   version "466.0.0"
   resolved "https://api.observablehq.com/@bensimonds/perlin-snakes@466.tgz?v=3#43b5c16b681f9dd2e1afc43120d8b41be4ecf831"
 
-"@bensimonds/spinning-globe@https://api.observablehq.com/@bensimonds/spinning-globe@142.tgz?v=3":
-  version "142.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/spinning-globe@142.tgz?v=3#f7153a9358fa7a30836adf3b8d53724ff7462aac"
+"@bensimonds/spinning-globe@https://api.observablehq.com/@bensimonds/spinning-globe@145.tgz?v=3":
+  version "145.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/spinning-globe@145.tgz?v=3#846a0d351434a00abcb8e7918bd3af9b2e4dc7fd"
 
 "@bensimonds/voronoi-cells@https://api.observablehq.com/@bensimonds/voronoi-cells@524.tgz?v=3":
   version "524.0.0"
