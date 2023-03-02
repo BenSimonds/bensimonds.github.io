@@ -166,14 +166,10 @@ svg,
 iframe {
     display: block;
     max-width: 100%;
-
-}
-
-iframe {
-    /* Center iframe by default. */
     margin: 1em auto;
 
 }
+
 
 
 .icon {
