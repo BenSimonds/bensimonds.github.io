@@ -20,7 +20,7 @@
     "@bensimonds/perlin-snakes": "https://api.observablehq.com/@bensimonds/perlin-snakes@466.tgz?v=3",
     "@bensimonds/spinning-globe": "https://api.observablehq.com/@bensimonds/spinning-globe@145.tgz?v=3",
     "@bensimonds/voronoi-cells": "https://api.observablehq.com/@bensimonds/voronoi-cells@524.tgz?v=3",
-    "@observablehq/runtime": "4",
+    "@observablehq/runtime": "5",
     "hexo": "^6.2.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
