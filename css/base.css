@@ -4,7 +4,7 @@
 :root {
     --spacing: 1rem;
     --block-spacing-vertical: calc(var(--spacing) * 2);
-    --color-bg: hsl(31 10% 91% / 1);
+    --color-bg: hsl(33 36% 87% / 1);
     --color-text: #222;
 }
 
