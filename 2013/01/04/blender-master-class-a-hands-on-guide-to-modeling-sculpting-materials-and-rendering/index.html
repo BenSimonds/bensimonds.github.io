@@ -59,28 +59,36 @@
 
     <header>
   <!-- Title -->
-  <a href="" style="text-decoration: none;">
-  <h1>
+  <h1 style="margin-bottom: -15px;">
+    <a href="" style="text-decoration: none;">
     BenSimonds.com
-  </h1>
   </a>
+  </h1>
 
   <!-- Site Banner Image -->
+  <div style="position:relative;">
+  <a id="siteBannerLink" href="/2011/10/13/abandoned-power-station/" style="font-size: 0.8rem; position: absolute; top: -25px; right:0px;">Abandoned Power Station</a>
   <a href="/">
   <img id="siteBanner" class="banner" src="/images/banner-warehouse-1.png" />
   </a>
+  </div>
   <script>
-    var images = [
-      "/images/banner-fractal.png",
-      "/images/banner-temple.png",
-      "/images/banner-spiderbot.png",
-      "/images/banner-pirate.jpg",
-      "/images/banner-warehouse-3.png",
-      "/images/banner-warehouse-2.png",
-      "/images/banner-warehouse-1.png"
+    var banners = [
+      {imgUrl: "/images/banner-fractal.png", title: "Fun with Instancing In Cycles", url: "/2012/07/04/fun-with-instancing-in-cycles/"},
+      {imgUrl: "/images/banner-temple.png", title: "Blender Masterclass", url: "/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/"},
+      {imgUrl: "/images/banner-spiderbot.png", title: "Blender Masterclass", url: "/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/"},
+      {imgUrl: "/images/banner-pirate.jpg", title: "Blending Life 2010", url: "/2010/02/24/blending-life-2010"},
+      {imgUrl: "/images/banner-warehouse-3.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/"},
+      {imgUrl: "/images/banner-warehouse-2.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/"},
+      {imgUrl: "/images/banner-warehouse-1.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/"},
+      {imgUrl: "/images/banner-circle-packing.png", title: "Mitchell's Best Candidate Algorithm", url: "/2023/02/22/circle-packing/"},
+      {imgUrl: "/images/banner-perlin-snakes.png", title: "Perlin Snakes", url: "/2023/02/19/perlin-snakes/"},
     ];
-    var randomNum = Math.floor(Math.random() * images.length);
-    document.getElementById("siteBanner").src = images[randomNum];
+    var randomNum = Math.floor(Math.random() * banners.length);
+    document.getElementById("siteBanner").src = banners[randomNum].imgUrl;
+    document.getElementById("siteBannerLink").href = banners[randomNum].url;
+    document.getElementById("siteBannerLink").textContent = banners[randomNum].title;
+    
   </script>
 
   <!-- Navbar -->
@@ -172,7 +180,7 @@
 </blockquote>
 <p>Ben Simonds (Mar 12, 2013)</p>
 <blockquote>
-<p>If you bought it from NoStarch press, then you should be able to download the ebook version. Email <a href="mailto:&#104;&#x65;&#108;&#x70;&#x40;&#x6e;&#x6f;&#x73;&#x74;&#x61;&#x72;&#99;&#x68;&#46;&#x63;&#111;&#x6d;">&#104;&#x65;&#108;&#x70;&#x40;&#x6e;&#x6f;&#x73;&#x74;&#x61;&#x72;&#99;&#x68;&#46;&#x63;&#111;&#x6d;</a> if you have any issues with downloads.</p>
+<p>If you bought it from NoStarch press, then you should be able to download the ebook version. Email <a href="mailto:&#x68;&#x65;&#x6c;&#x70;&#x40;&#x6e;&#x6f;&#x73;&#x74;&#97;&#114;&#x63;&#x68;&#46;&#x63;&#111;&#109;">&#x68;&#x65;&#x6c;&#x70;&#x40;&#x6e;&#x6f;&#x73;&#x74;&#97;&#114;&#x63;&#x68;&#46;&#x63;&#111;&#109;</a> if you have any issues with downloads.</p>
 </blockquote>
 <p>Trever Grissam (Apr 03, 2018)</p>
 <blockquote>
