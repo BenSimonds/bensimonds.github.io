@@ -6,9 +6,9 @@
   version "605.0.0"
   resolved "https://api.observablehq.com/@bensimonds/calendar-charts@605.tgz?v=3#766aca0ea2116eddfc2c9a3e14029f28b1b0c06b"
 
-"@bensimonds/cuboctahedral-projection@https://api.observablehq.com/@bensimonds/cuboctahedral-projection@1154.tgz?v=3":
-  version "1154.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/cuboctahedral-projection@1154.tgz?v=3#69d6e5ee7fe64d8157acd6cfb30f47f10c2327cc"
+"@bensimonds/cuboctahedral-projection@https://api.observablehq.com/@bensimonds/cuboctahedral-projection@1162.tgz?v=3":
+  version "1162.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/cuboctahedral-projection@1162.tgz?v=3#5085e5b3198c6eb4bc68776b314b26d84117d647"
 
 "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@197.tgz?v=3":
   version "197.0.0"
