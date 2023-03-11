@@ -14,9 +14,9 @@
   version "197.0.0"
   resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@197.tgz?v=3#78b0811e947cb1926103702b7934745e859685b3"
 
-"@bensimonds/mitchells-best-candidate-algorithm@https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3":
-  version "700.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3#baf8a6bdcf44c2e651c092692ddde04bf390f71b"
+"@bensimonds/mitchells-best-candidate-algorithm@https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@702.tgz?v=3":
+  version "702.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@702.tgz?v=3#1e9968b1eddd0369273e77e590427fedf84c56a1"
 
 "@bensimonds/parametric-kumiko-grids@https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@726.tgz?v=3":
   version "726.0.0"
