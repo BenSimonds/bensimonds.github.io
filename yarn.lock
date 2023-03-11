@@ -26,9 +26,9 @@
   version "698.0.0"
   resolved "https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3#1d4edd36b7e87eda8150c57c2d4630ec0b2ae289"
 
-"@bensimonds/perlin-snakes@https://api.observablehq.com/@bensimonds/perlin-snakes@466.tgz?v=3":
-  version "466.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/perlin-snakes@466.tgz?v=3#43b5c16b681f9dd2e1afc43120d8b41be4ecf831"
+"@bensimonds/perlin-snakes@https://api.observablehq.com/@bensimonds/perlin-snakes@468.tgz?v=3":
+  version "468.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/perlin-snakes@468.tgz?v=3#774b8d96666a58b363a188d01f23891327b1bb7a"
 
 "@bensimonds/spinning-globe@https://api.observablehq.com/@bensimonds/spinning-globe@145.tgz?v=3":
   version "145.0.0"
