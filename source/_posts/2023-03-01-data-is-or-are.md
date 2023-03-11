@@ -2,6 +2,7 @@
 title: Data Is or Data Are
 author: Ben Simonds
 date: 2023-03-01 16:21:35
+summary: Is data singlar or are they plural?
 tags: 
     - data
     - language

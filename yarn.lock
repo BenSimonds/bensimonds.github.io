@@ -6,17 +6,21 @@
   version "605.0.0"
   resolved "https://api.observablehq.com/@bensimonds/calendar-charts@605.tgz?v=3#766aca0ea2116eddfc2c9a3e14029f28b1b0c06b"
 
-"@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3":
-  version "196.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@196.tgz?v=3#c0be88fb32b9cf0d78becf9179aec0675d3e3fb2"
+"@bensimonds/cuboctahedral-projection@https://api.observablehq.com/@bensimonds/cuboctahedral-projection@1154.tgz?v=3":
+  version "1154.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/cuboctahedral-projection@1154.tgz?v=3#69d6e5ee7fe64d8157acd6cfb30f47f10c2327cc"
+
+"@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@197.tgz?v=3":
+  version "197.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@197.tgz?v=3#78b0811e947cb1926103702b7934745e859685b3"
 
 "@bensimonds/mitchells-best-candidate-algorithm@https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3":
   version "700.0.0"
   resolved "https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3#baf8a6bdcf44c2e651c092692ddde04bf390f71b"
 
-"@bensimonds/parametric-kumiko-grids@https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@722.tgz?v=3":
-  version "722.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@722.tgz?v=3#51df539829f794da50bb3fe3273c978f23375fd0"
+"@bensimonds/parametric-kumiko-grids@https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@726.tgz?v=3":
+  version "726.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@726.tgz?v=3#6e0342e8c21b9e4ad20357d912cf8e45119e24ad"
 
 "@bensimonds/perlin-noise@https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3":
   version "698.0.0"
