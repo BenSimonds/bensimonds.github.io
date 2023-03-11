@@ -3,8 +3,10 @@ title: Blender
 date: '2010-11-13'
 ---
 
-Here you can find some of my older tutorials and content on Blender related things. They're pretty out of date now as far as Blender versions are concerned, but I'm sure there's still something to be learned from them.
+Here you can find some of my older tutorials and content on Blender related things. They're pretty out of date now as far as Blender versions are concerned, but I hope there's still something to be learned from them.
 
+## Book
+ * [Blender Master Class](https://www.amazon.com/Blender-Master-Class-Hands-Sculpting/dp/1593275102)
 
 ## Tutorials
 
