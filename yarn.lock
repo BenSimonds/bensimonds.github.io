@@ -22,9 +22,9 @@
   version "726.0.0"
   resolved "https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@726.tgz?v=3#6e0342e8c21b9e4ad20357d912cf8e45119e24ad"
 
-"@bensimonds/perlin-noise@https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3":
-  version "698.0.0"
-  resolved "https://api.observablehq.com/@bensimonds/perlin-noise@698.tgz?v=3#1d4edd36b7e87eda8150c57c2d4630ec0b2ae289"
+"@bensimonds/perlin-noise@https://api.observablehq.com/@bensimonds/perlin-noise@700.tgz?v=3":
+  version "700.0.0"
+  resolved "https://api.observablehq.com/@bensimonds/perlin-noise@700.tgz?v=3#7b5dbf3f253a9e2ff2f0401e17257f0caa9a4dcd"
 
 "@bensimonds/perlin-snakes@https://api.observablehq.com/@bensimonds/perlin-snakes@468.tgz?v=3":
   version "468.0.0"
