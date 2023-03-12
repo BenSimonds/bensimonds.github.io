@@ -1,6 +1,6 @@
 # Mitchell's Best Candidate Algorithm
 
-https://observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700
+https://observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@702
 
 View this notebook in your browser by running a web server in this folder. For
 example:
@@ -14,7 +14,7 @@ import this module directly into your application. To npm install:
 
 ~~~sh
 npm install @observablehq/runtime@5
-npm install https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@700.tgz?v=3
+npm install https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@702.tgz?v=3
 ~~~
 
 Then, import your notebook and the runtime as:

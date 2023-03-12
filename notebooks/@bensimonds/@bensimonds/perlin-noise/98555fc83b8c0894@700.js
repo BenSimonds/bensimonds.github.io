@@ -134,8 +134,9 @@ function _theta(Inputs){return(
 Inputs.range([0, 360], {value: 0, step: 5, label: "Rotate noise vectors"})
 )}
 
-function _10(width,d3,noise2d,cells2d,nUnique,perm)
+async function _10(visibility,width,d3,noise2d,cells2d,nUnique,perm)
 {
+  await visibility();
   const margin = {left: 40, top: 40, right: 40, bottom: 40}
   const height = width;
   
@@ -279,8 +280,9 @@ function _octaves(Inputs){return(
 Inputs.range([1, 8], {value: 5, step: 1, label: "# Octaves"})
 )}
 
-function _16(width,d3,noise2DOctaves,octaves,persistence)
+async function _16(visibility,width,d3,noise2DOctaves,octaves,persistence)
 {
+  await visibility();
   const margin = {left: 40, top: 30, right: 30, bottom: 30}
   const height = width;
   
@@ -436,7 +438,7 @@ export default function define(runtime, observer) {
   main.variable(observer()).define(["md"], _8);
   main.variable(observer("viewof theta")).define("viewof theta", ["Inputs"], _theta);
   main.variable(observer("theta")).define("theta", ["Generators", "viewof theta"], (G, _) => G.input(_));
-  main.variable(observer()).define(["width","d3","noise2d","cells2d","nUnique","perm"], _10);
+  main.variable(observer()).define(["visibility","width","d3","noise2d","cells2d","nUnique","perm"], _10);
   main.variable(observer()).define(["md"], _11);
   main.variable(observer("noise2DOctaves")).define("noise2DOctaves", ["noise2d"], _noise2DOctaves);
   main.variable(observer()).define(["md"], _13);
@@ -444,7 +446,7 @@ export default function define(runtime, observer) {
   main.variable(observer("persistence")).define("persistence", ["Generators", "viewof persistence"], (G, _) => G.input(_));
   main.variable(observer("viewof octaves")).define("viewof octaves", ["Inputs"], _octaves);
   main.variable(observer("octaves")).define("octaves", ["Generators", "viewof octaves"], (G, _) => G.input(_));
-  main.variable(observer()).define(["width","d3","noise2DOctaves","octaves","persistence"], _16);
+  main.variable(observer()).define(["visibility","width","d3","noise2DOctaves","octaves","persistence"], _16);
   main.variable(observer()).define(["md"], _17);
   main.variable(observer()).define(["md"], _18);
   main.variable(observer("cells2d")).define("cells2d", ["cells2Base","rotate","theta"], _cells2d);

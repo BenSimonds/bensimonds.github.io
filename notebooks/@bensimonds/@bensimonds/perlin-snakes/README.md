@@ -1,6 +1,6 @@
 # Perlin Snakes
 
-https://observablehq.com/@bensimonds/perlin-snakes@466
+https://observablehq.com/@bensimonds/perlin-snakes@468
 
 View this notebook in your browser by running a web server in this folder. For
 example:
@@ -14,7 +14,7 @@ import this module directly into your application. To npm install:
 
 ~~~sh
 npm install @observablehq/runtime@5
-npm install https://api.observablehq.com/@bensimonds/perlin-snakes@466.tgz?v=3
+npm install https://api.observablehq.com/@bensimonds/perlin-snakes@468.tgz?v=3
 ~~~
 
 Then, import your notebook and the runtime as:

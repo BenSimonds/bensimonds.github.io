@@ -1,0 +1,185 @@
+<svg width="896" height="143" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+viewBox="10 10 876 123"
+>
+
+<!-- Outer Frame -->
+      <rect id="outer" x="10" y="10" width="876" height="123" stroke="#222" stroke-width="1.5" fill="none"/>
+
+<!-- Vertical Grid -->
+<path d="M 17.71405029296875 10 V 133" stroke="#222" stroke-width="2"/><path d="M 71.49979400634766 10 V 133" stroke="#222" stroke-width="2"/><path d="M 125.28553771972656 10 V 133" stroke="#222" stroke-width="2"/><path d="M 179.07128143310547 10 V 133" stroke="#222" stroke-width="2"/><path d="M 232.85702514648438 10 V 133" stroke="#222" stroke-width="2"/><path d="M 286.6427688598633 10 V 133" stroke="#222" stroke-width="2"/><path d="M 340.4285125732422 10 V 133" stroke="#222" stroke-width="2"/><path d="M 394.2142562866211 10 V 133" stroke="#222" stroke-width="2"/><path d="M 448 10 V 133" stroke="#222" stroke-width="2"/><path d="M 501.7857437133789 10 V 133" stroke="#222" stroke-width="2"/><path d="M 555.5714874267578 10 V 133" stroke="#222" stroke-width="2"/><path d="M 609.3572311401367 10 V 133" stroke="#222" stroke-width="2"/><path d="M 663.1429748535156 10 V 133" stroke="#222" stroke-width="2"/><path d="M 716.9287185668945 10 V 133" stroke="#222" stroke-width="2"/><path d="M 770.7144622802734 10 V 133" stroke="#222" stroke-width="2"/><path d="M 824.5002059936523 10 V 133" stroke="#222" stroke-width="2"/><path d="M 878.2859497070312 10 V 133" stroke="#222" stroke-width="2"/>
+<!-- Horizontal Grid -->
+<path d="M 10 17.71405029296875 H 886" stroke="#222" stroke-width="2"/><path d="M 10 71.49979400634766 H 886" stroke="#222" stroke-width="2"/><path d="M 10 125.28553771972656 H 886" stroke="#222" stroke-width="2"/>
+<!-- Asanoha pattern -->
+<g transform="translate(17.71405029296875 17.71405029296875) scale(1.0757148742675782)">
+  <g transform="scale(0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(-0.5 0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(100, 100) scale(-0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+</g><g transform="translate(125.28553771972656 17.71405029296875) scale(1.0757148742675782)">
+  <g transform="scale(0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(-0.5 0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(100, 100) scale(-0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+</g><g transform="translate(232.85702514648438 17.71405029296875) scale(1.0757148742675782)">
+  <g transform="scale(0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(-0.5 0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(100, 100) scale(-0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+</g><g transform="translate(340.4285125732422 17.71405029296875) scale(1.0757148742675782)">
+  <g transform="scale(0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(-0.5 0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(100, 100) scale(-0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+</g><g transform="translate(448 17.71405029296875) scale(1.0757148742675782)">
+  <g transform="scale(0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(-0.5 0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(100, 100) scale(-0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+</g><g transform="translate(555.5714874267578 17.71405029296875) scale(1.0757148742675782)">
+  <g transform="scale(0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(-0.5 0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(100, 100) scale(-0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+</g><g transform="translate(663.1429748535156 17.71405029296875) scale(1.0757148742675782)">
+  <g transform="scale(0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(-0.5 0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(100, 100) scale(-0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+</g><g transform="translate(770.7144622802734 17.71405029296875) scale(1.0757148742675782)">
+  <g transform="scale(0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(-0.5 0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(50, 50) scale(0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+  <g transform="translate(100, 100) scale(-0.5 -0.5)">
+  <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+  <rect x="0" y="0" width="100" height="100" stroke="#222" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+</g>
+</g>
+
+      
+  
+  </svg>

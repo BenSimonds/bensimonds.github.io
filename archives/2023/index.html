@@ -59,36 +59,38 @@
 
     <header>
   <!-- Title -->
-  <h1 style="margin-bottom: -15px;">
-    <a href="" style="text-decoration: none;">
-    BenSimonds.com
-  </a>
-  </h1>
-
-  <!-- Site Banner Image -->
-  <div style="position:relative;">
-  <a id="siteBannerLink" href="/2011/10/13/abandoned-power-station/" style="font-size: 0.8rem; position: absolute; top: -25px; right:0px;">Abandoned Power Station</a>
-  <a href="/">
-  <img id="siteBanner" class="banner" src="/images/banner-warehouse-1.png" />
-  </a>
+  <div style="display:flex; flex-wrap: wrap; flex-direction:row; width: 100%; align-items: baseline; margin-bottom: -20px;">
+    <h1 style="margin-bottom: 0px;">
+      <a tyle="text-decoration: none;">
+        BenSimonds.com
+      </a>
+    </h1>
+    <a style=" margin-left: auto; font-size: 0.8rem;" id="siteBannerLink" href="/2011/10/13/abandoned-power-station/">Abandoned Power Station</a>
   </div>
+  <!-- Site Banner Image -->
+
+  <a href="/">
+    <img id="siteBanner" class="banner" src="/images/banner-warehouse-1.png" />
+  </a>
+
   <script>
     var banners = [
-      {imgUrl: "/images/banner-fractal.png", title: "Fun with Instancing In Cycles", url: "/2012/07/04/fun-with-instancing-in-cycles/"},
-      {imgUrl: "/images/banner-temple.png", title: "Blender Masterclass", url: "/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/"},
-      {imgUrl: "/images/banner-spiderbot.png", title: "Blender Masterclass", url: "/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/"},
-      {imgUrl: "/images/banner-pirate.jpg", title: "Blending Life 2010", url: "/2010/02/24/blending-life-2010"},
-      {imgUrl: "/images/banner-warehouse-3.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/"},
-      {imgUrl: "/images/banner-warehouse-2.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/"},
-      {imgUrl: "/images/banner-warehouse-1.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/"},
-      {imgUrl: "/images/banner-circle-packing.png", title: "Mitchell's Best Candidate Algorithm", url: "/2023/02/22/circle-packing/"},
-      {imgUrl: "/images/banner-perlin-snakes.png", title: "Perlin Snakes", url: "/2023/02/19/perlin-snakes/"},
+      { imgUrl: "/images/banner-fractal.png", title: "Fun with Instancing In Cycles", url: "/2012/07/04/fun-with-instancing-in-cycles/" },
+      { imgUrl: "/images/banner-temple.png", title: "Blender Masterclass", url: "/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/" },
+      { imgUrl: "/images/banner-spiderbot.png", title: "Blender Masterclass", url: "/2013/01/04/blender-master-class-a-hands-on-guide-to-modeling-sculpting-materials-and-rendering/" },
+      { imgUrl: "/images/banner-pirate.jpg", title: "Blending Life 2010", url: "/2010/02/24/blending-life-2010" },
+      { imgUrl: "/images/banner-warehouse-3.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/" },
+      { imgUrl: "/images/banner-warehouse-2.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/" },
+      { imgUrl: "/images/banner-warehouse-1.png", title: "Abandoned Power Station", url: "/2011/10/13/abandoned-power-station/" },
+      { imgUrl: "/images/banner-circle-packing.png", title: "Mitchell's Best Candidate Algorithm", url: "/2023/02/22/circle-packing/" },
+      { imgUrl: "/images/banner-perlin-snakes.png", title: "Perlin Snakes", url: "/2023/02/19/perlin-snakes/" },
+      { imgUrl: "/images/banner-kumiko.svg", title: "Kumiko Grids", url: "/2023/02/28/kumiko-grids/" },
     ];
     var randomNum = Math.floor(Math.random() * banners.length);
     document.getElementById("siteBanner").src = banners[randomNum].imgUrl;
     document.getElementById("siteBannerLink").href = banners[randomNum].url;
     document.getElementById("siteBannerLink").textContent = banners[randomNum].title;
-    
+
   </script>
 
   <!-- Navbar -->
@@ -100,7 +102,7 @@
         
     </ul>
   </nav>
-  <hr/>
+  <hr />
 </header>
 
 
@@ -109,6 +111,34 @@
 
 <div class="post-list">
     
+
+        <article class="post-item">
+            <div>
+                <p>Mar 11, 2023</p>
+            </div>
+            <div>
+                <a href="/2023/03/11/cuboctahedral-projection/">
+                    
+                            Cuboctahedral Projection
+                                
+                </a>
+
+                
+                    <br />
+                    Creating Buckminster Fuller's Dymaxion Globe with d3.
+                        
+            </div>
+            <div>
+                
+                    <a href="/2023/03/11/cuboctahedral-projection/">
+                        <img src="/2023/03/11/cuboctahedral-projection/thumb.png" class="thumbnail" />
+                    </a>
+                    
+
+                        
+            </div>
+        </article>
+        
 
         <article class="post-item">
             <div>
@@ -122,6 +152,9 @@
                 </a>
 
                 
+                    <br />
+                    Is data singlar or are they plural?
+                        
             </div>
             <div>
                 
