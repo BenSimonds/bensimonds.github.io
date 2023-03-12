@@ -1,14 +1,9 @@
 {
-  "name": "@bensimonds/mitchells-best-candidate-algorithm",
-  "main": "ae95e92e88a0f0df@702.js",
+  "name": "mitchells-best-candidate-algorithm",
+  "main": "mitchells-best-candidate-algorithm.js",
   "version": "702.0.0",
-  "homepage": "https://observablehq.com/@bensimonds/mitchells-best-candidate-algorithm",
   "author": {
     "name": "Ben Simonds",
     "url": "https://observablehq.com/@bensimonds"
-  },
-  "type": "module",
-  "peerDependencies": {
-    "@observablehq/runtime": "4 - 5"
   }
 }

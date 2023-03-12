@@ -1,14 +1,9 @@
 {
-  "name": "@bensimonds/perlin-noise",
-  "main": "98555fc83b8c0894@700.js",
+  "name": "perlin-noise",
+  "main": "perlin-noise.js",
   "version": "700.0.0",
-  "homepage": "https://observablehq.com/@bensimonds/perlin-noise",
   "author": {
     "name": "Ben Simonds",
     "url": "https://observablehq.com/@bensimonds"
-  },
-  "type": "module",
-  "peerDependencies": {
-    "@observablehq/runtime": "4 - 5"
   }
 }

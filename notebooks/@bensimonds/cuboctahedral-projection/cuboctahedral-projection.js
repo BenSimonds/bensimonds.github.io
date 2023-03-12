@@ -1,4 +1,15 @@
-function _1(md){return(
+// URL: https://observablehq.com/@bensimonds/cuboctahedral-projection
+// Title: Cuboctahedral Projection
+// Author: Ben Simonds (@bensimonds)
+// Version: 1162
+// Runtime version: 1
+
+const m0 = {
+  id: "08a5552c4456c5be@1162",
+  variables: [
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`# Cuboctahedral Projection
 
 The inspiration from this came from [this collection](https://www.davidrumsey.com/luna/servlet/view/search;JSESSIONID=865a7d1e-595f-4216-be80-5c34d89b0826?q=pub_list_no%3d%2215437.000%22&qvq=sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1&mi=0) on Buckminster Fuller's [Dymaxion Globe](https://en.wikipedia.org/wiki/Dymaxion_map) in the [David Rumsey Historical Map Collection](https://www.davidrumsey.com/), which I had a great time printing out and assembling into a 3d globe.
@@ -6,17 +17,22 @@ The inspiration from this came from [this collection](https://www.davidrumsey.co
 > Printed on one side only of the two heavy center sheets of this issue of LIFE is a new kind of world map. It is a projection of the round earth on 14 flat segments, eight triangles and six squares. The map may be removed from the magazine and, in accordance with instructions on pages 44 and 53, cut out and assembled as a three-dimensional approximation of a globe or laid out as a flat map, with which the world may be fitted together and rearranged to illuminate special aspects of its geography.
 
 Later Dymaxion maps are projected onto an icosahedron, which can already be done with the [d3-geo-polygons](https://github.com/d3/d3-geo-polygon) library, but I think the cuboctahedron has some personality to it.`
-)}
-
-async function _2(FileAttachment,md){return(
+)})
+    },
+    {
+      inputs: ["FileAttachment","md"],
+      value: (async function(FileAttachment,md){return(
 md`Here is Buckminster Fuller's Map.
 
 ![Dymaxion Globe Net](${await FileAttachment("download.jpg").url()})
 
 And below is my implementation with a custom \`d3-geo-polygons\` projection.`
-)}
-
-function _map(DOM,width,height,d3,projection,outline,graticule,land,basefaces)
+)})
+    },
+    {
+      name: "map",
+      inputs: ["DOM","width","height","d3","projection","outline","graticule","land","basefaces"],
+      value: (function(DOM,width,height,d3,projection,outline,graticule,land,basefaces)
 {
   const context = DOM.context2d(width, height);
   const path = d3.geoPath(projection, context);
@@ -46,13 +62,19 @@ function _map(DOM,width,height,d3,projection,outline,graticule,land,basefaces)
   context.beginPath(), path(outline), context.strokeStyle = "#888", context.stroke();
   return context.canvas;
 }
-
-
-function _projection(cuboctahedron){return(
+)
+    },
+    {
+      name: "projection",
+      inputs: ["cuboctahedron"],
+      value: (function(cuboctahedron){return(
 cuboctahedron()
-)}
-
-function _cuboctahedron(d3,extraGeo,basefaces){return(
+)})
+    },
+    {
+      name: "cuboctahedron",
+      inputs: ["d3","extraGeo","basefaces"],
+      value: (function(d3,extraGeo,basefaces){return(
 function cuboctahedron(faceProjection) {
 
   faceProjection = faceProjection || function(face) {
@@ -92,17 +114,22 @@ function cuboctahedron(faceProjection) {
     .scale(100)
     .center([0, 45]);
 }
-)}
-
-function _baseverts(){return(
+)})
+    },
+    {
+      name: "baseverts",
+      value: (function(){return(
 [
   [45, 45],[135, 45],[-135,45],[-45,45],
   [0,0],[90,0],[-180,0],[-90,0],
   [45, -45],[135, -45],[-135,-45],[-45,-45],
 ]
-)}
-
-function _basefaces(baseverts){return(
+)})
+    },
+    {
+      name: "basefaces",
+      inputs: ["baseverts"],
+      value: (function(baseverts){return(
 [
   [0,3,2,1],
   [3,0,4],
@@ -123,14 +150,19 @@ function _basefaces(baseverts){return(
     return baseverts[i];
   });
 })
-)}
-
-function _8(md){return(
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`---
 ## Appendix`
-)}
-
-function _height(d3,projection,width,outline)
+)})
+    },
+    {
+      name: "height",
+      inputs: ["d3","projection","width","outline"],
+      value: (function(d3,projection,width,outline)
 {
   const [[x0, y0], [x1, y1]] = d3.geoPath(projection.fitWidth(width, outline)).bounds(outline);
   const dy = Math.ceil(y1 - y0);
@@ -138,37 +170,60 @@ function _height(d3,projection,width,outline)
   projection.scale(projection.scale() * (l - 1) / l).precision(0.2);
   return dy;
 }
-
-
-function _path(d3,projection){return(
+)
+    },
+    {
+      name: "path",
+      inputs: ["d3","projection"],
+      value: (function(d3,projection){return(
 d3.geoPath(projection)
-)}
-
-function _outline(){return(
+)})
+    },
+    {
+      name: "outline",
+      value: (function(){return(
 {type: "Sphere"}
-)}
-
-function _graticule(d3){return(
+)})
+    },
+    {
+      name: "graticule",
+      inputs: ["d3"],
+      value: (function(d3){return(
 d3.geoGraticule10()
-)}
-
-function _land(topojson,world){return(
+)})
+    },
+    {
+      name: "land",
+      inputs: ["topojson","world"],
+      value: (function(topojson,world){return(
 topojson.feature(world, world.objects.land)
-)}
-
-function _borders(topojson,world){return(
+)})
+    },
+    {
+      name: "borders",
+      inputs: ["topojson","world"],
+      value: (function(topojson,world){return(
 topojson.mesh(world, world.objects.countries, (a, b) => a !== b)
-)}
-
-function _world(FileAttachment){return(
+)})
+    },
+    {
+      name: "world",
+      inputs: ["FileAttachment"],
+      value: (function(FileAttachment){return(
 FileAttachment("countries-50m.json").json()
-)}
-
-function _extraGeo(require){return(
+)})
+    },
+    {
+      name: "extraGeo",
+      inputs: ["require"],
+      value: (function(require){return(
 require("d3-geo", "d3-geo-polygon")
-)}
-
-function _testnet(d3,htl,basefaces,baseverts)
+)})
+    },
+    {
+      name: "testnet",
+      inputs: ["d3","htl","basefaces","baseverts"],
+      value: (function(d3,htl,basefaces,baseverts)
 {
   // Just testing out that I've connected the right vertices together.
   const line = d3.line();
@@ -182,32 +237,14 @@ function _testnet(d3,htl,basefaces,baseverts)
     ${baseverts.map(([x,y], i) => htl.svg.fragment`<text fill="blue"text-anchor="middle" x="${x}" y="${-y - 5}" r="2" font-size="6" fill="black">${i} (${x},${y})</text>`)}
   </svg>`
 }
+)
+    }
+  ]
+};
 
+const notebook = {
+  id: "08a5552c4456c5be@1162",
+  modules: [m0]
+};
 
-export default function define(runtime, observer) {
-  const main = runtime.module();
-  function toString() { return this.url; }
-  const fileAttachments = new Map([
-    ["countries-50m.json", {url: new URL("./files/254a99fef9cfdc739794cf276a25ffce226b9d17d64789497bbed4935f1fda7d621149894d3a06e546f0e5c53beda2580db0166433ff2fac65397af1aa3627ea.json", import.meta.url), mimeType: "application/json", toString}],
-    ["download.jpg", {url: new URL("./files/54ae867d0d5e763776a50799a922abce335ee396a192c68bab75fddd0911232556b1ec7a68406c9a02df8f317c0c28cef05259307a6ba47b14d30b50854f7188.jpeg", import.meta.url), mimeType: "image/jpeg", toString}]
-  ]);
-  main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
-  main.variable(observer()).define(["md"], _1);
-  main.variable(observer()).define(["FileAttachment","md"], _2);
-  main.variable(observer("map")).define("map", ["DOM","width","height","d3","projection","outline","graticule","land","basefaces"], _map);
-  main.variable(observer("projection")).define("projection", ["cuboctahedron"], _projection);
-  main.variable(observer("cuboctahedron")).define("cuboctahedron", ["d3","extraGeo","basefaces"], _cuboctahedron);
-  main.variable(observer("baseverts")).define("baseverts", _baseverts);
-  main.variable(observer("basefaces")).define("basefaces", ["baseverts"], _basefaces);
-  main.variable(observer()).define(["md"], _8);
-  main.variable(observer("height")).define("height", ["d3","projection","width","outline"], _height);
-  main.variable(observer("path")).define("path", ["d3","projection"], _path);
-  main.variable(observer("outline")).define("outline", _outline);
-  main.variable(observer("graticule")).define("graticule", ["d3"], _graticule);
-  main.variable(observer("land")).define("land", ["topojson","world"], _land);
-  main.variable(observer("borders")).define("borders", ["topojson","world"], _borders);
-  main.variable(observer("world")).define("world", ["FileAttachment"], _world);
-  main.variable(observer("extraGeo")).define("extraGeo", ["require"], _extraGeo);
-  main.variable(observer("testnet")).define("testnet", ["d3","htl","basefaces","baseverts"], _testnet);
-  return main;
-}
+export default notebook;

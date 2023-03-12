@@ -1,6 +1,15 @@
-import define1 from "./a33468b95d0b15b0@808.js";
+// URL: https://observablehq.com/@bensimonds/calendar-charts
+// Title: Calendar Charts
+// Author: Ben Simonds (@bensimonds)
+// Version: 605
+// Runtime version: 1
 
-async function _1(FileAttachment,md){return(
+const m0 = {
+  id: "b146984afab14d30@605",
+  variables: [
+    {
+      inputs: ["FileAttachment","md"],
+      value: (async function(FileAttachment,md){return(
 md`# Calendar Charts
 
 A calendar chart is a flexible way of displaying some kind of time series data binned into intervals (eg. days, weeks, months), using colour to illustrate some other variable. Examples abound, but common cases are calendar heatmaps (like Mike Bostock's [calendar](https://observablehq.com/@d3/calendar) chart) or the GitHub contributions heatmap. 
@@ -12,13 +21,18 @@ Commonly, weeks are represented on the x-axis, and the day of the week on the y-
 Similarly, we usually see colour used to represent some continuous variable, but we could also use a categorical scale.
 
 In this first example, I've used a few months of some stock market data from 2020 and use the y-axis to show our open, high, low, and close values (this isn't particularly informative, since the differences between them are small, it's just for demonstration).`
-)}
-
-function _2(Legend,chart){return(
+)})
+    },
+    {
+      inputs: ["Legend","chart"],
+      value: (function(Legend,chart){return(
 Legend(chart.scales.c, {title: "Dow Jones Industrial Average"})
-)}
-
-function _chart(dji2,CalendarGrid,d3,width)
+)})
+    },
+    {
+      name: "chart",
+      inputs: ["dji2","CalendarGrid","d3","width"],
+      value: (function(dji2,CalendarGrid,d3,width)
 {
   const filteredData = dji2.filter(d => (d.Date.getFullYear() === 2000));
 const c = CalendarGrid(filteredData, {
@@ -39,17 +53,24 @@ const c = CalendarGrid(filteredData, {
   node.appendChild(c);
   return Object.assign(node, c);
 }
-
-
-function _4(md){return(
+)
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`Let's do something with some categorical data. We'll show the days President Trump went golfing during his presidency, using some data from [TrumpGolfCount.com](https://trumpgolfcount.com). In this example I've used the common convention of putting weeks on the x axis and day of the week on the y, which helpfully shows that most of Trump's golfing at least occurred on the weekend.`
-)}
-
-function _5(Swatches,chart2){return(
+)})
+    },
+    {
+      inputs: ["Swatches","chart2"],
+      value: (function(Swatches,chart2){return(
 Swatches(chart2.scales.c)
-)}
-
-function _chart2(CalendarGrid,trumpGolf,d3,width)
+)})
+    },
+    {
+      name: "chart2",
+      inputs: ["CalendarGrid","trumpGolf","d3","width"],
+      value: (function(CalendarGrid,trumpGolf,d3,width)
 {
 const c = CalendarGrid(trumpGolf, {
   x: d => d3.utcMonday(d.date),
@@ -72,17 +93,30 @@ const c = CalendarGrid(trumpGolf, {
   node.appendChild(c);
   return Object.assign(node, {scales: c.scales});
 }
-
-
-function _7(md){return(
+)
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`We can examine longer timespans as well. In the example below, we see the history of armed conflicts by year from the [UCDP/PRIO Armed Conflict Dataset](https://ucdp.uu.se/downloads/index.html#armedconflict). Showing the regions on the y axis lets us compare continents over time (this time with years on the x axis).`
-)}
-
-function _intensityLevel(Inputs){return(
+)})
+    },
+    {
+      name: "viewof intensityLevel",
+      inputs: ["Inputs"],
+      value: (function(Inputs){return(
 Inputs.select(["Minor","War"], {label: "Intensity Level"})
-)}
-
-function _chart3(intensityLevel,CalendarGrid,conflictsByRegionYear,d3,width)
+)})
+    },
+    {
+      name: "intensityLevel",
+      inputs: ["Generators","viewof intensityLevel"],
+      value: (G, _) => G.input(_)
+    },
+    {
+      name: "chart3",
+      inputs: ["intensityLevel","CalendarGrid","conflictsByRegionYear","d3","width"],
+      value: (function(intensityLevel,CalendarGrid,conflictsByRegionYear,d3,width)
 {
  function getConflicts(d) {
    return d.conflicts.filter(d => d.intensity_level >= (intensityLevel==='War' ? 2 : 1 ))
@@ -109,17 +143,24 @@ const c = CalendarGrid(conflictsByRegionYear, {
   node.appendChild(c);
   return Object.assign(node, {scales: c.scales});
 }
-
-
-function _10(Legend,chart3){return(
+)
+    },
+    {
+      inputs: ["Legend","chart3"],
+      value: (function(Legend,chart3){return(
 Legend(chart3.scales.c, {title: "# Armed Conflicts"})
-)}
-
-function _11(md){return(
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`### Implementation`
-)}
-
-function _CalendarGrid(d3){return(
+)})
+    },
+    {
+      name: "CalendarGrid",
+      inputs: ["d3"],
+      value: (function(d3){return(
 function CalendarGrid(data, {
   // X AXIS
   x = (d) => d,   // Given d in data, returns the (temporal) x-value
@@ -251,17 +292,34 @@ function CalendarGrid(data, {
   return Object.assign(svg.node(), {scales: {x: xScale, y: yScale, c: cScale}});
   
 }
-)}
-
-function _13(md){return(
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`## Appendix`
-)}
-
-function _14(ucdpPrioAcd221){return(
+)})
+    },
+    {
+      inputs: ["ucdpPrioAcd221"],
+      value: (function(ucdpPrioAcd221){return(
 ucdpPrioAcd221.filter(d => d.intensity_level == 2)
-)}
-
-async function _dji2(FileAttachment,d3)
+)})
+    },
+    {
+      from: "@d3/color-legend",
+      name: "Legend",
+      remote: "Legend"
+    },
+    {
+      from: "@d3/color-legend",
+      name: "Swatches",
+      remote: "Swatches"
+    },
+    {
+      name: "dji2",
+      inputs: ["FileAttachment","d3"],
+      value: (async function(FileAttachment,d3)
 {
   const raw = await FileAttachment("^DJI-2.csv").csv({typed: true})
   // unstack our data into a series of date, measure, value records.
@@ -275,9 +333,12 @@ async function _dji2(FileAttachment,d3)
   
   return tidy;
 }
-
-
-async function _trumpGolf(FileAttachment,d3)
+)
+    },
+    {
+      name: "trumpGolf",
+      inputs: ["FileAttachment","d3"],
+      value: (async function(FileAttachment,d3)
 {
   const data = await FileAttachment("trump_golf_outings.json").json();
   const columns = [
@@ -328,9 +389,12 @@ async function _trumpGolf(FileAttachment,d3)
   return golfCalendar;
   
 }
-
-
-async function _ucdpPrioAcd221(FileAttachment)
+)
+    },
+    {
+      name: "ucdpPrioAcd221",
+      inputs: ["FileAttachment"],
+      value: (async function(FileAttachment)
 {
   const raw = await FileAttachment("ucdp-prio-acd-221.csv").csv({typed: true})
   const regionNames = ["_","Europe","Middle East","Asia","Africa","Americas"]
@@ -339,9 +403,12 @@ async function _ucdpPrioAcd221(FileAttachment)
     regions: d.region.toString().split(',').map(parseInt).map(d => regionNames[d])
   }))
 }
-
-
-function _conflictsByRegionYear(d3,ucdpPrioAcd221)
+)
+    },
+    {
+      name: "conflictsByRegionYear",
+      inputs: ["d3","ucdpPrioAcd221"],
+      value: (function(d3,ucdpPrioAcd221)
 {
   const years = d3.utcYear.range(
     d3.utcYear(d3.min(ucdpPrioAcd221.map(d => new Date(d.year, 1, 1)))),
@@ -362,39 +429,251 @@ function _conflictsByRegionYear(d3,ucdpPrioAcd221)
   });
   return data;
 }
+)
+    }
+  ]
+};
 
+const m1 = {
+  id: "@d3/color-legend",
+  variables: [
+    {
+      name: "Legend",
+      inputs: ["d3"],
+      value: (function(d3){return(
+function Legend(color, {
+  title,
+  tickSize = 6,
+  width = 320, 
+  height = 44 + tickSize,
+  marginTop = 18,
+  marginRight = 0,
+  marginBottom = 16 + tickSize,
+  marginLeft = 0,
+  ticks = width / 64,
+  tickFormat,
+  tickValues
+} = {}) {
 
-export default function define(runtime, observer) {
-  const main = runtime.module();
-  function toString() { return this.url; }
-  const fileAttachments = new Map([
-    ["image.png", {url: new URL("./files/9b0f5b9e47cf221830b77fb39a03ec309aa97e27e170371131f08295fe41100233d3944d81c414c869ccb296157eadc5f2bfd64727eb6effcc562a99f59e0a99.png", import.meta.url), mimeType: "image/png", toString}],
-    ["^DJI-2.csv", {url: new URL("./files/754e2916be7548300012f5d0d6406308809baff7a2419cca200561b60eb4e788a826f8a588c66afdecbe119eea3b03725a5182fca591c03bc8cdfb1071436085.csv", import.meta.url), mimeType: "text/csv", toString}],
-    ["trump_golf_outings.json", {url: new URL("./files/9324ec159eca9689ec0b051cbfe358002d2b8b03969fbba46f472c6f85547c06dffbbabaeb1ed2e0271620f2595959a77dded583c970c7711378e19efca4f3a9.json", import.meta.url), mimeType: "application/json", toString}],
-    ["ucdp-prio-acd-221.csv", {url: new URL("./files/18c901885a1fba4b5839671da8eb974b9ed15e0cbed3ad4cc2b68c55e6f781d8e4d065a41e5ff1e98a88cf242ac65a9cf350291cb15280376c724bd19b74cca1.csv", import.meta.url), mimeType: "text/csv", toString}]
-  ]);
-  main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
-  main.variable(observer()).define(["FileAttachment","md"], _1);
-  main.variable(observer()).define(["Legend","chart"], _2);
-  main.variable(observer("chart")).define("chart", ["dji2","CalendarGrid","d3","width"], _chart);
-  main.variable(observer()).define(["md"], _4);
-  main.variable(observer()).define(["Swatches","chart2"], _5);
-  main.variable(observer("chart2")).define("chart2", ["CalendarGrid","trumpGolf","d3","width"], _chart2);
-  main.variable(observer()).define(["md"], _7);
-  main.variable(observer("viewof intensityLevel")).define("viewof intensityLevel", ["Inputs"], _intensityLevel);
-  main.variable(observer("intensityLevel")).define("intensityLevel", ["Generators", "viewof intensityLevel"], (G, _) => G.input(_));
-  main.variable(observer("chart3")).define("chart3", ["intensityLevel","CalendarGrid","conflictsByRegionYear","d3","width"], _chart3);
-  main.variable(observer()).define(["Legend","chart3"], _10);
-  main.variable(observer()).define(["md"], _11);
-  main.variable(observer("CalendarGrid")).define("CalendarGrid", ["d3"], _CalendarGrid);
-  main.variable(observer()).define(["md"], _13);
-  main.variable(observer()).define(["ucdpPrioAcd221"], _14);
-  const child1 = runtime.module(define1);
-  main.import("Legend", child1);
-  main.import("Swatches", child1);
-  main.variable(observer("dji2")).define("dji2", ["FileAttachment","d3"], _dji2);
-  main.variable(observer("trumpGolf")).define("trumpGolf", ["FileAttachment","d3"], _trumpGolf);
-  main.variable(observer("ucdpPrioAcd221")).define("ucdpPrioAcd221", ["FileAttachment"], _ucdpPrioAcd221);
-  main.variable(observer("conflictsByRegionYear")).define("conflictsByRegionYear", ["d3","ucdpPrioAcd221"], _conflictsByRegionYear);
-  return main;
+  function ramp(color, n = 256) {
+    const canvas = document.createElement("canvas");
+    canvas.width = n;
+    canvas.height = 1;
+    const context = canvas.getContext("2d");
+    for (let i = 0; i < n; ++i) {
+      context.fillStyle = color(i / (n - 1));
+      context.fillRect(i, 0, 1, 1);
+    }
+    return canvas;
+  }
+
+  const svg = d3.create("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", [0, 0, width, height])
+      .style("overflow", "visible")
+      .style("display", "block");
+
+  let tickAdjust = g => g.selectAll(".tick line").attr("y1", marginTop + marginBottom - height);
+  let x;
+
+  // Continuous
+  if (color.interpolate) {
+    const n = Math.min(color.domain().length, color.range().length);
+
+    x = color.copy().rangeRound(d3.quantize(d3.interpolate(marginLeft, width - marginRight), n));
+
+    svg.append("image")
+        .attr("x", marginLeft)
+        .attr("y", marginTop)
+        .attr("width", width - marginLeft - marginRight)
+        .attr("height", height - marginTop - marginBottom)
+        .attr("preserveAspectRatio", "none")
+        .attr("xlink:href", ramp(color.copy().domain(d3.quantize(d3.interpolate(0, 1), n))).toDataURL());
+  }
+
+  // Sequential
+  else if (color.interpolator) {
+    x = Object.assign(color.copy()
+        .interpolator(d3.interpolateRound(marginLeft, width - marginRight)),
+        {range() { return [marginLeft, width - marginRight]; }});
+
+    svg.append("image")
+        .attr("x", marginLeft)
+        .attr("y", marginTop)
+        .attr("width", width - marginLeft - marginRight)
+        .attr("height", height - marginTop - marginBottom)
+        .attr("preserveAspectRatio", "none")
+        .attr("xlink:href", ramp(color.interpolator()).toDataURL());
+
+    // scaleSequentialQuantile doesn’t implement ticks or tickFormat.
+    if (!x.ticks) {
+      if (tickValues === undefined) {
+        const n = Math.round(ticks + 1);
+        tickValues = d3.range(n).map(i => d3.quantile(color.domain(), i / (n - 1)));
+      }
+      if (typeof tickFormat !== "function") {
+        tickFormat = d3.format(tickFormat === undefined ? ",f" : tickFormat);
+      }
+    }
+  }
+
+  // Threshold
+  else if (color.invertExtent) {
+    const thresholds
+        = color.thresholds ? color.thresholds() // scaleQuantize
+        : color.quantiles ? color.quantiles() // scaleQuantile
+        : color.domain(); // scaleThreshold
+
+    const thresholdFormat
+        = tickFormat === undefined ? d => d
+        : typeof tickFormat === "string" ? d3.format(tickFormat)
+        : tickFormat;
+
+    x = d3.scaleLinear()
+        .domain([-1, color.range().length - 1])
+        .rangeRound([marginLeft, width - marginRight]);
+
+    svg.append("g")
+      .selectAll("rect")
+      .data(color.range())
+      .join("rect")
+        .attr("x", (d, i) => x(i - 1))
+        .attr("y", marginTop)
+        .attr("width", (d, i) => x(i) - x(i - 1))
+        .attr("height", height - marginTop - marginBottom)
+        .attr("fill", d => d);
+
+    tickValues = d3.range(thresholds.length);
+    tickFormat = i => thresholdFormat(thresholds[i], i);
+  }
+
+  // Ordinal
+  else {
+    x = d3.scaleBand()
+        .domain(color.domain())
+        .rangeRound([marginLeft, width - marginRight]);
+
+    svg.append("g")
+      .selectAll("rect")
+      .data(color.domain())
+      .join("rect")
+        .attr("x", x)
+        .attr("y", marginTop)
+        .attr("width", Math.max(0, x.bandwidth() - 1))
+        .attr("height", height - marginTop - marginBottom)
+        .attr("fill", color);
+
+    tickAdjust = () => {};
+  }
+
+  svg.append("g")
+      .attr("transform", `translate(0,${height - marginBottom})`)
+      .call(d3.axisBottom(x)
+        .ticks(ticks, typeof tickFormat === "string" ? tickFormat : undefined)
+        .tickFormat(typeof tickFormat === "function" ? tickFormat : undefined)
+        .tickSize(tickSize)
+        .tickValues(tickValues))
+      .call(tickAdjust)
+      .call(g => g.select(".domain").remove())
+      .call(g => g.append("text")
+        .attr("x", marginLeft)
+        .attr("y", marginTop + marginBottom - height - 6)
+        .attr("fill", "currentColor")
+        .attr("text-anchor", "start")
+        .attr("font-weight", "bold")
+        .attr("class", "title")
+        .text(title));
+
+  return svg.node();
 }
+)})
+    },
+    {
+      name: "Swatches",
+      inputs: ["d3","htl"],
+      value: (function(d3,htl){return(
+function Swatches(color, {
+  columns = null,
+  format,
+  unknown: formatUnknown,
+  swatchSize = 15,
+  swatchWidth = swatchSize,
+  swatchHeight = swatchSize,
+  marginLeft = 0
+} = {}) {
+  const id = `-swatches-${Math.random().toString(16).slice(2)}`;
+  const unknown = formatUnknown == null ? undefined : color.unknown();
+  const unknowns = unknown == null || unknown === d3.scaleImplicit ? [] : [unknown];
+  const domain = color.domain().concat(unknowns);
+  if (format === undefined) format = x => x === unknown ? formatUnknown : x;
+
+  function entity(character) {
+    return `&#${character.charCodeAt(0).toString()};`;
+  }
+
+  if (columns !== null) return htl.html`<div style="display: flex; align-items: center; margin-left: ${+marginLeft}px; min-height: 33px; font: 10px sans-serif;">
+  <style>
+
+.${id}-item {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1px;
+}
+
+.${id}-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - ${+swatchWidth}px - 0.5em);
+}
+
+.${id}-swatch {
+  width: ${+swatchWidth}px;
+  height: ${+swatchHeight}px;
+  margin: 0 0.5em 0 0;
+}
+
+  </style>
+  <div style=${{width: "100%", columns}}>${domain.map(value => {
+    const label = `${format(value)}`;
+    return htl.html`<div class=${id}-item>
+      <div class=${id}-swatch style=${{background: color(value)}}></div>
+      <div class=${id}-label title=${label}>${label}</div>
+    </div>`;
+  })}
+  </div>
+</div>`;
+
+  return htl.html`<div style="display: flex; align-items: center; min-height: 33px; margin-left: ${+marginLeft}px; font: 10px sans-serif;">
+  <style>
+
+.${id} {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.${id}::before {
+  content: "";
+  width: ${+swatchWidth}px;
+  height: ${+swatchHeight}px;
+  margin-right: 0.5em;
+  background: var(--color);
+}
+
+  </style>
+  <div>${domain.map(value => htl.html`<span class="${id}" style="--color: ${color(value)}">${format(value)}</span>`)}</div>`;
+}
+)})
+    }
+  ]
+};
+
+const notebook = {
+  id: "b146984afab14d30@605",
+  modules: [m0,m1]
+};
+
+export default notebook;

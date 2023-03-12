@@ -1,24 +1,7 @@
 {
-  "name": "bensimonds.github.io",
-  "version": "1.0.0",
-  "description": "Ben Simonds' Blog",
-  "main": "index.js",
-  "repository": "git@github.com:BenSimonds/bensimonds.github.io.git",
-  "author": "<bssimonds@gmail.com>",
-  "license": "MIT",
+  "name": "hexo-site",
+  "version": "0.0.0",
   "private": true,
-  "dependencies": {
-    "@observablehq/runtime": "4",
-    "hexo": "^6.3.0",
-    "hexo-generator-archive": "^2.0.0",
-    "hexo-generator-category": "^2.0.0",
-    "hexo-generator-index": "^3.0.0",
-    "hexo-generator-tag": "^2.0.0",
-    "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-marked": "^6.0.0",
-    "hexo-renderer-stylus": "^2.1.0",
-    "hexo-server": "^3.0.0"
-  },
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
@@ -39,5 +22,19 @@
     "@bensimonds/perlin-snakes": "https://api.observablehq.com/@bensimonds/perlin-snakes@468.tgz?v=3",
     "@bensimonds/spinning-globe": "https://api.observablehq.com/@bensimonds/spinning-globe@145.tgz?v=3",
     "@bensimonds/voronoi-cells": "https://api.observablehq.com/@bensimonds/voronoi-cells@524.tgz?v=3"
-  }
+  },
+  "dependencies": {
+    "@observablehq/runtime": "4",
+    "hexo": "^6.2.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^5.0.0",
+    "hexo-renderer-stylus": "^2.1.0",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-landscape": "^0.0.3"
+  },
+  "packageManager": "yarn@3.4.1"
 }

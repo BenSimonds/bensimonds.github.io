@@ -1,11 +1,22 @@
-import define1 from "./450051d7f1174df8@254.js";
+// URL: https://observablehq.com/@bensimonds/parametric-kumiko-grids
+// Title: Parametric Kumiko Grids
+// Author: Ben Simonds (@bensimonds)
+// Version: 726
+// Runtime version: 1
 
-function _1(md){return(
+const m0 = {
+  id: "097722237adcf6cb@726",
+  variables: [
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`# Parametric Kumiko Grids
 `
-)}
-
-function _2(width,grids,bisectRatio,solve,htl,asanoha)
+)})
+    },
+    {
+      inputs: ["width","grids","bisectRatio","solve","htl","asanoha"],
+      value: (function(width,grids,bisectRatio,solve,htl,asanoha)
 {
   const margin = 10,
     height = width * 0.32,
@@ -53,9 +64,11 @@ ${
   `
   return frame;
 }
-
-
-function _3(md){return(
+)
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`
 
 I came across a problem recently in a woodworking project, where I wanted to fit a [kumiko](https://en.wikipedia.org/wiki/Kumiko_(woodworking)) grid into a panel. Kumiko grids can be based on a variety of patterns, but for my panel I wanted to use the square asanoha pattern you see above. The issue was that my panel was a rectangle that didn't fit some whole number of squares perfectly (ie. having a rational number ratio between that width and height that wasn't too complex).
@@ -63,13 +76,23 @@ I came across a problem recently in a woodworking project, where I wanted to fit
 By adding some padding around the edge of the design though, I realised I could adjust the ratio between the width and height of the inner rectangle to fit a whole number of squares exactly.
 
 Adjust the padding width below - as the aspect ratio of the inner rectangle reaches a value close to a whole number the matching number of squares will appear in the grid.`
-)}
-
-function _padding(Scrubber,d3,width){return(
+)})
+    },
+    {
+      name: "viewof padding",
+      inputs: ["Scrubber","d3","width"],
+      value: (function(Scrubber,d3,width){return(
 Scrubber(d3.range(0,width/5,0.1), {initial:0, alternate: true, format: d3.format('.0f')})
-)}
-
-function _5(width,padding,d3,htl)
+)})
+    },
+    {
+      name: "padding",
+      inputs: ["Generators","viewof padding"],
+      value: (G, _) => G.input(_)
+    },
+    {
+      inputs: ["width","padding","d3","htl"],
+      value: (function(width,padding,d3,htl)
 {
   const margin = 10,
     height = width / 2.5, // Some non-whole number ratio
@@ -99,9 +122,11 @@ function _5(width,padding,d3,htl)
   `
   return frame;
 }
-
-
-function _6(tex,width,md){return(
+)
+    },
+    {
+      inputs: ["tex","width","md"],
+      value: (function(tex,width,md){return(
 md`To find the _exact_ padding ${tex`p`} needed for any given panel, we just need to solve the following, for a horizontal rectangle of height ${tex`h`} and width ${tex`w`}. For example:
 
 <svg width=${width} height=${width/3} viewBox="-10 -10 100 100">
@@ -125,9 +150,11 @@ ${tex`h = 2p + mx`}
 <br/>
 
 Where ${tex`n \times m`} is our number of squares we want to fit and ${tex`x`} is the size of our squares. We can solve this with some iteration - narrowing in on the correct values by repeatedly plugging them into the formulas above.`
-)}
-
-function _solve(){return(
+)})
+    },
+    {
+      name: "solve",
+      value: (function(){return(
 function solve(w, h, n, m=1, threshold=0.001) {
   var error = 1, p=0, i=0, x = w / n;
   while (error > threshold && i < 1000) {
@@ -139,17 +166,29 @@ function solve(w, h, n, m=1, threshold=0.001) {
   }
   return [p, x];
 }
-)}
-
-function _8(tex,md){return(
+)})
+    },
+    {
+      inputs: ["tex","md"],
+      value: (function(tex,md){return(
 md`Now we can use our solver to fit a nice grid into a rectangle with any ratio of side length, using an even amount of padding around the edges to force the inner rectangle to have a whole number ratio in its side lengths. The process goes as follows - first we just find a whole number combination ${tex`n \times m`} that gives a ratio just larger than that of the outer rectangle, then we solve to get the padding and square size. `
-)}
-
-function _ratio(Scrubber,d3){return(
+)})
+    },
+    {
+      name: "viewof ratio",
+      inputs: ["Scrubber","d3"],
+      value: (function(Scrubber,d3){return(
 Scrubber(d3.range(1.3, 4, 0.005), {initial:2, alternate: true, autoplay: true, format: d3.format('.2f')})
-)}
-
-function _10(width,ratio,grids,bisectRatio,solve,htl,asanoha)
+)})
+    },
+    {
+      name: "ratio",
+      inputs: ["Generators","viewof ratio"],
+      value: (G, _) => G.input(_)
+    },
+    {
+      inputs: ["width","ratio","grids","bisectRatio","solve","htl","asanoha"],
+      value: (function(width,ratio,grids,bisectRatio,solve,htl,asanoha)
 {
   const margin = 10,
     height = width / 1.3,
@@ -196,23 +235,32 @@ ${
   `
   return frame;
 }
-
-
-function _11(md){return(
+)
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`Which means I can design a Kumiko grid to fit any size woodworking project.`
-)}
-
-function _img_07852(FileAttachment){return(
+)})
+    },
+    {
+      name: "img_07852",
+      inputs: ["FileAttachment"],
+      value: (function(FileAttachment){return(
 FileAttachment("IMG_0785 2.jpg").image({width: 450})
-)}
-
-function _13(md){return(
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`## Appendix
 
 I've used the following array to store a list of integer grid ratios.`
-)}
-
-function _grids()
+)})
+    },
+    {
+      name: "grids",
+      value: (function()
 {
   const grids = [];
   const ratios = [];
@@ -228,30 +276,43 @@ function _grids()
   }
   return grids.sort((a,b) => a.ratio - b.ratio);
 }
-
-
-function _15(md){return(
+)
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`And this d3 bisect function to find the closest integer ratio to any grid size.`
-)}
-
-function _bisectRatio(d3){return(
+)})
+    },
+    {
+      name: "bisectRatio",
+      inputs: ["d3"],
+      value: (function(d3){return(
 d3.bisector(d => d.ratio)
-)}
-
-function _17(md){return(
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`And here's a couple of little \`htl\` fragment generating functions for drawing the square version of the Asanoha pattern.`
-)}
-
-function _asanohaQuadrant(htl){return(
+)})
+    },
+    {
+      name: "asanohaQuadrant",
+      inputs: ["htl"],
+      value: (function(htl){return(
 function asanohaQuadrant(transform, stroke="black", strokeWidth=2) {
   return htl.svg.fragment`<g transform="${transform}">
   <path d="M 0 0 L 100 100 L 75 25 L 0 0 M 100 0 L 75 25" stroke="${stroke}" stroke-width="${strokeWidth}" fill="none" vector-effect="non-scaling-stroke"/>
   <path d="M 100 100 L 25 75 L 0 0 M 0 100 L 25 75" stroke="${stroke}" stroke-width="${strokeWidth}" fill="none" vector-effect="non-scaling-stroke"/>
   <rect x=0 y=0 width=100 height=100 stroke="${stroke}" stroke-width="${strokeWidth}" fill="none" vector-effect="non-scaling-stroke" />
 </g>`}
-)}
-
-function _asanoha(htl,asanohaQuadrant){return(
+)})
+    },
+    {
+      name: "asanoha",
+      inputs: ["htl","asanohaQuadrant"],
+      value: (function(htl,asanohaQuadrant){return(
 function asanoha(x, y, size, stroke="black", strokeWidth=2) {
   return htl.svg.fragment`<g transform="translate(${x} ${y}) scale(${size / 100})">
   ${asanohaQuadrant("scale(0.5)", stroke, strokeWidth)}
@@ -260,42 +321,108 @@ function asanoha(x, y, size, stroke="black", strokeWidth=2) {
   ${asanohaQuadrant("translate(100, 100) scale(-0.5 -0.5)", stroke, strokeWidth)}
 </svg>`
 }
-)}
-
-function _20(htl,asanoha){return(
+)})
+    },
+    {
+      inputs: ["htl","asanoha"],
+      value: (function(htl,asanoha){return(
 htl.svg`<svg>${asanoha(100,10,100)}<svg>`
-)}
+)})
+    },
+    {
+      from: "@mbostock/scrubber",
+      name: "Scrubber",
+      remote: "Scrubber"
+    }
+  ]
+};
 
-export default function define(runtime, observer) {
-  const main = runtime.module();
-  function toString() { return this.url; }
-  const fileAttachments = new Map([
-    ["IMG_0785 2.jpg", {url: new URL("./files/eef1beef61842eeeaf7e3e06505e3ce25e93b9045a56ccc28810a0495c25f3481ce74e56e4bea72fba52aecb50abe3f65cee8614cd43e8e70600729b4eabcb47.jpeg", import.meta.url), mimeType: "image/jpeg", toString}]
-  ]);
-  main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
-  main.variable(observer()).define(["md"], _1);
-  main.variable(observer()).define(["width","grids","bisectRatio","solve","htl","asanoha"], _2);
-  main.variable(observer()).define(["md"], _3);
-  main.variable(observer("viewof padding")).define("viewof padding", ["Scrubber","d3","width"], _padding);
-  main.variable(observer("padding")).define("padding", ["Generators", "viewof padding"], (G, _) => G.input(_));
-  main.variable(observer()).define(["width","padding","d3","htl"], _5);
-  main.variable(observer()).define(["tex","width","md"], _6);
-  main.variable(observer("solve")).define("solve", _solve);
-  main.variable(observer()).define(["tex","md"], _8);
-  main.variable(observer("viewof ratio")).define("viewof ratio", ["Scrubber","d3"], _ratio);
-  main.variable(observer("ratio")).define("ratio", ["Generators", "viewof ratio"], (G, _) => G.input(_));
-  main.variable(observer()).define(["width","ratio","grids","bisectRatio","solve","htl","asanoha"], _10);
-  main.variable(observer()).define(["md"], _11);
-  main.variable(observer("img_07852")).define("img_07852", ["FileAttachment"], _img_07852);
-  main.variable(observer()).define(["md"], _13);
-  main.variable(observer("grids")).define("grids", _grids);
-  main.variable(observer()).define(["md"], _15);
-  main.variable(observer("bisectRatio")).define("bisectRatio", ["d3"], _bisectRatio);
-  main.variable(observer()).define(["md"], _17);
-  main.variable(observer("asanohaQuadrant")).define("asanohaQuadrant", ["htl"], _asanohaQuadrant);
-  main.variable(observer("asanoha")).define("asanoha", ["htl","asanohaQuadrant"], _asanoha);
-  main.variable(observer()).define(["htl","asanoha"], _20);
-  const child1 = runtime.module(define1);
-  main.import("Scrubber", child1);
-  return main;
+const m1 = {
+  id: "@mbostock/scrubber",
+  variables: [
+    {
+      name: "Scrubber",
+      inputs: ["html","Inputs"],
+      value: (function(html,Inputs){return(
+function Scrubber(values, {
+  format = value => value,
+  initial = 0,
+  delay = null,
+  autoplay = true,
+  loop = true,
+  loopDelay = null,
+  alternate = false
+} = {}) {
+  values = Array.from(values);
+  const form = html`<form style="font: 12px var(--sans-serif); font-variant-numeric: tabular-nums; display: flex; height: 33px; align-items: center;">
+  <button name=b type=button style="margin-right: 0.4em; width: 5em;"></button>
+  <label style="display: flex; align-items: center;">
+    <input name=i type=range min=0 max=${values.length - 1} value=${initial} step=1 style="width: 180px;">
+    <output name=o style="margin-left: 0.4em;"></output>
+  </label>
+</form>`;
+  let frame = null;
+  let timer = null;
+  let interval = null;
+  let direction = 1;
+  function start() {
+    form.b.textContent = "Pause";
+    if (delay === null) frame = requestAnimationFrame(tick);
+    else interval = setInterval(tick, delay);
+  }
+  function stop() {
+    form.b.textContent = "Play";
+    if (frame !== null) cancelAnimationFrame(frame), frame = null;
+    if (timer !== null) clearTimeout(timer), timer = null;
+    if (interval !== null) clearInterval(interval), interval = null;
+  }
+  function running() {
+    return frame !== null || timer !== null || interval !== null;
+  }
+  function tick() {
+    if (form.i.valueAsNumber === (direction > 0 ? values.length - 1 : direction < 0 ? 0 : NaN)) {
+      if (!loop) return stop();
+      if (alternate) direction = -direction;
+      if (loopDelay !== null) {
+        if (frame !== null) cancelAnimationFrame(frame), frame = null;
+        if (interval !== null) clearInterval(interval), interval = null;
+        timer = setTimeout(() => (step(), start()), loopDelay);
+        return;
+      }
+    }
+    if (delay === null) frame = requestAnimationFrame(tick);
+    step();
+  }
+  function step() {
+    form.i.valueAsNumber = (form.i.valueAsNumber + direction + values.length) % values.length;
+    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
+  }
+  form.i.oninput = event => {
+    if (event && event.isTrusted && running()) stop();
+    form.value = values[form.i.valueAsNumber];
+    form.o.value = format(form.value, form.i.valueAsNumber, values);
+  };
+  form.b.onclick = () => {
+    if (running()) return stop();
+    direction = alternate && form.i.valueAsNumber === values.length - 1 ? -1 : 1;
+    form.i.valueAsNumber = (form.i.valueAsNumber + direction) % values.length;
+    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
+    start();
+  };
+  form.i.oninput();
+  if (autoplay) start();
+  else stop();
+  Inputs.disposal(form).then(stop);
+  return form;
 }
+)})
+    }
+  ]
+};
+
+const notebook = {
+  id: "097722237adcf6cb@726",
+  modules: [m0,m1]
+};
+
+export default notebook;
