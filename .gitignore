@@ -2,8 +2,7 @@
 Thumbs.db
 db.json
 *.log
-node_modules/*
-!node_modules/@bensimonds
+node_modules/
 public/
 .deploy*/
 _multiconfig.yml
