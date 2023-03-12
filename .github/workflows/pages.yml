@@ -16,9 +16,7 @@ jobs:
           node-version: '16'
           cache: 'yarn'
       - name: Install Dependencies
-        run: yarn install
-      # - name: Show node folder.
-      #   run: ls node_modules/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo
+        run: yarn install --prod
       - name: Build
         run: yarn run build
       - name: Copy notebook files.
