@@ -1,14 +1,9 @@
 {
-  "name": "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo",
-  "main": "5da2161e9f1f2784@197.js",
+  "name": "interactive-blogging-with-observable-notebooks-and-hexo",
+  "main": "interactive-blogging-with-observable-notebooks-and-hexo.js",
   "version": "197.0.0",
-  "homepage": "https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo",
   "author": {
     "name": "Ben Simonds",
     "url": "https://observablehq.com/@bensimonds"
-  },
-  "type": "module",
-  "peerDependencies": {
-    "@observablehq/runtime": "4 - 5"
   }
 }

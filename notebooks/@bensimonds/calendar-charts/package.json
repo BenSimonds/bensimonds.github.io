@@ -1,14 +1,9 @@
 {
-  "name": "@bensimonds/calendar-charts",
-  "main": "b146984afab14d30@605.js",
+  "name": "calendar-charts",
+  "main": "calendar-charts.js",
   "version": "605.0.0",
-  "homepage": "https://observablehq.com/@bensimonds/calendar-charts",
   "author": {
     "name": "Ben Simonds",
     "url": "https://observablehq.com/@bensimonds"
-  },
-  "type": "module",
-  "peerDependencies": {
-    "@observablehq/runtime": "4 - 5"
   }
 }

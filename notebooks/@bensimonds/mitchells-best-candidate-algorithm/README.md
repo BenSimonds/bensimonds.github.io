@@ -1,33 +1,15 @@
 # Mitchell's Best Candidate Algorithm
 
-https://observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@702
+You can view this notebook by running a web server in this directory and
+visiting it as a webpage. For example:
 
-View this notebook in your browser by running a web server in this folder. For
-example:
-
-~~~sh
+```sh
 npx http-server
-~~~
+# Then, visit http://localhost:8080.
+```
 
-Or, use the [Observable Runtime](https://github.com/observablehq/runtime) to
-import this module directly into your application. To npm install:
+Or, use the [Notebook Runtime API](https://github.com/observablehq/notebook-runtime) to
+integrate directly with mitchells-best-candidate-algorithm.js, which contains the notebook compiled as an
+ES module.
 
-~~~sh
-npm install @observablehq/runtime@5
-npm install https://api.observablehq.com/@bensimonds/mitchells-best-candidate-algorithm@702.tgz?v=3
-~~~
-
-Then, import your notebook and the runtime as:
-
-~~~js
-import {Runtime, Inspector} from "@observablehq/runtime";
-import define from "@bensimonds/mitchells-best-candidate-algorithm";
-~~~
-
-To log the value of the cell named “foo”:
-
-~~~js
-const runtime = new Runtime();
-const main = runtime.module(define);
-main.value("foo").then(value => console.log(value));
-~~~
+*Exported from version 702 of [Mitchell's Best Candidate Algorithm](https://observablehq.com/@bensimonds/mitchells-best-candidate-algorithm) on observablehq.com.*

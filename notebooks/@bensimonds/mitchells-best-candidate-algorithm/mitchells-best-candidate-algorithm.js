@@ -1,16 +1,32 @@
-function _1(md){return(
+// URL: https://observablehq.com/@bensimonds/mitchells-best-candidate-algorithm
+// Title: Mitchell's Best Candidate Algorithm
+// Author: Ben Simonds (@bensimonds)
+// Version: 702
+// Runtime version: 1
+
+const m0 = {
+  id: "ae95e92e88a0f0df@702",
+  variables: [
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`# Mitchell's Best Candidate Algorithm
 
 Learning from Mike Bostock's [gist](https://gist.github.com/mbostock/1893974).
 
 > Mitchell’s best-candidate algorithm generates a new random sample by creating k candidate samples and picking the best of k. Here the “best” sample is defined as the sample that is farthest away from previous samples. The algorithm approximates Poisson-disc sampling, producing a much more natural appearance (better blue noise spectral characteristics) than uniform random sampling.`
-)}
-
-function _2(md){return(
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`I wanted to play with different algorithms for placing circles that don't overlap. My first, naive circle generator is pretty inefficient. It just tries random candidate places until it finds one a circle will fit in. `
-)}
-
-function _naiveCircleGenerator(distanceSquared){return(
+)})
+    },
+    {
+      name: "naiveCircleGenerator",
+      inputs: ["distanceSquared"],
+      value: (function(distanceSquared){return(
 function naiveCircleGenerator(maxRadius, padding,x0, x1, y0, y1) {
   // No optimisation, pick anywhere in the plane from (x0,y0) to (x1,y1)
   const circles = [];
@@ -36,13 +52,24 @@ function naiveCircleGenerator(maxRadius, padding,x0, x1, y0, y1) {
     return best;
   }
 }
-)}
-
-function _replay1(Inputs){return(
+)})
+    },
+    {
+      name: "viewof replay1",
+      inputs: ["Inputs"],
+      value: (function(Inputs){return(
 Inputs.button("replay")
-)}
-
-async function* _canvas(visibility,replay1,DOM,width,height,naiveCircleGenerator,config,$0)
+)})
+    },
+    {
+      name: "replay1",
+      inputs: ["Generators","viewof replay1"],
+      value: (G, _) => G.input(_)
+    },
+    {
+      name: "canvas",
+      inputs: ["visibility","replay1","DOM","width","height","naiveCircleGenerator","config","mutable timer1"],
+      value: (async function*(visibility,replay1,DOM,width,height,naiveCircleGenerator,config,$0)
 {
   await visibility();
   replay1;
@@ -84,15 +111,20 @@ async function* _canvas(visibility,replay1,DOM,width,height,naiveCircleGenerator
   const t2 = performance.now();
   $0.value = t2 - t1;
 }
-
-
-function _6(d3,timer1,md){return(
+)
+    },
+    {
+      inputs: ["d3","timer1","md"],
+      value: (function(d3,timer1,md){return(
 md`That took ${d3.format('.2f')(timer1/1000)} seconds to render.
 
 Not bad, but can we write a more efficient circle generator for finding empty spots with d3-quadtree? This will limit the number of circles we have to compare against for each candidate.`
-)}
-
-function _quadTreeCircleGenerator(d3,distanceSquared){return(
+)})
+    },
+    {
+      name: "quadTreeCircleGenerator",
+      inputs: ["d3","distanceSquared"],
+      value: (function(d3,distanceSquared){return(
 function quadTreeCircleGenerator(maxRadius, padding,x0, x1, y0, y1) {
   
   const quadtree = d3.quadtree()
@@ -139,13 +171,24 @@ function quadTreeCircleGenerator(maxRadius, padding,x0, x1, y0, y1) {
   f.quadtree = quadtree;
   return f;
 }
-)}
-
-function _replay2(Inputs){return(
+)})
+    },
+    {
+      name: "viewof replay2",
+      inputs: ["Inputs"],
+      value: (function(Inputs){return(
 Inputs.button("replay")
-)}
-
-async function* _canvas2(visibility,replay2,DOM,width,height,quadTreeCircleGenerator,config,$0)
+)})
+    },
+    {
+      name: "replay2",
+      inputs: ["Generators","viewof replay2"],
+      value: (G, _) => G.input(_)
+    },
+    {
+      name: "canvas2",
+      inputs: ["visibility","replay2","DOM","width","height","quadTreeCircleGenerator","config","mutable timer2"],
+      value: (async function*(visibility,replay2,DOM,width,height,quadTreeCircleGenerator,config,$0)
 {
   await visibility();
   const t1 = performance.now();
@@ -188,13 +231,17 @@ async function* _canvas2(visibility,replay2,DOM,width,height,quadTreeCircleGener
   $0.value = t2 - t1;
   newCircle.quadtree
 }
-
-
-function _10(d3,timer2,md){return(
+)
+    },
+    {
+      inputs: ["d3","timer2","md"],
+      value: (function(d3,timer2,md){return(
 md`Took ${d3.format('.2f')(timer2/1000)} seconds to render`
-)}
-
-function _11(md){return(
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`## 🤔 That Was supposed to be faster... 
 
 Odd, our quadtree was supposed to require checking fewer circles for overlaps. Why was it so much slower?
@@ -209,13 +256,24 @@ We can test this explanation - we should see an advantage for the quadtree gener
 Let's try that out.
 
 ### Small Circles - Naive`
-)}
-
-function _replay3(Inputs){return(
+)})
+    },
+    {
+      name: "viewof replay3",
+      inputs: ["Inputs"],
+      value: (function(Inputs){return(
 Inputs.button("replay")
-)}
-
-async function* _canvas3(visibility,replay3,DOM,width,height,naiveCircleGenerator,config,$0)
+)})
+    },
+    {
+      name: "replay3",
+      inputs: ["Generators","viewof replay3"],
+      value: (G, _) => G.input(_)
+    },
+    {
+      name: "canvas3",
+      inputs: ["visibility","replay3","DOM","width","height","naiveCircleGenerator","config","mutable timer3"],
+      value: (async function*(visibility,replay3,DOM,width,height,naiveCircleGenerator,config,$0)
 {
   await visibility();
   const t1 = performance.now();
@@ -257,19 +315,32 @@ async function* _canvas3(visibility,replay3,DOM,width,height,naiveCircleGenerato
   const t2 = performance.now();
   $0.value = t2 - t1;
 }
-
-
-function _14(d3,timer3,md){return(
+)
+    },
+    {
+      inputs: ["d3","timer3","md"],
+      value: (function(d3,timer3,md){return(
 md`Took ${d3.format('.2f')(timer3/1000)} seconds to render
 
 ## Small Circles - Quadtree`
-)}
-
-function _replay4(Inputs){return(
+)})
+    },
+    {
+      name: "viewof replay4",
+      inputs: ["Inputs"],
+      value: (function(Inputs){return(
 Inputs.button("replay")
-)}
-
-async function* _canvas4(visibility,replay4,DOM,width,height,quadTreeCircleGenerator,config,$0)
+)})
+    },
+    {
+      name: "replay4",
+      inputs: ["Generators","viewof replay4"],
+      value: (G, _) => G.input(_)
+    },
+    {
+      name: "canvas4",
+      inputs: ["visibility","replay4","DOM","width","height","quadTreeCircleGenerator","config","mutable timer4"],
+      value: (async function*(visibility,replay4,DOM,width,height,quadTreeCircleGenerator,config,$0)
 {
   await visibility();
   const t1 = performance.now();
@@ -311,39 +382,97 @@ async function* _canvas4(visibility,replay4,DOM,width,height,quadTreeCircleGener
   const t2 = performance.now();
   $0.value = t2 - t1;
 }
-
-
-function _17(d3,timer4,md){return(
+)
+    },
+    {
+      inputs: ["d3","timer4","md"],
+      value: (function(d3,timer4,md){return(
 md`Took ${d3.format('.2f')(timer4/1000)} seconds to render.
 
 There we go. The quadtree method is faster when our naive method ends up checking most circles.`
-)}
-
-function _18(md){return(
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
 md`## Appendix`
-)}
-
-function _height(width){return(
+)})
+    },
+    {
+      name: "height",
+      inputs: ["width"],
+      value: (function(width){return(
 width / 2
-)}
-
-function _timer1(){return(
+)})
+    },
+    {
+      name: "initial timer1",
+      value: (function(){return(
 undefined
-)}
-
-function _timer2(){return(
+)})
+    },
+    {
+      name: "mutable timer1",
+      inputs: ["Mutable","initial timer1"],
+      value: (M, _) => new M(_)
+    },
+    {
+      name: "timer1",
+      inputs: ["mutable timer1"],
+      value: _ => _.generator
+    },
+    {
+      name: "initial timer2",
+      value: (function(){return(
 undefined
-)}
-
-function _timer3(){return(
+)})
+    },
+    {
+      name: "mutable timer2",
+      inputs: ["Mutable","initial timer2"],
+      value: (M, _) => new M(_)
+    },
+    {
+      name: "timer2",
+      inputs: ["mutable timer2"],
+      value: _ => _.generator
+    },
+    {
+      name: "initial timer3",
+      value: (function(){return(
 undefined
-)}
-
-function _timer4(){return(
+)})
+    },
+    {
+      name: "mutable timer3",
+      inputs: ["Mutable","initial timer3"],
+      value: (M, _) => new M(_)
+    },
+    {
+      name: "timer3",
+      inputs: ["mutable timer3"],
+      value: _ => _.generator
+    },
+    {
+      name: "initial timer4",
+      value: (function(){return(
 undefined
-)}
-
-function _config(height,d3)
+)})
+    },
+    {
+      name: "mutable timer4",
+      inputs: ["Mutable","initial timer4"],
+      value: (M, _) => new M(_)
+    },
+    {
+      name: "timer4",
+      inputs: ["mutable timer4"],
+      value: _ => _.generator
+    },
+    {
+      name: "config",
+      inputs: ["height","d3"],
+      value: (function(height,d3)
 {
   const maxRadius = height / 3;
     return {
@@ -357,52 +486,22 @@ function _config(height,d3)
       cm: d3.scaleSequential().interpolator(d3.interpolateSpectral).domain([0, 1])
   }  
 }
-
-
-function _distanceSquared(){return(
+)
+    },
+    {
+      name: "distanceSquared",
+      value: (function(){return(
 function distanceSquared(x0,y0,x1,y1) {
   return (x1 - x0) * (x1 - x0) + (y1 - y0) * (y1 - y0)
 }
-)}
+)})
+    }
+  ]
+};
 
-export default function define(runtime, observer) {
-  const main = runtime.module();
-  main.variable(observer()).define(["md"], _1);
-  main.variable(observer()).define(["md"], _2);
-  main.variable(observer("naiveCircleGenerator")).define("naiveCircleGenerator", ["distanceSquared"], _naiveCircleGenerator);
-  main.variable(observer("viewof replay1")).define("viewof replay1", ["Inputs"], _replay1);
-  main.variable(observer("replay1")).define("replay1", ["Generators", "viewof replay1"], (G, _) => G.input(_));
-  main.variable(observer("canvas")).define("canvas", ["visibility","replay1","DOM","width","height","naiveCircleGenerator","config","mutable timer1"], _canvas);
-  main.variable(observer()).define(["d3","timer1","md"], _6);
-  main.variable(observer("quadTreeCircleGenerator")).define("quadTreeCircleGenerator", ["d3","distanceSquared"], _quadTreeCircleGenerator);
-  main.variable(observer("viewof replay2")).define("viewof replay2", ["Inputs"], _replay2);
-  main.variable(observer("replay2")).define("replay2", ["Generators", "viewof replay2"], (G, _) => G.input(_));
-  main.variable(observer("canvas2")).define("canvas2", ["visibility","replay2","DOM","width","height","quadTreeCircleGenerator","config","mutable timer2"], _canvas2);
-  main.variable(observer()).define(["d3","timer2","md"], _10);
-  main.variable(observer()).define(["md"], _11);
-  main.variable(observer("viewof replay3")).define("viewof replay3", ["Inputs"], _replay3);
-  main.variable(observer("replay3")).define("replay3", ["Generators", "viewof replay3"], (G, _) => G.input(_));
-  main.variable(observer("canvas3")).define("canvas3", ["visibility","replay3","DOM","width","height","naiveCircleGenerator","config","mutable timer3"], _canvas3);
-  main.variable(observer()).define(["d3","timer3","md"], _14);
-  main.variable(observer("viewof replay4")).define("viewof replay4", ["Inputs"], _replay4);
-  main.variable(observer("replay4")).define("replay4", ["Generators", "viewof replay4"], (G, _) => G.input(_));
-  main.variable(observer("canvas4")).define("canvas4", ["visibility","replay4","DOM","width","height","quadTreeCircleGenerator","config","mutable timer4"], _canvas4);
-  main.variable(observer()).define(["d3","timer4","md"], _17);
-  main.variable(observer()).define(["md"], _18);
-  main.variable(observer("height")).define("height", ["width"], _height);
-  main.define("initial timer1", _timer1);
-  main.variable(observer("mutable timer1")).define("mutable timer1", ["Mutable", "initial timer1"], (M, _) => new M(_));
-  main.variable(observer("timer1")).define("timer1", ["mutable timer1"], _ => _.generator);
-  main.define("initial timer2", _timer2);
-  main.variable(observer("mutable timer2")).define("mutable timer2", ["Mutable", "initial timer2"], (M, _) => new M(_));
-  main.variable(observer("timer2")).define("timer2", ["mutable timer2"], _ => _.generator);
-  main.define("initial timer3", _timer3);
-  main.variable(observer("mutable timer3")).define("mutable timer3", ["Mutable", "initial timer3"], (M, _) => new M(_));
-  main.variable(observer("timer3")).define("timer3", ["mutable timer3"], _ => _.generator);
-  main.define("initial timer4", _timer4);
-  main.variable(observer("mutable timer4")).define("mutable timer4", ["Mutable", "initial timer4"], (M, _) => new M(_));
-  main.variable(observer("timer4")).define("timer4", ["mutable timer4"], _ => _.generator);
-  main.variable(observer("config")).define("config", ["height","d3"], _config);
-  main.variable(observer("distanceSquared")).define("distanceSquared", _distanceSquared);
-  return main;
-}
+const notebook = {
+  id: "ae95e92e88a0f0df@702",
+  modules: [m0]
+};
+
+export default notebook;

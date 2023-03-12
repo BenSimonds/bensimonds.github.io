@@ -1,33 +1,15 @@
 # Interactive Blogging with Observable Notebooks and Hexo
 
-https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@197
+You can view this notebook by running a web server in this directory and
+visiting it as a webpage. For example:
 
-View this notebook in your browser by running a web server in this folder. For
-example:
-
-~~~sh
+```sh
 npx http-server
-~~~
+# Then, visit http://localhost:8080.
+```
 
-Or, use the [Observable Runtime](https://github.com/observablehq/runtime) to
-import this module directly into your application. To npm install:
+Or, use the [Notebook Runtime API](https://github.com/observablehq/notebook-runtime) to
+integrate directly with interactive-blogging-with-observable-notebooks-and-hexo.js, which contains the notebook compiled as an
+ES module.
 
-~~~sh
-npm install @observablehq/runtime@5
-npm install https://api.observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo@197.tgz?v=3
-~~~
-
-Then, import your notebook and the runtime as:
-
-~~~js
-import {Runtime, Inspector} from "@observablehq/runtime";
-import define from "@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo";
-~~~
-
-To log the value of the cell named “foo”:
-
-~~~js
-const runtime = new Runtime();
-const main = runtime.module(define);
-main.value("foo").then(value => console.log(value));
-~~~
+*Exported from version 197 of [Interactive Blogging with Observable Notebooks and Hexo](https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo) on observablehq.com.*
