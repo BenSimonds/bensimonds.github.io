@@ -1,9 +1,14 @@
 {
-  "name": "voronoi-cells",
-  "main": "voronoi-cells.js",
+  "name": "@bensimonds/voronoi-cells",
+  "main": "6c54627640a71236@524.js",
   "version": "524.0.0",
+  "homepage": "https://observablehq.com/@bensimonds/voronoi-cells",
   "author": {
     "name": "Ben Simonds",
     "url": "https://observablehq.com/@bensimonds"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
   }
 }

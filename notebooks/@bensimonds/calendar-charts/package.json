@@ -1,9 +1,0 @@
-{
-  "name": "calendar-charts",
-  "main": "calendar-charts.js",
-  "version": "605.0.0",
-  "author": {
-    "name": "Ben Simonds",
-    "url": "https://observablehq.com/@bensimonds"
-  }
-}

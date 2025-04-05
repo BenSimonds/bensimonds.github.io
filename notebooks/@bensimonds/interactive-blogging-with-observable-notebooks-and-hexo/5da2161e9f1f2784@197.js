@@ -1,24 +1,11 @@
-// URL: https://observablehq.com/@bensimonds/interactive-blogging-with-observable-notebooks-and-hexo
-// Title: Interactive Blogging with Observable Notebooks and Hexo
-// Author: Ben Simonds (@bensimonds)
-// Version: 197
-// Runtime version: 1
-
-const m0 = {
-  id: "5da2161e9f1f2784@197",
-  variables: [
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+function _1(md){return(
 md`# Interactive Blogging with Observable Notebooks and Hexo
 I recently read Robin Linacre's [post](https://www.robinlinacre.com/interactive_blogging/) on using observable to author interactive blog posts with [Gatsby](https://www.gatsbyjs.com/). Since my personal site is built on [Hexo](https://hexo.io/) - a very similar style of static site generator, I was inspired to try out a very similar sort of thing thing.
 
 Lets start with a brief summary of what this post is about:`
-)})
-    },
-    {
-      inputs: ["width","d3","data"],
-      value: (function(width,d3,data)
+)}
+
+function _2(width,d3,data)
 {
   const svgwidth = Math.min(width, 760)
   const height = 200;
@@ -60,11 +47,9 @@ Lets start with a brief summary of what this post is about:`
     .text("Proportion of this blog post by subject.");
   return container.node();
 }
-)
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+
+
+function _3(md){return(
 md`### Steps
 
 The steps are very similar to Robin's, with a few adjustments.
@@ -76,11 +61,9 @@ The steps are very similar to Robin's, with a few adjustments.
 5. I created a helper function in hexo that generates the script and the div the notebook renders into and updated my post template to look in the post metadata for a \`notebook\` attribute and call the helper function.
 
 To update the post, I just need to republish the notebook, and update my package.json file with the latest version number. Committing the change then rebuilds the static version of the page.`
-)})
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+)}
+
+function _4(md){return(
 md`### Hexo Setup
 My post markdown just looks like the following. I just need to add the path to the notebook in the front matter, though I can add additional content that will appear below the main notebook too.
 \`\`\`yaml
@@ -120,23 +103,21 @@ And my post template just has a section that looks like this.
   <h2><%- page.title %></h2>
 <% } %>
 \`\`\``
-)})
-    },
-    {
-      name: "data",
-      value: (function(){return(
+)}
+
+function _data(){return(
 [
   {"label": "Technical Messing Around", "value": 0.95},
   {"label": "Actual Data Visualisation", "value": 0.05}
 ]
-)})
-    }
-  ]
-};
+)}
 
-const notebook = {
-  id: "5da2161e9f1f2784@197",
-  modules: [m0]
-};
-
-export default notebook;
+export default function define(runtime, observer) {
+  const main = runtime.module();
+  main.variable(observer()).define(["md"], _1);
+  main.variable(observer()).define(["width","d3","data"], _2);
+  main.variable(observer()).define(["md"], _3);
+  main.variable(observer()).define(["md"], _4);
+  main.variable(observer("data")).define("data", _data);
+  return main;
+}

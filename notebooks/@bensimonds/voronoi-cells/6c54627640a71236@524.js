@@ -1,36 +1,14 @@
-// URL: https://observablehq.com/@bensimonds/voronoi-cells
-// Title: Voronoi Cells
-// Author: Ben Simonds (@bensimonds)
-// Version: 524
-// Runtime version: 1
-
-const m0 = {
-  id: "6c54627640a71236@524",
-  variables: [
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+function _1(md){return(
 md`# Voronoi Cells
 
 Some cell-like things with [d3-delaunay](https://github.com/d3/d3-delaunay).`
-)})
-    },
-    {
-      name: "viewof nCells",
-      inputs: ["Inputs"],
-      value: (function(Inputs){return(
+)}
+
+function _nCells(Inputs){return(
 Inputs.range([1, 500], {value: 100, step: 1, label: "Number of cells"})
-)})
-    },
-    {
-      name: "nCells",
-      inputs: ["Generators","viewof nCells"],
-      value: (G, _) => G.input(_)
-    },
-    {
-      name: "chart",
-      inputs: ["width","d3","randomPointsNormal","nCells","relax","subdivide","contractDistance"],
-      value: (function(width,d3,randomPointsNormal,nCells,relax,subdivide,contractDistance)
+)}
+
+function _chart(width,d3,randomPointsNormal,nCells,relax,subdivide,contractDistance)
 {
   const height = width * 0.6;
   const bounds = [0, 0, width, height];
@@ -100,18 +78,13 @@ Inputs.range([1, 500], {value: 100, step: 1, label: "Number of cells"})
     )
   return svg.node()
 }
-)
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+
+
+function _4(md){return(
 md`## Appendix`
-)})
-    },
-    {
-      name: "randomPoly",
-      inputs: ["d3"],
-      value: (function(d3){return(
+)}
+
+function _randomPoly(d3){return(
 function randomPoly(n, x0=0, y0=0, x1=100, y1=100) {
     // Create a random n sided convex polygon by choosing some random points.
     // Bounds defines the x and y domain the points will be sampled from.
@@ -125,11 +98,9 @@ function randomPoly(n, x0=0, y0=0, x1=100, y1=100) {
     }
     return poly;
 }
-)})
-    },
-    {
-      name: "subdivide",
-      value: (function(){return(
+)}
+
+function _subdivide(){return(
 function subdivide(poly) {
   // Subdivide a polygon by adding a vertex between each pair of points.
   const newPoly = [];
@@ -141,46 +112,33 @@ function subdivide(poly) {
   }
   return newPoly
 }
-)})
-    },
-    {
-      name: "myRandomPoly",
-      inputs: ["randomPoly"],
-      value: (function(randomPoly){return(
+)}
+
+function _myRandomPoly(randomPoly){return(
 randomPoly(5)
-)})
-    },
-    {
-      inputs: ["subdivide","myRandomPoly"],
-      value: (function(subdivide,myRandomPoly){return(
+)}
+
+function _8(subdivide,myRandomPoly){return(
 subdivide(myRandomPoly)
-)})
-    },
-    {
-      name: "randomPointsUniform",
-      inputs: ["d3"],
-      value: (function(d3){return(
+)}
+
+function _randomPointsUniform(d3){return(
 function randomPointsUniform(n, x0=0, y0=0, x1=100, y1=100) {
   const randomX = d3.randomUniform(x0, x1);
   const randomY = d3.randomUniform(y0, y1);
   return [...Array(n).keys()].map(i => [randomX(),randomY()]);
 }
-)})
-    },
-    {
-      name: "randomPointsNormal",
-      inputs: ["d3"],
-      value: (function(d3){return(
+)}
+
+function _randomPointsNormal(d3){return(
 function randomPointsNormal(n, xMu=50, xSigma=50, yMu=50, ySigma=50) {
   const randomX = d3.randomNormal(xMu, xSigma);
   const randomY = d3.randomNormal(yMu, ySigma);
   return [...Array(n).keys()].map(i => [randomX(),randomY()]);
 }
-)})
-    },
-    {
-      name: "contractFactor",
-      value: (function(){return(
+)}
+
+function _contractFactor(){return(
 function contractFactor(points, centroid, k) {
   // Move each point in a set of points a factor of k closer to the centroid.
   return points.map(p => [
@@ -188,12 +146,9 @@ function contractFactor(points, centroid, k) {
     p[1] + k*(centroid[1] - p[1]),
   ])
 }
-)})
-    },
-    {
-      name: "relax",
-      inputs: ["d3","distance"],
-      value: (function(d3,distance){return(
+)}
+
+function _relax(d3,distance){return(
 function relax(points, bounds, iterations=100) {
   // Relax points by moving each point to the centroid of its vodonoi cell.
   const polygons = [...d3.Delaunay.from(points).voronoi(bounds).cellPolygons()];
@@ -208,20 +163,15 @@ function relax(points, bounds, iterations=100) {
   }
   
 }
-)})
-    },
-    {
-      name: "displacement",
-      value: (function(){return(
+)}
+
+function _displacement(){return(
 function displacement(a, b) {
   return [b[0]-a[0], b[1]-a[1]]
 }
-)})
-    },
-    {
-      name: "distance",
-      inputs: ["displacement"],
-      value: (function(displacement){return(
+)}
+
+function _distance(displacement){return(
 function distance(a, b) {
   if (b === undefined) {
     return Math.abs(Math.sqrt(a[0]**2 + a[1]**2));
@@ -229,12 +179,9 @@ function distance(a, b) {
    return distance(displacement(a, b))
   }
 }
-)})
-    },
-    {
-      name: "contractDistance",
-      inputs: ["displacement","distance"],
-      value: (function(displacement,distance){return(
+)}
+
+function _contractDistance(displacement,distance){return(
 function contractDistance(points, centroid, d) {
   // Move each point in a set of points a distance d closer to the centroid.
   const vec = (p) => displacement(p, centroid);
@@ -250,11 +197,9 @@ function contractDistance(points, centroid, d) {
     p[1] + d*unitVecToCentroid(p)[1],
   ])
 }
-)})
-    },
-    {
-      inputs: ["d3","randomPoly","contractDistance"],
-      value: (function(d3,randomPoly,contractDistance)
+)}
+
+function _16(d3,randomPoly,contractDistance)
 {
   const svg = d3.create("svg")
       .attr("width", 100)
@@ -277,31 +222,41 @@ function contractDistance(points, centroid, d) {
   
   return svg.node();
 }
-)
-    },
-    {
-      inputs: ["randomPointsNormal","d3"],
-      value: (function(randomPointsNormal,d3)
+
+
+function _17(randomPointsNormal,d3)
 {
   const points = randomPointsNormal(40);
   const delaunay = d3.Delaunay.from(points);
   const voronoi = delaunay.voronoi([0, 0, 100, 100])
   return [...voronoi.cellPolygons()];
 }
-)
-    },
-    {
-      name: "height",
-      value: (function(){return(
+
+
+function _height(){return(
 200
-)})
-    }
-  ]
-};
+)}
 
-const notebook = {
-  id: "6c54627640a71236@524",
-  modules: [m0]
-};
-
-export default notebook;
+export default function define(runtime, observer) {
+  const main = runtime.module();
+  main.variable(observer()).define(["md"], _1);
+  main.variable(observer("viewof nCells")).define("viewof nCells", ["Inputs"], _nCells);
+  main.variable(observer("nCells")).define("nCells", ["Generators", "viewof nCells"], (G, _) => G.input(_));
+  main.variable(observer("chart")).define("chart", ["width","d3","randomPointsNormal","nCells","relax","subdivide","contractDistance"], _chart);
+  main.variable(observer()).define(["md"], _4);
+  main.variable(observer("randomPoly")).define("randomPoly", ["d3"], _randomPoly);
+  main.variable(observer("subdivide")).define("subdivide", _subdivide);
+  main.variable(observer("myRandomPoly")).define("myRandomPoly", ["randomPoly"], _myRandomPoly);
+  main.variable(observer()).define(["subdivide","myRandomPoly"], _8);
+  main.variable(observer("randomPointsUniform")).define("randomPointsUniform", ["d3"], _randomPointsUniform);
+  main.variable(observer("randomPointsNormal")).define("randomPointsNormal", ["d3"], _randomPointsNormal);
+  main.variable(observer("contractFactor")).define("contractFactor", _contractFactor);
+  main.variable(observer("relax")).define("relax", ["d3","distance"], _relax);
+  main.variable(observer("displacement")).define("displacement", _displacement);
+  main.variable(observer("distance")).define("distance", ["displacement"], _distance);
+  main.variable(observer("contractDistance")).define("contractDistance", ["displacement","distance"], _contractDistance);
+  main.variable(observer()).define(["d3","randomPoly","contractDistance"], _16);
+  main.variable(observer()).define(["randomPointsNormal","d3"], _17);
+  main.variable(observer("height")).define("height", _height);
+  return main;
+}

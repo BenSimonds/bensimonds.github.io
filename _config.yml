@@ -5,11 +5,13 @@
 # Site
 title: Ben Simonds' Personal Blog
 subtitle: ''
-description: 'My personal site.'
-keywords:
+description: I write about data visualisation, Blender, and other things I find interesting.
+keywords: 
+  - Data Visualisation
+  - Blender
 author: Ben Simonds
 language: en
-timezone: ''
+timezone: 'Europe/London'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'

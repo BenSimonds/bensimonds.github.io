@@ -1,24 +1,10 @@
-// URL: https://observablehq.com/@bensimonds/perlin-snakes
-// Title: Perlin Snakes
-// Author: Ben Simonds (@bensimonds)
-// Version: 468
-// Runtime version: 1
-
-const m0 = {
-  id: "5dac7dc1b2dd8aca@468",
-  variables: [
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+function _1(md){return(
 md`# Perlin Snakes
 
 A remaking of [Seph Gentle's](https://josephg.com/blog/) beautiful [Perlin snakes](https://josephg.com/perlin/3/) visualisation. I wanted to understand how it was put together, and discovered that it's rather fun to play with the parameters.`
-)})
-    },
-    {
-      name: "viewof parameters",
-      inputs: ["Inputs","d3"],
-      value: (function(Inputs,d3){return(
+)}
+
+function _parameters(Inputs,d3){return(
 Inputs.form({
   nParticles: Inputs.range([10, 10000], {value: 2000, label: "Particle Count", step: 10}),
   period: Inputs.range([16, 512], {value: 256, label: "Period", step: 16}),
@@ -38,28 +24,13 @@ Inputs.form({
   ], {format: d => d.name}),
   antiParticles: Inputs.toggle({value: true, label: "Add particles going in both directions."})
 }, {width: 200})
-)})
-    },
-    {
-      name: "parameters",
-      inputs: ["Generators","viewof parameters"],
-      value: (G, _) => G.input(_)
-    },
-    {
-      name: "viewof restart",
-      inputs: ["Inputs"],
-      value: (function(Inputs){return(
+)}
+
+function _restart(Inputs){return(
 Inputs.button("Restart")
-)})
-    },
-    {
-      name: "restart",
-      inputs: ["Generators","viewof restart"],
-      value: (G, _) => G.input(_)
-    },
-    {
-      inputs: ["restart","width","DOM","noisejs","d3","parameters","noise2DOctaves"],
-      value: (function*(restart,width,DOM,noisejs,d3,parameters,noise2DOctaves)
+)}
+
+function* _4(restart,width,DOM,noisejs,d3,parameters,noise2DOctaves)
 {
   restart;
   const height = width/2;
@@ -135,17 +106,13 @@ Inputs.button("Restart")
   }
   
 }
-)
-    },
-    {
-      name: "noisejs",
-      value: (function(){return(
+
+
+function _noisejs(){return(
 import("https://cdn.skypack.dev/noisejs@2.1.0")
-)})
-    },
-    {
-      name: "noise2DOctaves",
-      value: (function(){return(
+)}
+
+function _noise2DOctaves(){return(
 function noise2DOctaves(f, x, y, octaves=2, persistence=1.0) {
   var total = 0;
   var frequency = 1;
@@ -159,14 +126,17 @@ function noise2DOctaves(f, x, y, octaves=2, persistence=1.0) {
   }
   return total / maxValue;
 }
-)})
-    }
-  ]
-};
+)}
 
-const notebook = {
-  id: "5dac7dc1b2dd8aca@468",
-  modules: [m0]
-};
-
-export default notebook;
+export default function define(runtime, observer) {
+  const main = runtime.module();
+  main.variable(observer()).define(["md"], _1);
+  main.variable(observer("viewof parameters")).define("viewof parameters", ["Inputs","d3"], _parameters);
+  main.variable(observer("parameters")).define("parameters", ["Generators", "viewof parameters"], (G, _) => G.input(_));
+  main.variable(observer("viewof restart")).define("viewof restart", ["Inputs"], _restart);
+  main.variable(observer("restart")).define("restart", ["Generators", "viewof restart"], (G, _) => G.input(_));
+  main.variable(observer()).define(["restart","width","DOM","noisejs","d3","parameters","noise2DOctaves"], _4);
+  main.variable(observer("noisejs")).define("noisejs", _noisejs);
+  main.variable(observer("noise2DOctaves")).define("noise2DOctaves", _noise2DOctaves);
+  return main;
+}

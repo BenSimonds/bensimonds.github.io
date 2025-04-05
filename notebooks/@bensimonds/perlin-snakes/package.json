@@ -1,9 +1,14 @@
 {
-  "name": "perlin-snakes",
-  "main": "perlin-snakes.js",
+  "name": "@bensimonds/perlin-snakes",
+  "main": "5dac7dc1b2dd8aca@468.js",
   "version": "468.0.0",
+  "homepage": "https://observablehq.com/@bensimonds/perlin-snakes",
   "author": {
     "name": "Ben Simonds",
     "url": "https://observablehq.com/@bensimonds"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
   }
 }

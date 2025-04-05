@@ -1,15 +1,33 @@
 # Parametric Kumiko Grids
 
-You can view this notebook by running a web server in this directory and
-visiting it as a webpage. For example:
+https://observablehq.com/@bensimonds/parametric-kumiko-grids@726
 
-```sh
+View this notebook in your browser by running a web server in this folder. For
+example:
+
+~~~sh
 npx http-server
-# Then, visit http://localhost:8080.
-```
+~~~
 
-Or, use the [Notebook Runtime API](https://github.com/observablehq/notebook-runtime) to
-integrate directly with parametric-kumiko-grids.js, which contains the notebook compiled as an
-ES module.
+Or, use the [Observable Runtime](https://github.com/observablehq/runtime) to
+import this module directly into your application. To npm install:
 
-*Exported from version 726 of [Parametric Kumiko Grids](https://observablehq.com/@bensimonds/parametric-kumiko-grids) on observablehq.com.*
+~~~sh
+npm install @observablehq/runtime@5
+npm install https://api.observablehq.com/@bensimonds/parametric-kumiko-grids@726.tgz?v=3
+~~~
+
+Then, import your notebook and the runtime as:
+
+~~~js
+import {Runtime, Inspector} from "@observablehq/runtime";
+import define from "@bensimonds/parametric-kumiko-grids";
+~~~
+
+To log the value of the cell named “foo”:
+
+~~~js
+const runtime = new Runtime();
+const main = runtime.module(define);
+main.value("foo").then(value => console.log(value));
+~~~

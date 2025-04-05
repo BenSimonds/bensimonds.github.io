@@ -1,15 +1,4 @@
-// URL: https://observablehq.com/@bensimonds/perlin-noise
-// Title: Perlin Noise
-// Author: Ben Simonds (@bensimonds)
-// Version: 700
-// Runtime version: 1
-
-const m0 = {
-  id: "98555fc83b8c0894@700",
-  variables: [
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+function _1(md){return(
 md`# Perlin Noise
 
 This notebook builds up some examples of the Perlin noise algorithm from scratch. It's based heavily on the following resources: 
@@ -21,12 +10,9 @@ Perlin noise is way of creating a continuous noise field, by chopping up the dom
 
 ## 1D Perlin Noise
 Our 1D Perlin noise function takes an input x and returns a continuous noise field. We basically assign each integer value a random value, and just interpolate smoothly between them.`
-)})
-    },
-    {
-      name: "noise1d",
-      inputs: ["cells1d","nUnique","lerp","fade"],
-      value: (function(cells1d,nUnique,lerp,fade){return(
+)}
+
+function _noise1d(cells1d,nUnique,lerp,fade){return(
 function noise1d (x) {
 
   // Get the integer component of x to tell us which "unit" of we're in.
@@ -42,29 +28,17 @@ function noise1d (x) {
   // Linearly interpolate between g1 and g2 to give our output.
   return lerp(g1, g2, fade(x))
 }
-)})
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+)}
+
+function _3(md){return(
 md`Let's test our our 1D noise function with a line chart. ● circles mark each integer point, so you can see how the function interpolates between them. <span style='color: red;'>●</span> red circles mark where the pattern repeats as we loop through our array of random values.`
-)})
-    },
-    {
-      name: "viewof nUnique",
-      inputs: ["Inputs"],
-      value: (function(Inputs){return(
+)}
+
+function _nUnique(Inputs){return(
 Inputs.range([1, 256], {value: 16, step: 1, label: "# Unique values"})
-)})
-    },
-    {
-      name: "nUnique",
-      inputs: ["Generators","viewof nUnique"],
-      value: (G, _) => G.input(_)
-    },
-    {
-      inputs: ["d3","width","noise1d","nUnique"],
-      value: (function(d3,width,noise1d,nUnique)
+)}
+
+function _5(d3,width,noise1d,nUnique)
 {
   // generate some noise
   const [bottom, top] = [0, 64];
@@ -103,19 +77,14 @@ Inputs.range([1, 256], {value: 16, step: 1, label: "# Unique values"})
   return svg.node();
 
 }
-)
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+
+
+function _6(md){return(
 md`## 2D Perlin Noise
 For our 2D perlin noise we need to create a 2D pseudo-random vector at each integer grid point, rather than a scalar value. Then to convert that to a value we can compute the dot product been this vector and any points position within the cell to compute a noise value.`
-)})
-    },
-    {
-      name: "noise2d",
-      inputs: ["nUnique","cells2d","perm","dot","lerp","fade"],
-      value: (function(nUnique,cells2d,perm,dot,lerp,fade){return(
+)}
+
+function _noise2d(nUnique,cells2d,perm,dot,lerp,fade){return(
 function noise2d(x, y) {
   // get our position within the unit space.
   const _x = Math.floor(x);
@@ -155,29 +124,17 @@ function noise2d(x, y) {
   return lerp(l1, l2, fade(y)) + 0.5;
   
 }
-)})
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+)}
+
+function _8(md){return(
 md`We can draw our noise field with some shapes, coloring them by the value of the field at that location. We'll also draw in the random vector for the field at each integer loaction, so we can see how this influences the noise pattern. You'll see the vectors always point in the direction of the higher (blue) values, and that the integer points themselves always lie at the midpoint of the color gradient - because their dot product will always be zero.`
-)})
-    },
-    {
-      name: "viewof theta",
-      inputs: ["Inputs"],
-      value: (function(Inputs){return(
+)}
+
+function _theta(Inputs){return(
 Inputs.range([0, 360], {value: 0, step: 5, label: "Rotate noise vectors"})
-)})
-    },
-    {
-      name: "theta",
-      inputs: ["Generators","viewof theta"],
-      value: (G, _) => G.input(_)
-    },
-    {
-      inputs: ["visibility","width","d3","noise2d","cells2d","nUnique","perm"],
-      value: (async function(visibility,width,d3,noise2d,cells2d,nUnique,perm)
+)}
+
+async function _10(visibility,width,d3,noise2d,cells2d,nUnique,perm)
 {
   await visibility();
   const margin = {left: 40, top: 40, right: 40, bottom: 40}
@@ -288,19 +245,14 @@ Inputs.range([0, 360], {value: 0, step: 5, label: "Rotate noise vectors"})
   return div.node();
 
 }
-)
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+
+
+function _11(md){return(
 md`## Layering Noise - Octaves
 We can create more natural, fractal like noise, by combining noise functions with different scales. If we make each layer of noise a have a smaller scale, and progressively adjust their influence, we end up with a nice looking "scale-free" noise texture with detail at both large and small scales.`
-)})
-    },
-    {
-      name: "noise2DOctaves",
-      inputs: ["noise2d"],
-      value: (function(noise2d){return(
+)}
+
+function _noise2DOctaves(noise2d){return(
 function noise2DOctaves(x, y, octaves=2, persistence=1.0) {
   var total = 0;
   var frequency = 1;
@@ -314,41 +266,21 @@ function noise2DOctaves(x, y, octaves=2, persistence=1.0) {
   }
   return total / maxValue;
 }
-)})
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+)}
+
+function _13(md){return(
 md`You can play with how layers are blended together below. Persistence defines how much influence smaller scales of noise have - a value of \`0.5\` means each smaller scale of noise has half the influence of the layer before it. A value of 1 means each layer has the same influence.`
-)})
-    },
-    {
-      name: "viewof persistence",
-      inputs: ["Inputs"],
-      value: (function(Inputs){return(
+)}
+
+function _persistence(Inputs){return(
 Inputs.range([0, 2], {value: 0.5, step: 0.1, label: "Persistence"})
-)})
-    },
-    {
-      name: "persistence",
-      inputs: ["Generators","viewof persistence"],
-      value: (G, _) => G.input(_)
-    },
-    {
-      name: "viewof octaves",
-      inputs: ["Inputs"],
-      value: (function(Inputs){return(
+)}
+
+function _octaves(Inputs){return(
 Inputs.range([1, 8], {value: 5, step: 1, label: "# Octaves"})
-)})
-    },
-    {
-      name: "octaves",
-      inputs: ["Generators","viewof octaves"],
-      value: (G, _) => G.input(_)
-    },
-    {
-      inputs: ["visibility","width","d3","noise2DOctaves","octaves","persistence"],
-      value: (async function(visibility,width,d3,noise2DOctaves,octaves,persistence)
+)}
+
+async function _16(visibility,width,d3,noise2DOctaves,octaves,persistence)
 {
   await visibility();
   const margin = {left: 40, top: 30, right: 30, bottom: 30}
@@ -413,34 +345,24 @@ Inputs.range([1, 8], {value: 5, step: 1, label: "# Octaves"})
   return div.node();
 
 }
-)
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+
+
+function _17(md){return(
 md`## 📝 A note on the algorithm
 One important part of the Perlin algorithm I've neglected a bit here is how the random vectors for each grid point are chosen and what they should be. In the [real](http://adrianb.io/2014/08/09/perlinnoise.html) Perlin algorithm these aren't completely random, but are picked in such a way as to make generating the noise pattern really efficient. In my examples, I've generated and picked random vectors much less efficiently, but in a way that makes it more fun to play with the charts above.`
-)})
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+)}
+
+function _18(md){return(
 md`## Appendix
 
 Our \`cells\` arrays act as a lookup of values we can sample vectors (for 2d Noise) or numbers (for 1d noise) from.`
-)})
-    },
-    {
-      name: "cells2d",
-      inputs: ["cells2Base","rotate","theta"],
-      value: (function(cells2Base,rotate,theta){return(
+)}
+
+function _cells2d(cells2Base,rotate,theta){return(
 cells2Base.map(d => rotate(d, theta / 360 * 2 * Math.PI))
-)})
-    },
-    {
-      name: "cells2Base",
-      inputs: ["nUnique"],
-      value: (function(nUnique)
+)}
+
+function _cells2Base(nUnique)
 {
   // This acts as the source for cells2d, allowing us to rotate cells2d without picking new random values.
   var cells = [];
@@ -449,12 +371,9 @@ cells2Base.map(d => rotate(d, theta / 360 * 2 * Math.PI))
   }
   return cells;
 }
-)
-    },
-    {
-      name: "cells1d",
-      inputs: ["nUnique"],
-      value: (function(nUnique)
+
+
+function _cells1d(nUnique)
 {
   // Actas as a lookup for the random 1D value
   var cells = [];
@@ -463,54 +382,39 @@ cells2Base.map(d => rotate(d, theta / 360 * 2 * Math.PI))
   }
   return cells;
 }
-)
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+
+
+function _22(md){return(
 md`\`perm\` is just a randomised array of the number of unique noise values we have. It acts as a way to randomise how we choose vectors on our x vs y axis, so they dont correlate.`
-)})
-    },
-    {
-      name: "perm",
-      inputs: ["nUnique"],
-      value: (function(nUnique){return(
+)}
+
+function _perm(nUnique){return(
 [...new Array(nUnique).keys()].sort(() => Math.random() - 0.5)
-)})
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+)}
+
+function _24(md){return(
 md`Finally we have some numbers for fading an interpolating smoothly between values, and a helper function for taking vector dot products.`
-)})
-    },
-    {
-      name: "lerp",
-      value: (function(){return(
+)}
+
+function _lerp(){return(
 function lerp(a,b,t) {
     return ((1-t) * a) + (t * b);
   }
-)})
-    },
-    {
-      name: "fade",
-      value: (function(){return(
+)}
+
+function _fade(){return(
 function fade(t) {
     return t*t*t*(t*(t*6-15)+10);
   }
-)})
-    },
-    {
-      name: "dot",
-      value: (function(){return(
+)}
+
+function _dot(){return(
 function dot(a, b) {
   return a.map((d, i) => d * b[i]).reduce((a, b) => a+b, 0)
 }
-)})
-    },
-    {
-      name: "rotate",
-      value: (function(){return(
+)}
+
+function _rotate(){return(
 function rotate(vec, theta) {
   return [
     //𝑥2=cos𝛽𝑥1−sin𝛽𝑦1
@@ -519,14 +423,41 @@ function rotate(vec, theta) {
     Math.sin(theta) * vec[0] + Math.cos(theta) * vec[1]
   ]
 }
-)})
-    }
-  ]
-};
+)}
 
-const notebook = {
-  id: "98555fc83b8c0894@700",
-  modules: [m0]
-};
-
-export default notebook;
+export default function define(runtime, observer) {
+  const main = runtime.module();
+  main.variable(observer()).define(["md"], _1);
+  main.variable(observer("noise1d")).define("noise1d", ["cells1d","nUnique","lerp","fade"], _noise1d);
+  main.variable(observer()).define(["md"], _3);
+  main.variable(observer("viewof nUnique")).define("viewof nUnique", ["Inputs"], _nUnique);
+  main.variable(observer("nUnique")).define("nUnique", ["Generators", "viewof nUnique"], (G, _) => G.input(_));
+  main.variable(observer()).define(["d3","width","noise1d","nUnique"], _5);
+  main.variable(observer()).define(["md"], _6);
+  main.variable(observer("noise2d")).define("noise2d", ["nUnique","cells2d","perm","dot","lerp","fade"], _noise2d);
+  main.variable(observer()).define(["md"], _8);
+  main.variable(observer("viewof theta")).define("viewof theta", ["Inputs"], _theta);
+  main.variable(observer("theta")).define("theta", ["Generators", "viewof theta"], (G, _) => G.input(_));
+  main.variable(observer()).define(["visibility","width","d3","noise2d","cells2d","nUnique","perm"], _10);
+  main.variable(observer()).define(["md"], _11);
+  main.variable(observer("noise2DOctaves")).define("noise2DOctaves", ["noise2d"], _noise2DOctaves);
+  main.variable(observer()).define(["md"], _13);
+  main.variable(observer("viewof persistence")).define("viewof persistence", ["Inputs"], _persistence);
+  main.variable(observer("persistence")).define("persistence", ["Generators", "viewof persistence"], (G, _) => G.input(_));
+  main.variable(observer("viewof octaves")).define("viewof octaves", ["Inputs"], _octaves);
+  main.variable(observer("octaves")).define("octaves", ["Generators", "viewof octaves"], (G, _) => G.input(_));
+  main.variable(observer()).define(["visibility","width","d3","noise2DOctaves","octaves","persistence"], _16);
+  main.variable(observer()).define(["md"], _17);
+  main.variable(observer()).define(["md"], _18);
+  main.variable(observer("cells2d")).define("cells2d", ["cells2Base","rotate","theta"], _cells2d);
+  main.variable(observer("cells2Base")).define("cells2Base", ["nUnique"], _cells2Base);
+  main.variable(observer("cells1d")).define("cells1d", ["nUnique"], _cells1d);
+  main.variable(observer()).define(["md"], _22);
+  main.variable(observer("perm")).define("perm", ["nUnique"], _perm);
+  main.variable(observer()).define(["md"], _24);
+  main.variable(observer("lerp")).define("lerp", _lerp);
+  main.variable(observer("fade")).define("fade", _fade);
+  main.variable(observer("dot")).define("dot", _dot);
+  main.variable(observer("rotate")).define("rotate", _rotate);
+  return main;
+}

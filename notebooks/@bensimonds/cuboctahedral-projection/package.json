@@ -1,9 +1,14 @@
 {
-  "name": "cuboctahedral-projection",
-  "main": "cuboctahedral-projection.js",
+  "name": "@bensimonds/cuboctahedral-projection",
+  "main": "08a5552c4456c5be@1162.js",
   "version": "1162.0.0",
+  "homepage": "https://observablehq.com/@bensimonds/cuboctahedral-projection",
   "author": {
     "name": "Ben Simonds",
     "url": "https://observablehq.com/@bensimonds"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
   }
 }

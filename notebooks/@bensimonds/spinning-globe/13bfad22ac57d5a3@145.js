@@ -1,22 +1,8 @@
-// URL: https://observablehq.com/@bensimonds/spinning-globe
-// Title: Spinning Globe
-// Author: Ben Simonds (@bensimonds)
-// Version: 145
-// Runtime version: 1
-
-const m0 = {
-  id: "13bfad22ac57d5a3@145",
-  variables: [
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+function _1(md){return(
 md`# Spinning Globe`
-)})
-    },
-    {
-      name: "viewof colors",
-      inputs: ["Inputs"],
-      value: (function(Inputs){return(
+)}
+
+function _colors(Inputs){return(
 Inputs.form({
   countryOutline: Inputs.color({value: '#d61f1f', label: "Country Outline"}),
   countryFill: Inputs.color({value: '#800a21', label: "Country Fill"}),
@@ -26,16 +12,9 @@ Inputs.form({
   bgHaze2: Inputs.color({value: '#045181', label: "BG Haze 2"}),
   bg: Inputs.color({value: '#000', label: "BG Color"}),
 })
-)})
-    },
-    {
-      name: "colors",
-      inputs: ["Generators","viewof colors"],
-      value: (G, _) => G.input(_)
-    },
-    {
-      inputs: ["DOM","width","height","d3","projection","inset","colors","graticule","countries","vx","vy"],
-      value: (function*(DOM,width,height,d3,projection,inset,colors,graticule,countries,vx,vy)
+)}
+
+function* _3(DOM,width,height,d3,projection,inset,colors,graticule,countries,vx,vy)
 {
   const context = DOM.context2d(width, height);
   const path = d3.geoPath(projection, context);
@@ -117,70 +96,62 @@ Inputs.form({
     yield context.canvas;
   }
 }
-)
-    },
-    {
-      inputs: ["md"],
-      value: (function(md){return(
+
+
+function _4(md){return(
 md`# Appendix`
-)})
-    },
-    {
-      name: "countries",
-      inputs: ["FileAttachment"],
-      value: (function(FileAttachment){return(
+)}
+
+function _countries(FileAttachment){return(
 FileAttachment("custom.geo.json").json()
-)})
-    },
-    {
-      name: "inset",
-      value: (function(){return(
+)}
+
+function _inset(){return(
 50
-)})
-    },
-    {
-      name: "height",
-      inputs: ["width"],
-      value: (function(width){return(
+)}
+
+function _height(width){return(
 width / 2
-)})
-    },
-    {
-      name: "vx",
-      value: (function(){return(
+)}
+
+function _vx(){return(
 0.03
-)})
-    },
-    {
-      name: "vy",
-      value: (function(){return(
+)}
+
+function _vy(){return(
 -0.05
-)})
-    },
-    {
-      name: "projection",
-      inputs: ["d3","inset","width","height"],
-      value: (function(d3,inset,width,height){return(
+)}
+
+function _projection(d3,inset,width,height){return(
 d3.geoOrthographic()
     .fitExtent([
         [inset, inset], [width - inset, height - inset]], // The region we want our sphere to fit in.
         {type: "Sphere"}
     )
-)})
-    },
-    {
-      name: "graticule",
-      inputs: ["d3"],
-      value: (function(d3){return(
+)}
+
+function _graticule(d3){return(
 d3.geoGraticule10()
-)})
-    }
-  ]
-};
+)}
 
-const notebook = {
-  id: "13bfad22ac57d5a3@145",
-  modules: [m0]
-};
-
-export default notebook;
+export default function define(runtime, observer) {
+  const main = runtime.module();
+  function toString() { return this.url; }
+  const fileAttachments = new Map([
+    ["custom.geo.json", {url: new URL("./files/c47d86a5f6e479788307e8da3ed59a9eeb7d89e6f57fa8a508e6a2ec8e0e9f070c764e2a8b289724679309e97d32301e62070398016a76f7f440dbe400566dea.json", import.meta.url), mimeType: "application/json", toString}]
+  ]);
+  main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
+  main.variable(observer()).define(["md"], _1);
+  main.variable(observer("viewof colors")).define("viewof colors", ["Inputs"], _colors);
+  main.variable(observer("colors")).define("colors", ["Generators", "viewof colors"], (G, _) => G.input(_));
+  main.variable(observer()).define(["DOM","width","height","d3","projection","inset","colors","graticule","countries","vx","vy"], _3);
+  main.variable(observer()).define(["md"], _4);
+  main.variable(observer("countries")).define("countries", ["FileAttachment"], _countries);
+  main.variable(observer("inset")).define("inset", _inset);
+  main.variable(observer("height")).define("height", ["width"], _height);
+  main.variable(observer("vx")).define("vx", _vx);
+  main.variable(observer("vy")).define("vy", _vy);
+  main.variable(observer("projection")).define("projection", ["d3","inset","width","height"], _projection);
+  main.variable(observer("graticule")).define("graticule", ["d3"], _graticule);
+  return main;
+}
