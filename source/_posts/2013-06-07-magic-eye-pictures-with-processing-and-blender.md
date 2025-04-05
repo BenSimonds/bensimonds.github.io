@@ -86,39 +86,3 @@ It takes two inputs, one the pattern to repeat, the other a depth map. The resul
  Now if you'll excuse me I need to go and rest my eyes. Debugging the script took a lot of staring, and it's weird trying to make yourself see a 3D image when you aren't even sure whether there should be one yet....
 
 
-
-
-
-# Comments
-
-
-DC (Aug 27, 2013)
-> Hi, I used some of your code to make a random dot stereogram in processing. Was really helpful. Hope you don't mind. Thanks.
-> 
-> The sketch:
-> http://www.openprocessing.org/sketch/106591
-
-Ben Simonds (Aug 27, 2013)
-> Cool!
-
-vitos1k (Jun 07, 2013)
-> cool! but on the Vase image, there are few pixels grouped together, that are off, and are ruining the picture, on the top part of the vase
-
-Ben Simonds (Jun 07, 2013)
-> I think I see what you mean. The vase actually has some holes around the top of it, but the 3D effect works better without them. I've updated the image. Cheers!
-
-vitos1k (Jun 08, 2013)
-> ah! much nicer now
-> thanks for the code
-
-Man with 20 less minutes (Feb 01, 2014)
-> Stared at the first image for 20 minutes before reading. My bad. lol
-
-Autostereograms | Kalshiev (Aug 10, 2016)
-> [&#8230;] If you want to make your own or learn more about magic eye pictures visist: Ben Simonds&#8217; Tutorial [&#8230;]
-
-Magiceye Venus | Kalshiev (Aug 11, 2016)
-> [&#8230;] For a tutorial on how to make these click here [&#8230;]
-
-Estereograma &#8211; &#8211; MATEUS TARGINO &#8211; (Aug 27, 2018)
-> [&#8230;] Magic Eye Pictures with Processing and Blender [&#8230;]

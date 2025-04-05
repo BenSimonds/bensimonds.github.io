@@ -17,13 +17,3 @@ alias: blog/posts/2013-02-15-blender-master-class-on-the-blender-org-store
 You can now buy my book, Blender Master Class on the Blender.org E-Store, it's roughly the same price as ordering anywhere else, and you'll also be supporting the Blender Foundation.
 
 
-
-
-
-# Comments
-
-
-Reynante M. Martinez (Feb 25, 2013)
-> Great to hear that, Ben.  I'm currently reading your book and will eventually provide a review soon as requested by NoStarch. :)
-> 
-> -Reyn

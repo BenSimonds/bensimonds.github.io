@@ -48,34 +48,3 @@ Here, a rough paint texture is mapped to the screen space coordinates, and affec
 
 
 
-
-
-# Comments
-
-
-Reyn (Aug 11, 2009)
-> Very interesting, indeed.  Thanks for the blend file.  I'll try that at as soon as possible. ^_^
-
-Нефотореалистичный рендеринг: рисуем полигонами / Теория / artnotes.ru / CG, blender, photoshop, 3ds max, уроки, информация (Aug 24, 2009)
-> [...] Автор: Ben Simonds [...]
-
-Non-Photorealistic Rendering Test | Robert Murrish (Mar 07, 2011)
-> [...] a test I did based on a technique detailed by Isaac Botkin at Siggraph 2009. I must also credit Ben Simonds for introducing me to the technique and pointing me to that Siggraph paper. As always with a render [...]
-
-Kevin (Jan 12, 2011)
-> Hi Ben, the above link for the blend file seems to be broken. Any chance you could take a look, I'd like to look into this technique and the file would answer a few questions I'm thinking. It's a very cool look for npr types of renders.
-> 
-> Cheers,
-> Kevin
-
-bensimonds (Jan 14, 2011)
-> Thanks for pointing that out. I've uploaded the file to blendswap: http://www.blendswap.com/3D-models/materials/painting-with-polygons/
-
-Diehl Art Gallery (Jun 27, 2010)
-> Interesting work, all the best!
-
-Pri Argoud (Feb 25, 2016)
-> Hi Ben, same problem with the file here... link's broken :(
-
-Sebastian Sanchez-pena Lemos (Oct 06, 2017)
-> Here is the new working link: https://www.blendswap.com/blends/view/4562

@@ -80,9 +80,3 @@ Of course the best place to learn is from the masters. Here are a couple of link
 
 
 
-
-# Comments
-
-
-Arena Dilsukhnagar (May 03, 2016)
-> Great blog on Animation

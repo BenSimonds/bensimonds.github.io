@@ -21,10 +21,3 @@ For more about the book, check out [this post](http://bensimonds.com/2013/01/04/
 
 
 
-
-
-# Comments
-
-
-Black-Light (Sep 09, 2013)
-> I do love crisp look and nice feel of the book

@@ -49,18 +49,3 @@ You can find more options that you can change this way by exploring the api with
 
 
 
-
-
-# Comments
-
-
-gregzaal (Apr 04, 2012)
-> Nice tips :) I've recently (yesterday) started learning python too - really a great tool for artists.
-> As for the last one regarding bundle sizes for the camera tracker, you can just change that in the N properties bar :) and change their type there too.
-> I think I'm gonna find the subsurf one and the obj index one invaluable :) thanks!
-
-Ben Simonds (Apr 05, 2012)
-> Thanks Greg. The subsurf one is definitely my fave.
-
-lindl (Jul 27, 2015)
-> what might be the best resource for learning bpy API

@@ -19,12 +19,3 @@ This is just a quick little video tutorial to test out my new screen recording s
 
 
 
-
-
-# Comments
-
-
-scarodj (Oct 24, 2011)
-> Thanks for the tip!
-> 
-> (For the ones with hearing deficiencies like I appear to be: Ctrl+shift+O for the offset menu)

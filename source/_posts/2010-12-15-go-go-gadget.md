@@ -44,16 +44,3 @@ Here are some ortho shots of the finished model:
 
 ![>< ><](/images/old/orthos.jpg)
 
-
-# Comments
-
-
-amfaty (Dec 24, 2010)
-> pretty neat! :)
-
-unfa (Dec 15, 2010)
-> Impressive work :)
-> I like the mix of styles. It's amazing how you made Gadget scary :)
-
-Yulia Kalashnikova (Mar 12, 2015)
-> when shall we see a textured version?

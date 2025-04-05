@@ -27,11 +27,3 @@ And here is a video of the model morphing between the expressions (Click to visi
 
 
 
-
-
-# Comments
-
-
-catcher1 (Jul 29, 2009)
-> Awesome, 
-> Still learning the basics .

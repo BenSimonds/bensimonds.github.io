@@ -21,17 +21,3 @@ Over at[ GeckoAnimation](http://www.geckoanimation.com/), [@laxy ](https://twitt
 Anyway, the series starts tonight at 9pm on Dave, with Episode 6 (the one we worked on) going out sometime in November. Watch it!
 
 
-
-
-
-# Comments
-
-
-Ben Simonds (Oct 05, 2012)
-> Thanks!
-
-chromebiatch (Oct 05, 2012)
-> Awesome - I loved all the visuals, great job!
-
-James___UK (Oct 04, 2012)
-> You worked on an episode? Siiick! As for episode 1 that's gonna be on my Sky+ box very soon

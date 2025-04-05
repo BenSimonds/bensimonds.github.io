@@ -26,18 +26,3 @@ For my fathers birthday this year I created a model of my family crest and had i
 
 
 
-
-
-
-# Comments
-
-
-Jason Simonds (Oct 13, 2009)
-> That is really amazing what you did with the Family crest.
-> I have been searching for an image of the crest but all that I find looks too generic. The one you have is the best one so far. If possible can you E-mail me the Image that you designed this off of.
-
-Alton (Apr 14, 2013)
-> i love the crest.  I have a custom crest I designed but would love to have it in 3D.  Please let me know if you want to work together.
-
-Ben Simonds (Apr 14, 2013)
-> Sounds interesting. Drop me an email.

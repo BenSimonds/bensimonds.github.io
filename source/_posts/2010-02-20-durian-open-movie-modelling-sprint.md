@@ -23,15 +23,3 @@ Today the [Durian](http://durian.blender.org/) open movie guys had a [modelling 
 
 You can see all the great models people produced over at [Blendswap.com.](http://www.blendswap.com/)
 
-
-
-
-
-# Comments
-
-
-blendipel (Feb 20, 2010)
-> Yup, well done. :)
-
-RH2 (Feb 20, 2010)
-> I wouldn't be surprised if the tree stump made it into the short.

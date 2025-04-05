@@ -21,9 +21,3 @@ The third piece of album art I've produced for Panic Elbow, and probably my favo
 As usual, I encourage you to go and listen to their music on their [MySpace page](http://www.myspace.com/panicelbow).
 
 
-
-# Comments
-
-
-cj (Aug 22, 2010)
-> nice work,simple but cool

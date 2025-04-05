@@ -22,10 +22,3 @@ Some practice at écorché style anatomy sculpting with blender 2.5. Rendered in
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/15580626" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
-
-
-# Comments
-
-
-Tyler (Oct 06, 2010)
-> He looks like Dr. Manhattan.

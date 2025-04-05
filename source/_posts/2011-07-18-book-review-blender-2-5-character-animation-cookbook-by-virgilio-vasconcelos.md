@@ -27,11 +27,3 @@ On the animation side (which I know less about) the book teaches the layered tec
 All the source .blend files for the book are available through [Virgilio's website](http://virgiliovasconcelos.com/blender-animation-cookbook/), which are a great resource when trying to pick apart how a rig works so you can implement something in your own projects. If you're interested in buying the book, I'd suggest you go and check them out. Also available is the main character rig "Otto", used in the book. All in all the book should be a nice reference for anyone looking to start with rigging and animation. It's an easy book to flip through and find the topic you're stuck on, and whilst I disagreed with a couple of solutions, the book has an answer for most problems that might stump newbie blender-heads.
 
 
-
-# Comments
-
-
-Jordan (Oct 22, 2011)
-> The only thing I wish the book did was walk you through the process of actually creating a workable and usable animation scene. Definitely, ahead of the game when teaching animation!
-> 
-> Ben, what solutions did you disagree with? And what would your fixes be?

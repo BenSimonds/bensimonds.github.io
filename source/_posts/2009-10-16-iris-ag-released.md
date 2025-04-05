@@ -34,11 +34,3 @@ A few assets we decided to drop from the game. Each was animated and built up ou
  **The finished product:** We're all really proud of the game, it's great fun to play and it looks great too. As our first iPhone game, and the first to use our engine, we think the results are great, and now we've got one under our belts the next is going to be even better. Go and check out the game for yourself, it's only $2, with a free demo version coming soon.
 
 
-
-
-
-# Comments
-
-
-Mike (Oct 17, 2009)
-> Right on!  Game looks nice, and its interesting that those more detailed objects didn't translate well onto the handheld screen.

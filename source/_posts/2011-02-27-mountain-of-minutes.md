@@ -20,11 +20,3 @@ So some friends of mine from BlenderArtists.org and I decided to get together an
 Gargoyle - By Brandon Phoenix
 
 
-
-
-
-# Comments
-
-
-DennisJ (Mar 08, 2011)
-> Nice style.

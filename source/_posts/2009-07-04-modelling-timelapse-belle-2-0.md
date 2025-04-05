@@ -46,25 +46,3 @@ Anyway, I hope to update soon with some more progress. Leave comments, particula
 ![WIP1 ><](/images/old/wip1.jpg)
 
 
-
-# Comments
-
-
-Swede (Jul 23, 2009)
-> I downloaded Blender last week, and I am amazed at what can be done with this 3d software, and it is free!  Great project keep up the good work.  It gives inspiration to beginners in 3D Digital Art.
-
-Ryan Neily (Oct 01, 2009)
-> Your video is probably good but my browser did not show either it or the link to it.
-
-bensimonds (Oct 02, 2009)
-> Shows up fine this end, here's a link though: http://www.vimeo.com/5444650
-
-flash (Jul 07, 2009)
-> Cool!
-
-bluemanjive (Mar 29, 2010)
-> I want to applaud, I am still quite new to 3D in general. This shows alot of the thaught and design processes an idea goes through before the modeling even starts. What tools did you use the most in blender?
-> Thankyou for sharing and keep up the good work.
-
-JC Tatge (Aug 16, 2010)
-> good show, then!

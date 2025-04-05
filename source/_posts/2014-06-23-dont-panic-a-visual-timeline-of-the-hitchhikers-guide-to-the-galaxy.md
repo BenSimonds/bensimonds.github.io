@@ -22,35 +22,8 @@ Thanks to folks on the Don't Panic [Subreddit](http://www.reddit.com/r/DontPanic
 
 ### Update:
 
-So I've been doing some listening to the radio series, and looking and peoples comments, and made some improvements to the timeline). I think the new one is more true to the series. What's changed: 
+So I've been doing some listening to the radio series, and looking and peoples comments, and made some improvements to the timeline. I think the new one is more true to the series. What's changed: 
 
   * On prehistoric Earth, the timeline for Ford and Arthur now splits in two. On the first path, the two are rescued by Zaphod and they head off to Brontitall (the Secondary Phase plot). On the second, they are stuck there until Ford detects eddies in the space time continuum, and they escape to Lord's Cricket ground on a sofa.
   * After the old man's shack, Arthur runs off with Lintilla and Marvin in the Heart of Gold, and the rest are left stranded. The only character who continues on to the Tertiary Phase with an unbroken timeline is Zaphod, who seems to be the only one with any memory of the events of the Secondary Phase. This also fits with the glimpse of Arthur and the (now several) Lintillas aboard the Heart of Gold we see at the end of the Epilogue for the Quintessential Phase.
   * A couple of fixes for Marvin. His path splits too. In one path he comes along for Zaphod's potentially hallucinatory adventures in the Secondary phase, in the other he carries on from Megadodo publications, which is the last place we see him before he's abandoned by Zaphod, appearing next on Squornshellous Zeta in the Tertiary phase.
-
-
-# Comments
-
-
-Nicholas Joll (Jun 23, 2014)
-> Really very wonderful!
-
-Tyler Parker (Jun 23, 2014)
-> Animating the flow of time would look awesome. Even better: having someone who can impersonate the Guide's VO to narrate it.
-
-Univartech (Sep 09, 2014)
-> Great! Thank you!
-
-Nicholas Joll (Jun 23, 2014)
-> PS: You might want to send this to ZZ9PluralZAlpha, which is the Hitchhiker's fanclub. The people there would love this.
-
-DeadFlanders (Feb 03, 2015)
-> Have you thought about making a book version of the timeline as well?  This is awesome, but I've never listened to the radio series..  Although, now I think I'm going to go dig it up and give it a listen..
-> 
-> Looking this over, it looks like the timelines are very close..  Closer than I would have thought..  Probably wouldn't take to much..
-
-Aditia (Jun 23, 2014)
-> Hi Ben, I'm just curious how'd you make that in blender?
-
-Ben Simonds (Jun 23, 2014)
-> Just curves and text objects mostly. The arrowheads are just cone meshes.

@@ -59,19 +59,3 @@ A bit of a bonus, this site just has a rather cool collection of free high resol
 
  
 
-
-# Comments
-
-
-Milad Thaha (Feb 20, 2011)
-> 'fa fantastic'
-> 
-> Heh, great article; thanks alot for sharing.
-
-Yozheg (Feb 21, 2011)
-> TextureLib.com and CGTextures.com - super!
-> everything else - looks a lot worse.
-
-dante (Nov 14, 2010)
-> thank you indeed.
-> very useful post.

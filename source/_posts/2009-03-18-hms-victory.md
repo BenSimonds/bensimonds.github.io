@@ -37,31 +37,3 @@ In addition I produced a short tutorial on making ships in blender. See the page
 
 
 
-
-# Comments
-
-
-JIM COSMAN (Feb 23, 2010)
-> Ben  , The 3d  of the HMS Victory   is what I need  to help me start my ship project .  How can I download your program ?
-> 
-> Jim Cosman
-
-bensimonds (Feb 23, 2010)
-> Unfortunately the model itself is not avaliable for download. The files are far too big for me to host anywhere. If you need any specifics though drop me another comment and I'll see if I have any renders that could help you out.
-
-CapnMuadDib (Mar 30, 2010)
-> Hi, could I by any chance use the textures you used here on a project of mine? You'll receive full credit of course! I've tried making my own, and succeeded sort-of, but it just doesn't look right. It would be a real help to base my skin on your textures. Could I get them?
-
-bensimonds (Mar 30, 2010)
-> Most of the textures I used are freely available at cgtextures.com, but I put a few of my more edited ones in a zip for you: http://dl.dropbox.com/u/180363/Victory_textures.zip
-> 
-> Hope you find them useful.
-
-CapnMuadDib (Mar 30, 2010)
-> Thanks a lot! Especially like the red and blue (the textures are going to be used in a game... Always red vs. blue!)
-
-CapnMuadDib (Mar 30, 2010)
-> Sorry to bother you again, the skin for the ship itself is done, the deck and masts are giving me some problems though... Got anything I could use?
-
-Chris Volter (Jun 14, 2013)
-> Could you PLEASE put this on BlendSwap? You can compress it for smaller file size.

@@ -18,13 +18,3 @@ Here's a bit of album art I did for a York based jazz/swing group called Ben Bea
 
 You can check them out at their [website](http://www.benbeattieandthejazzage.co.uk/), or have a listen to their stuff on their [myspace](http://www.myspace.com/benbeattieandthejazzage) page.
 
-
-
-# Comments
-
-
-Alex (May 04, 2010)
-> Perfect music for walking down the street ^^, gj peeps, awesome sound
-
-Dread Knight (Jun 01, 2010)
-> I like the cover; will check out the music too :)

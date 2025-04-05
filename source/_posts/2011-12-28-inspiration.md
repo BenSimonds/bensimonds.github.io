@@ -48,20 +48,3 @@ Look at his drawings. [LOOK AT THEM](http://blog.mcbess.com/post/7609853173/le-s
 Aside from producing my favourite (through until lately frustratingly slow to update) webcomic, [Dresden Codak](http://dresdencodak.com/), Diaz also writes a [fantastic blog](http://dresdencodak.tumblr.com/) on comic book art theory and character design that is always a great read. His superhero redesigns in particular shine out as an example of genuinely well thought out character design. Well worth a read.
 
 
-
-# Comments
-
-
-Milad (Jan 05, 2012)
-> Mcbess is god, I'll tell you that.
-
-Bonjour Tristesse (Jan 19, 2012)
-> Wow, that octopus leg sculpture is amazing.  Creepy but amazing.
-
-Theartofabthomas (Dec 28, 2011)
-> dresdan codak is awesome! good post :)
-
-Reynante Martinez (Dec 29, 2011)
-> Thanks for the share, Ben. :)
-> 
-> -Reyn
